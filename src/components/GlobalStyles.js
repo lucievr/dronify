@@ -1,4 +1,6 @@
 import { css } from "@emotion/core"
+import 'typeface-roboto';
+
 
 const GlobalStyles = css`
   * {

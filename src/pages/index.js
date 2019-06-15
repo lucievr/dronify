@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import "materialize-css/dist/js/materialize.js"
 import { css, Global } from "@emotion/core"
 
 import GlobalStyles from "../components/GlobalStyles"
