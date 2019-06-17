@@ -43,8 +43,15 @@ const landingContent = css`
     `
 
 const heading = css`
-        font-size: 10rem;
+        font-size: 8rem;
         color: #fff;
+        letter-spacing: 1px;
+        font-weight: 300;
+
+        font-family: 'Raleway', sans-serif;
+        font-family: 'Work Sans', sans-serif;
+        font-family: 'Jura', sans-serif;
+        font-family: 'Montserrat', sans-serif;
     `
 
 const LandingPage = () => {
@@ -52,7 +59,7 @@ const LandingPage = () => {
         <>
             {/* Video */}
             <div css={videoDiv}>
-                <video css={videoContent} autoPlay muted loop>
+                <video css={videoContent} autoPlay muted loop preload="auto">
                     <source
                         src={Video}
                         type="video/mp4"

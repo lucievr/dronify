@@ -1,13 +1,11 @@
 import { css } from "@emotion/core"
-import 'typeface-roboto';
-
 
 const GlobalStyles = css`
   * {
     box-sizing: border-box;
   }
   html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     overflow-y: scroll;
