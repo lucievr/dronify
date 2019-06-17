@@ -4,7 +4,7 @@
     }
 
     &__button {
-        background-color: #000;
+        background-color: transparent;
         height: 3rem;
         width: 3rem;
         position: fixed;
@@ -24,7 +24,6 @@
         position: fixed;
         top: 1.5rem;
         left: 1.5rem;
-        background-image: radial-gradient(#333, #000);
         z-index: 1000;
         transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
     }
@@ -87,6 +86,7 @@
     //FUNCTIONALITY
     &__checkbox:checked ~ &__background {
         transform: scale(80);
+        background-image: radial-gradient(#333, #000);
     }
 
     &__checkbox:checked ~ &__nav {
