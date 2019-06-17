@@ -7,7 +7,7 @@ const GlobalStyles = css`
     box-sizing: border-box;
   }
   html {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     overflow-y: scroll;

@@ -7,10 +7,13 @@ import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 
-import Video from "../images/video.mp4"
+// import Video from "../images/video.mp4"
+import LandingPage from './landing-main'
 
 const IndexPage = () => (
-  <Layout>
+  
+  <LandingPage />
+   /* <Layout>
     <Global styles={GlobalStyles} />
     <SEO title="home" />
     <div className="div--video">
@@ -25,11 +28,12 @@ const IndexPage = () => (
         loop
       />
     </div>
-    {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
-    </div> */}
+    </div>
     <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  </Layout>  */
+  
 )
 
 export default IndexPage
