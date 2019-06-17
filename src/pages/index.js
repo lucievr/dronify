@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 // import Video from "../images/video.mp4"
-import LandingPage from './landing-main'
+import LandingPage from '../components/LandingPage/landingPage'
 
 const IndexPage = () => (
   
