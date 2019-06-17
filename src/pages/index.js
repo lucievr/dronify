@@ -10,6 +10,8 @@ import SEO from "../components/seo"
 // import Video from "../images/video.mp4"
 import LandingPage from '../components/LandingPage/landingPage'
 
+import '../components/fonts.css'
+
 const IndexPage = () => (
   
   <LandingPage />

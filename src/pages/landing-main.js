@@ -2,6 +2,8 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Video from "../images/video.mp4"
 
+import '../components/fonts.css'
+
 const VideoDiv = styled.div`
     position: absolute;
     top: 0;
@@ -42,6 +44,7 @@ const LandingContent = styled.div`
 const Heading = styled.h1`
     font-size: 10rem;
     color: #fff;
+    font-family: 'Gotham Light';
 `
 
 const LandingPage = () => {
@@ -63,7 +66,6 @@ const LandingPage = () => {
                     </LandingContent>
                 </DarkOverlay>
             </Landing>
-
         </>
     )
 }
