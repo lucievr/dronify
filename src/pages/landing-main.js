@@ -48,7 +48,7 @@ const LandingPage = () => {
     return (
         <>
             <VideoDiv>
-                <VideoContent autoplay muted loop>
+                <VideoContent autoPlay muted loop preload="auto">
                     <source
                         src={Video}
                         type="video/mp4"
