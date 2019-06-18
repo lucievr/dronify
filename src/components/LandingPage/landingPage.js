@@ -36,6 +36,7 @@ const heading = css`
         font-family: 'Work Sans', sans-serif;
         font-family: 'Jura', sans-serif;
         font-family: 'Montserrat', sans-serif;
+        
     `
 
 const LandingPage = () => {
