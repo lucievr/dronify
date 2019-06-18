@@ -29,6 +29,7 @@ const GlobalStyles = css`
 
   a {
     text-decoration: none;
+    color: #000;
   }
 `
 export default GlobalStyles
