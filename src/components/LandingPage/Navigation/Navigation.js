@@ -2,15 +2,17 @@ import React from 'react'
 import { css } from '@emotion/core'
 
 const Navbar = css`
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: .5rem;
     display: flex;
     justify-content: center;
-    height: 4.5rem;
 `
 
 const NavList = css`
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
     width: 70%;
 `
 

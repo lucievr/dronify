@@ -43,8 +43,8 @@ const LandingPage = () => {
         <>
             <div css={landing}>
                 <div css={darkOverlay}>
-                    <Navigation />
                     <div css={landingContent}>
+                        <Navigation />
                         <Video />
                         <Button />
                         <h1 css={heading}>Dronify</h1>

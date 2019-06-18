@@ -8,8 +8,8 @@ const GlobalStyles = css`
 
   html {
 
-    //font-family: 'Montserrat', sans-serif;
-    font-family: 'Gotham Book', 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    //font-family: 'Gotham Book', 'Arial', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     overflow-y: scroll;
