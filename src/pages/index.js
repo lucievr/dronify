@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 
-import LandingPage from '../components/LandingPage/landingPage'
+import LandingPage from '../components/LandingPage/LandingPage'
 
 const IndexPage = () => (
   

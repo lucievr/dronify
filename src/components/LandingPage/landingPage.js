@@ -15,7 +15,6 @@ const darkOverlay = css`
         top: 0;
         left: 0;
         width: 100%;
-        margin-top: -5rem;
         background: rgba(0, 0, 0, 0.5);
     `
 
@@ -36,8 +35,8 @@ const LandingPage = () => {
         <>
             <div css={landing}>
                 <div css={darkOverlay}>
-                    <div css={landingContent}>
                         <Navigation />
+                    <div css={landingContent}>
                         <Video />
                         <Button />
                         <h1 css={heading}>Dronify</h1>
