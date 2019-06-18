@@ -2,7 +2,8 @@ import React from "react"
 import { Global } from "@emotion/core"
 import GlobalStyles from "../components/GlobalStyles"
 import SEO from "../components/seo"
-import LandingPage from '../components/LandingPage/landingPage'
+
+import LandingPage from '../components/LandingPage/LandingPage'
 
 const IndexPage = () => (
   <>

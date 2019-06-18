@@ -15,7 +15,6 @@ const darkOverlay = css`
         top: 0;
         left: 0;
         width: 100%;
-        margin-top: -5rem;
         background: rgba(0, 0, 0, 0.5);
     `
 
@@ -36,7 +35,7 @@ const heading = css`
         font-family: 'Work Sans', sans-serif;
         font-family: 'Jura', sans-serif;
         font-family: 'Montserrat', sans-serif;
-        
+                    
     `
 
 const LandingPage = () => {
