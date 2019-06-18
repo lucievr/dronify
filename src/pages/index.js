@@ -11,12 +11,12 @@ import LandingPage from '../components/LandingPage/landingPage'
 
 const IndexPage = () => (
   <>
-  <Global styles={GlobalStyles} />
-  <LandingPage />
-  <SEO title="home" />
-  {/*  <Layout>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout> */}
+    <Global styles={GlobalStyles} />
+    <LandingPage />
+    <SEO title="home" />
+    {/*  <Layout>
+      <Link to="/page-2/">Go to page 2</Link>
+    </Layout> */}
   </>
 )
 
