@@ -1,3 +1,5 @@
+db.drones.insertOne()
+
 const Mavic2 = {
     name: "Mavic 2",
     price: 1499,
