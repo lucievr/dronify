@@ -1,0 +1,24 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    height: 4.5rem;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 70%;
+    }
+
+    &__item {
+        list-style-type: none;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #fff;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+        font-size: .8rem;
+    }
+}

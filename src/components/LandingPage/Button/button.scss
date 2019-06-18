@@ -58,7 +58,7 @@
         &:link,
         &:visited {
             display: inline-block;
-            font-size: 3rem;
+            font-size: 1.5rem;
             font-weight: 300;
             padding: 1rem 2rem;
             color: #fff;
@@ -67,11 +67,6 @@
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
             background-size: 220%;
             transition: all .4s;
-
-            span {
-                margin-right: 1.5rem;
-                display: inline-block;
-            }
         }
         
         &:hover,
