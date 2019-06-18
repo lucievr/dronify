@@ -1,61 +1,59 @@
 import React from "react"
-import { Link } from "gatsby"
-import Button from '@material-ui/core/Button';
-
-import Layout from "../components/layout"
+// import { Link } from "gatsby"
+// import Button from '@material-ui/core/Button';
+// import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { StaticQuery, graphql } from "gatsby"
 
 const SecondPage = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
 
-    {/* Material UI test button */}
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
-
-    <button
-    class="snipcart-add-item"
-    data-item-id="1"
-    data-item-name="Beer"
-    data-item-price="3.00"
-    data-item-weight="20"
-    data-item-url="https://shoolix.netlify.com"
-    data-item-description="Some cool beer">
-        Buy beer
-</button>
- <button
-    class="snipcart-add-item"
-    data-item-id="2"
-    data-item-name="White wine"
-    data-item-price="5.00"
-    data-item-weight="20"
-    data-item-url="https://shoolix.netlify.com"
-    data-item-description="Some crisp white wine">
-        Buy white wine
-</button>
-
-<button
-    class="snipcart-add-item"
-    data-item-id="3"
-    data-item-name="Red wine"
-    data-item-price="5.00"
-    data-item-weight="20"
-    data-item-url="https://shoolix.netlify.com"
-    data-item-description="Some full-bodied red wine">
-        Buy red wine
-</button>
-
-<a href="#" class="snipcart-checkout">Click here to checkout</a>
-
-<div class="snipcart-summary">
-    Number of items: <span class="snipcart-total-items"></span>
-    Total price: <span class="snipcart-total-price"></span>
-</div>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+  <StaticQuery
+    query={graphql`
+      query DbConQuery {
+        allMongodbDronifyDrones(filter: { category: { eq: "consumer" } }) {
+          edges {
+            node {
+              category
+              colors
+              description
+              icon1
+              icon2
+              icon3
+              icon4
+              icon5
+              icon6
+              id
+              imageURL
+              name
+              price
+              spec1
+              spec2
+              spec3
+              spec4
+              spec5
+              spec6
+              version
+            }
+          }
+        }
+      }
+    `}
+    render={({ allMongodbDronifyDrones }) => (
+      <>
+        <SEO title="products" />
+        <h1>Hi from the second page</h1>
+        {
+          allMongodbDronifyDrones.edges.map(({ node }) => (
+                    <ul key={node.id}>
+                          <li><strong>Product:</strong> {node.name}</li>
+                          <li><strong>Price:</strong> {node.price}</li>
+                          <li><strong>Category:</strong> {node.category}</li>
+                    </ul>
+              ))
+        }
+        </>
+)}
+  />
 )
 
 export default SecondPage
