@@ -4,11 +4,13 @@ import GlobalStyles from "../components/GlobalStyles"
 import SEO from "../components/seo"
 
 import LandingPage from '../components/LandingPage/LandingPage'
+import Products from '../components/Products/Products'
 
 const IndexPage = () => (
   <>
     <Global styles={GlobalStyles} />
     <LandingPage />
+    <Products />
     <SEO title="home" />
   </>
 )

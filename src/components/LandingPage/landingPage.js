@@ -14,7 +14,7 @@ const darkOverlay = css`
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    //background: rgba(0, 0, 0, 0.5);
 `
 
 const landingContent = css`
@@ -42,7 +42,8 @@ const Button = css`
     border: 3px solid #fff;
     padding: 1rem 3rem;
     border-radius: 5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 `
 
 const LandingPage = () => {
@@ -50,8 +51,8 @@ const LandingPage = () => {
         <>
             <div css={landing}>
                 <div css={darkOverlay}>
-                        <Navigation />
-                        <Video />
+                    <Navigation />
+                    <Video />
                     <div css={landingContent}>
                         <h1 css={heading}>Explore the future</h1>
                         <a href='#' css={Button}>Fly with us</a>
