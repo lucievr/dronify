@@ -27,11 +27,8 @@ const GlobalStyles = css`
     background-color: #666666;
   }
 
-  @font-face {
-    font-family: 'Gotham Book';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Gotham Book'), url('../fonts/gotham/GothamBook.woff') format('woff');
-    }
+  a {
+    text-decoration: none;
+  }
 `
 export default GlobalStyles

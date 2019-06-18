@@ -2,7 +2,6 @@ import React from 'react'
 import { css } from '@emotion/core'
 
 import Navigation from './Navigation/Navigation'
-import Button from './Button/Button'
 import Video from './Video/Video'
 
 const landing = css`
@@ -34,8 +33,7 @@ const heading = css`
         font-family: 'Raleway', sans-serif;
         font-family: 'Work Sans', sans-serif;
         font-family: 'Jura', sans-serif;
-        font-family: 'Montserrat', sans-serif;
-                    
+        font-family: 'Montserrat', sans-serif;             
     `
 
 const LandingPage = () => {
@@ -46,7 +44,6 @@ const LandingPage = () => {
                     <div css={landingContent}>
                         <Navigation />
                         <Video />
-                        <Button />
                         <h1 css={heading}></h1>
                     </div>
                 </div>
