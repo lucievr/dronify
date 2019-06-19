@@ -2,10 +2,81 @@ import React from "react"
 // import { Link } from "gatsby"
 import Layout from "../components/layout"
 import GlobalStyles from "../components/GlobalStyles"
-import { Global } from "@emotion/core"
+import { Global, css } from "@emotion/core"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+
+const contentWrapper = css`
+  text-align: center;
+  margin-top: 160px;
+`
+
+const categoryTitle = css`
+  font-weight: 300;
+`
+
+const cardsWrapper = css`
+  width: 100%;
+  max-width: 1512px;
+  margin: 0 auto 50px auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`
+
+const cardList = css`
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+`
+
+const card = css`
+  width: 450px;
+  height: 500px;
+  background-color: rgb(255, 255, 255, 0.2);
+  margin: 30px;
+  color: grey;
+  font-family: "Montserrat", sans-serif;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const imageWrapper = css`
+  width: 100%;
+  height: auto;
+  max-height: 40%;
+`
+
+const textWrapper = css`
+  padding: 0 20px;
+  text-align: center;
+  color: black;
+`
+const Button = css`
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  padding: 1rem 1rem;
+  border-radius: 5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  &:hover {
+    background-color: rgb(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+`
 
 const ConsumerDrones = () => (
   <StaticQuery
@@ -22,7 +93,7 @@ const ConsumerDrones = () => (
               localImage {
                 id
                 childImageSharp {
-                  fluid(maxWidth: 700) {
+                  fluid(maxWidth: 500) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -33,80 +104,29 @@ const ConsumerDrones = () => (
       }
     `}
     render={({ allMongodbDronifyDrones }) => (
-    <Layout>
-      <Global styles={GlobalStyles} />
-      <SEO title="Consumer drones" />
-        <div style={{textAlign: `center`, marginTop: `160px`}}>
-          <h1 style={{fontWeight: `300`}}>Consumer drones</h1>
-          <div
-            className="div--card"
-            style={{
-              width: `100%`,
-              maxWidth: `1512px`,
-              margin: `0 auto 50px auto`,
-              paddingLeft: `1rem`,
-              paddingRight: `1rem`,
-              lineHeight: `1.5`,
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `center`,
-              alignItems: `center`,
-            }}
-          >
+      <Layout>
+        <Global styles={GlobalStyles} />
+        <SEO title="Consumer drones" />
+        <div css={contentWrapper}>
+          <h1 css={categoryTitle}>Consumer drones</h1>
+          <div css={cardsWrapper}>
             {allMongodbDronifyDrones.edges.map(({ node }) => (
               <>
-                <ul
-                  key={node.id}
-                  className="productListing"
-                  style={{
-                    listStyleType: `none`,
-                    padding: `0`,
-                    display: `flex`,
-                    flexWrap: `wrap`,
-                    flexDirection: `row`,
-                    justifyContent: `center`,
-                    alignItems: `center`,
-                  }}
-                >
-                  <li
-                    style={{
-                      width: `400px`,
-                      height: `500px`,
-                      backgroundColor: `rgb(255,255,255, 0.2)`,
-                      margin: `30px`,
-                      color: `grey`,
-                      fontFamily: `'Montserrat', sans-serif`,
-                      padding: `20px`,
-                      display: `flex`,
-                      flexDirection: `column`, 
-                      justifyContent: `center`
-                    }}
-                  >
-                    <a href="/" style={{ textDecoration: `none` }}>
-                      <article className="productCard">
-                        <div style={{ width: `100%`, height: `auto` }}>
-                          <Img fluid={node.localImage.childImageSharp.fluid} />
-                        </div>
-                        <div
-                          style={{
-                            padding: `0 20px`,
-                            textAlign: `center`,
-                            color: `black`,
-                          }}
-                        >
-                          <h3 style={{letterSpacing: `1px`}}>
-                            <strong>{node.name}</strong>
-                          </h3>
-                          <p>
-                            <strong>Category:</strong> {node.category}
-                          </p>
-                          <p>
-                            <strong>Price:</strong> € {node.price}
-                          </p>
-                          <button>Show product</button>
-                        </div>
-                      </article>
-                    </a>
+                <ul key={node.id} css={cardList}>
+                  <li css={card}>
+                    <div css={imageWrapper}>
+                      <Img fluid={node.localImage.childImageSharp.fluid} />
+                    </div>
+                    <div css={textWrapper}>
+                      <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
+                      <p>
+                        <strong>Category:</strong> {node.category}
+                      </p>
+                      <p>
+                        <strong>Price:</strong> € {node.price}
+                      </p>
+                      <button css={Button}>Show product</button>
+                    </div>
                   </li>
                 </ul>
               </>

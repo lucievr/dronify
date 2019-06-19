@@ -18,10 +18,10 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Navigation siteTitle={data.site.siteMetadata.title} />
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()} {data.site.siteMetadata.title}
-          </footer>
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()} {data.site.siteMetadata.title}
+        </footer>
       </>
     )}
   />
