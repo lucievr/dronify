@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from "gatsby"
 import './button.scss'
 
 const Button = () => {
     return (
-        <div className="navigation" >
+        <div className="navigation">
             <input type="checkbox" className="navigation__checkbox" id="nav-toggle" />
 
             <label htmlFor="nav-toggle" className="navigation__button">
@@ -15,10 +16,12 @@ const Button = () => {
             <nav className="navigation__nav">
                 <ul className="navigation__list">
                     <li className="navigation__item">
-                        <a href="#" className="navigation__link">Consumers</a>
+                    <Link to="/consumer-drones/" className="navigation__link">
+                        Consumer
+                    </Link>     
                     </li>
                     <li className="navigation__item">
-                        <a href="#" className="navigation__link">Professionals</a>
+                        <a href="#" className="navigation__link">Professional</a>
                     </li>
                     <li className="navigation__item">
                         <a href="#" className="navigation__link">Enterprise</a>
@@ -31,7 +34,7 @@ const Button = () => {
                     </li>
                 </ul>
             </nav>
-        </div >
+        </div>
     )
 }
 

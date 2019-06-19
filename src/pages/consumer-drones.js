@@ -1,6 +1,8 @@
-import React, { Fragment } from "react"
+import React from "react"
 // import { Link } from "gatsby"
-// import Layout from "../components/layout"
+import Layout from "../components/layout"
+import GlobalStyles from "../components/GlobalStyles"
+import { Global } from "@emotion/core"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -31,10 +33,11 @@ const ConsumerDrones = () => (
       }
     `}
     render={({ allMongodbDronifyDrones }) => (
-      <>
-        <div>
-          <SEO title="products" />
-          <h1>Hi from the second page</h1>
+    <Layout>
+      <Global styles={GlobalStyles} />
+      <SEO title="Consumer drones" />
+        <div style={{textAlign: `center`, marginTop: `160px`}}>
+          <h1 style={{fontWeight: `300`}}>Consumer drones</h1>
           <div
             className="div--card"
             style={{
@@ -67,27 +70,31 @@ const ConsumerDrones = () => (
                 >
                   <li
                     style={{
-                      minWidth: `400px`,
-                      backgroundColor: `rgb(0,0,0, 0.05)`,
+                      width: `400px`,
+                      height: `500px`,
+                      backgroundColor: `rgb(255,255,255, 0.2)`,
                       margin: `30px`,
                       color: `grey`,
                       fontFamily: `'Montserrat', sans-serif`,
                       padding: `20px`,
+                      display: `flex`,
+                      flexDirection: `column`, 
+                      justifyContent: `center`
                     }}
                   >
                     <a href="/" style={{ textDecoration: `none` }}>
                       <article className="productCard">
-                        <div style={{ maxWidth: `500px` }}>
+                        <div style={{ width: `100%`, height: `auto` }}>
                           <Img fluid={node.localImage.childImageSharp.fluid} />
                         </div>
                         <div
                           style={{
                             padding: `0 20px`,
                             textAlign: `center`,
-                            color: `grey`,
+                            color: `black`,
                           }}
                         >
-                          <h3>
+                          <h3 style={{letterSpacing: `1px`}}>
                             <strong>{node.name}</strong>
                           </h3>
                           <p>
@@ -106,7 +113,7 @@ const ConsumerDrones = () => (
             ))}
           </div>
         </div>
-      </>
+      </Layout>
     )}
   />
 )

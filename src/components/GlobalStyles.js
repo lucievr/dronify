@@ -7,7 +7,6 @@ const GlobalStyles = css`
   }
 
   html {
-
     font-family: 'Montserrat', sans-serif;
     //font-family: 'Gotham Book', 'Arial', sans-serif;
     -ms-text-size-adjust: 100%;
@@ -24,12 +23,16 @@ const GlobalStyles = css`
     font-size: calc(11px + 0.5vw);
     line-height: 1.5;
     word-wrap: break-word;
-    background-color: #666666;
+    background-color: rgb(128,141,153);
   }
 
   a {
     text-decoration: none;
     color: #000;
+  }
+
+  footer {
+    text-align: center;
   }
 `
 export default GlobalStyles

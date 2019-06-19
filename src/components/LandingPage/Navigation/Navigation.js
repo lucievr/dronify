@@ -1,5 +1,6 @@
 import React from "react"
 import Button from "../Button/Button"
+import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -79,16 +80,16 @@ const NavLink = css`
   font-size: 0.8rem;
 `
 
-const Navigation = () => {
+const Navigation = ({ siteTitle }) => {
   return (
     <nav css={Navbar}>
       <div css={NavMenuTop}>
         <div css={ButtonWrapper}>
           <Button />
         </div>
-        <a href="localhost:8000">
-          <span css={LogoName}>Dronify</span>
-        </a>
+        <Link to="/">
+           <span css={LogoName}> {siteTitle} </span>
+         </Link>
         <div css={Icons}>
           <div css={IconItem}>
             {user}
@@ -104,12 +105,12 @@ const Navigation = () => {
       <ul css={NavList}>
         <li css={NavItem}>
           <Link to="/consumer-drones/" css={NavLink}>
-            Customers
+            Consumer
           </Link>
         </li>
         <li css={NavItem}>
           <a css={NavLink} href="#">
-            Professionals
+            Professional
           </a>
         </li>
         <li css={NavItem}>
@@ -130,6 +131,14 @@ const Navigation = () => {
       </ul>
     </nav>
   )
+}
+
+Navigation.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Navigation.defaultProps = {
+  siteTitle: ``,
 }
 
 export default Navigation
