@@ -17,15 +17,27 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
     {
-			resolve: `gatsby-plugin-snipcart`,
-			options: {
-        apiKey: 'ZDM4ZGQ1NjQtNmNmYy00ZDJlLTkyYjUtMTE4MzJkNTQ2ZjExNjM2OTUyNzg0NTA4NTI0NzI3',
-        autopop: true
-			},
-		},
+      resolve: `gatsby-plugin-snipcart`,
+      options: {
+        apiKey:
+          "ZDM4ZGQ1NjQtNmNmYy00ZDJlLTkyYjUtMTE4MzJkNTQ2ZjExNjM2OTUyNzg0NTA4NTI0NzI3",
+        autopop: true,
+      },
+    },
     {
       resolve: `gatsby-source-mongodb`,
-      options: { connectionString: `mongodb+srv://lucie:6snYknGZrjvnSX5@dronify-9s7j9.mongodb.net`, dbName: `Dronify`, collection: [`drones`, `users`] },
+      options: {
+        connectionString: `mongodb+srv://lucie:6snYknGZrjvnSX5@dronify-9s7j9.mongodb.net`,
+        dbName: `Dronify`,
+        collection: [`drones`, `users`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'mongodbDronifyDrones',
+        imagePath: 'imageURL',
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -39,6 +51,8 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-sass`,
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

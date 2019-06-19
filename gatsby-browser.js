@@ -4,7 +4,12 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-require("materialize-css/dist/css/materialize.css")
 
 // example of how self-hosted fonts are imported
-// require("typeface-montserrat")
+require("typeface-montserrat")
+require("typeface-raleway")
+require("typeface-work-sans")
+require("typeface-jura")
+
+
+

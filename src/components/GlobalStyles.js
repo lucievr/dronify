@@ -1,16 +1,21 @@
 import { css } from "@emotion/core"
 
 const GlobalStyles = css`
+
   * {
     box-sizing: border-box;
   }
+
   html {
-    font-family: sans-serif;
+
+    font-family: 'Montserrat', sans-serif;
+    //font-family: 'Gotham Book', 'Arial', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
   }
+
   body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -21,20 +26,10 @@ const GlobalStyles = css`
     word-wrap: break-word;
     background-color: #666666;
   }
-  img {
-  max-width: 100%;
-  }
-  .div--video {
-    margin: 0 auto;
-    border-radius: 10px;
-  }
-  #background-video {
-    maxWidth: 100%;
-    border-radius: 10px;
-    border: 4px solid #4d4d4d;
-    background-color: #4d4d4d;
-    padding: 2% 0;
-    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3), 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+
+  a {
+    text-decoration: none;
+    color: #000;
   }
 `
 export default GlobalStyles
