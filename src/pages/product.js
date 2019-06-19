@@ -4,6 +4,7 @@ import React from "react"
 // import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const SecondPage = () => (
 
@@ -23,7 +24,6 @@ const SecondPage = () => (
               icon5
               icon6
               id
-              imageURL
               name
               price
               spec1
@@ -33,6 +33,15 @@ const SecondPage = () => (
               spec5
               spec6
               version
+              imageURL
+              localImage {
+                  id
+                  childImageSharp {
+                    fluid(maxWidth: 700) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
             }
           }
         }
@@ -44,11 +53,16 @@ const SecondPage = () => (
         <h1>Hi from the second page</h1>
         {
           allMongodbDronifyDrones.edges.map(({ node }) => (
+            <>
                     <ul key={node.id}>
                           <li><strong>Product:</strong> {node.name}</li>
                           <li><strong>Price:</strong> {node.price}</li>
                           <li><strong>Category:</strong> {node.category}</li>
                     </ul>
+                    <div>
+                       <Img fluid={node.localImage.childImageSharp.fluid} />
+                    </div>
+            </>
               ))
         }
         </>
