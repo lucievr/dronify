@@ -1,6 +1,5 @@
 import React, { Fragment } from "react"
 // import { Link } from "gatsby"
-import Button from "@material-ui/core/Button"
 // import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
@@ -97,7 +96,7 @@ const ConsumerDrones = () => (
                           <p>
                             <strong>Price:</strong> € {node.price}
                           </p>
-                          <Button variant="outlined">Show product</Button>
+                          <button>Show product</button>
                         </div>
                       </article>
                     </a>
