@@ -103,7 +103,7 @@ const Navigation = () => {
 
             <ul css={NavList}>
                 <li css={NavItem}>
-                    <a css={NavLink} href="#">Customers</a>
+                    <a css={NavLink} href="#">Consumers</a>
                 </li>
                 <li css={NavItem}>
                     <a css={NavLink} href="#">Professionals</a>
