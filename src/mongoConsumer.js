@@ -3,6 +3,7 @@ db.drones.insertOne()
 const Mavic2 = {
     name: "Mavic 2",
     price: 1499,
+    category: "consumer",
     description: "The Mavic 2 offers iconic Hasselblad image quality on the Pro and a high-performance zoom lens on the Zoom.",
     icon1: "/images/mavic2icon1.png",
     spec1: "Hasselblad Camera",
@@ -27,6 +28,7 @@ const Mavic2 = {
 const MavicAir = {
     name: "Mavic Air",
     price: 849,
+    category: "consumer",
     description: "The ultraportable Mavic Air features high-end flight performance and functionality for limitless exploration.",
     icon1: "/images/mavicairicon1.png",
     spec1: "32 MP Sphere Panoramas",
@@ -51,6 +53,7 @@ const MavicAir = {
 const MavicProPlatinum = {
     name: "Mavic Pro Platinum",
     price: 999,
+    category: "consumer",
     description: "With enhanced endurance and quieter flight, the Mavic Pro Platinum is DJI's best portable drone yet.",
     icon1: "/images/mavicproicon1.png",
     spec1: "Flight time: 30 MINS",
@@ -74,6 +77,7 @@ const MavicProPlatinum = {
 const Phantom3SE = {
     name: "Phantom 3 SE",
     price: 699,
+    category: "consumer",
     description: "The Phantom 3 SE is the most streamlined addition to the Phantom 3 series yet. It connects to the DJI GO app via Wi-Fi with maximum a video transmission range of up to 2.5 mi (4 km), and it has a 4K video camera. ",
     icon1: "/images/phantom3icon1.png",
     spec1: "Flight time: 25 MINS",
@@ -97,6 +101,7 @@ const Phantom3SE = {
 const Phantom4Ad = {
     name: "Phantom 4 Advanced",
     price: 1399,
+    category: "consumer",
     description: "1-inch 20MP sensor, 30-min flight time, forward obstacle avoidance, smart features and more. Advanced Aerial Imaging Technology.",
     icon1: "/images/phantom4icon1.png",
     spec1: "Flight time: 30 MINS",
