@@ -60,7 +60,6 @@ const ZenmuseX4S = {
     imageURL: "https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fzenmuse-x4s-iv.png?alt=media&token=83fcd931-7647-472e-a5c7-f0a54e854e1e",
 }
 
-
 const RoninS = {
     name: "Ronin-S",
     price: 749,
