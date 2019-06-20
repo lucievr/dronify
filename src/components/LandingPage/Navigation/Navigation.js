@@ -1,6 +1,5 @@
 import React from "react"
 import Button from "../Button/Button"
-import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -80,7 +79,7 @@ const NavLink = css`
   font-size: 0.8rem;
 `
 
-const Navigation = ({ siteTitle }) => {
+const Navigation = () => {
   return (
     <nav css={Navbar}>
       <div css={NavMenuTop}>
@@ -88,7 +87,7 @@ const Navigation = ({ siteTitle }) => {
           <Button />
         </div>
         <Link to="/">
-           <span css={LogoName}> {siteTitle} </span>
+           <span css={LogoName}> Dronify </span>
          </Link>
         <div css={Icons}>
           <div css={IconItem}>
@@ -131,14 +130,6 @@ const Navigation = ({ siteTitle }) => {
       </ul>
     </nav>
   )
-}
-
-Navigation.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Navigation.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Navigation
