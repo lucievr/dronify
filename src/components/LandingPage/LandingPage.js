@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-// import Navigation from './Navigation/Navigation'
+import Navigation from './Navigation/Navigation'
 import Video from "./Video/Video"
 
 const landing = css`
@@ -50,7 +50,7 @@ const LandingPage = () => {
     <>
       <div css={landing}>
         <div css={darkOverlay}>
-          {/* <Navigation /> */}
+          <Navigation />
           <Video />
           <div css={landingContent}>
             <h1 css={heading}>Explore the future</h1>
