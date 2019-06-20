@@ -20,6 +20,26 @@ const Inspire2 = {
     imageURL: "https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Finspire-2.png?alt=media&token=89b10030-b6dc-462a-8446-bca2f2562961",
 }
 
+const ZenmuseX7 = {
+    name: "Zenmuse X7",
+    price: 2999,
+    category: "professional",
+    description: "Fully compatible with the DJI Inspire 2, the Zenmuse X7 is a compact Super 35 camera with an integrated gimbal made for high-end filmmaking.",
+    icon1: "/images/zenmusex7icon1.png",
+    spec1: "Inspire 2 Compatibility",
+    icon2: "/images/zenmusex7icon2.png",
+    spec2: "5.2K Apple ProRes",
+    icon3: "/images/zenmusex7icon3.png",
+    spec3: "Super 35 Sensor",
+    icon4: "/images/zenmusex7icon4.png",
+    spec4: "14 Stops of Dynamic Range",
+    icon5: "/images/zenmusex7icon5.png",
+    spec5: "6K CinemaDNG",
+    icon6: "/images/zenmusex7icon6.png",
+    spec6: "24 MP Stills",
+    imageURL: "https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fzenmuse-x7-ii.png?alt=media&token=53d07051-d3d5-40d8-b860-1dcd1c44b3aa",
+}
+
 const ZenmuseX4S = {
     name: "Zenmuse X4S",
     price: 999,
@@ -40,3 +60,23 @@ const ZenmuseX4S = {
     imageURL: "https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fzenmuse-x4s-iv.png?alt=media&token=83fcd931-7647-472e-a5c7-f0a54e854e1e",
 }
 
+
+const RoninS = {
+    name: "Ronin-S",
+    price: 749,
+    category: "professional",
+    description: "Designed in a single-handed form factor for DSLR and mirrorless cameras, the Ronin-S empowers creators to shoot with the freedom of stabilized shots on the move.",
+    icon1: "/images/zenmusex7icon1.png",
+    spec1: "Superior 3-Axis Stabilization",
+    icon2: "/images/zenmusex7icon2.png",
+    spec2: "3.6 kg Tested Payload Capacity",
+    icon3: "/images/zenmusex7icon3.png",
+    spec3: "Camera Control",
+    icon4: "/images/zenmusex7icon4.png",
+    spec4: "Pro Accessory Compatibility",
+    icon5: "/images/zenmusex7icon5.png",
+    spec5: "Automated Smart Features",
+    icon6: "/images/zenmusex7icon6.png",
+    spec6: "Angled Roll Motor",
+    imageURL: "https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fronin-s.png?alt=media&token=6243cb8b-c301-4c72-ab85-7e23028df556",
+}
