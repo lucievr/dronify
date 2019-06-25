@@ -90,10 +90,12 @@ const Navigation = () => {
            <span css={LogoName}> Dronify </span>
          </Link>
         <div css={Icons}>
+        <Link to="/account">
           <div css={IconItem}>
             {user}
             <span>Log In</span>
           </div>
+          </Link>
           <div css={IconItem}>
             {cart}
             <span>Cart: 0</span>

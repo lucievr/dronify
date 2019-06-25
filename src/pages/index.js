@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { Global } from "@emotion/core"
 import GlobalStyles from "../components/GlobalStyles"
 import SEO from "../components/seo"
@@ -14,7 +13,6 @@ const IndexPage = () => (
     <SEO title="home" />
     <LandingPage />
     <Products />
-    <Link to="/account">Go to your account</Link>
   </Layout>
 )
 

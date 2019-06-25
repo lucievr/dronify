@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import { Global } from "@emotion/core"
 import GlobalStyles from "../components/GlobalStyles"
 
-import { login, isAuthenticated, getProfile } from "../utils/auth"
+import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
 
 
 const Home = ({ user }) => {
@@ -31,6 +31,15 @@ const Account = () => {
         <Link to="/account/">Home</Link>{" "}
         <Link to="/account/settings/">Settings</Link>{" "}
         <Link to="/account/billing/">Billing</Link>{" "}
+        <a
+          href="#logout"
+          onClick={e => {
+            logout()
+            e.preventDefault()
+          }}
+        >
+          Log Out
+        </a>
       </nav>
       <Router>
         <Home path="/account/" user={user} />
