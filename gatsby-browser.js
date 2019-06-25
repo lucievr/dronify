@@ -3,13 +3,38 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-
-
-// example of how self-hosted fonts are imported
+import React from "react"
+import { silentAuth } from "./src/utils/auth"
 require("typeface-montserrat")
 require("typeface-raleway")
 require("typeface-work-sans")
 require("typeface-jura")
 
+class SessionCheck extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loading: true,
+    }
+  }
 
+  handleCheckSession = () => {
+    this.setState({ loading: false })
+  }
 
+  componentDidMount() {
+    silentAuth(this.handleCheckSession)
+  }
+
+  render() {
+    return (
+      this.state.loading === false && (
+        <React.Fragment>{this.props.children}</React.Fragment>
+      )
+    )
+  }
+}
+
+export const wrapRootElement = ({ element }) => {
+  return <SessionCheck>{element}</SessionCheck>
+}
