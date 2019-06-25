@@ -6,26 +6,39 @@ import SEO from "../components/seo"
 import { Global } from "@emotion/core"
 import GlobalStyles from "../components/GlobalStyles"
 
-const Home = () => <p>Home</p>
+import { login, isAuthenticated, getProfile } from "../utils/auth"
+
+
+const Home = ({ user }) => {
+  return <p>Hi, {user.name ? user.name : "friend"}!</p>
+}
 const Settings = () => <p>Settings</p>
 const Billing = () => <p>Billing</p>
 
-const Account = () => (
-  <Layout>
-    <Global styles={GlobalStyles} />
-    <SEO title="user account" />
-    <nav>
-      <Link to="/account">Home</Link>{" "}
-      <Link to="/account/settings">Settings</Link>{" "}
-      <Link to="/account/billing">Billing</Link>{" "}
-    </nav>
-    <h2>This will be the protected route for user account.</h2>
-    <Router>
-      <Home path="/account" />
-      <Settings path="/account/settings" />
-      <Billing path="/account/billing" />
-    </Router>
-  </Layout>
-)
+const Account = () => {
+  if (!isAuthenticated()) {
+    login()
+    return <p>Redirecting to login...</p>
+  }
+
+  const user = getProfile()
+
+  return (
+    <Layout>
+      <Global styles={GlobalStyles} />
+      <SEO title="user account" />
+      <nav>
+        <Link to="/account/">Home</Link>{" "}
+        <Link to="/account/settings/">Settings</Link>{" "}
+        <Link to="/account/billing/">Billing</Link>{" "}
+      </nav>
+      <Router>
+        <Home path="/account/" user={user} />
+        <Settings path="/account/settings" />
+        <Billing path="/account/billing" />
+      </Router>
+    </Layout>
+  )
+}
 
 export default Account
