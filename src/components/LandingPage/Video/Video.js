@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import LandingVideo from "./video.mp4"
+import Poster from "../../../images/poster.jpg"
 
 // VIDEO STYLES
 
@@ -25,7 +26,7 @@ const Video = () => {
     return (
         <>
             <div css={videoDiv}>
-                <video css={videoContent} autoPlay muted loop>
+                <video css={videoContent} preload="auto" autoPlay poster={Poster} muted loop>
                     <source
                         src={LandingVideo}
                         type="video/mp4"

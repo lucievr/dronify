@@ -86,14 +86,16 @@ const Navigation = () => {
         <div css={ButtonWrapper}>
           <Button />
         </div>
-        <a href="localhost:8000">
-          <span css={LogoName}>Dronify</span>
-        </a>
+        <Link to="/">
+           <span css={LogoName}> Dronify </span>
+         </Link>
         <div css={Icons}>
+        <Link to="/account">
           <div css={IconItem}>
             {user}
             <span>Log In</span>
           </div>
+          </Link>
           <div css={IconItem}>
             {cart}
             <span>Cart: 0</span>
@@ -104,12 +106,12 @@ const Navigation = () => {
       <ul css={NavList}>
         <li css={NavItem}>
           <Link to="/consumer-drones/" css={NavLink}>
-            Customers
+            Consumer
           </Link>
         </li>
         <li css={NavItem}>
           <a css={NavLink} href="#">
-            Professionals
+            Professional
           </a>
         </li>
         <li css={NavItem}>
