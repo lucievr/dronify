@@ -9,5 +9,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const EnterpriseDrones = () => {
-    
+    return <p>enterprise</p>
 }
+
+export default EnterpriseDrones;
