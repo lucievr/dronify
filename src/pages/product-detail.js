@@ -15,3 +15,10 @@ import { FiAperture, FiBatteryCharging, FiCamera, FiCheckSquare, FiClock, FiDisc
 import { MdAirplanemodeActive, MdHd, MdHearing, MdHistory, MdLightbulbOutline, MdSettingsRemote, MdTimer, MdToys } from "react-icons/md";
 
 import { FaCloudscale } from "react-icons/fa";
+
+const ProductDetail = () => {
+
+        return <p>Testing...</p>
+    }
+    
+export default ProductDetail
