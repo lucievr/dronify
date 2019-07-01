@@ -4,10 +4,10 @@ const buttonStyles = css`
 
     text-transform: uppercase;
     padding: 1rem 3rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     letter-spacing: 0.2rem;
     display: inline-block;
-    border-radius: 10rem;
+    border-radius: 10px;
     transition: all 0.2s;
     background: transparent;
     color: #fff;
