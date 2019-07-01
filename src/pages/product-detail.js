@@ -18,7 +18,7 @@ import { FaCloudscale } from "react-icons/fa";
 
 const ProductDetail = () => {
 
-        return <p>Testing...</p>
+        return <p>Testing..</p>
     }
     
 export default ProductDetail
