@@ -27,6 +27,7 @@ function SEO({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
 
+
   return (
     <Helmet
       htmlAttributes={{
@@ -38,6 +39,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: `google-site-verification`,
+          content: "RmgE0on5MmIp0Uw0MBUnCjeldCSRxDdWA6N4yrsMp_Q",
         },
         {
           property: `og:title`,
