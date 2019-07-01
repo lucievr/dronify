@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
-import Navigation from './Navigation/Navigation'
-import Video from "./Video/Video"
+import Navigation from './navigation/Navigation'
+import Video from "./video/Video"
 
 const landing = css`
   height: 100vh;
@@ -30,9 +30,9 @@ const heading = css`
   letter-spacing: 1px;
   font-weight: 300;
 
-  font-family: "Raleway", sans-serif;
-  font-family: "Work Sans", sans-serif;
-  font-family: "Jura", sans-serif;
+  // font-family: "Raleway", sans-serif;
+  // font-family: "Work Sans", sans-serif;
+  // font-family: "Jura", sans-serif;
   font-family: "Montserrat", sans-serif;
 `
 

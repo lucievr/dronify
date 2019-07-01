@@ -1,11 +1,14 @@
 import React from "react"
 import { css } from "@emotion/core"
-import Consumers from "./Consumers"
-import Professionals from "./Professionals"
-import Enterprise from "./Enterprise"
-import Accessories from "./Accessories"
+import Consumers from "./products-categories/consumers/Consumer"
+import Professionals from "./products-categories/professionals/Professional"
+import Enterprise from "./products-categories/enterprise/Enterprise"
+import Accessories from "./products-categories/accessories/Accessories"
+//import darkOverlay from '../GlobalStyles'
 
-const Layout = css``
+const Layout = css`
+  background: rgba(0, 0, 0, 1);
+`
 
 const Category = css`
   height: 100vh;

@@ -4,8 +4,8 @@ import GlobalStyles from "../components/GlobalStyles"
 import SEO from "../components/seo"
 
 import Layout from "../components/layout"
-import LandingPage from "../components/LandingPage/LandingPage"
-import Products from "../components/Products/Products"
+import LandingPage from "../components/landing-page/LandingPage"
+import Products from "../components/products/Products"
 
 const IndexPage = () => (
   <Layout>

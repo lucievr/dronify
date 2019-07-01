@@ -1,6 +1,8 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
+import Button from '../../products-button/Button'
+import Heading from '../../products-heading/Heading'
 
 const Layout = css`
   height: 100%;
@@ -21,9 +23,9 @@ const Professionals = () => {
   return (
     <div css={Layout}>
       <div css={styling}>
-        <h3>Professional drones</h3>
+        <Heading name='Professional drones' />
         <Link to="/professional-drones/">
-          <button>Explore our collection</button>
+          <Button label='Button' />
         </Link>
       </div>
       <div css={styling}>

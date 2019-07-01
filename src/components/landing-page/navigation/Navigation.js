@@ -1,5 +1,5 @@
 import React from "react"
-import Button from "../Button/Button"
+import Button from "../button/Button"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
