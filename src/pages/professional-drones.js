@@ -79,11 +79,11 @@ const Button = css`
   }
 `
 
-const EnterpriseDrones = () => (
+const ProfessionalDrones = () => (
   <StaticQuery
     query={graphql`
-      query DbEntQuery {
-        allMongodbDronifyDrones(filter: { category: { eq: "enterprise" } }) {
+      query DbProQuery {
+        allMongodbDronifyDrones(filter: { category: { eq: "professional" } }) {
           edges {
             node {
               id
@@ -108,9 +108,9 @@ const EnterpriseDrones = () => (
       <Layout>
         <Navigation />
         <Global styles={GlobalStyles} />
-        <SEO title="Enterprise drones" />
+        <SEO title="Professional drones" />
         <div css={contentWrapper}>
-          <h1 css={categoryTitle}>Enterprise drones</h1>
+          <h1 css={categoryTitle}>Professional drones</h1>
           <div css={cardsWrapper}>
             {allMongodbDronifyDrones.edges.map(({ node }) => (
               <>
@@ -140,4 +140,4 @@ const EnterpriseDrones = () => (
   />
 )
 
-export default EnterpriseDrones
+export default ProfessionalDrones
