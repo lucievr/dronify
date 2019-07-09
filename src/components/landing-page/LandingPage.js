@@ -2,6 +2,8 @@ import React from "react"
 import { css } from "@emotion/core"
 import Navigation from './navigation/Navigation'
 import Video from "./video/Video"
+import Products from "../products/Products";
+import { Link } from "gatsby"
 
 const landing = css`
   height: 100vh;
@@ -20,8 +22,9 @@ const landingContent = css`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-bottom: 2rem;
 `
 
 const heading = css`
@@ -29,14 +32,11 @@ const heading = css`
   color: #fff;
   letter-spacing: 1px;
   font-weight: 300;
-
-  // font-family: "Raleway", sans-serif;
-  // font-family: "Work Sans", sans-serif;
-  // font-family: "Jura", sans-serif;
   font-family: "Montserrat", sans-serif;
+  margin-bottom: 10rem;
 `
 
-const Button = css`
+const button = css`
   color: #fff;
   border: 3px solid #fff;
   padding: 1rem 3rem;
@@ -54,9 +54,9 @@ const LandingPage = () => {
           <Video />
           <div css={landingContent}>
             <h1 css={heading}>Explore the future</h1>
-            <a href="#" css={Button}>
+            <Link to='/products' css={button}>
               Fly with us
-            </a>
+            </Link>
           </div>
         </div>
       </div>
