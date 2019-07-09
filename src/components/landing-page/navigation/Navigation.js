@@ -40,6 +40,10 @@ const LogoName = css`
   font-size: 1.5rem;
   color: #fff;
   text-transform: uppercase;
+
+  @media screen and (max-width: 420px) {
+    display: none;
+  }
 `
 
 const Icons = css`
@@ -58,6 +62,14 @@ const NavList = css`
   margin: 0;
 
   width: 70%;
+
+  @media screen and (max-width: 1100px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
 `
 
 const IconItem = css`
@@ -77,6 +89,14 @@ const NavLink = css`
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-size: 0.8rem;
+
+  @media screen and (max-width: 1100px) {
+    letter-spacing: 0.1rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    font-size: 0.6rem;
+  }
 `
 
 const Navigation = () => {
