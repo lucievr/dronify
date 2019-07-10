@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import Navigation from './navigation/Navigation'
+import Navigation from "./navigation/Navigation"
 import Video from "./video/Video"
 
 const landing = css`
@@ -45,10 +45,10 @@ const Button = css`
   text-transform: uppercase;
 `
 
-const LandingPage = () => {
+const LandingPage = ({ goToPage }) => {
   return (
     <>
-      <div css={landing}>
+      <div css={landing} goToPage={goToPage}>
         <div css={darkOverlay}>
           <Navigation />
           <Video />
