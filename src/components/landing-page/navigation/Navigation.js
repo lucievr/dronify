@@ -53,7 +53,7 @@ const Icons = css`
   display: flex;
   justify-content: flex-end;
 
-  div:first-child {
+  div:first-of-type {
     margin-right: 1rem;
   }
 `
