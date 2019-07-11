@@ -21,24 +21,24 @@ const Button = () => {
             </Link>
           </li>
           <li className="navigation__item">
-            <a href="#" className="navigation__link">
+            <Link to="/professional-drones/" className="navigation__link">
               Professional
-            </a>
+            </Link>
           </li>
           <li className="navigation__item">
-            <a href="#" className="navigation__link">
+            <Link to="/enterprise-drones/" className="navigation__link">
               Enterprise
-            </a>
+            </Link>
           </li>
           <li className="navigation__item">
-            <a href="#" className="navigation__link">
+            <Link to="/accessories/" className="navigation__link">
               Accessories
-            </a>
+            </Link>
           </li>
           <li className="navigation__item">
-            <a href="#" className="navigation__link">
+            <Link to="/contact-us/" className="navigation__link">
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

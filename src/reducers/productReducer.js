@@ -5,7 +5,7 @@ const initialState = {
     ]
 }
 
-const reducer = (state = initialState, action) => {
+const productReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'MENU_LOADED':
             return {
@@ -75,4 +75,4 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-export default reducer
+export default productReducer

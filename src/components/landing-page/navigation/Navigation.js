@@ -1,17 +1,18 @@
 import React from "react"
-import Button from "../button/Button"
+import { connect } from 'react-redux'
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
 import { faUser } from "@fortawesome/free-regular-svg-icons"
 
-import { connect } from 'react-redux'
+import Button from "../button/Button"
 
 const cart = <FontAwesomeIcon icon={faShoppingCart} size="1x" color="white" />
 const user = <FontAwesomeIcon icon={faUser} size="1x" color="white" />
 
-const Navbar = css`
+const NavBar = css`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,67 +104,66 @@ const NavLink = css`
 
 const Navigation = ({ items }) => {
 
-  const total = items.reduce((acc, item) => (acc + item.price * item.quantity), 0)
+    const total = items.reduce((acc, item) => (acc + item.price * item.quantity), 0)
 
-  return (
-    <nav css={Navbar}>
-      <div css={NavMenuTop}>
-        <div css={ButtonWrapper}>
-          <Button />
-        </div>
-        <Link to="/">
-          <span css={LogoName}> Dronify </span>
-        </Link>
-        <div css={Icons}>
-          <Link to="/account">
-            <div css={IconItem}>
-              {user}
-              <span>Log In</span>
+    return (
+        <nav css={NavBar}>
+            <div css={NavMenuTop}>
+                <div css={ButtonWrapper}>
+                    <Button />
+                </div>
+                <Link to="/">
+                    <span css={LogoName}> Dronify </span>
+                </Link>
+                <div css={Icons}>
+                    <Link to="/account">
+                        <div css={IconItem}>
+                            {user}
+                            <span>Log In</span>
+                        </div>
+                    </Link>
+                    <div css={IconItem}>
+                        {cart}
+                        <span>Cart: {total}€</span>
+                    </div>
+                </div>
             </div>
-          </Link>
-          <div css={IconItem}>
-            {cart}
-            <span>Cart: {total}€</span>
-          </div>
-        </div>
-      </div>
 
-      <ul css={NavList}>
-        <li css={NavItem}>
-          <Link to="/consumer-drones/" css={NavLink}>
-            Consumer
-          </Link>
-        </li>
-        <li css={NavItem}>
-          <Link to="/professional-drones/" css={NavLink}>
-            Professional
-          </Link>
-        </li>
-        <li css={NavItem}>
-          <Link to="/enterprise-drones/" css={NavLink}>
-            Enterprise
-          </Link>
-        </li>
-        <li css={NavItem}>
-          <a css={NavLink} href="#">
-            Accessories
-          </a>
-        </li>
-        <li css={NavItem}>
-          <a css={NavLink} href="#">
-            Contact Us
-          </a>
-        </li>
-      </ul>
-    </nav>
-  )
+            <ul css={NavList}>
+                <li css={NavItem}>
+                    <Link to="/consumer-drones/" css={NavLink}>
+                        Consumer
+                    </Link>
+                </li>
+                <li css={NavItem}>
+                    <Link to="/professional-drones/" css={NavLink}>
+                        Professional
+                    </Link>
+                </li>
+                <li css={NavItem}>
+                    <Link to="/enterprise-drones/" css={NavLink}>
+                        Enterprise
+                    </Link>
+                </li>
+                <li css={NavItem}>
+                    <Link to="/accessories/" css={NavLink}>
+                        Accessories
+                    </Link>
+                </li>
+                <li css={NavItem}>
+                    <Link to="/contact-us/" css={NavLink}>
+                        Contact Us
+                    </Link>
+                </li>
+            </ul>
+        </nav>
+    )
 }
 
 const mapStateToProps = ({ items }) => {
-  return {
-    items
-  }
+    return {
+        items
+    }
 }
 
-// export default Navigation
 export default connect(mapStateToProps)(Navigation)

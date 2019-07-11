@@ -1,9 +1,9 @@
 import React from "react"
+import { Link } from "gatsby"
 import { css } from "@emotion/core"
+
 import Navigation from "./navigation/Navigation"
 import Video from "./video/Video"
-import Products from "../products/Products";
-import { Link } from "gatsby"
 
 const landing = css`
   height: 100vh;
@@ -45,23 +45,21 @@ const button = css`
   text-transform: uppercase;
 `
 
-const LandingPage = ({ goToPage }) => {
-  return (
-    <>
-      <div css={landing} goToPage={goToPage}>
-        <div css={darkOverlay}>
-          <Navigation />
-          <Video />
-          <div css={landingContent}>
-            <h1 css={heading}>Explore the future</h1>
-            <Link to='/products' css={button}>
-              Fly with us
-            </Link>
-          </div>
+const LandingPage = () => {
+    return (
+        <div css={landing}>
+            <div css={darkOverlay}>
+                <Navigation />
+                <Video />
+                <div css={landingContent}>
+                    <h1 css={heading}>Explore the future</h1>
+                    <Link to='/consumer-drones' css={button}>
+                        Fly with us
+                    </Link>
+                </div>
+            </div>
         </div>
-      </div>
-    </>
-  )
+    )
 }
 
 export default LandingPage

@@ -1,15 +1,10 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import { Provider } from 'react-redux'
+import store from './src/state/store'
+
 import React from "react"
 import { silentAuth } from "./src/utils/auth"
-require("typeface-montserrat")
-require("typeface-raleway")
-require("typeface-work-sans")
-require("typeface-jura")
 
+require("typeface-montserrat")
 class SessionCheck extends React.Component {
   constructor(props) {
     super(props)
@@ -36,5 +31,11 @@ class SessionCheck extends React.Component {
 }
 
 export const wrapRootElement = ({ element }) => {
-  return <SessionCheck>{element}</SessionCheck>
+  return (
+    <Provider store={store}>
+      <SessionCheck>
+        {element}
+      </SessionCheck>
+    </Provider>
+  )
 }

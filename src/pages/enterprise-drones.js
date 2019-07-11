@@ -1,16 +1,14 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { connect } from 'react-redux'
 import Layout from "../components/layout"
-import Navigation from "../components/landing-page/navigation/Navigation"
 import GlobalStyles from "../components/GlobalStyles"
 import { Global, css } from "@emotion/core"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import { Provider, connect } from 'react-redux'
-import store from '../store'
-import { addedToCart } from "../actions";
+import Navigation from "../components/landing-page/navigation/Navigation"
+// import { addedToCart } from "../actions"
 
 const contentWrapper = css`
   text-align: center;
@@ -84,8 +82,8 @@ const Button = css`
 `
 
 const EnterpriseDrones = () => (
-  <StaticQuery
-    query={graphql`
+    <StaticQuery
+        query={graphql`
       query DbEntQuery {
         allMongodbDronifyDrones(filter: { category: { eq: "enterprise" } }) {
           edges {
@@ -108,54 +106,50 @@ const EnterpriseDrones = () => (
         }
       }
     `}
-    render={({ allMongodbDronifyDrones, addedToCart }) => (
-      <Provider store={store}>
-        <Layout>
-          <Navigation />
-          <Global styles={GlobalStyles} />
-          <SEO title="Enterprise drones" />
-          <div css={contentWrapper}>
-            <h1 css={categoryTitle}>Enterprise drones</h1>
-            <div css={cardsWrapper}>
-              {allMongodbDronifyDrones.edges.map(({ node }) => (
-                <>
-                  <ul key={node.id} css={cardList}>
-                    <li css={card}>
-                      <div css={imageWrapper}>
-                        <Img fluid={node.localImage.childImageSharp.fluid} />
-                      </div>
-                      <div css={textWrapper}>
-                        <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
-                        <p>
-                          <strong>Category:</strong> {node.category}
-                        </p>
-                        <p>
-                          <strong>Price:</strong> € {node.price}
-                        </p>
-                        <button onClick={() => console.log(node.id)} css={Button}>Show product</button>
-                      </div>
-                    </li>
-                  </ul>
-                </>
-              ))}
-            </div>
-          </div>
-        </Layout>
-      </Provider>
-    )}
-  />
+        render={({ allMongodbDronifyDrones }) => (
+            <Layout>
+                <Navigation />
+                <Global styles={GlobalStyles} />
+                <SEO title="Enterprise drones" />
+                <div css={contentWrapper}>
+                    <h1 css={categoryTitle}>Enterprise drones</h1>
+                    <div css={cardsWrapper}>
+                        {allMongodbDronifyDrones.edges.map(({ node }) => (
+                            <ul key={node.id} css={cardList}>
+                                <li css={card}>
+                                    <div css={imageWrapper}>
+                                        <Img fluid={node.localImage.childImageSharp.fluid} />
+                                    </div>
+                                    <div css={textWrapper}>
+                                        <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
+                                        <p>
+                                            <strong>Category:</strong> {node.category}
+                                        </p>
+                                        <p>
+                                            <strong>Price:</strong> € {node.price}
+                                        </p>
+                                        <button onClick={() => console.log(node.id)} css={Button}>Show product</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        ))}
+                    </div>
+                </div>
+            </Layout>
+        )}
+    />
 )
 
-const mapStateToProps = (state) => {
-  return {
-    menuItems: state.menu,
-    loading: state.loading,
-    error: state.error
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     menuItems: state.menu,
+//     loading: state.loading,
+//     error: state.error
+//   }
+// }
 
-const mapDispatchToProps = {
-  addedToCart
-}
+// const mapDispatchToProps = {
+//   addedToCart
+// }
 
-export default EnterpriseDrones
+export default connect()(EnterpriseDrones)
