@@ -43,8 +43,8 @@ const cardList = css`
 `
 
 const card = css`
-  width: 450px;
-  height: 500px;
+  min-width: 450px;
+  min-height: 500px;
   background-color: rgb(255, 255, 255, 0.2);
   margin: 30px;
   color: grey;
@@ -53,13 +53,12 @@ const card = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 `
 
 const imageWrapper = css`
   width: 100%;
   height: auto;
-  max-height: 40%;
 `
 
 const textWrapper = css`
@@ -96,7 +95,7 @@ const EnterpriseDrones = () => (
               localImage {
                 id
                 childImageSharp {
-                  fluid(maxWidth: 500) {
+                  fluid(maxWidth: 700, fit: CONTAIN) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -118,7 +117,7 @@ const EnterpriseDrones = () => (
                             <ul key={node.id} css={cardList}>
                                 <li css={card}>
                                     <div css={imageWrapper}>
-                                        <Img fluid={node.localImage.childImageSharp.fluid} />
+                                        <Img fluid={node.localImage.childImageSharp.fluid} imgStyle={{position: `absolute`, objectFit: `contain`}} style={{position: `relative`, maxHeight: `300px`}} />
                                     </div>
                                     <div css={textWrapper}>
                                         <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>

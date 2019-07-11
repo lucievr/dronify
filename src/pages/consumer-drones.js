@@ -29,7 +29,7 @@ const cardsWrapper = css`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 `
 
 const cardList = css`
@@ -53,7 +53,7 @@ const card = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 `
 
 const imageWrapper = css`
