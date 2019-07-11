@@ -7,6 +7,7 @@ import { Global, css } from "@emotion/core"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+
 import { Provider } from 'react-redux'
 import store from '../store'
 
