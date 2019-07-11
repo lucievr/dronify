@@ -5,12 +5,11 @@ import SEO from "../components/seo"
 
 import Layout from "../components/layout"
 import LandingPage from "../components/landing-page/LandingPage"
-import Products from "../components/products/Products"
 import ReactPageScroller from "react-page-scroller"
-import Consumers from "../components/Products/products-categories/consumers/Consumer"
-import Professionals from "../components/Products/products-categories/professionals/Professional"
-import Enterprise from "../components/Products/products-categories/enterprise/Enterprise"
-import Accessories from "../components/Products/products-categories/accessories/Accessories"
+import Consumers from "../components/products/products-categories/consumers/Consumer"
+import Professionals from "../components/products/products-categories/professionals/Professional"
+import Enterprise from "../components/products/products-categories/enterprise/Enterprise"
+import Accessories from "../components/products/products-categories/accessories/Accessories"
 
 const Category = css`
   height: 100vh;
