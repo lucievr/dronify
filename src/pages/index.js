@@ -11,6 +11,9 @@ import Professionals from "../components/products/products-categories/profession
 import Enterprise from "../components/products/products-categories/enterprise/Enterprise"
 import Accessories from "../components/products/products-categories/accessories/Accessories"
 
+import { Provider } from 'react-redux'
+import store from '../store'
+
 const Category = css`
   height: 100vh;
 `
@@ -27,25 +30,27 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout>
-      <Global styles={GlobalStyles} />
-      <SEO title="home" />
-      <ReactPageScroller ref={scrollRef} pageOnChange={pageOnChange}>
-        <LandingPage goToPage={goToPage} />
-        <div css={Category} goToPage={goToPage}>
-          <Consumers />
-        </div>
-        <div css={Category} goToPage={goToPage}>
-          <Professionals />
-        </div>
-        <div css={Category} goToPage={goToPage}>
-          <Enterprise />
-        </div>
-        <div css={Category} goToPage={goToPage}>
-          <Accessories />
-        </div>
-      </ReactPageScroller>
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Global styles={GlobalStyles} />
+        <SEO title="home" />
+        <ReactPageScroller ref={scrollRef} pageOnChange={pageOnChange}>
+          <LandingPage goToPage={goToPage} />
+          <div css={Category} goToPage={goToPage}>
+            <Consumers />
+          </div>
+          <div css={Category} goToPage={goToPage}>
+            <Professionals />
+          </div>
+          <div css={Category} goToPage={goToPage}>
+            <Enterprise />
+          </div>
+          <div css={Category} goToPage={goToPage}>
+            <Accessories />
+          </div>
+        </ReactPageScroller>
+      </Layout>
+    </Provider>
   )
 }
 
