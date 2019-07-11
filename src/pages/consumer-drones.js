@@ -59,7 +59,7 @@ const card = css`
 const imageWrapper = css`
   width: 100%;
   height: auto;
-  max-height: 40%;
+  background-color: transparent;
 `
 
 const textWrapper = css`
@@ -96,7 +96,7 @@ const ConsumerDrones = () => (
               localImage {
                 id
                 childImageSharp {
-                  fluid(maxWidth: 500) {
+                  fluid(maxWidth: 500, maxHeight: 500, fit: CONTAIN) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -118,7 +118,7 @@ const ConsumerDrones = () => (
                             <ul key={node.id} css={cardList}>
                                 <li css={card}>
                                     <div css={imageWrapper}>
-                                        <Img fluid={node.localImage.childImageSharp.fluid} />
+                                        <Img fluid={node.localImage.childImageSharp.fluid} imgStyle={{maxHeight: `50%`, maxWidth: `80%`}} />
                                     </div>
                                     <div css={textWrapper}>
                                         <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
