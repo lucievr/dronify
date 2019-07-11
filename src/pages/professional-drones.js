@@ -29,7 +29,7 @@ const cardsWrapper = css`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 `
 
 const cardList = css`
