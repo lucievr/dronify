@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
 import { faUser } from "@fortawesome/free-regular-svg-icons"
 
+import { connect } from 'react-redux'
+
 const cart = <FontAwesomeIcon icon={faShoppingCart} size="1x" color="white" />
 const user = <FontAwesomeIcon icon={faUser} size="1x" color="white" />
 
@@ -99,7 +101,10 @@ const NavLink = css`
   }
 `
 
-const Navigation = () => {
+const Navigation = ({ items }) => {
+
+  const total = items.reduce((acc, item) => (acc + item.price * item.quantity), 0)
+
   return (
     <nav css={Navbar}>
       <div css={NavMenuTop}>
@@ -118,7 +123,7 @@ const Navigation = () => {
           </Link>
           <div css={IconItem}>
             {cart}
-            <span>Cart: 0</span>
+            <span>Cart: {total}€</span>
           </div>
         </div>
       </div>
@@ -154,4 +159,11 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+const mapStateToProps = ({ items }) => {
+  return {
+    items
+  }
+}
+
+// export default Navigation
+export default connect(mapStateToProps)(Navigation)

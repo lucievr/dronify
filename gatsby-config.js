@@ -25,6 +25,21 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-react-redux`,
+      options: {
+        // [required] - path to your createStore module
+        pathToCreateStoreModule: './src/state/createStore',
+        // [optional] - options passed to `serialize-javascript`
+        // info: https://github.com/yahoo/serialize-javascript#options
+        // will be merged with these defaults:
+        serialize: {
+          space: 0,
+          isJSON: true,
+          unsafe: false,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-mongodb`,
       options: {
         connectionString: `mongodb+srv://lucie:6snYknGZrjvnSX5@dronify-9s7j9.mongodb.net`,

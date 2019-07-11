@@ -8,6 +8,9 @@ import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import { Provider } from 'react-redux'
+import store from '../store'
+
 const contentWrapper = css`
   text-align: center;
   margin-top: 160px;
@@ -105,37 +108,40 @@ const ProfessionalDrones = () => (
       }
     `}
     render={({ allMongodbDronifyDrones }) => (
-      <Layout>
-        <Navigation />
-        <Global styles={GlobalStyles} />
-        <SEO title="Professional drones" />
-        <div css={contentWrapper}>
-          <h1 css={categoryTitle}>Professional drones</h1>
-          <div css={cardsWrapper}>
-            {allMongodbDronifyDrones.edges.map(({ node }) => (
-              <>
-                <ul key={node.id} css={cardList}>
-                  <li css={card}>
-                    <div css={imageWrapper}>
-                      <Img fluid={node.localImage.childImageSharp.fluid} />
-                    </div>
-                    <div css={textWrapper}>
-                      <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
-                      <p>
-                        <strong>Category:</strong> {node.category}
-                      </p>
-                      <p>
-                        <strong>Price:</strong> € {node.price}
-                      </p>
-                      <button css={Button}>Show product</button>
-                    </div>
-                  </li>
-                </ul>
-              </>
-            ))}
+      <Provider store={store}>
+
+        <Layout>
+          <Navigation />
+          <Global styles={GlobalStyles} />
+          <SEO title="Professional drones" />
+          <div css={contentWrapper}>
+            <h1 css={categoryTitle}>Professional drones</h1>
+            <div css={cardsWrapper}>
+              {allMongodbDronifyDrones.edges.map(({ node }) => (
+                <>
+                  <ul key={node.id} css={cardList}>
+                    <li css={card}>
+                      <div css={imageWrapper}>
+                        <Img fluid={node.localImage.childImageSharp.fluid} />
+                      </div>
+                      <div css={textWrapper}>
+                        <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
+                        <p>
+                          <strong>Category:</strong> {node.category}
+                        </p>
+                        <p>
+                          <strong>Price:</strong> € {node.price}
+                        </p>
+                        <button css={Button}>Show product</button>
+                      </div>
+                    </li>
+                  </ul>
+                </>
+              ))}
+            </div>
           </div>
-        </div>
-      </Layout>
+        </Layout>
+      </Provider>
     )}
   />
 )
