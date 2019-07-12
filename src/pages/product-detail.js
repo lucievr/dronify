@@ -86,7 +86,7 @@ const ProductDetail = () => (
     <StaticQuery
         query={graphql`
             query ProductQuery {
-                allMongodbDronifyDrones {
+                allMongodbDronifyDrones(filter: { category: { eq: "consumer" } }) {
                     edges {
                         node {
                             category
@@ -101,6 +101,8 @@ const ProductDetail = () => (
                             id
                             imageURL1
                             imageURL2
+                            imageURL3
+                            imageURL4
                             name
                             price
                             spec1
@@ -119,6 +121,22 @@ const ProductDetail = () => (
                                 }
                             }
                             localImage2 {
+                                id
+                                childImageSharp {
+                                    fluid(maxWidth: 700, fit: CONTAIN) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                            localImage3 {
+                                id
+                                childImageSharp {
+                                    fluid(maxWidth: 700, fit: CONTAIN) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                            localImage4 {
                                 id
                                 childImageSharp {
                                     fluid(maxWidth: 700, fit: CONTAIN) {
@@ -159,6 +177,36 @@ const ProductDetail = () => (
                                 <Img
                                     fluid={
                                         node.localImage2.childImageSharp.fluid
+                                    }
+                                    imgStyle={{
+                                        position: `absolute`,
+                                        objectFit: `contain`,
+                                    }}
+                                    style={{
+                                        position: `relative`,
+                                        maxHeight: `300px`,
+                                    }}
+                                />
+                            </div>
+                            <div css={imageWrapper}>
+                                <Img
+                                    fluid={
+                                        node.localImage3.childImageSharp.fluid
+                                    }
+                                    imgStyle={{
+                                        position: `absolute`,
+                                        objectFit: `contain`,
+                                    }}
+                                    style={{
+                                        position: `relative`,
+                                        maxHeight: `300px`,
+                                    }}
+                                />
+                            </div>
+                            <div css={imageWrapper}>
+                                <Img
+                                    fluid={
+                                        node.localImage4.childImageSharp.fluid
                                     }
                                     imgStyle={{
                                         position: `absolute`,
