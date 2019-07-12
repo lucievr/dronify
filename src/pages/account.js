@@ -1,10 +1,10 @@
 import React from "react"
 import { Router } from "@reach/router"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/gatsby-default-files/layout"
+import SEO from "../components/gatsby-default-files/seo"
 import { Global } from "@emotion/core"
-import GlobalStyles from "../components/GlobalStyles"
+import GlobalStyles from "../components/styles/GlobalStyles"
 
 import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
 
