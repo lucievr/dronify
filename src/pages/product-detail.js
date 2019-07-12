@@ -86,7 +86,7 @@ const ProductDetail = () => (
     <StaticQuery
         query={graphql`
             query ProductQuery {
-                allMongodbDronifyDrones {
+                allMongodbDronifyDrones(filter: { category: { eq: "consumer" } }) {
                     edges {
                         node {
                             category
@@ -117,7 +117,6 @@ const ProductDetail = () => (
                                     }
                                 }
                             }
-
                         }
                     }
                 }
@@ -147,7 +146,6 @@ const ProductDetail = () => (
                                     }}
                                 />
                             </div>
-
                             <div css={textWrapper}>
                                 <h1 style={{ letterSpacing: `1px` }}>
                                     {node.name}
