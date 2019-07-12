@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from 'react-redux'
+import { addedToCart, menuLoaded } from "../actions"
 import Layout from "../components/layout"
 import GlobalStyles from "../components/GlobalStyles"
 import { Global, css } from "@emotion/core"
@@ -8,7 +9,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import Navigation from "../components/landing-page/navigation/Navigation"
-import { addedToCart, menuLoaded } from "../actions"
 
 const contentWrapper = css`
   text-align: center;
@@ -137,7 +137,11 @@ const EnterpriseDrones = (props) => {
                                         <p>
                                             <strong>Price:</strong> € {node.price}
                                         </p>
-                                        <button onClick={() => addedToCart(node.id)} css={button}>Show product</button>
+                                        <button
+                                            onClick={() => addedToCart(node.id)}
+                                            css={button}>
+                                            Show product
+                                        </button>
                                     </div>
                                 </li>
                             </ul>
