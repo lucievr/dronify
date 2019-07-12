@@ -109,6 +109,7 @@ const ConsumerDrones = (props) => {
             }
             }
         }
+    }
         `)
     return (
         <Layout>
