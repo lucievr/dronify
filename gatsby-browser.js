@@ -1,5 +1,4 @@
-import { Provider } from 'react-redux'
-import store from './src/state/store'
+import wrapWithProvider from "./wrap-with-provider"
 
 import React from "react"
 import { silentAuth } from "./src/utils/auth"
@@ -30,12 +29,5 @@ class SessionCheck extends React.Component {
   }
 }
 
-export const wrapRootElement = ({ element }) => {
-  return (
-    <Provider store={store}>
-      <SessionCheck>
-        {element}
-      </SessionCheck>
-    </Provider>
-  )
-}
+
+export const wrapRootElement = wrapWithProvider
