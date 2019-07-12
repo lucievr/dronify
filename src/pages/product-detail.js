@@ -100,6 +100,9 @@ const ProductDetail = () => (
                             icon6
                             id
                             imageURL1
+                            imageURL2
+                            imageURL3
+                            imageURL4
                             name
                             price
                             spec1
@@ -110,6 +113,30 @@ const ProductDetail = () => (
                             spec6
                             version
                             localImage1 {
+                                id
+                                childImageSharp {
+                                    fluid(maxWidth: 700, fit: CONTAIN) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                            localImage2 {
+                                id
+                                childImageSharp {
+                                    fluid(maxWidth: 700, fit: CONTAIN) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                            localImage3 {
+                                id
+                                childImageSharp {
+                                    fluid(maxWidth: 700, fit: CONTAIN) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                            localImage4 {
                                 id
                                 childImageSharp {
                                     fluid(maxWidth: 700, fit: CONTAIN) {
@@ -135,6 +162,51 @@ const ProductDetail = () => (
                                 <Img
                                     fluid={
                                         node.localImage1.childImageSharp.fluid
+                                    }
+                                    imgStyle={{
+                                        position: `absolute`,
+                                        objectFit: `contain`,
+                                    }}
+                                    style={{
+                                        position: `relative`,
+                                        maxHeight: `300px`,
+                                    }}
+                                />
+                            </div>
+                            <div css={imageWrapper}>
+                                <Img
+                                    fluid={
+                                        node.localImage2.childImageSharp.fluid
+                                    }
+                                    imgStyle={{
+                                        position: `absolute`,
+                                        objectFit: `contain`,
+                                    }}
+                                    style={{
+                                        position: `relative`,
+                                        maxHeight: `300px`,
+                                    }}
+                                />
+                            </div>
+                            <div css={imageWrapper}>
+                                <Img
+                                    fluid={
+                                        node.localImage3.childImageSharp.fluid
+                                    }
+                                    imgStyle={{
+                                        position: `absolute`,
+                                        objectFit: `contain`,
+                                    }}
+                                    style={{
+                                        position: `relative`,
+                                        maxHeight: `300px`,
+                                    }}
+                                />
+                            </div>
+                            <div css={imageWrapper}>
+                                <Img
+                                    fluid={
+                                        node.localImage4.childImageSharp.fluid
                                     }
                                     imgStyle={{
                                         position: `absolute`,
