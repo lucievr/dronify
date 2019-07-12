@@ -1,33 +1,9 @@
 import React from "react"
-<<<<<<< HEAD
 import Layout from "../components/gatsby-default-files/layout"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import GlobalStyles from "../components/styles/GlobalStyles"
-import { Global } from "@emotion/core"
-import SEO from "../components/gatsby-default-files/seo"
-
-// import { connect } from 'react-redux'
-
-const Accessories = () => {
-
-    return (
-        <Layout>
-            <Navigation />
-            <Global styles={GlobalStyles} />
-            <SEO title="Contact Us" />
-        </Layout>
-    )
-}
-
-// export default connect()(Accessories)
-export default Accessories
-=======
-// import { Link } from "gatsby"
-import Layout from "../components/layout"
-import Navigation from "../components/landing-page/Navigation/Navigation"
-import GlobalStyles from "../components/GlobalStyles"
 import { Global, css } from "@emotion/core"
-import SEO from "../components/seo"
+import SEO from "../components/gatsby-default-files/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -113,8 +89,8 @@ const AccessoriesDrones = () => (
               name
               category
               price
-              imageURL
-              localImage {
+              imageURL1
+              localImage1 {
                 id
                 childImageSharp {
                   fluid(maxWidth: 500) {
@@ -140,7 +116,7 @@ const AccessoriesDrones = () => (
                 <ul key={node.id} css={cardList}>
                   <li css={card}>
                     <div css={imageWrapper}>
-                      <Img fluid={node.localImage.childImageSharp.fluid} />
+                      <Img fluid={node.localImage1.childImageSharp.fluid} />
                     </div>
                     <div css={textWrapper}>
                       <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
@@ -163,5 +139,4 @@ const AccessoriesDrones = () => (
   />
 )
 
-export default ConsumerDrones
->>>>>>> marijan
+export default AccessoriesDrones
