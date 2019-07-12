@@ -1,14 +1,14 @@
 import React from "react"
-import Layout from "../components/layout"
-import Navigation from "../components/landing-page/navigation/Navigation"
-import GlobalStyles from "../components/GlobalStyles"
+import Layout from "../components/gatsby-default-files/layout"
+import Navigation from "../components/main-page/landing/navigation/Navigation"
+import GlobalStyles from "../components/styles/GlobalStyles"
 import { Global, css } from "@emotion/core"
-import SEO from "../components/seo"
+import SEO from "../components/gatsby-default-files/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import { connect } from "react-redux"
-import Icon from "../components/Icon"
+import Icon from "../components/styles/Icon"
 
 
 const cardList = css`
@@ -63,6 +63,10 @@ const column = css`
   text-align: left;
   word-wrap: break-word;
   margin: 10px;
+`
+
+const specText = css`
+  margin: 0;
 `
 
 const Button = css`
@@ -146,22 +150,22 @@ const ProductDetail = () => (
                     <h5>{node.description}</h5>
                     <div css={specWrapper}>
                         <section css={column}>
-                        <p><Icon name={node.icon1} /> {node.spec1}</p>
-                        <p><Icon name={node.icon2} /> {node.spec2}</p>
-                        <p><Icon name={node.icon3} /> {node.spec3}</p>
+                        <p><Icon name={node.icon1} /> <span css={specText}>{node.spec1}</span></p>
+                        <p><Icon name={node.icon2} /> <span css={specText}>{node.spec2}</span></p>
+                        <p><Icon name={node.icon3} /> <span css={specText}>{node.spec3}</span></p>
                         </section>
                         <section css={column}>
-                        <p><Icon name={node.icon4} /> {node.spec4}</p>
-                        <p><Icon name={node.icon5} /> {node.spec5}</p>
-                        <p><Icon name={node.icon6} /> {node.spec6}</p>
+                        <p><Icon name={node.icon4} /> <span css={specText}>{node.spec4}</span></p>
+                        <p><Icon name={node.icon5} /> <span css={specText}>{node.spec5}</span></p>
+                        <p><Icon name={node.icon6} /> <span css={specText}>{node.spec6}</span></p>
                         </section>
                     </div>
 
-                    <button css={Button}>Buy</button>
-                  </div>
-                </li>
-              </ul>
-            ))}
+                <button css={Button}>Buy</button>
+              </div>
+            </li>
+          </ul>
+        ))}
       </Layout>
     )}
   />
