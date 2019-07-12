@@ -50,6 +50,13 @@ const textWrapper = css`
   text-align: center;
   color: black;
 `
+
+const specWrapper = css`
+    display: flex;
+    flex-wrap: wrap;
+
+`
+
 const Button = css`
   color: #fff;
   background-color: transparent;
@@ -127,14 +134,17 @@ const ProductDetail = () => (
                     <p>
                       <strong>Category:</strong> {node.category}
                     </p>
-                    <p>
-                      
-                    </p>
-                    <Icon name="aperture" class="white" />
-                    <Icon name="camera" class="white" />
-                    <Icon name="radio" class="white" />
-                    <Icon name="send" class="white" />
-                    <Icon name="clock" class="white" />
+                    <hr />
+                    <h5>{node.description}</h5>
+                    <div css={specWrapper}>
+                        <div><Icon name={node.icon1} /> {node.spec1}</div>
+                        <div><Icon name={node.icon2} /> {node.spec2}</div>
+                        <div><Icon name={node.icon3} /> {node.spec3}</div>
+                        <div><Icon name={node.icon4} /> {node.spec4}</div>
+                        <div><Icon name={node.icon5} /> {node.spec5}</div>
+                        <div><Icon name={node.icon6} /> {node.spec6}</div>
+                    </div>
+
                     <button css={Button}>Buy</button>
                   </div>
                 </li>
