@@ -120,9 +120,9 @@ const Navigation = () => {
           </Link>
         </li>
         <li css={NavItem}>
-          <a css={NavLink} href="#">
+          <Link to="/accessories/" css={NavLink}>
             Accessories
-          </a>
+          </Link>
         </li>
         <li css={NavItem}>
           <a css={NavLink} href="#">
