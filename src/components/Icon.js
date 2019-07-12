@@ -34,10 +34,10 @@ class Icon extends React.Component {
 
 Icon.defaultProps = {
     name: ``,
-    width: `24px`,
-    height: `24px`,
+    width: `30px`,
+    height: `30px`,
     color: `black`,
-    class: ``,
+    class: `icon-style`,
     containerClass: ``,
     strokeWidth: 2,
 }
