@@ -1,6 +1,5 @@
-import { createStore } from 'redux'
+import { createStore as reduxCreateStore } from "redux"
 import productReducer from '../reducers/productReducer'
 
-const store = createStore(productReducer)
-
-export default store
+const createStore = () => reduxCreateStore(productReducer)
+export default createStore

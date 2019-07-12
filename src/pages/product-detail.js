@@ -53,8 +53,16 @@ const textWrapper = css`
 
 const specWrapper = css`
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+`
 
+const column = css`
+  align-self: left;
+  text-align: left;
+  word-wrap: break-word;
+  margin: 10px;
 `
 
 const Button = css`
@@ -137,12 +145,16 @@ const ProductDetail = () => (
                     <hr />
                     <h5>{node.description}</h5>
                     <div css={specWrapper}>
-                        <div><Icon name={node.icon1} /> {node.spec1}</div>
-                        <div><Icon name={node.icon2} /> {node.spec2}</div>
-                        <div><Icon name={node.icon3} /> {node.spec3}</div>
-                        <div><Icon name={node.icon4} /> {node.spec4}</div>
-                        <div><Icon name={node.icon5} /> {node.spec5}</div>
-                        <div><Icon name={node.icon6} /> {node.spec6}</div>
+                        <section css={column}>
+                        <p><Icon name={node.icon1} /> {node.spec1}</p>
+                        <p><Icon name={node.icon2} /> {node.spec2}</p>
+                        <p><Icon name={node.icon3} /> {node.spec3}</p>
+                        </section>
+                        <section css={column}>
+                        <p><Icon name={node.icon4} /> {node.spec4}</p>
+                        <p><Icon name={node.icon5} /> {node.spec5}</p>
+                        <p><Icon name={node.icon6} /> {node.spec6}</p>
+                        </section>
                     </div>
 
                     <button css={Button}>Buy</button>
