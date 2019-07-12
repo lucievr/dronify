@@ -98,8 +98,8 @@ const ProfessionalDrones = (props) => {
               name
               category
               price
-              imageURL
-              localImage {
+              imageURL1
+              localImage1 {
                 id
                 childImageSharp {
                   fluid(maxWidth: 700, fit: CONTAIN) {
@@ -125,7 +125,7 @@ const ProfessionalDrones = (props) => {
               <ul key={node.id} css={cardList}>
                 <li css={card}>
                   <div css={imageWrapper}>
-                    <Img fluid={node.localImage.childImageSharp.fluid} imgStyle={{ position: `absolute`, objectFit: `contain` }} style={{ position: `relative`, maxHeight: `300px` }} />
+                    <Img fluid={node.localImage1.childImageSharp.fluid} imgStyle={{ position: `absolute`, objectFit: `contain` }} style={{ position: `relative`, maxHeight: `300px` }} />
                   </div>
                   <div css={textWrapper}>
                     <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
