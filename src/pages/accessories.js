@@ -5,7 +5,7 @@ import GlobalStyles from "../components/GlobalStyles"
 import { Global } from "@emotion/core"
 import SEO from "../components/seo"
 
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 const Accessories = () => {
 
@@ -18,4 +18,5 @@ const Accessories = () => {
     )
 }
 
-export default connect()(Accessories)
+// export default connect()(Accessories)
+export default Accessories
