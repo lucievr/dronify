@@ -1,14 +1,14 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { connect } from 'react-redux'
 import Layout from "../components/layout"
 import GlobalStyles from "../components/GlobalStyles"
 import { Global, css } from "@emotion/core"
 import SEO from "../components/seo"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import Navigation from "../components/landing-page/navigation/Navigation"
-// import { addedToCart } from "../actions"
+import { addedToCart, menuLoaded } from "../actions"
 
 const contentWrapper = css`
   text-align: center;
@@ -67,7 +67,7 @@ const textWrapper = css`
   text-align: center;
   color: black;
 `
-const Button = css`
+const button = css`
   color: #fff;
   background-color: transparent;
   border: 2px solid #fff;
@@ -81,9 +81,17 @@ const Button = css`
   }
 `
 
-const EnterpriseDrones = () => (
-    <StaticQuery
-        query={graphql`
+const EnterpriseDrones = (props) => {
+
+    useEffect(() => {
+        props.menuLoaded(data.allMongodbDronifyDrones.edges)
+    }, [])
+
+    const { menuItems, addedToCart } = props
+
+    console.log(menuItems)
+
+    const data = useStaticQuery(graphql`
       query DbEntQuery {
         allMongodbDronifyDrones(filter: { category: { eq: "enterprise" } }) {
           edges {
@@ -105,16 +113,17 @@ const EnterpriseDrones = () => (
           }
         }
       }
-    `}
-        render={({ allMongodbDronifyDrones }) => (
-            <Layout>
-                <Navigation />
-                <Global styles={GlobalStyles} />
-                <SEO title="Enterprise drones" />
-                <div css={contentWrapper}>
-                    <h1 css={categoryTitle}>Enterprise drones</h1>
-                    <div css={cardsWrapper}>
-                        {allMongodbDronifyDrones.edges.map(({ node }) => (
+    `)
+    return (
+        <Layout>
+            <Navigation />
+            <Global styles={GlobalStyles} />
+            <SEO title="Enterprise drones" />
+            <div css={contentWrapper}>
+                <h1 css={categoryTitle}>Enterprise drones</h1>
+                <div css={cardsWrapper}>
+                    {
+                        menuItems.map(({ node }) => (
                             <ul key={node.id} css={cardList}>
                                 <li css={card}>
                                     <div css={imageWrapper}>
@@ -128,28 +137,27 @@ const EnterpriseDrones = () => (
                                         <p>
                                             <strong>Price:</strong> € {node.price}
                                         </p>
-                                        <button onClick={() => console.log(node.id)} css={Button}>Show product</button>
+                                        <button onClick={() => addedToCart(node.id)} css={button}>Show product</button>
                                     </div>
                                 </li>
                             </ul>
-                        ))}
-                    </div>
+                        ))
+                    }
                 </div>
-            </Layout>
-        )}
-    />
-)
+            </div>
+        </Layout>
+    )
+}
 
-// const mapStateToProps = (state) => {
-//   return {
-//     menuItems: state.menu,
-//     loading: state.loading,
-//     error: state.error
-//   }
-// }
+const mapStateToProps = (state) => {
+    return {
+        menuItems: state.menu
+    }
+}
 
-// const mapDispatchToProps = {
-//   addedToCart
-// }
+const mapDispatchToProps = {
+    addedToCart,
+    menuLoaded
+}
 
-export default connect()(EnterpriseDrones)
+export default connect(mapStateToProps, mapDispatchToProps)(EnterpriseDrones)
