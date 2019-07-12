@@ -1,14 +1,14 @@
-import React from "react"
-// import { Link } from "gatsby"
+import React, { useEffect } from "react"
+import { connect } from 'react-redux'
+import { addedToCart, menuLoaded } from "../actions"
 import Layout from "../components/layout"
-import Navigation from "../components/landing-page/navigation/Navigation"
 import GlobalStyles from "../components/GlobalStyles"
 import { Global, css } from "@emotion/core"
 import SEO from "../components/seo"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import { connect } from 'react-redux'
+import Navigation from "../components/landing-page/navigation/Navigation"
 
 const contentWrapper = css`
   text-align: center;
@@ -66,7 +66,7 @@ const textWrapper = css`
   text-align: center;
   color: black;
 `
-const Button = css`
+const button = css`
   color: #fff;
   background-color: transparent;
   border: 2px solid #fff;
@@ -80,44 +80,51 @@ const Button = css`
   }
 `
 
-const ConsumerDrones = () => (
-    <StaticQuery
-        query={graphql`
-      query DbConQuery {
-        allMongodbDronifyDrones(filter: { category: { eq: "consumer" } }) {
-          edges {
-            node {
-              id
-              name
-              category
-              price
-              imageURL
-              localImage {
+const ConsumerDrones = (props) => {
+
+    useEffect(() => {
+        props.menuLoaded(data.allMongodbDronifyDrones.edges)
+    }, [])
+
+    const { menuItems, addedToCart } = props
+
+    const data = useStaticQuery(graphql`
+        query DbConQuery {
+            allMongodbDronifyDrones(filter: { category: { eq: "consumer" } }) {
+            edges {
+                node {
                 id
-                childImageSharp {
-                  fluid(maxWidth: 700, fit: CONTAIN) {
-                    ...GatsbyImageSharpFluid
-                  }
+                name
+                category
+                price
+                imageURL
+                localImage {
+                    id
+                    childImageSharp {
+                        fluid(maxWidth: 700, fit: CONTAIN) {
+                          ...GatsbyImageSharpFluid
+                        }
+                    }
                 }
-              }
             }
-          }
+            }
         }
-      }
-    `}
-        render={({ allMongodbDronifyDrones }) => (
-            <Layout>
-                <Navigation />
-                <Global styles={GlobalStyles} />
-                <SEO title="Consumer drones" />
-                <div css={contentWrapper}>
-                    <h1 css={categoryTitle}>Consumer drones</h1>
-                    <div css={cardsWrapper}>
-                        {allMongodbDronifyDrones.edges.map(({ node }) => (
+    }
+        `)
+    return (
+        <Layout>
+            <Navigation />
+            <Global styles={GlobalStyles} />
+            <SEO title="Consumer drones" />
+            <div css={contentWrapper}>
+                <h1 css={categoryTitle}>Consumer drones</h1>
+                <div css={cardsWrapper}>
+                    {
+                        menuItems.map(({ node }) => (
                             <ul key={node.id} css={cardList}>
                                 <li css={card}>
                                     <div css={imageWrapper}>
-                                        <Img fluid={node.localImage.childImageSharp.fluid} imgStyle={{position: `absolute`, objectFit: `contain`}} style={{position: `relative`, maxHeight: `300px`}} />
+                                        <Img fluid={node.localImage.childImageSharp.fluid} imgStyle={{ position: `absolute`, objectFit: `contain` }} style={{ position: `relative`, maxHeight: `300px` }} />
                                     </div>
                                     <div css={textWrapper}>
                                         <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
@@ -127,16 +134,31 @@ const ConsumerDrones = () => (
                                         <p>
                                             <strong>Price:</strong> € {node.price}
                                         </p>
-                                        <button css={Button}>Show product</button>
+                                        <button
+                                            onClick={() => addedToCart(node.id)}
+                                            css={button}>
+                                            Show product
+                                        </button>
                                     </div>
                                 </li>
                             </ul>
-                        ))}
-                    </div>
+                        ))
+                    }
                 </div>
-            </Layout>
-        )}
-    />
-)
+            </div>
+        </Layout>
+    )
+}
 
-export default connect()(ConsumerDrones)
+const mapStateToProps = (state) => {
+    return {
+        menuItems: state.menu
+    }
+}
+
+const mapDispatchToProps = {
+    addedToCart,
+    menuLoaded
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConsumerDrones)

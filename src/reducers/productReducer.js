@@ -1,8 +1,6 @@
 const initialState = {
     menu: [],
-    items: [
-        { price: 15, quantity: 10 }
-    ]
+    items: []
 }
 
 const productReducer = (state = initialState, action) => {
@@ -39,15 +37,19 @@ const productReducer = (state = initialState, action) => {
 
             } else {
 
-                const item = state.menu.find(item => item.id === id)
+                const item = state.menu.find(item => item.node.id === id)
+                console.log(item)
 
                 const newItem = {
-                    id: item.id,
-                    url: item.url,
-                    title: item.title,
-                    price: item.price,
+                    id: item.node.id,
+                    name: item.node.name,
+                    image: item.node.localImage.childImageSharp.fluid,
+                    price: item.node.price,
+                    category: item.node.category,
                     quantity: 1
                 }
+
+                console.log(state.items)
 
                 newItems = [
                     ...state.items,
