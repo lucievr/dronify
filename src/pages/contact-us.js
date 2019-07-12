@@ -5,7 +5,7 @@ import GlobalStyles from "../components/GlobalStyles"
 import { Global } from "@emotion/core"
 import SEO from "../components/seo"
 
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 const ContactUs = () => {
 
@@ -18,4 +18,5 @@ const ContactUs = () => {
     )
 }
 
-export default connect()(ContactUs)
+// export default connect()(ContactUs)
+export default ContactUs
