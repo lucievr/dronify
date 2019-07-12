@@ -1,14 +1,14 @@
 import React from "react"
-// import { Link } from "gatsby"
-import Layout from "../components/layout"
-import Navigation from "../components/landing-page/navigation/Navigation"
+import { connect } from 'react-redux'
 import GlobalStyles from "../components/GlobalStyles"
 import { Global, css } from "@emotion/core"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import { connect } from 'react-redux'
+import Layout from "../components/layout"
+import Navigation from "../components/landing-page/navigation/Navigation"
+
 
 const contentWrapper = css`
   text-align: center;
@@ -80,11 +80,11 @@ const Button = css`
   }
 `
 
-const ConsumerDrones = () => (
+const ProfessionalDrones = () => (
     <StaticQuery
         query={graphql`
-      query DbConQuery {
-        allMongodbDronifyDrones(filter: { category: { eq: "consumer" } }) {
+      query DbProQuery {
+        allMongodbDronifyDrones(filter: { category: { eq: "professional" } }) {
           edges {
             node {
               id
@@ -109,9 +109,9 @@ const ConsumerDrones = () => (
             <Layout>
                 <Navigation />
                 <Global styles={GlobalStyles} />
-                <SEO title="Consumer drones" />
+                <SEO title="Professional drones" />
                 <div css={contentWrapper}>
-                    <h1 css={categoryTitle}>Consumer drones</h1>
+                    <h1 css={categoryTitle}>Professional drones</h1>
                     <div css={cardsWrapper}>
                         {allMongodbDronifyDrones.edges.map(({ node }) => (
                             <ul key={node.id} css={cardList}>
@@ -139,4 +139,4 @@ const ConsumerDrones = () => (
     />
 )
 
-export default connect()(ConsumerDrones)
+export default connect()(ProfessionalDrones)

@@ -17,14 +17,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
     {
-      resolve: `gatsby-plugin-snipcart`,
-      options: {
-        apiKey:
-          "ZDM4ZGQ1NjQtNmNmYy00ZDJlLTkyYjUtMTE4MzJkNTQ2ZjExNjM2OTUyNzg0NTA4NTI0NzI3",
-        autopop: true,
-      },
-    },
-    {
       resolve: `gatsby-source-mongodb`,
       options: {
         connectionString: `mongodb+srv://lucie:6snYknGZrjvnSX5@dronify-9s7j9.mongodb.net`,

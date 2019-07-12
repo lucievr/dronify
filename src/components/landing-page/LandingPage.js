@@ -1,7 +1,9 @@
 import React from "react"
+import { Link } from "gatsby"
 import { css } from "@emotion/core"
-// import Navigation from './Navigation/Navigation'
-import Video from "./Video/Video"
+
+import Navigation from "./navigation/Navigation"
+import Video from "./video/Video"
 
 const landing = css`
   height: 100vh;
@@ -13,15 +15,16 @@ const darkOverlay = css`
   top: 0;
   left: 0;
   width: 100%;
-  ${"" /* background: rgba(0, 0, 0, 0.5); */}
+  background: rgba(0, 0, 0, 0.5);
 `
 
 const landingContent = css`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-bottom: 2rem;
 `
 
 const heading = css`
@@ -29,14 +32,11 @@ const heading = css`
   color: #fff;
   letter-spacing: 1px;
   font-weight: 300;
-
-  font-family: "Raleway", sans-serif;
-  font-family: "Work Sans", sans-serif;
-  font-family: "Jura", sans-serif;
   font-family: "Montserrat", sans-serif;
+  margin-bottom: 10rem;
 `
 
-const Button = css`
+const button = css`
   color: #fff;
   border: 3px solid #fff;
   padding: 1rem 3rem;
@@ -46,22 +46,20 @@ const Button = css`
 `
 
 const LandingPage = () => {
-  return (
-    <>
-      <div css={landing}>
-        <div css={darkOverlay}>
-          {/* <Navigation /> */}
-          <Video />
-          <div css={landingContent}>
-            <h1 css={heading}>Explore the future</h1>
-            <a href="#" css={Button}>
-              Fly with us
-            </a>
-          </div>
+    return (
+        <div css={landing}>
+            <div css={darkOverlay}>
+                <Navigation />
+                <Video />
+                <div css={landingContent}>
+                    <h1 css={heading}>Explore the future</h1>
+                    <Link to='/consumer-drones' css={button}>
+                        Fly with us
+                    </Link>
+                </div>
+            </div>
         </div>
-      </div>
-    </>
-  )
+    )
 }
 
 export default LandingPage
