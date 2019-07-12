@@ -1,5 +1,5 @@
 import React from "react"
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 // STYLES
 import { Global, css } from "@emotion/core"
 import GlobalStyles from "../components/styles/GlobalStyles"
