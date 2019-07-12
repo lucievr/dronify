@@ -1,15 +1,21 @@
 import React from "react"
-import { Global, css } from "@emotion/core"
-import GlobalStyles from "../components/GlobalStyles"
-import SEO from "../components/seo"
 
-import Layout from "../components/layout"
-import LandingPage from "../components/landing-page/LandingPage"
+// STYLES
+import { Global, css } from "@emotion/core"
+import GlobalStyles from "../components/styles/GlobalStyles"
+
+// GATSBY
+import SEO from "../components/gatsby-default-files/seo"
+import Layout from "../components/gatsby-default-files/layout"
+
+// COMPONENTS
+import Landing from "../components/main-page/landing/layout/Landing"
+import Consumers from "../components/main-page/categories/layout/consumers/Consumers"
+import Professionals from "../components/main-page/categories/layout/professionals/Professionals"
+import Enterprise from "../components/main-page/categories/layout/enterprise/Enterprise"
+import Accessories from "../components/main-page/categories/layout/accessories/Accessories"
+
 import ReactPageScroller from "react-page-scroller"
-import Consumers from "../components/products/products-categories/consumers/Consumer"
-import Professionals from "../components/products/products-categories/professionals/Professional"
-import Enterprise from "../components/products/products-categories/enterprise/Enterprise"
-import Accessories from "../components/products/products-categories/accessories/Accessories"
 
 const Category = css`
   height: 100vh;
@@ -28,7 +34,7 @@ const IndexPage = () => {
             <Global styles={GlobalStyles} />
             <SEO title="home" />
             <ReactPageScroller ref={scrollRef}>
-                <LandingPage />
+                <Landing />
                 <Consumers gotopage={gotopage} css={Category} />
                 <Professionals gotopage={gotopage} css={Category} />
                 <Enterprise gotopage={gotopage} css={Category} />
