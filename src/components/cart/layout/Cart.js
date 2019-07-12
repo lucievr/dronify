@@ -1,7 +1,19 @@
 import React from 'react'
-import { Table } from 'reactstrap';
+import { Button, Table } from 'reactstrap';
 import { Link } from 'gatsby'
 import { connect } from 'react-redux'
+
+import {
+    wrapper,
+    top,
+    bottom,
+    top_button,
+    bottom__heading,
+    bottom__heading__title,
+    bottom__heading__total,
+    item__box,
+    qty
+} from './CartStyles'
 
 const Cart = (props) => {
 
@@ -12,40 +24,54 @@ const Cart = (props) => {
     const quantityLabel = (totalQuantity > 1) ? 'items' : 'item'
 
     return (
-        <>
-            <Link to='/'>Back to home</Link>
-            <h3>Your order:</h3>
-            <Table hover>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        props.items.map((item, index) => {
+        <div css={wrapper}>
+            <div css={top}>
+                <Button color="secondary">
+                    <Link css={top_button} to='/'>Return</Link>
+                </Button>
+            </div>
+            <div css={bottom}>
+                <div css={bottom__heading}>
+                    <h3 css={bottom__heading__title}>My order</h3>
+                    <div css={bottom__heading__total}>
+                        <span>Total: </span>
+                        <span>{total}€</span>
+                    </div>
+                </div>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            props.items.map((item) => {
 
-                            const { name, price, id, quantity } = item
+                                const { name, price, id, quantity } = item
 
-                            const itemLabel = (quantity > 1) ? 'items' : 'item'
+                                // const itemLabel = (quantity > 1) ? 'items' : 'item'
 
-                            return (
-                                <tr key={id}>
-                                    <th scope="row">{index + 1}</th>
-                                    <td>{name}</td>
-                                    <td>{quantity} {itemLabel}</td>
-                                    <td>{price}€</td>
-                                </tr>
-                            )
-                        })
-                    }
-                    <tr><td>=</td><td>Total:</td><td>{totalQuantity} {quantityLabel}</td><td>{total}€</td></tr>
-                </tbody>
-            </Table>
-        </>
+                                return (
+                                    <tr key={id} css={item__box}>
+                                        <td>{name}</td>
+                                        <td>
+                                            <span css={qty}>-</span>
+                                            {quantity}
+                                            <span css={qty}>+</span>
+                                        </td>
+                                        <td>{price}€</td>
+                                        <td>&times;</td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </Table>
+            </div>
+        </div>
     )
 }
 
