@@ -1,14 +1,14 @@
 import React, { useEffect } from "react"
 import { connect } from 'react-redux'
 import { addedToCart, menuLoaded } from "../actions"
-import Layout from "../components/layout"
-import GlobalStyles from "../components/GlobalStyles"
+import Layout from "../components/gatsby-default-files/layout"
+import GlobalStyles from "../components/styles/GlobalStyles"
 import { Global, css } from "@emotion/core"
-import SEO from "../components/seo"
+import SEO from "../components/gatsby-default-files/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Navigation from "../components/landing-page/navigation/Navigation"
+import Navigation from "../components/main-page/landing/navigation/Navigation"
 
 const contentWrapper = css`
   text-align: center;
