@@ -32,14 +32,7 @@ module.exports = {
         name: `localImage1`,
       },
     },
-    {
-      resolve: `gatsby-plugin-remote-images`,
-      options: {
-        nodeType: 'mongodbDronifyDrones',
-        imagePath: 'imageURL2',
-        name: `localImage2`,
-      },
-    },
+    
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
