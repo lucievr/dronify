@@ -51,6 +51,7 @@ const LogoName = css`
   font-size: 1.5rem;
   color: #fff;
   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif !important;
 
   @media screen and (max-width: 420px) {
     display: none;
@@ -88,18 +89,26 @@ const IconItem = css`
   flex-direction: column;
   align-items: center;
   color: #fff;
+  font-family: "Montserrat", sans-serif !important;
 `
 
 const NavItem = css`
-  list-style-type: none;
+  list-style-type: none !important;
 `
 
 const NavLink = css`
-  text-decoration: none;
+  text-decoration: none !important;
+  font-family: "Montserrat", sans-serif !important;
   color: #fff;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-size: 0.8rem;
+
+  &:hover {
+    text-decoration: none !important;
+    color: #fff !important;
+    cursor: pointer;
+  }
 
   @media screen and (max-width: 1100px) {
     letter-spacing: 0.1rem;

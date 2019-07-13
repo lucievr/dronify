@@ -32,17 +32,23 @@ const heading = css`
   color: #fff;
   letter-spacing: 1px;
   font-weight: 300;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   margin-bottom: 10rem;
 `
 
 const button = css`
   color: #fff;
+  font-family: "Montserrat", sans-serif !important;
   border: 3px solid #fff;
   padding: 1rem 3rem;
   border-radius: 5rem;
   font-size: 1.2rem;
   text-transform: uppercase;
+  &:hover {
+    text-decoration: none !important;
+    color: #fff !important;
+    cursor: pointer;
+  }
 `
 
 const LandingPage = () => {

@@ -6,7 +6,7 @@ const GlobalStyles = css`
     }
 
     html {
-        font-family: "Montserrat", sans-serif;
+        font-family: "Montserrat", sans-serif !important;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
         overflow-y: scroll;
@@ -25,7 +25,7 @@ const GlobalStyles = css`
     }
 
     a {
-        text-decoration: none;
+        text-decoration: none !important;
         color: #000;
     }
 
