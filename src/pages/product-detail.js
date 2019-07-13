@@ -86,11 +86,10 @@ const ProductDetail = () => (
     <StaticQuery
         query={graphql`
             query ProductQuery {
-                allMongodbDronifyDrones(filter: { category: { eq: "consumer" } }) {
+                allMongodbDronifyDrones {
                     edges {
                         node {
                             category
-                            colors
                             description
                             icon1
                             icon2
@@ -111,7 +110,6 @@ const ProductDetail = () => (
                             spec4
                             spec5
                             spec6
-                            version
                             localImage1 {
                                 id
                                 childImageSharp {

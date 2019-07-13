@@ -9,11 +9,12 @@ import Img from "gatsby-image"
 
 const contentWrapper = css`
   text-align: center;
-  margin-top: 160px;
+  margin-top: 200px;
 `
 
 const categoryTitle = css`
   font-weight: 300;
+  margin: 30px;
 `
 
 const cardsWrapper = css`
@@ -26,7 +27,7 @@ const cardsWrapper = css`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 `
 
 const cardList = css`
@@ -40,9 +41,9 @@ const cardList = css`
 `
 
 const card = css`
-  width: 450px;
-  height: 500px;
-  background-color: rgb(255, 255, 255, 0.2);
+  min-width: 450px;
+  min-height: 500px;
+  ${'' /* background-color: rgb(255, 255, 255, 0.2); */}
   margin: 30px;
   color: grey;
   font-family: "Montserrat", sans-serif;
@@ -50,13 +51,13 @@ const card = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 `
 
 const imageWrapper = css`
   width: 100%;
   height: auto;
-  max-height: 40%;
+  margin-bottom: 50px;
 `
 
 const textWrapper = css`
@@ -64,6 +65,13 @@ const textWrapper = css`
   text-align: center;
   color: black;
 `
+const productTitle = css`
+  color: white;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+`
+
 const Button = css`
   color: #fff;
   background-color: transparent;
@@ -93,7 +101,7 @@ const AccessoriesDrones = () => (
               localImage1 {
                 id
                 childImageSharp {
-                  fluid(maxWidth: 500) {
+                  fluid(maxWidth: 700, fit: CONTAIN) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -116,10 +124,10 @@ const AccessoriesDrones = () => (
                 <ul key={node.id} css={cardList}>
                   <li css={card}>
                     <div css={imageWrapper}>
-                      <Img fluid={node.localImage1.childImageSharp.fluid} />
+                    <Img fluid={node.localImage1.childImageSharp.fluid} imgStyle={{ position: `absolute`, objectFit: `contain` }} style={{ position: `relative`, maxHeight: `280px` }} />
                     </div>
                     <div css={textWrapper}>
-                      <h3 style={{ letterSpacing: `1px` }}>{node.name}</h3>
+                      <h3 css={productTitle}>{node.name}</h3>
                       <p>
                         <strong>Category:</strong> {node.category}
                       </p>
