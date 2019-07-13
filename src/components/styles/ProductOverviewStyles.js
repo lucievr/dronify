@@ -6,6 +6,7 @@ export const contentWrapper = css`
 `
 
 export const categoryTitle = css`
+  font-family: "Montserrat", sans-serif !important;
   font-weight: 300;
   margin: 30px;
 `
@@ -39,7 +40,6 @@ export const card = css`
   ${'' /* background-color: rgb(255, 255, 255, 0.2); */}
   margin: 30px;
   color: grey;
-  font-family: "Montserrat", sans-serif;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -54,12 +54,14 @@ export const imageWrapper = css`
 `
 
 export const textWrapper = css`
+  font-family: "Montserrat", sans-serif !important;
   padding: 0 20px;
   text-align: center;
   color: black;
 `
 export const productTitle = css`
   color: white;
+  font-family: "Montserrat", sans-serif !important;
   font-weight: 300;
   letter-spacing: 1px;
   margin-bottom: 20px;
@@ -67,6 +69,7 @@ export const productTitle = css`
 
 export const buttonStyle = css`
   color: #fff;
+  font-family: "Montserrat", sans-serif !important;
   background-color: transparent;
   border: 2px solid #fff;
   padding: 1rem 1rem;
@@ -74,7 +77,7 @@ export const buttonStyle = css`
   font-size: 1rem;
   text-transform: uppercase;
   &:hover {
-    background-color: rgb(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
   }
 `

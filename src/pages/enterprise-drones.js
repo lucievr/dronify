@@ -4,7 +4,7 @@ import { addedToCart, menuLoaded } from "../actions"
 import Layout from "../components/gatsby-default-files/layout"
 import GlobalStyles from "../components/styles/GlobalStyles"
 import { contentWrapper, categoryTitle, cardsWrapper, cardList, card, imageWrapper, textWrapper, productTitle, buttonStyle } from '../components/styles/ProductOverviewStyles'
-import { Global, css } from "@emotion/core"
+import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
