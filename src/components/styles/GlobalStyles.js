@@ -33,6 +33,12 @@ const GlobalStyles = css`
         margin: 10px;
     }
 
+    span.account-icon .icon-style{
+        width: 25px;
+        height: 25px;
+        margin: 10px 15px 18px 10px;
+    }
+
     footer {
         text-align: center;
         background-color: transparent;
