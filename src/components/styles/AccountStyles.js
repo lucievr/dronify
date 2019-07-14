@@ -87,6 +87,14 @@ const ordersSection = css`
     margin: 10px 40px;
 `
 
+const viewLink = css`
+    color: #b8bfc6;
+    &:hover {
+        cursor: pointer;
+        color: #fff;
+    }
+`
+
 export {
     sectionWrapper,
     navStyle,
@@ -98,4 +106,5 @@ export {
     profileTitle,
     saveBtn,
     ordersSection,
+    viewLink,
 }
