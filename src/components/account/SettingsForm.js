@@ -9,28 +9,15 @@ export default class UserSettings extends React.Component {
                 <Row form>
                     <Col md={6}>
                         <FormGroup>
-                            <Label for="firstname">First Name</Label>
+                            <Label for="fullname">Full Name</Label>
                             <Input
                                 type="text"
-                                name="firstname"
-                                id="firstname"
+                                name="fullname"
+                                id="fullname"
                                 placeholder="with a placeholder"
                             />
                         </FormGroup>
                     </Col>
-                    <Col md={6}>
-                        <FormGroup>
-                            <Label for="lastname">Last Name</Label>
-                            <Input
-                                type="text"
-                                name="lastname"
-                                id="lastname"
-                                placeholder="password placeholder"
-                            />
-                        </FormGroup>
-                    </Col>
-                </Row>
-                <Row form>
                     <Col md={6}>
                         <FormGroup>
                             <Label for="email">Email</Label>
@@ -42,18 +29,8 @@ export default class UserSettings extends React.Component {
                             />
                         </FormGroup>
                     </Col>
-                    <Col md={6}>
-                        <FormGroup>
-                            <Label for="password">Password</Label>
-                            <Input
-                                type="password"
-                                name="password"
-                                id="password"
-                                placeholder="password placeholder"
-                            />
-                        </FormGroup>
-                    </Col>
                 </Row>
+
                 <FormGroup>
                     <Label for="address">Address</Label>
                     <Input
