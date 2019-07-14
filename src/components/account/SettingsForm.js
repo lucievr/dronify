@@ -6,16 +6,17 @@ export default class UserSettings extends React.Component {
     render() {
         console.log(this.props.user)
         return (
-            <Form>
+            <Form onSubmit={(event) => this.props.handleSubmit(event)}>
                 <Row form>
                     <Col md={6}>
                         <FormGroup>
-                            <Label for="fullname">Full Name</Label>
+                            <Label for="name">Full Name</Label>
                             <Input
                                 type="text"
-                                name="fullname"
-                                id="fullname"
-                                value={this.props.user.nickname}
+                                name="name"
+                                id="name"
+                                value={this.props.user.name}
+                                onChange={(event) => this.props.handleChange(event)}
                             />
                         </FormGroup>
                     </Col>
@@ -27,6 +28,7 @@ export default class UserSettings extends React.Component {
                                 name="email"
                                 id="email"
                                 value={this.props.user.email}
+                                onChange={(event) => this.props.handleChange(event)}
                             />
                         </FormGroup>
                     </Col>
@@ -39,6 +41,7 @@ export default class UserSettings extends React.Component {
                         name="address"
                         id="address"
                         value={this.props.user.address}
+                        onChange={(event) => this.props.handleChange(event)}
                     />
                 </FormGroup>
                 <FormGroup>
@@ -51,6 +54,7 @@ export default class UserSettings extends React.Component {
                         id="exampleAddress2"
                         placeholder="Apartment, studio, or floor"
                         value={this.props.user.address2}
+                        onChange={(event) => this.props.handleChange(event)}
                     />
                 </FormGroup>
                 <Row form>
@@ -62,6 +66,7 @@ export default class UserSettings extends React.Component {
                                 name="city"
                                 id="exampleCity"
                                 value={this.props.user.city}
+                                onChange={(event) => this.props.handleChange(event)}
                             />
                         </FormGroup>
                     </Col>
@@ -73,6 +78,7 @@ export default class UserSettings extends React.Component {
                                 name="country"
                                 id="country"
                                 value={this.props.user.country}
+                                onChange={(event) => this.props.handleChange(event)}
                             />
                         </FormGroup>
                     </Col>
@@ -84,6 +90,7 @@ export default class UserSettings extends React.Component {
                                 name="postcode"
                                 id="postcode"
                                 value={this.props.user.postcode}
+                                onChange={(event) => this.props.handleChange(event)}
                             />
                         </FormGroup>
                     </Col>

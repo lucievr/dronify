@@ -17,7 +17,7 @@ import Home from "../components/account/HomeSection"
 import Settings from "../components/account/SettingsSection"
 import Orders from "../components/account/OrdersSection"
 
-console.log(getProfile())
+// console.log(getProfile())
 
 export default class Account extends React.Component {
     constructor(props) {
@@ -26,7 +26,6 @@ export default class Account extends React.Component {
         this.state = {
             user: {
                 email: user.email,
-                nickname: user.nickname,
                 name: user.name,
                 picture: user.picture,
                 address: "Taborska 31",
@@ -38,12 +37,25 @@ export default class Account extends React.Component {
         }
     }
 
+    handleChange = event => {
+        const { user } = { ...this.state }
+        const currentState = user
+        const { name, value } = event.target
+        currentState[name] = value
+
+        this.setState({ user: currentState })
+    }
+
+    handleSubmit = event => {
+        event.preventDefault()
+        alert(" ✔ Your changes have been saved")
+    }
+
     render() {
         if (!isAuthenticated()) {
             login()
             return <p>Redirecting to login...</p>
         }
-        console.log(this.state.user)
 
         return (
             <>
@@ -76,6 +88,8 @@ export default class Account extends React.Component {
                         <Settings
                             path="/account/settings"
                             user={this.state.user}
+                            handleChange={this.handleChange}
+                            handleSubmit={this.handleSubmit}
                         />
                         <Orders path="/account/orders" user={this.state.user} />
                     </Router>

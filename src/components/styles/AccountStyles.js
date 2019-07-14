@@ -56,6 +56,8 @@ const welcomeMsg = css`
 
 const userImg = css`
     border-radius: 50%;
+    max-width: 200px;
+    max-height: 200px;
 `
 
 const settingsSection = css`
@@ -71,7 +73,7 @@ const profileTitle = css`
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: 500;
-    margin: 1.5rem 1rem;
+    margin: 1rem 1.5rem 2rem;
 `
 
 const saveBtn = css`
