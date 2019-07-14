@@ -29,11 +29,11 @@ export default class Account extends React.Component {
                 nickname: user.nickname,
                 name: user.name,
                 picture: user.picture,
-                address: "",
+                address: "Taborska 31",
                 address2: "",
-                city: "",
-                country: "",
-                postcode: "",
+                city: "Prague",
+                country: "Czech Republic",
+                postcode: "140 00",
             },
         }
     }
