@@ -24,6 +24,7 @@ const Account = () => {
     }
 
     const user = getProfile()
+    console.log(user.email)
 
     return (
         <>
