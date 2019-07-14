@@ -9,7 +9,7 @@ const Settings = ({ user }) => {
                 Welcome to your account, {user.name ? user.name : "friend"}!
             </p> */}
             <h5 css={profileTitle}>Customer Profile</h5>
-            <UserSettings />
+            <UserSettings user={user}/>
         </section>
     )
 }
