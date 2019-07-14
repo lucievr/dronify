@@ -35,8 +35,8 @@ const CarouselUI = ({ position, total, handleClick, children }) => (
 
 const Carousel = makeCarousel(CarouselUI)
 
-const width = "600px",
-    height = "600px"
+const width = "600px", height = "600px"
+
 const Container = styled.div`
     border: 1px solid white;
     position: relative;
@@ -98,7 +98,6 @@ const cardList = css`
 
 const card = css`
     width: 100%;
-    ${"" /* background-color: rgb(255, 255, 255, 0.2); */}
     margin: 30px;
     color: grey;
     font-family: "Montserrat", sans-serif;
