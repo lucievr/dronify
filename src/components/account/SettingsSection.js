@@ -1,13 +1,15 @@
 import React from "react"
-import { settingsSection, welcomeMsg } from "../styles/AccountStyles"
+import { settingsSection, profileTitle } from "../styles/AccountStyles"
+import UserSettings from './SettingsForm'
 
 const Settings = ({ user }) => {
     return (
         <section css={settingsSection}>
-            <p css={welcomeMsg}>
+            {/* <p css={welcomeMsg}>
                 Welcome to your account, {user.name ? user.name : "friend"}!
-            </p>
-            <p>User Settings</p>
+            </p> */}
+            <h5 css={profileTitle}>Customer Profile</h5>
+            <UserSettings />
         </section>
     )
 }
