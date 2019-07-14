@@ -30,8 +30,7 @@ const GlobalStyles = css`
     }
 
     .icon-style {
-        margin: 5px;
-        margin-bottom: -7px;
+        margin: 10px;
     }
 
     footer {

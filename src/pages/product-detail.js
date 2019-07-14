@@ -2,12 +2,84 @@ import React from "react"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import GlobalStyles from "../components/styles/GlobalStyles"
 import { Global, css } from "@emotion/core"
+import styled from "@emotion/styled"
 import SEO from "../components/gatsby-default-files/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import makeCarousel from "react-reveal/makeCarousel"
+import Slide from "react-reveal/Slide"
 
 import { connect } from "react-redux"
 import Icon from "../components/styles/Icon"
+
+const CarouselUI = ({ position, total, handleClick, children }) => (
+    <Container>
+        <Children>
+            {children}
+            <Arrow onClick={handleClick} data-position={position - 1}>
+                {"<"}
+            </Arrow>
+            <Arrow right onClick={handleClick} data-position={position + 1}>
+                {">"}
+            </Arrow>
+        </Children>
+        <Dots>
+            {Array(...Array(total)).map((val, index) => (
+                <Dot key={index} onClick={handleClick} data-position={index}>
+                    {index === position ? "● " : "○ "}
+                </Dot>
+            ))}
+        </Dots>
+    </Container>
+)
+
+const Carousel = makeCarousel(CarouselUI)
+
+const width = "600px",
+    height = "600px"
+const Container = styled.div`
+    border: 1px solid white;
+    position: relative;
+    overflow: hidden;
+    width: ${width};
+`
+const Children = styled.div`
+    width: ${width};
+    position: relative;
+    height: ${height};
+    margin: 0 auto;
+`
+const Arrow = styled.div`
+    text-shadow: 1px 1px 1px #fff;
+    z-index: 100;
+    line-height: ${height};
+    text-align: center;
+    position: absolute;
+    top: 0;
+    width: 10%;
+    font-size: 3em;
+    cursor: pointer;
+    user-select: none;
+    ${props =>
+        props.right
+            ? css`
+                  left: 90%;
+              `
+            : css`
+                  left: 0%;
+              `}
+`
+const Dot = styled.span`
+    font-size: 1.5em;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #fff;
+    user-select: none;
+`
+const Dots = styled.span`
+    text-align: center;
+    width: ${width};
+    z-index: 100;
+`
 
 const cardList = css`
     max-width: 1512px;
@@ -26,7 +98,7 @@ const cardList = css`
 
 const card = css`
     width: 100%;
-    background-color: rgb(255, 255, 255, 0.2);
+    ${"" /* background-color: rgb(255, 255, 255, 0.2); */}
     margin: 30px;
     color: grey;
     font-family: "Montserrat", sans-serif;
@@ -37,7 +109,7 @@ const card = css`
     justify-content: center;
 `
 
-const imageWrapper = css`
+const carouselWrapper = css`
     width: 50%;
     height: auto;
 `
@@ -47,6 +119,9 @@ const textWrapper = css`
     padding: 0 20px;
     text-align: center;
     color: black;
+`
+const descriptionStyle = css`
+    line-height: 1.7;
 `
 
 const specWrapper = css`
@@ -112,7 +187,7 @@ const ProductDetail = () => (
                             localImage1 {
                                 id
                                 childImageSharp {
-                                    fluid(maxWidth: 700, fit: CONTAIN) {
+                                    fluid(maxHeight: 500, fit: CONTAIN) {
                                         ...GatsbyImageSharpFluid
                                     }
                                 }
@@ -120,7 +195,7 @@ const ProductDetail = () => (
                             localImage2 {
                                 id
                                 childImageSharp {
-                                    fluid(maxWidth: 700, fit: CONTAIN) {
+                                    fluid(maxHeight: 500, fit: CONTAIN) {
                                         ...GatsbyImageSharpFluid
                                     }
                                 }
@@ -128,7 +203,7 @@ const ProductDetail = () => (
                             localImage3 {
                                 id
                                 childImageSharp {
-                                    fluid(maxWidth: 700, fit: CONTAIN) {
+                                    fluid(maxHeight: 500, fit: CONTAIN) {
                                         ...GatsbyImageSharpFluid
                                     }
                                 }
@@ -136,7 +211,7 @@ const ProductDetail = () => (
                             localImage4 {
                                 id
                                 childImageSharp {
-                                    fluid(maxWidth: 700, fit: CONTAIN) {
+                                    fluid(maxHeight: 500, fit: CONTAIN) {
                                         ...GatsbyImageSharpFluid
                                     }
                                 }
@@ -155,76 +230,102 @@ const ProductDetail = () => (
                 {allMongodbDronifyDrones.edges.map(({ node }) => (
                     <ul key={node.id} css={cardList}>
                         <li css={card}>
-                            <div css={imageWrapper}>
-                                <Img
-                                    fluid={
-                                        node.localImage1.childImageSharp.fluid
-                                    }
-                                    imgStyle={{
-                                        position: `absolute`,
-                                        objectFit: `contain`,
-                                    }}
-                                    style={{
-                                        position: `relative`,
-                                        maxHeight: `300px`,
-                                    }}
-                                />
-                            </div>
-                            <div css={imageWrapper}>
-                                <Img
-                                    fluid={
-                                        node.localImage2.childImageSharp.fluid
-                                    }
-                                    imgStyle={{
-                                        position: `absolute`,
-                                        objectFit: `contain`,
-                                    }}
-                                    style={{
-                                        position: `relative`,
-                                        maxHeight: `300px`,
-                                    }}
-                                />
-                            </div>
-                            <div css={imageWrapper}>
-                                <Img
-                                    fluid={
-                                        node.localImage3.childImageSharp.fluid
-                                    }
-                                    imgStyle={{
-                                        position: `absolute`,
-                                        objectFit: `contain`,
-                                    }}
-                                    style={{
-                                        position: `relative`,
-                                        maxHeight: `300px`,
-                                    }}
-                                />
-                            </div>
-                            <div css={imageWrapper}>
-                                <Img
-                                    fluid={
-                                        node.localImage4.childImageSharp.fluid
-                                    }
-                                    imgStyle={{
-                                        position: `absolute`,
-                                        objectFit: `contain`,
-                                    }}
-                                    style={{
-                                        position: `relative`,
-                                        maxHeight: `300px`,
-                                    }}
-                                />
-                            </div>
+                            <Carousel defaultWait={3000} css={carouselWrapper}>
+                                <Slide right>
+                                    <div>
+                                        <Img
+                                            fluid={
+                                                node.localImage1.childImageSharp
+                                                    .fluid
+                                            }
+                                            imgStyle={{
+                                                position: `absolute`,
+                                                objectFit: `contain`,
+                                                top: `50px`,
+                                                maxHeight: `500px`,
+                                                maxWidth: `500px`
+                                            }}
+                                            style={{
+                                                position: `relative`,
+                                                maxHeight: `500px`,
+                                            }}
+                                        />
+                                    </div>
+                                </Slide>
+                                <Slide right>
+                                    <div>
+                                        <Img
+                                            fluid={
+                                                node.localImage2.childImageSharp
+                                                    .fluid
+                                            }
+                                            imgStyle={{
+                                                position: `absolute`,
+                                                objectFit: `contain`,
+                                                top: `50px`,
+                                                maxHeight: `500px`,
+                                                maxWidth: `500px`
+                                            }}
+                                            style={{
+                                                position: `relative`,
+                                                maxHeight: `500px`,
+                                            }}
+                                        />
+                                    </div>
+                                </Slide>
+                                <Slide right>
+                                    <div>
+                                        <Img
+                                            fluid={
+                                                node.localImage3.childImageSharp
+                                                    .fluid
+                                            }
+                                            imgStyle={{
+                                                position: `absolute`,
+                                                objectFit: `contain`,
+                                                top: `50px`,
+                                                maxHeight: `500px`,
+                                                maxWidth: `500px`
+                                            }}
+                                            style={{
+                                                position: `relative`,
+                                                maxHeight: `500px`,
+                                            }}
+                                        />
+                                    </div>
+                                </Slide>
+                                <Slide right>
+                                    <div>
+                                        <Img
+                                            fluid={
+                                                node.localImage4.childImageSharp
+                                                    .fluid
+                                            }
+                                            imgStyle={{
+                                                position: `absolute`,
+                                                objectFit: `contain`,
+                                                top: `50px`,
+                                                maxHeight: `500px`,
+                                                maxWidth: `500px`
+                                            }}
+                                            style={{
+                                                position: `relative`,
+                                                maxHeight: `500px`,
+                                            }}
+                                        />
+                                    </div>
+                                </Slide>
+                            </Carousel>
                             <div css={textWrapper}>
-                                <h1 style={{ letterSpacing: `1px` }}>
+                                <h2 style={{ letterSpacing: `1px` }}>
                                     {node.name}
-                                </h1>
+                                </h2>
                                 <h2>€ {node.price}</h2>
                                 <p>
                                     <strong>Category:</strong> {node.category}
                                 </p>
                                 <hr />
-                                <h5>{node.description}</h5>
+                                <h5 css={descriptionStyle}>{node.description}</h5>
                                 <div css={specWrapper}>
                                     <section css={column}>
                                         <p>
