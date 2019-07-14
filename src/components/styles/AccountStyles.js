@@ -16,19 +16,6 @@ const navStyle = css`
     text-align: left;
 `
 
-const homeSection = css`
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/consumer-drones%2Fphantom-3-se-ii.jpg?alt=media&token=9d80bf06-1938-4813-9314-d0c7362e72da');
-    background-size: cover;
-    min-height: 60vh;
-    min-width: 60vw;
-`
-const welcomeMsg = css`
-    text-align: left;
-    padding: 50px;
-    font-size: 1.5rem;
-    
-`
-
 const navLink = css`
     text-decoration: none !important;
     font-family: "Montserrat", sans-serif !important;
@@ -53,5 +40,35 @@ const navLink = css`
         font-size: 0.6rem;
     }
 `
+const homeSection = css`
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/consumer-drones%2Fphantom-3-se-ii.jpg?alt=media&token=9d80bf06-1938-4813-9314-d0c7362e72da");
+    background-size: cover;
+    min-height: 60vh;
+    min-width: 60vw;
+`
 
-export { sectionWrapper, navStyle, navLink, homeSection, welcomeMsg}
+const welcomeMsg = css`
+    text-align: left;
+    padding: 50px;
+    font-size: 1.5rem;
+`
+
+const settingsSection = css`
+    min-height: 60vh;
+    min-width: 60vw;
+`
+
+const ordersSection = css`
+    min-height: 60vh;
+    min-width: 60vw;
+`
+
+export {
+    sectionWrapper,
+    navStyle,
+    navLink,
+    homeSection,
+    welcomeMsg,
+    settingsSection,
+    ordersSection,
+}
