@@ -1,6 +1,6 @@
 import React from "react"
 import { settingsSection, profileTitle } from "../styles/AccountStyles"
-import UserSettings from './SettingsForm'
+import UserSettings from "./SettingsForm"
 
 const Settings = ({ user }) => {
     return (
@@ -9,7 +9,7 @@ const Settings = ({ user }) => {
                 Welcome to your account, {user.name ? user.name : "friend"}!
             </p> */}
             <h5 css={profileTitle}>Customer Profile</h5>
-            <UserSettings user={user}/>
+            <UserSettings user={user} />
         </section>
     )
 }

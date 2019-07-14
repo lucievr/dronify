@@ -54,6 +54,10 @@ const welcomeMsg = css`
     font-size: 1.5rem;
 `
 
+const userImg = css`
+    border-radius: 50%;
+`
+
 const settingsSection = css`
     min-height: 60vh;
     min-width: 50vw;
@@ -70,6 +74,11 @@ const profileTitle = css`
     margin: 1.5rem 1rem;
 `
 
+const saveBtn = css`
+    background-color: #404040;
+    margin: 1.5rem;
+`
+
 const ordersSection = css`
     min-height: 60vh;
     min-width: 50vw;
@@ -82,7 +91,9 @@ export {
     navLink,
     homeSection,
     welcomeMsg,
+    userImg,
     settingsSection,
     profileTitle,
+    saveBtn,
     ordersSection,
 }

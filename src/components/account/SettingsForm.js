@@ -1,9 +1,10 @@
 import React from "react"
-
+import { saveBtn } from "../styles/AccountStyles"
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap"
 
 export default class UserSettings extends React.Component {
     render() {
+        console.log(this.props.user)
         return (
             <Form>
                 <Row form>
@@ -14,7 +15,7 @@ export default class UserSettings extends React.Component {
                                 type="text"
                                 name="fullname"
                                 id="fullname"
-                                placeholder="with a placeholder"
+                                value={this.props.user.nickname}
                             />
                         </FormGroup>
                     </Col>
@@ -25,7 +26,7 @@ export default class UserSettings extends React.Component {
                                 type="email"
                                 name="email"
                                 id="email"
-                                placeholder="with a placeholder"
+                                value={this.props.user.email}
                             />
                         </FormGroup>
                     </Col>
@@ -37,35 +38,53 @@ export default class UserSettings extends React.Component {
                         type="text"
                         name="address"
                         id="address"
-                        placeholder="1234 Main St"
+                        value={this.props.user.address}
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="exampleAddress2">Address Description (optional)</Label>
+                    <Label for="exampleAddress2">
+                        Address Description (optional)
+                    </Label>
                     <Input
                         type="text"
                         name="address2"
                         id="exampleAddress2"
                         placeholder="Apartment, studio, or floor"
+                        value={this.props.user.address2}
                     />
                 </FormGroup>
                 <Row form>
                     <Col md={6}>
                         <FormGroup>
                             <Label for="exampleCity">City</Label>
-                            <Input type="text" name="city" id="exampleCity" />
+                            <Input
+                                type="text"
+                                name="city"
+                                id="exampleCity"
+                                value={this.props.user.city}
+                            />
                         </FormGroup>
                     </Col>
                     <Col md={4}>
                         <FormGroup>
                             <Label for="country">Country</Label>
-                            <Input type="text" name="country" id="country" />
+                            <Input
+                                type="text"
+                                name="country"
+                                id="country"
+                                value={this.props.user.country}
+                            />
                         </FormGroup>
                     </Col>
                     <Col md={2}>
                         <FormGroup>
                             <Label for="postcode">Post Code</Label>
-                            <Input type="text" name="postcode" id="postcode" />
+                            <Input
+                                type="text"
+                                name="postcode"
+                                id="postcode"
+                                value={this.props.user.postcode}
+                            />
                         </FormGroup>
                     </Col>
                 </Row>
@@ -75,7 +94,9 @@ export default class UserSettings extends React.Component {
                         The above details are correct
                     </Label>
                 </FormGroup>
-                <Button>Save</Button>
+                <Button size="lg" css={saveBtn}>
+                    Save Changes
+                </Button>
             </Form>
         )
     }
