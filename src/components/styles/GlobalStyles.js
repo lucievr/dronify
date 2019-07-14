@@ -36,6 +36,8 @@ const GlobalStyles = css`
 
     footer {
         text-align: center;
+        background-color: transparent;
+        margin-bottom: 1rem;
     }
 `
 

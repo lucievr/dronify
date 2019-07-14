@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/gatsby-default-files/layout"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import GlobalStyles from "../components/styles/GlobalStyles"
 import { Global, css } from "@emotion/core"
@@ -148,7 +147,7 @@ const ProductDetail = () => (
             }
         `}
         render={({ allMongodbDronifyDrones }) => (
-            <Layout>
+            <>
                 <Navigation />
                 <Global styles={GlobalStyles} />
                 <SEO title="Product Detail" />
@@ -274,7 +273,8 @@ const ProductDetail = () => (
                         </li>
                     </ul>
                 ))}
-            </Layout>
+                <footer>© {new Date().getFullYear()} dronify</footer>
+            </>
         )}
     />
 )

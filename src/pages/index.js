@@ -6,7 +6,6 @@ import GlobalStyles from "../components/styles/GlobalStyles"
 
 // GATSBY
 import SEO from "../components/gatsby-default-files/seo"
-import Layout from "../components/gatsby-default-files/layout"
 
 // COMPONENTS
 import Landing from "../components/main-page/landing/layout/Landing"
@@ -30,7 +29,7 @@ const IndexPage = () => {
     }
 
     return (
-        <Layout>
+        <>
             <Global styles={GlobalStyles} />
             <SEO title="home" />
             <ReactPageScroller ref={scrollRef}>
@@ -40,7 +39,7 @@ const IndexPage = () => {
                 <Enterprise gotopage={gotopage} css={Category} />
                 <Accessories gotopage={gotopage} css={Category} />
             </ReactPageScroller>
-        </Layout>
+       </>
     )
 }
 

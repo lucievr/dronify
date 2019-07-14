@@ -12,7 +12,7 @@ const Item = css`
 const Content = css`
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 92%;
 `
 
 const Image = css`

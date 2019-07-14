@@ -1,6 +1,4 @@
 import React from "react"
-import GlobalStyles from "../../components/styles/GlobalStyles"
-import { Global } from "@emotion/core"
 
 const ContactForm = () => {
     return (

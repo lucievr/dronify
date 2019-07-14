@@ -17,7 +17,7 @@ const Content = css`
 `
 
 const Image = css`
-    width: 80%;
+    width: 68%;
 `
 
 export default Background

@@ -64,7 +64,7 @@ export const productTitle = css`
   font-family: "Montserrat", sans-serif !important;
   font-weight: 300;
   letter-spacing: 1px;
-  margin-bottom: 20px;
+  margin: 20px;
 `
 
 export const buttonStyle = css`
@@ -73,6 +73,7 @@ export const buttonStyle = css`
   background-color: transparent;
   border: 2px solid #fff;
   padding: 1rem 1rem;
+  margin: 1rem;
   border-radius: 5rem;
   font-size: 1rem;
   text-transform: uppercase;
