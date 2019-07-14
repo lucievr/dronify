@@ -4,7 +4,8 @@ import React from "react"
 import { silentAuth } from "./src/utils/auth"
 
 require("typeface-montserrat")
-class SessionCheck extends React.Component {
+
+export class SessionCheck extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

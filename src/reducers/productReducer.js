@@ -38,18 +38,15 @@ const productReducer = (state = initialState, action) => {
             } else {
 
                 const item = state.menu.find(item => item.node.id === id)
-                console.log(item)
 
                 const newItem = {
                     id: item.node.id,
                     name: item.node.name,
-                    image: item.node.localImage.childImageSharp.fluid,
+                    image: item.node.localImage1.childImageSharp.fluid,
                     price: item.node.price,
                     category: item.node.category,
                     quantity: 1
                 }
-
-                console.log(state.items)
 
                 newItems = [
                     ...state.items,
