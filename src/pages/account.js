@@ -2,16 +2,27 @@ import React from "react"
 import { Router } from "@reach/router"
 import { Link } from "gatsby"
 import SEO from "../components/gatsby-default-files/seo"
-import { Global } from "@emotion/core"
+import AccountNavigation from "../components/account/AccountNavigation"
+import { Global, css } from "@emotion/core"
 import GlobalStyles from "../components/styles/GlobalStyles"
 
-import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
+import { login, isAuthenticated, getProfile } from "../utils/auth"
 
 const Home = ({ user }) => {
     return <p>Hi, {user.name ? user.name : "friend"}!</p>
 }
 const Settings = () => <p>Settings</p>
 const Billing = () => <p>Billing</p>
+
+const sectionWrapper = css`
+    display: flex;
+    flex-direction: row;
+`
+
+const navStyle = css`
+    display: flex;
+    flex-direction: column;
+`
 
 const Account = () => {
     if (!isAuthenticated()) {
@@ -23,27 +34,21 @@ const Account = () => {
 
     return (
         <>
+            <AccountNavigation />
             <Global styles={GlobalStyles} />
-            <SEO title="user account" />
-            <nav>
-                <Link to="/account/">Home</Link>{" "}
-                <Link to="/account/settings/">Settings</Link>{" "}
-                <Link to="/account/billing/">Billing</Link>{" "}
-                <a
-                    href="#logout"
-                    onClick={e => {
-                        logout()
-                        e.preventDefault()
-                    }}
-                >
-                    Log Out
-                </a>
-            </nav>
-            <Router>
-                <Home path="/account/" user={user} />
-                <Settings path="/account/settings" />
-                <Billing path="/account/billing" />
-            </Router>
+            <SEO title="User account" />
+            <section css={sectionWrapper}>
+                <nav css={navStyle}>
+                    <Link to="/account/">Home</Link>{" "}
+                    <Link to="/account/settings/">Settings</Link>{" "}
+                    <Link to="/account/billing/">Billing</Link>{" "}
+                </nav>
+                <Router>
+                    <Home path="/account/" user={user} />
+                    <Settings path="/account/settings" />
+                    <Billing path="/account/billing" />
+                </Router>
+            </section>
             <footer>© {new Date().getFullYear()} dronify</footer>
         </>
     )
