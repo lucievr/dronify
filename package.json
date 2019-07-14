@@ -37,6 +37,7 @@
     "react-helmet": "^5.2.1",
     "react-page-scroller": "^1.5.1",
     "react-redux": "^7.1.0",
+    "react-reveal": "^1.2.2",
     "reactstrap": "^8.0.1",
     "redux": "^4.0.4",
     "typeface-jura": "0.0.72",

@@ -4,6 +4,7 @@ const buttonStyles = css`
 
     text-transform: uppercase;
     padding: 1rem 3rem;
+    margin: 3rem;
     font-size: 1rem;
     letter-spacing: 0.2rem;
     display: inline-block;
@@ -11,7 +12,7 @@ const buttonStyles = css`
     transition: all 0.2s;
     background: transparent;
     color: #fff;
-    border: 3px solid #fff;
+    border: 2px solid #fff;
     box-shadow: 0 1rem 2rem rgba(#000, 0.1);
     cursor: pointer;
 
