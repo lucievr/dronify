@@ -48,14 +48,18 @@ export const bottom__heading__title = css`
 export const bottom__heading__total = css`
     font-size: 1.2rem;
 
-    span:nth-child(2) {
+    span:nth-of-type(2) {
         font-weight: bold;
     }
 `
 
 export const item__box = css`
-    padding: 2rem;
     border-bottom: 1px solid #000;
+
+    td {
+        padding: 0;
+        height: 5rem;
+    }
 
     td:last-child {
         color: red;
@@ -64,13 +68,26 @@ export const item__box = css`
     }
 `
 
+export const buttons = css`
+    display: flex;
+    align-items: center;
+    color: #000;
+`
+
 export const qty = css`
-    background: grey;
-    color: #fff;
-    display: inline-block;
-    height: 1rem;
-    width: 1rem;
-    padding: .5rem;
-    margin: 0 .5rem;
-    border-radius: 10rem;
+    height: 2rem;
+    width: 2rem;
+    margin: 0 .3rem;
+    border-radius: 50%;
+`
+
+export const imageStyles = css`
+    height: 50px;
+    width: 50px;
+`
+
+export const deleteItemButton = css`
+    background: none;
+    border: none;
+    color: red;
 `

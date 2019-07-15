@@ -29,6 +29,10 @@ const GlobalStyles = css`
         color: #000;
     }
 
+    button:focus {
+        outline: none;
+    }
+
     .icon-style {
         margin: 5px;
         margin-bottom: -7px;

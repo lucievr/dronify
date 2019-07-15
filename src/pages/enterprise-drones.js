@@ -88,8 +88,6 @@ const EnterpriseDrones = (props) => {
 
   const { menuItems, addedToCart } = props
 
-  console.log(menuItems)
-
   const data = useStaticQuery(graphql`
       query DbEntQuery {
         allMongodbDronifyDrones(filter: { category: { eq: "enterprise" } }) {

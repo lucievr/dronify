@@ -5,6 +5,7 @@ const initialState = {
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
+
         case 'MENU_LOADED':
             return {
                 ...state,
@@ -34,6 +35,7 @@ const productReducer = (state = initialState, action) => {
 
                 newItems = state.items.slice()
                 newItems[itemIndex].quantity++
+                newItems[itemIndex].price += newItems[itemIndex].price
 
             } else {
 
@@ -59,10 +61,43 @@ const productReducer = (state = initialState, action) => {
                 items: newItems
             }
 
+        case 'ITEM_ADD_QUANTITY':
+
+            const idToIncrease = action.payload
+
+            const indexToIncrease = state.items.findIndex(item => item.id === idToIncrease)
+
+            newItems = state.items.slice()
+            newItems[indexToIncrease].quantity++
+
+            console.log(newItems)
+
+            return {
+                ...state,
+                items: newItems
+            }
+
+        case 'ITEM_REDUCE_QUANTITY':
+
+            const idToReduce = action.payload
+
+            const indexToReduce = state.items.findIndex(item => item.id === idToReduce)
+
+            newItems = state.items.slice()
+
+            if (newItems[indexToReduce].quantity > 1) {
+                newItems[indexToReduce].quantity--
+            }
+
+            return {
+                ...state,
+                items: newItems
+            }
+
         case 'ITEM_REMOVE_FROM_CART':
 
-            const indexToRemove = action.payload
-            const itemsLeft = state.items.filter(item => item.id !== indexToRemove)
+            const idToRemove = action.payload
+            const itemsLeft = state.items.filter(item => item.id !== idToRemove)
 
             return {
                 ...state,
