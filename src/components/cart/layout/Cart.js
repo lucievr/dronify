@@ -25,6 +25,8 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
 
     const total = items.reduce((acc, item) => (acc + item.price * item.quantity), 0)
 
+    const content = (total !== 0) ? <View /> : <tr><td>No items in the cart</td></tr>
+
     return (
         <div css={wrapper} css={GlobalStyles}>
             <div css={top}>
@@ -51,47 +53,61 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            items.map((item) => {
-
-                                const { name, price, id, quantity, image } = item
-
-                                return (
-                                    <tr key={id} css={item__box}>
-                                        <td><img css={imageStyles} src={image.src} /></td>
-                                        <td>{name}</td>
-                                        <td>
-                                            <div css={buttons}>
-                                                <button
-                                                    css={qty}
-                                                    onClick={() => reduceQuantity(id)}>
-                                                    -
-                                                </button>
-                                                {quantity}
-                                                <button
-                                                    css={qty}
-                                                    onClick={() => addQuantity(id)}>
-                                                    +
-                                                </button>
-                                            </div>
-                                        </td>
-                                        <td>{price}€</td>
-                                        <td>{quantity * price}€</td>
-                                        <td>
-                                            <button
-                                                css={deleteItemButton}
-                                                onClick={() => deleteFromCart(id)}>
-                                                &times;
-                                            </button>
-                                        </td>
-                                    </tr>
-                                )
-                            })
-                        }
+                        {content}
                     </tbody>
                 </Table>
+                <button>Next Step</button>
             </div>
         </div>
+    )
+}
+
+const View = ({ items }) => {
+
+    if (items === undefined) {
+        return null
+    }
+
+    return (
+
+        items.map((item) => {
+
+            const { name, price, id, quantity, image } = item
+
+            return (
+                <>
+                    <tr key={id} css={item__box}>
+                        <td><img css={imageStyles} src={image.src} /></td>
+                        <td>{name}</td>
+                        <td>
+                            <div css={buttons}>
+                                <button
+                                    css={qty}
+                                    onClick={() => reduceQuantity(id)}>
+                                    -
+                                </button>
+                                {quantity}
+                                <button
+                                    css={qty}
+                                    onClick={() => addQuantity(id)}>
+                                    +
+                                </button>
+                            </div>
+                        </td>
+                        <td>{price}€</td>
+                        <td>{quantity * price}€</td>
+                        <td>
+                            <button
+                                css={deleteItemButton}
+                                onClick={() => deleteFromCart(id)}>
+                                &times;
+                            </button>
+                        </td>
+                    </tr>
+                </>
+            )
+        })
+
     )
 }
 

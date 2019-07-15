@@ -70,8 +70,6 @@ const productReducer = (state = initialState, action) => {
             newItems = state.items.slice()
             newItems[indexToIncrease].quantity++
 
-            console.log(newItems)
-
             return {
                 ...state,
                 items: newItems
