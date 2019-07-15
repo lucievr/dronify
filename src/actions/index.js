@@ -24,6 +24,20 @@ const addedToCart = (id) => {
     }
 }
 
+const addQuantity = (id) => {
+    return {
+        type: 'ITEM_ADD_QUANTITY',
+        payload: id
+    }
+}
+
+const reduceQuantity = (id) => {
+    return {
+        type: 'ITEM_REDUCE_QUANTITY',
+        payload: id
+    }
+}
+
 const deleteFromCart = (id) => {
     return {
         type: 'ITEM_REMOVE_FROM_CART',
@@ -36,5 +50,7 @@ export {
     menuRequested,
     menuError,
     addedToCart,
-    deleteFromCart
+    deleteFromCart,
+    addQuantity,
+    reduceQuantity
 }
