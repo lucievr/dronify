@@ -19,100 +19,36 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 
-const contentWrapper = css`
-  text-align: center;
-  margin-top: 160px;
-`
-
-const categoryTitle = css`
-  font-weight: 300;
-`
-
-const cardsWrapper = css`
-  width: 100%;
-  max-width: 1512px;
-  margin: 0 auto 50px auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  line-height: 1.5;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-`
-
-const cardList = css`
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-`
-
-const card = css`
-  min-width: 450px;
-  min-height: 500px;
-  background-color: rgb(255, 255, 255, 0.2);
-  margin: 30px;
-  color: grey;
-  font-family: "Montserrat", sans-serif;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-`
-
-const imageWrapper = css`
-  width: 100%;
-  height: auto;
-`
-
-const textWrapper = css`
-  padding: 0 20px;
-  text-align: center;
-  color: black;
-`
-const button = css`
-  color: #fff;
-  background-color: transparent;
-  border: 2px solid #fff;
-  padding: 1rem 1rem;
-  border-radius: 5rem;
-  font-size: 1rem;
-  text-transform: uppercase;
-  &:hover {
-    background-color: rgb(0, 0, 0, 0.3);
-    cursor: pointer;
-  }
-`
-
-const EnterpriseDrones = (props) => {
-
+const EnterpriseDrones = props => {
     useEffect(() => {
         props.menuLoaded(data.allMongodbDronifyDrones.edges)
     }, [])
 
     const { menuItems, addedToCart } = props
 
+    console.log(menuItems)
+
     const data = useStaticQuery(graphql`
-      query DbEntQuery {
-        allMongodbDronifyDrones(filter: { category: { eq: "enterprise" } }) {
-          edges {
-            node {
-              id
-              name
-              category
-              price
-              imageURL1
-              localImage1 {
-                id
-                childImageSharp {
-                  fluid(maxWidth: 700, fit: CONTAIN) {
-                    ...GatsbyImageSharpFluid
-                  }
+        query DbEntQuery {
+            allMongodbDronifyDrones(
+                filter: { category: { eq: "enterprise" } }
+            ) {
+                edges {
+                    node {
+                        id
+                        name
+                        category
+                        price
+                        imageURL1
+                        localImage1 {
+                            id
+                            childImageSharp {
+                                fluid(maxWidth: 700, fit: CONTAIN) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
