@@ -1,5 +1,6 @@
 import React from "react"
 import { ordersSection, profileTitle, viewLink } from "../styles/AccountStyles"
+import { Link } from 'gatsby'
 
 import { Table } from "reactstrap"
 
@@ -38,9 +39,9 @@ const Orders = ({ user }) => {
                         <td>€ 699</td>
                         <td>delivered</td>
                         <td>
-                            <a href="#" css={viewLink}>
+                            <Link to='' css={viewLink}>
                                 View
-                            </a>
+                            </Link>
                         </td>
                     </tr>
                     <tr>
@@ -49,9 +50,9 @@ const Orders = ({ user }) => {
                         <td>€ 2999</td>
                         <td>processed</td>
                         <td>
-                            <a href="#" css={viewLink}>
+                            <Link to='' css={viewLink}>
                                 View
-                            </a>
+                            </Link>
                         </td>
                     </tr>
                     <tr>
@@ -60,9 +61,9 @@ const Orders = ({ user }) => {
                         <td>–</td>
                         <td>in progress</td>
                         <td>
-                            <a href="#" css={viewLink}>
+                            <Link to='' css={viewLink}>
                                 –
-                            </a>
+                            </Link>
                         </td>
                     </tr>
                 </tbody>

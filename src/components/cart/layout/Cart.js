@@ -28,35 +28,37 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
     const content = (total !== 0) ? <View /> : <tr><td>No items in the cart</td></tr>
 
     return (
-        <div css={wrapper} css={GlobalStyles}>
-            <div css={top}>
-                <Button color="secondary">
-                    <Link css={top_button} to='/'>Home</Link>
-                </Button>
-            </div>
-            <div css={bottom}>
-                <div css={bottom__heading}>
-                    <h3 css={bottom__heading__title}>My order</h3>
-                    <div css={bottom__heading__total}>
-                        <span>Total: </span>
-                        <span>{total}€</span>
-                    </div>
+        <div css={GlobalStyles}>
+            <div css={wrapper}>
+                <div css={top}>
+                    <Button color="secondary">
+                        <Link css={top_button} to='/'>Home</Link>
+                    </Button>
                 </div>
-                <Table hover>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Total Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {content}
-                    </tbody>
-                </Table>
-                <button>Next Step</button>
+                <div css={bottom}>
+                    <div css={bottom__heading}>
+                        <h3 css={bottom__heading__title}>My order</h3>
+                        <div css={bottom__heading__total}>
+                            <span>Total: </span>
+                            <span>{total}€</span>
+                        </div>
+                    </div>
+                    <Table hover>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Unit Price</th>
+                                <th>Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {content}
+                        </tbody>
+                    </Table>
+                    <button>Next Step</button>
+                </div>
             </div>
         </div>
     )
@@ -77,7 +79,7 @@ const View = ({ items }) => {
             return (
                 <>
                     <tr key={id} css={item__box}>
-                        <td><img css={imageStyles} src={image.src} /></td>
+                        <td><img css={imageStyles} src={image.src} alt='product' /></td>
                         <td>{name}</td>
                         <td>
                             <div css={buttons}>
