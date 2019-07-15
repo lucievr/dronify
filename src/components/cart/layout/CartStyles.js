@@ -59,6 +59,8 @@ export const item__box = css`
     td {
         padding: 0;
         height: 5rem;
+        text-align: center; 
+        vertical-align: middle;
     }
 
     td:last-child {
