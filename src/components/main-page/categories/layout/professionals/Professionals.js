@@ -8,7 +8,7 @@ import { Item, Content, Image } from "./ProfessionalsStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import Fade from "react-reveal/Fade"
 
-const Professionals = () => {
+const Professionals = props => {
     return (
         <div css={Background}>
             <div css={DarkOverlay}>
@@ -28,6 +28,13 @@ const Professionals = () => {
                             />
                         </Fade>
                     </div>
+                    <button
+                        onClick={() => {
+                            props.gotopage(0) //Go to top, page 0
+                        }}
+                    >
+                        Back to top
+                    </button>
                 </div>
             </div>
         </div>

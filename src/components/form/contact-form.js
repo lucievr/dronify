@@ -1,37 +1,76 @@
 import React from "react"
+import { saveBtn, sectionWrapper } from "../styles/AccountStyles"
+import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap"
+import { css } from "@emotion/core"
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 
-const ContactForm = () => {
+const GoogleMaps = css`
+    width: 50%;
+    height: 80vh;
+    position: relative;
+`
+const FlexContainer = css`
+    display: flex;
+    justify-content: center;
+`
+
+const ContactForm = props => {
     return (
-        <form name="contact" method="POST" data-netlify="true">
-            <p>
-                <label>
-                    Your Name: <input type="text" name="name" />
-                </label>
-            </p>
-            <p>
-                <label>
-                    Your Email: <input type="email" name="email" />
-                </label>
-            </p>
-            <p>
-                <label>
-                    Your Role:{" "}
-                    <select name="role[]" multiple>
-                        <option value="leader">Leader</option>
-                        <option value="follower">Follower</option>
-                    </select>
-                </label>
-            </p>
-            <p>
-                <label>
-                    Message: <textarea name="message"></textarea>
-                </label>
-            </p>
-            <p>
-                <button type="submit">Send</button>
-            </p>
-        </form>
+        <>
+            <section css={sectionWrapper}>
+                <Form name="contact" method="POST" data-netlify="true">
+                    <Col form>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="name">
+                                    Your Name: <input type="text" name="name" />
+                                </Label>
+                            </FormGroup>
+                        </Col>
+
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="email">
+                                    Your Email:{" "}
+                                    <input type="email" name="email" />
+                                </Label>
+                            </FormGroup>
+                        </Col>
+
+                        <Col md={6}>
+                            <FormGroup>
+                                <label>
+                                    Message:{" "}
+                                    <textarea name="message"></textarea>
+                                </label>
+                            </FormGroup>
+                        </Col>
+                        <Col md={6}>
+                            <Button size="lg" css={saveBtn}>
+                                Send
+                            </Button>
+                        </Col>
+                    </Col>
+                </Form>
+            </section>
+
+            <div css={FlexContainer}>
+                <div css={GoogleMaps}>
+                    <Map
+                        google={props.google}
+                        zoom={8}
+                        initialCenter={{ lat: 50.06224, lng: 14.437376 }}
+                    >
+                        <Marker position={{ lat: 50.06224, lng: 14.437376 }} />
+                    </Map>
+                </div>
+            </div>
+        </>
     )
 }
 
-export default ContactForm
+/* export default ContactForm
+ */
+export default GoogleApiWrapper({
+    apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
+})(ContactForm)
