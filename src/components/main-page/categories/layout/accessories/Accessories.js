@@ -7,6 +7,8 @@ import Background from "./AccessoriesStyles"
 import { Item, Content } from "./AccessoriesStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import { StaticQuery, graphql } from "gatsby"
+import { backToTop } from "../../button/ButtonStyles"
+import Icon from "../../../../styles/Icon"
 
 const Accessories = props => (
     <StaticQuery
@@ -30,14 +32,15 @@ const Accessories = props => (
                             </Link>
                         </div>
                         <div css={Item}></div>
+                        <button
+                            css={backToTop}
+                            onClick={() => {
+                                props.gotopage(0) //Go to top, page 0
+                            }}
+                        >
+                            <Icon name="chevrons-up" />
+                        </button>
                     </div>
-                    <button
-                        onClick={() => {
-                            props.gotopage(0) //Go to top, page 0
-                        }}
-                    >
-                        Back to top
-                    </button>
 
                     <footer>
                         © {new Date().getFullYear()}{" "}

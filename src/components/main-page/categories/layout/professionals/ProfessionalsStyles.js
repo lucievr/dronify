@@ -10,9 +10,9 @@ const Item = css`
 `
 
 const Content = css`
+    position: relative;
     display: flex;
     align-items: center;
-
     height: 100%;
 `
 
