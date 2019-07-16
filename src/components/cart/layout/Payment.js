@@ -246,7 +246,7 @@ class Payment extends React.Component {
                                     </span>
                                 ) : null}
                             </FormGroup>
-                            <Link to="/cart/">
+                            <Link to="/delivery/">
                                 <Button size="lg">Previous Step</Button>
                             </Link>
 
