@@ -49,7 +49,7 @@ const GlobalStyles = css`
         margin-bottom: 1rem;
     }
 
-    svg {
+  .loaded svg {
   width: 100px;
   display: block;
   margin: 40px auto 0;
