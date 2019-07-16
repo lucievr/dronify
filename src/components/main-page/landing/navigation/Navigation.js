@@ -9,7 +9,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons"
 
 // COMPONENTS
 import Button from "../../navigation-button/Button"
-import { NavBar, NavMenuTop, ButtonWrapper, LogoName, Icons, IconItem, NavList, NavItem, NavLink} from '../../../styles/NavigationStyles'
+import { NavBar, NavMenuTop, ButtonWrapper, LogoName, Icons, IconItem, NavList, NavItem, NavLink } from '../../../styles/NavigationStyles'
 
 const cart = <FontAwesomeIcon
     icon={faShoppingCart}

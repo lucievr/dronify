@@ -42,6 +42,7 @@ export const Icons = css`
     flex: 1 1 20%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 
     div:first-of-type {
         margin-right: 1rem;

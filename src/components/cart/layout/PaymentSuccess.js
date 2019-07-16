@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Button, Spinner } from "reactstrap"
 import { Global } from "@emotion/core"
 import { Link } from "gatsby"
@@ -14,45 +14,39 @@ import {
     bottom__heading__title,
     bottom__heading__total,
 } from "./CartStyles"
+import { redirectTo } from "@reach/router";
 
-class PaymentSuccess extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isLoading: true,
-        }
-    }
+const PaymentSuccess = () => {
 
-    loadAndRedirect = async () => {
-        await setTimeout(() => {
-            this.setState({ isLoading: false })
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 2000)
+        setTimeout(() => {
+            navigate('/')
         }, 4000)
-        .setTimeout(navigate("/"), 4000)   
-    }
+    }, [])
 
-    componentDidMount() {
-        this.loadAndRedirect();
-    }
-
-    render() {
-        return (
-            <section css={wrapper}>
-                <Global styles={GlobalStyles} />
-                <div css={top}>
-                    <Button color="secondary">
-                        <Link css={top_button} to="/">
-                            Home
-                        </Link>
-                    </Button>
+    return (
+        <section css={wrapper}>
+            <Global styles={GlobalStyles} />
+            <div css={top}>
+                <Button color="secondary">
+                    <Link css={top_button} to="/">
+                        Home
+                    </Link>
+                </Button>
+            </div>
+            <div css={bottom}>
+                <div css={bottom__heading}>
+                    <h3 css={bottom__heading__title}>My order</h3>
+                    <span css={bottom__heading__total}>
+                        <span>PAYMENT </span>
+                    </span>
                 </div>
-                <div css={bottom}>
-                    <div css={bottom__heading}>
-                        <h3 css={bottom__heading__title}>My order</h3>
-                        <span css={bottom__heading__total}>
-                            <span>PAYMENT </span>
-                        </span>
-                    </div>
-                    {this.state.isLoading ? 
+                {loading ?
                     (<div className="loading">
                         <Spinner
                             color="info"
@@ -92,13 +86,12 @@ class PaymentSuccess extends React.Component {
                         </svg>
                         <p className="svg success">
                             Oh Yeah! Your payment has been processed.
-                        </p>
+                    </p>
                     </div>)
                 }
-                </div>
-            </section>
-        )
-    }
+            </div>
+        </section>
+    )
 }
 
 export default PaymentSuccess
