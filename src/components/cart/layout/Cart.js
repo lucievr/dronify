@@ -1,9 +1,10 @@
 import React from "react"
-import { Button, Table } from "reactstrap"
+import { Table } from "reactstrap"
 import { Global } from "@emotion/core"
 import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { deleteFromCart, addQuantity, reduceQuantity, removeAllItems } from "../../../actions"
+import Navigation from '../../main-page/landing/navigation/Navigation'
 
 import GlobalStyles from "../../styles/GlobalStyles"
 
@@ -50,13 +51,7 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllIte
         <div>
             <Global styles={GlobalStyles} />
             <div css={wrapper}>
-                <div css={top}>
-                    <Button color="secondary">
-                        <Link css={top_button} to="/">
-                            Home
-                        </Link>
-                    </Button>
-                </div>
+                <Navigation />
                 <div css={bottom}>
                     <div css={bottom__heading}>
                         <h3 css={bottom__heading__title}>My order</h3>
