@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import GlobalStyles from "../../styles/GlobalStyles"
 import { login, isAuthenticated } from "../../../utils/auth"
 import { navigate } from "gatsby"
+import Navigation from '../../main-page/landing/navigation/Navigation'
 
 import {
     wrapper,
@@ -61,13 +62,7 @@ class DeliveryForm extends React.Component {
         return (
             <section css={wrapper}>
                 <Global styles={GlobalStyles} />
-                <div css={top}>
-                    <Button color="secondary">
-                        <Link css={top_button} to="/">
-                            Home
-                        </Link>
-                    </Button>
-                </div>
+                <Navigation />
                 <div css={bottom}>
                     <div css={bottom__heading}>
                         <h3 css={bottom__heading__title}>My order</h3>
@@ -76,7 +71,7 @@ class DeliveryForm extends React.Component {
                         </span>
                     </div>
 
-                    <Form onSubmit={this.handleSubmit}>
+                    <Form onSubmit={this.handleSubmit} style={{ padding: `1rem` }}>
                         <Row form>
                             <Col md={6}>
                                 <FormGroup>
@@ -183,10 +178,10 @@ class DeliveryForm extends React.Component {
                             </Label>
                         </FormGroup>
                         <Link to="/cart/">
-                            <Button size="lg">Previous Step</Button>
+                            <Button style={{marginRight: `20rem`, margin: `1rem`}} size="lg">Previous Step</Button>
                         </Link>
 
-                        <Button size="lg" type="submit">
+                        <Button style={{margin: `1rem`}} type="submit" size="lg">
                             Next Step
                         </Button>
                     </Form>

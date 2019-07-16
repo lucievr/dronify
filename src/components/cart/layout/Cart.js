@@ -40,9 +40,9 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllIte
             </span>
         ) : (
                 <div css={cartButtons}>
-                    <Button color="info" size="lg" onClick={() => removeAllItems()}>Empty</Button>
+                    <Button color="secondary" size="lg" onClick={() => removeAllItems()}>Empty</Button>
                     <Link to="/delivery/">
-                        <Button color="info" size="lg">Next Step</Button>
+                        <Button color="secondary" size="lg">Next Step</Button>
                     </Link>
                 </div>
             )
