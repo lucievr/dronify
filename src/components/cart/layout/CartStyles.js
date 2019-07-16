@@ -92,10 +92,15 @@ export const qty = css`
 export const imageStyles = css`
     height: 50px;
     width: 50px;
+    margin: .5rem;
 `
 
 export const deleteItemButton = css`
     background: none;
     border: none;
     color: red;
+`
+
+export const emptyCart = css`
+    padding: 1.5rem;
 `
