@@ -7,6 +7,8 @@ import Background from "./EnterpriseStyles"
 import { Item, Content, Image } from "./EnterpriseStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import Fade from "react-reveal/Fade"
+import { backToTop } from "../../button/ButtonStyles"
+import Icon from "../../../../styles/Icon"
 
 const Enterprise = props => {
     return (
@@ -29,11 +31,12 @@ const Enterprise = props => {
                         </Link>
                     </div>
                     <button
+                        css={backToTop}
                         onClick={() => {
                             props.gotopage(0) //Go to top, page 0
                         }}
                     >
-                        Back to top
+                        <Icon name="chevrons-up" />
                     </button>
                 </div>
             </div>
