@@ -26,8 +26,6 @@ const EnterpriseDrones = props => {
 
     const { menuItems, addedToCart } = props
 
-    console.log(menuItems)
-
     const data = useStaticQuery(graphql`
         query DbEntQuery {
             allMongodbDronifyDrones(
@@ -61,44 +59,46 @@ const EnterpriseDrones = props => {
             <div css={contentWrapper}>
                 <h1 css={categoryTitle}>Enterprise drones</h1>
                 <div css={cardsWrapper}>
-                    {menuItems.map(({ node }) => (
-                        <ul key={node.id} css={cardList}>
-                            <li css={card}>
-                                <div css={imageWrapper}>
-                                    <Img
-                                        fluid={
-                                            node.localImage1.childImageSharp
-                                                .fluid
-                                        }
-                                        imgStyle={{
-                                            position: `absolute`,
-                                            objectFit: `contain`,
-                                        }}
-                                        style={{
-                                            position: `relative`,
-                                            maxHeight: `280px`,
-                                        }}
-                                    />
-                                </div>
-                                <div css={textWrapper}>
-                                    <h3 css={productTitle}>{node.name}</h3>
-                                    <p>
-                                        <strong>Category:</strong>{" "}
-                                        {node.category}
-                                    </p>
-                                    <p>
-                                        <strong>Price:</strong> € {node.price}
-                                    </p>
-                                    <button
-                                        onClick={() => addedToCart(node.id)}
-                                        css={buttonStyle}
-                                    >
-                                        Show product
-                                    </button>
-                                </div>
-                            </li>
-                        </ul>
-                    ))}
+                    {
+                        menuItems.map(({ node }) => (
+                            <ul key={node.id} css={cardList}>
+                                <li css={card}>
+                                    <div css={imageWrapper}>
+                                        <Img
+                                            fluid={
+                                                node.localImage1.childImageSharp
+                                                    .fluid
+                                            }
+                                            imgStyle={{
+                                                position: `absolute`,
+                                                objectFit: `contain`,
+                                            }}
+                                            style={{
+                                                position: `relative`,
+                                                maxHeight: `280px`,
+                                            }}
+                                        />
+                                    </div>
+                                    <div css={textWrapper}>
+                                        <h3 css={productTitle}>{node.name}</h3>
+                                        <p>
+                                            <strong>Category:</strong>{" "}
+                                            {node.category}
+                                        </p>
+                                        <p>
+                                            <strong>Price:</strong> € {node.price}
+                                        </p>
+                                        <button
+                                            onClick={() => addedToCart(node.id)}
+                                            css={buttonStyle}
+                                        >
+                                            Show product
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        ))
+                    }
                 </div>
                 <footer>© {new Date().getFullYear()} dronify</footer>
             </div>

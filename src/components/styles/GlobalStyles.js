@@ -29,6 +29,10 @@ const GlobalStyles = css`
         color: #000;
     }
 
+    button:focus {
+        outline: none;
+    }
+
     .icon-style {
         margin: 10px;
     }
@@ -44,6 +48,75 @@ const GlobalStyles = css`
         background-color: transparent;
         margin-bottom: 1rem;
     }
+
+    svg {
+  width: 100px;
+  display: block;
+  margin: 40px auto 0;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  &.circle {
+    -webkit-animation: dash .9s ease-in-out;
+    animation: dash .9s ease-in-out;
+  }
+  &.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash .9s .35s ease-in-out forwards;
+    animation: dash .9s .35s ease-in-out forwards;
+  }
+  &.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check .9s .35s ease-in-out forwards;
+    animation: dash-check .9s .35s ease-in-out forwards;
+  }
+}
+
+p.svg {
+  text-align: center;
+  margin: 20px 0 60px;
+  font-size: 1.25em;
+}
+
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
 `
 
 const DarkOverlay = css`
