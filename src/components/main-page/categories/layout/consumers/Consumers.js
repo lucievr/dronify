@@ -8,7 +8,7 @@ import { Item, Content, Image } from "./ConsumersStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import Fade from "react-reveal/Fade"
 
-const Consumers = () => {
+const Consumers = props => {
     return (
         <div css={Background}>
             <div css={DarkOverlay}>
@@ -28,6 +28,13 @@ const Consumers = () => {
                             <Button label="Explore" />
                         </Link>
                     </div>
+                    <button
+                        onClick={() => {
+                            props.gotopage(0) //Go to top, page 0
+                        }}
+                    >
+                        Click
+                    </button>
                 </div>
             </div>
         </div>

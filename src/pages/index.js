@@ -23,24 +23,28 @@ const Category = css`
 `
 
 const IndexPage = () => {
-    const scrollRef = null
+    let scrollRef = null
 
     const gotopage = eventKey => {
-        scrollRef.gotopage(eventKey)
+        scrollRef.goToPage(eventKey)
     }
 
     return (
         <>
             <Global styles={GlobalStyles} />
             <SEO title="home" />
-            <ReactPageScroller ref={scrollRef}>
+            <ReactPageScroller
+                ref={ref => {
+                    scrollRef = ref
+                }}
+            >
                 <Landing />
                 <Consumers gotopage={gotopage} css={Category} />
                 <Professionals gotopage={gotopage} css={Category} />
                 <Enterprise gotopage={gotopage} css={Category} />
                 <Accessories gotopage={gotopage} css={Category} />
-                <ScrollUpButton />
             </ReactPageScroller>
+            <ScrollUpButton />
         </>
     )
 }

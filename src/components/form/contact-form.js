@@ -2,7 +2,17 @@ import React from "react"
 import { saveBtn, sectionWrapper } from "../styles/AccountStyles"
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap"
 import { css } from "@emotion/core"
-import GoogleMapReact from "google-maps-react"
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
+
+const GoogleMaps = css`
+    width: 50%;
+    height: 80vh;
+    position: relative;
+`
+const FlexContainer = css`
+    display: flex;
+    justify-content: center;
+`
 
 const ContactForm = props => {
     return (
@@ -44,11 +54,17 @@ const ContactForm = props => {
                 </Form>
             </section>
 
-            <Map
-                google={props.google}
-                zoom={8}
-                initialCenter={{ lat: 47.444, lng: -122.176 }}
-            />
+            <div css={FlexContainer}>
+                <div css={GoogleMaps}>
+                    <Map
+                        google={props.google}
+                        zoom={8}
+                        initialCenter={{ lat: 50.06224, lng: 14.437376 }}
+                    >
+                        <Marker position={{ lat: 50.06224, lng: 14.437376 }} />
+                    </Map>
+                </div>
+            </div>
         </>
     )
 }
@@ -56,5 +72,5 @@ const ContactForm = props => {
 /* export default ContactForm
  */
 export default GoogleApiWrapper({
-    apiKey: "AIzaSyAC9WtkRbRs0W1wo_bpmspdAsOGKSll5zA",
+    apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
 })(ContactForm)
