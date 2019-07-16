@@ -7,6 +7,8 @@ import Background from "./ProfessionalsStyles"
 import { Item, Content, Image } from "./ProfessionalsStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import Fade from "react-reveal/Fade"
+import { backToTop } from "../../button/ButtonStyles"
+import Icon from "../../../../styles/Icon"
 
 const Professionals = props => {
     return (
@@ -29,11 +31,12 @@ const Professionals = props => {
                         </Fade>
                     </div>
                     <button
+                        css={backToTop}
                         onClick={() => {
                             props.gotopage(0) //Go to top, page 0
                         }}
                     >
-                        Back to top
+                        <Icon className="arrow" name="chevrons-up" />
                     </button>
                 </div>
             </div>
