@@ -3,6 +3,7 @@ import { Button, Spinner } from "reactstrap"
 import { Global } from "@emotion/core"
 import { Link } from "gatsby"
 import GlobalStyles from "../../styles/GlobalStyles"
+import { navigate } from "gatsby"
 
 import {
     wrapper,
@@ -22,10 +23,15 @@ class PaymentSuccess extends React.Component {
         }
     }
 
-    componentDidMount() {
-        setTimeout(() => {
+    loadAndRedirect = async () => {
+        await setTimeout(() => {
             this.setState({ isLoading: false })
         }, 4000)
+        .setTimeout(navigate("/"), 4000)   
+    }
+
+    componentDidMount() {
+        this.loadAndRedirect();
     }
 
     render() {

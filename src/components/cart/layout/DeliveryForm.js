@@ -3,7 +3,7 @@ import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap"
 import { Global } from "@emotion/core"
 import { Link } from "gatsby"
 import GlobalStyles from "../../styles/GlobalStyles"
-import { login, isAuthenticated, getProfile } from "../../../utils/auth"
+import { login, isAuthenticated } from "../../../utils/auth"
 import { navigate } from "gatsby"
 
 import {
