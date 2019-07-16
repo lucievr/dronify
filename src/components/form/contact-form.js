@@ -23,7 +23,7 @@ const ContactForm = props => {
                         <Col md={6}>
                             <FormGroup>
                                 <Label for="name">
-                                    Your Name: <input type="text" name="name" />
+                                    Your Name: <Input type="text" name="name" />
                                 </Label>
                             </FormGroup>
                         </Col>
@@ -34,7 +34,7 @@ const ContactForm = props => {
                             <FormGroup>
                                 <Label for="email">
                                     Your Email:{" "}
-                                    <input type="email" name="email" />
+                                    <Input type="email" name="email" />
                                 </Label>
                             </FormGroup>
                         </Col>
@@ -44,7 +44,7 @@ const ContactForm = props => {
                             <FormGroup>
                                 <label>
                                     Message:{" "}
-                                    <textarea name="message"></textarea>
+                                    <Input type="textarea" name="message" />
                                 </label>
                             </FormGroup>
                         </Col>

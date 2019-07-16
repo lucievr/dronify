@@ -10,9 +10,7 @@ import GlobalStyles from "../../styles/GlobalStyles"
 
 import {
     wrapper,
-    top,
     bottom,
-    top_button,
     bottom__heading,
     bottom__heading__title,
     bottom__heading__total,

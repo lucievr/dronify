@@ -9,9 +9,7 @@ import Navigation from '../../main-page/landing/navigation/Navigation'
 
 import {
     wrapper,
-    top,
     bottom,
-    top_button,
     bottom__heading,
     bottom__heading__title,
     bottom__heading__total,
