@@ -1,29 +1,28 @@
 import React from "react"
-import { connect } from 'react-redux'
+import { connect } from "react-redux"
 import { Link } from "gatsby"
-
-// FONTAWESOME
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
-import { faUser } from "@fortawesome/free-regular-svg-icons"
 
 // COMPONENTS
 import Button from "../../navigation-button/Button"
-import { NavBar, NavMenuTop, ButtonWrapper, LogoName, Icons, IconItem, NavList, NavItem, NavLink } from '../../../styles/NavigationStyles'
-
-const cart = <FontAwesomeIcon
-    icon={faShoppingCart}
-    size="1x"
-    color="white" />
-const user = <FontAwesomeIcon
-    icon={faUser}
-    size="1x"
-    color="white" />
-
+import Icon from "../../../styles/Icon"
+import {
+    NavBar,
+    NavMenuTop,
+    ButtonWrapper,
+    LogoName,
+    Icons,
+    IconItem,
+    NavList,
+    NavItem,
+    NavLink,
+} from "../../../styles/NavigationStyles"
+import { isAuthenticated, logout } from "../../../../utils/auth"
 
 const Navigation = ({ items }) => {
-
-    const total = items.reduce((acc, item) => (acc + item.price * item.quantity), 0)
+    const total = items.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+    )
 
     return (
         <nav css={NavBar}>
@@ -32,19 +31,51 @@ const Navigation = ({ items }) => {
                     <Button />
                 </div>
                 <Link to="/">
-                    <span css={LogoName}> Dronify </span>
+                    <div css={LogoName}> Dronify </div>
                 </Link>
                 <div css={Icons}>
-                    <Link to="/account">
-                        <div css={IconItem}>
-                            {user}
-                            <span>Log In</span>
-                        </div>
-                    </Link>
+                    {!isAuthenticated() ? (
+                        <Link to="/account">
+                            <div css={IconItem}>
+                                <span className="iconDiv">
+                                    <Icon name="user-plus" />
+                                </span>
+                                <span className="iconName">Log In</span>
+                            </div>
+                        </Link>
+                    ) : (
+                        <>
+                            <Link to="/account">
+                                <div css={IconItem}>
+                                    <span className="iconDiv">
+                                        <Icon name="user" />
+                                    </span>
+                                    <span className="iconName">Account</span>
+                                </div>
+                            </Link>
+                            <a
+                                href="#logout"
+                                onClick={e => {
+                                    logout()
+                                    e.preventDefault()
+                                }}
+                            >
+                                <div css={IconItem}>
+                                    <span className="iconDiv">
+                                        <Icon name="x-circle" />
+                                    </span>
+                                    <span className="iconName">Log Out</span>
+                                </div>
+                            </a>
+                        </>
+                    )}
+
                     <Link to="/cart">
                         <div css={IconItem}>
-                            {cart}
-                            <span>Cart: {total}€</span>
+                            <span className="iconDiv">
+                                <Icon name="shopping-cart" />
+                            </span>
+                            <span className="iconName">Cart: {total}€</span>
                         </div>
                     </Link>
                 </div>
@@ -83,7 +114,7 @@ const Navigation = ({ items }) => {
 
 const mapStateToProps = ({ items }) => {
     return {
-        items
+        items,
     }
 }
 

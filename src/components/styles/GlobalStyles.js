@@ -41,10 +41,22 @@ const GlobalStyles = css`
         margin: 10px;
     }
 
-    span.account-icon .icon-style {
+    span.account-icon svg.icon-style {
         width: 25px;
         height: 25px;
         margin: 10px 15px 18px 10px;
+    }
+
+    span.iconDiv svg.icon-style {
+        color: white;
+        width: 23px;
+        height: 23px;
+        margin: 0 10px 3px 10px;
+    }
+
+    span.iconName {
+        font-size: calc(8px + 0.4vw);
+        letter-spacing: 1px;
     }
 
     footer {
@@ -58,6 +70,7 @@ const GlobalStyles = css`
         display: block;
         margin: 40px auto 0;
     }
+<<<<<<< HEAD
 
     .path {
         stroke-dasharray: 1000;
@@ -118,6 +131,32 @@ const GlobalStyles = css`
         100% {
             stroke-dashoffset: 900;
         }
+=======
+
+    .path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+        &.circle {
+            -webkit-animation: dash 0.9s ease-in-out;
+            animation: dash 0.9s ease-in-out;
+        }
+        &.line {
+            stroke-dashoffset: 1000;
+            -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+            animation: dash 0.9s 0.35s ease-in-out forwards;
+        }
+        &.check {
+            stroke-dashoffset: -100;
+            -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+            animation: dash-check 0.9s 0.35s ease-in-out forwards;
+        }
+    }
+
+    p.svg {
+        text-align: center;
+        margin: 20px 0 60px;
+        font-size: 1.25em;
+>>>>>>> navbar-auth
     }
 
     @-webkit-keyframes dash {
