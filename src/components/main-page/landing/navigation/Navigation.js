@@ -3,22 +3,25 @@ import { connect } from 'react-redux'
 import { Link } from "gatsby"
 
 // FONTAWESOME
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
-import { faUser } from "@fortawesome/free-regular-svg-icons"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
+// import { faUser } from "@fortawesome/free-regular-svg-icons"
+
+import Icon from "../../../styles/Icon"
 
 // COMPONENTS
 import Button from "../../navigation-button/Button"
 import { NavBar, NavMenuTop, ButtonWrapper, LogoName, Icons, IconItem, NavList, NavItem, NavLink } from '../../../styles/NavigationStyles'
+import { isAuthenticated, logout } from "../../../../utils/auth"
 
-const cart = <FontAwesomeIcon
-    icon={faShoppingCart}
-    size="1x"
-    color="white" />
-const user = <FontAwesomeIcon
-    icon={faUser}
-    size="1x"
-    color="white" />
+// const cart = <FontAwesomeIcon
+//     icon={faShoppingCart}
+//     size="1x"
+//     color="white" />
+// const user = <FontAwesomeIcon
+//     icon={faUser}
+//     size="1x"
+//     color="white" />
 
 
 const Navigation = ({ items }) => {
@@ -35,15 +38,45 @@ const Navigation = ({ items }) => {
                     <span css={LogoName}> Dronify </span>
                 </Link>
                 <div css={Icons}>
-                    <Link to="/account">
+
+                    {!isAuthenticated() ? 
+
+                        (
+                        <Link to="/account">
                         <div css={IconItem}>
-                            {user}
+                        <Icon name="user-plus"  />
                             <span>Log In</span>
                         </div>
-                    </Link>
+                        </Link>
+                        )
+                        :
+                        (
+                        <>
+                        <Link to="/account">
+                        <div css={IconItem}>
+                        <Icon name="user" />
+                            <span>Account</span>
+                        </div>
+                        </Link>
+                        <a
+                        href="#logout"
+                        onClick={e => {
+                            logout()
+                            e.preventDefault()
+                        }}
+                        >
+                        <div css={IconItem}>
+                        <Icon name="user-minus" />
+                            <span>Log Out</span>
+                        </div>
+                        </a>
+                        </>
+                        )
+                    }
+                    
                     <Link to="/cart">
                         <div css={IconItem}>
-                            {cart}
+                        <Icon name="shopping-cart"  />
                             <span>Cart: {total}€</span>
                         </div>
                     </Link>

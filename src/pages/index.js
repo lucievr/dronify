@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 // STYLES
 import { Global, css } from "@emotion/core"
 import GlobalStyles from "../components/styles/GlobalStyles"
-import { login, isAuthenticated, getProfile } from "../utils/auth"
+import { isAuthenticated } from "../utils/auth"
 
 // GATSBY
 import SEO from "../components/gatsby-default-files/seo"
