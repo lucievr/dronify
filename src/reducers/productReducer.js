@@ -35,7 +35,7 @@ const productReducer = (state = initialState, action) => {
 
                 newItems = state.items.slice()
                 newItems[itemIndex].quantity++
-                newItems[itemIndex].price += newItems[itemIndex].price
+                // newItems[itemIndex].price += newItems[itemIndex].price
 
             } else {
 

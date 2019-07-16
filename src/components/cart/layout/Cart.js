@@ -26,11 +26,9 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
 
     const total = items.reduce((acc, item) => (acc + item.price * item.quantity), 0)
 
-    const content = (total !== 0) ? <View /> : <tr><td>No items in the cart</td></tr>
-
     return (
         <div>
-        <Global styles={GlobalStyles} />
+            <Global styles={GlobalStyles} />
             <div css={wrapper}>
                 <div css={top}>
                     <Button color="secondary">
@@ -56,7 +54,45 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {content}
+                            {
+                                items.map((item) => {
+
+                                    const { name, price, id, quantity, image } = item
+
+                                    return (
+                                        <>
+                                            <tr key={id} css={item__box}>
+                                                <td><img css={imageStyles} src={image.src} alt='product' /></td>
+                                                <td>{name}</td>
+                                                <td>
+                                                    <div css={buttons}>
+                                                        <button
+                                                            css={qty}
+                                                            onClick={() => reduceQuantity(id)}>
+                                                            -
+                                                        </button>
+                                                        {quantity}
+                                                        <button
+                                                            css={qty}
+                                                            onClick={() => addQuantity(id)}>
+                                                            +
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td>{price}€</td>
+                                                <td>{quantity * price}€</td>
+                                                <td>
+                                                    <button
+                                                        css={deleteItemButton}
+                                                        onClick={() => deleteFromCart(id)}>
+                                                        &times;
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </>
+                                    )
+                                })
+                            }
                         </tbody>
                     </Table>
                     <Link to="/payment/"><button>Next Step</button></Link>
@@ -66,54 +102,18 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
     )
 }
 
-const View = ({ items }) => {
+// const View = ({ items }) => {
 
-    if (items === undefined) {
-        return null
-    }
+//     if (items === undefined) {
+//         return null
+//     }
 
-    return (
+//     return (
 
-        items.map((item) => {
 
-            const { name, price, id, quantity, image } = item
 
-            return (
-                <>
-                    <tr key={id} css={item__box}>
-                        <td><img css={imageStyles} src={image.src} alt='product' /></td>
-                        <td>{name}</td>
-                        <td>
-                            <div css={buttons}>
-                                <button
-                                    css={qty}
-                                    onClick={() => reduceQuantity(id)}>
-                                    -
-                                </button>
-                                {quantity}
-                                <button
-                                    css={qty}
-                                    onClick={() => addQuantity(id)}>
-                                    +
-                                </button>
-                            </div>
-                        </td>
-                        <td>{price}€</td>
-                        <td>{quantity * price}€</td>
-                        <td>
-                            <button
-                                css={deleteItemButton}
-                                onClick={() => deleteFromCart(id)}>
-                                &times;
-                            </button>
-                        </td>
-                    </tr>
-                </>
-            )
-        })
-
-    )
-}
+//     )
+// }
 
 const mapStateToProps = ({ items }) => {
     return {
