@@ -3,6 +3,7 @@ import { css } from "@emotion/core"
 export const wrapper = css`
     display: flex;
     flex-direction: column;
+    background-color: #fff;
 `
 
 export const top = css`
@@ -30,6 +31,11 @@ export const bottom = css`
     -webkit-box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.75);
+`
+
+export const payformWrapper = css`
+    display: flex;
+    flex-direction: row;
 `
 
 export const bottom__heading = css`

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Table } from 'reactstrap';
+import { Global } from "@emotion/core"
 import { Link } from 'gatsby'
 import { connect } from 'react-redux'
 import { deleteFromCart, addQuantity, reduceQuantity } from '../../../actions'
@@ -28,7 +29,8 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
     const content = (total !== 0) ? <View /> : <tr><td>No items in the cart</td></tr>
 
     return (
-        <div css={GlobalStyles}>
+        <div>
+        <Global styles={GlobalStyles} />
             <div css={wrapper}>
                 <div css={top}>
                     <Button color="secondary">
@@ -57,7 +59,7 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
                             {content}
                         </tbody>
                     </Table>
-                    <button>Next Step</button>
+                    <Link to="/payment/"><button>Next Step</button></Link>
                 </div>
             </div>
         </div>
