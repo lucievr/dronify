@@ -111,10 +111,6 @@ export const cartButtons = css`
     justify-content: space-around;
 
     button {
-        background: black;
-        color: white;
-        border-radius: 5px;
         margin-bottom: 1rem;
-        padding: .5rem;
     }
 `

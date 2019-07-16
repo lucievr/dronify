@@ -1,5 +1,5 @@
 import React from "react"
-import { Table } from "reactstrap"
+import { Table, Button } from "reactstrap"
 import { Global } from "@emotion/core"
 import { Link } from "gatsby"
 import { connect } from "react-redux"
@@ -40,9 +40,9 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllIte
             </span>
         ) : (
                 <div css={cartButtons}>
-                    <button onClick={() => removeAllItems()}>Empty</button>
+                    <Button color="info" size="lg" onClick={() => removeAllItems()}>Empty</Button>
                     <Link to="/delivery/">
-                        <button>Next Step</button>
+                        <Button color="info" size="lg">Next Step</Button>
                     </Link>
                 </div>
             )
