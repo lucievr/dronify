@@ -10,6 +10,16 @@ const sectionWrapper = css`
     width: 100%;
 `
 
+const sectionWrapperCol = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    min-height: 60vh;
+    width: 100%;
+`
+
 const navStyle = css`
     display: flex;
     flex-direction: column;
@@ -97,6 +107,7 @@ const viewLink = css`
 
 export {
     sectionWrapper,
+    sectionWrapperCol,
     navStyle,
     navLink,
     homeSection,
