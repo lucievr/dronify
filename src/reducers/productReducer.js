@@ -24,6 +24,11 @@ const productReducer = (state = initialState, action) => {
                 menu: []
             }
 
+        case 'ITEMS_REMOVE':
+            return {
+                items: state.items
+            }
+
         case 'ITEM_ADD_TO_CART':
 
             let newItems = {}

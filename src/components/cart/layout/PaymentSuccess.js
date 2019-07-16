@@ -4,6 +4,8 @@ import { Global } from "@emotion/core"
 import { Link } from "gatsby"
 import GlobalStyles from "../../styles/GlobalStyles"
 import { navigate } from "gatsby"
+import { connect } from "react-redux"
+import { removeAllItems } from "../../../actions"
 
 import {
     wrapper,
@@ -14,9 +16,8 @@ import {
     bottom__heading__title,
     bottom__heading__total,
 } from "./CartStyles"
-import { redirectTo } from "@reach/router";
 
-const PaymentSuccess = () => {
+const PaymentSuccess = ({ removeAllItems }) => {
 
     const [loading, setLoading] = useState(true)
 
@@ -25,6 +26,7 @@ const PaymentSuccess = () => {
             setLoading(false)
         }, 2000)
         setTimeout(() => {
+            removeAllItems()
             navigate('/')
         }, 4000)
     }, [])
@@ -94,4 +96,14 @@ const PaymentSuccess = () => {
     )
 }
 
-export default PaymentSuccess
+const mapDispatchToProps = {
+    removeAllItems
+}
+
+const mapStateToProps = ({ items }) => {
+    return {
+        items
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PaymentSuccess)

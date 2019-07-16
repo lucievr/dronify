@@ -24,6 +24,12 @@ const addedToCart = (id) => {
     }
 }
 
+const removeAllItems = () => {
+    return {
+        type: 'ITEMS_REMOVE'
+    }
+}
+
 const addQuantity = (id) => {
     return {
         type: 'ITEM_ADD_QUANTITY',
@@ -52,5 +58,6 @@ export {
     addedToCart,
     deleteFromCart,
     addQuantity,
-    reduceQuantity
+    reduceQuantity,
+    removeAllItems
 }

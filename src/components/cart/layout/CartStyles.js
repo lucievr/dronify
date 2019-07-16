@@ -99,8 +99,22 @@ export const deleteItemButton = css`
     background: none;
     border: none;
     color: red;
+    margin-right: 1rem;
 `
 
 export const emptyCart = css`
     padding: 1.5rem;
+`
+
+export const cartButtons = css`
+    display: flex;
+    justify-content: space-around;
+
+    button {
+        background: black;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        padding: .5rem;
+    }
 `
