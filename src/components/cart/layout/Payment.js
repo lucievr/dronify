@@ -195,7 +195,7 @@ class Payment extends React.Component {
                                         value={this.state.name}
                                         onChange={this.handleNameChange}
                                         onFocus={this.handleOnFocus("name")}
-                                        pattern="[a-zA-Z]{5,}"
+                                        pattern="^([A-Za-z ]){5,}$"
                                         title="Minimum 5 letters"
                                         maxLength="40"
                                         required
