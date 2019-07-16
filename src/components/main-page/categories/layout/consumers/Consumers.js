@@ -36,7 +36,7 @@ const Consumers = props => {
                             props.gotopage(0) //Go to top, page 0
                         }}
                     >
-                        <Icon name="chevrons-up" />
+                        <Icon color="white" name="chevrons-up" />
                     </button>
                 </div>
             </div>

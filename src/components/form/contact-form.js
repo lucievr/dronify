@@ -19,7 +19,7 @@ const ContactForm = props => {
         <>
             <section css={sectionWrapper}>
                 <Form name="contact" method="POST" data-netlify="true">
-                    <Col form>
+                    <Row form>
                         <Col md={6}>
                             <FormGroup>
                                 <Label for="name">
@@ -27,7 +27,9 @@ const ContactForm = props => {
                                 </Label>
                             </FormGroup>
                         </Col>
+                    </Row>
 
+                    <Row form>
                         <Col md={6}>
                             <FormGroup>
                                 <Label for="email">
@@ -36,7 +38,8 @@ const ContactForm = props => {
                                 </Label>
                             </FormGroup>
                         </Col>
-
+                    </Row>
+                    <Row form>
                         <Col md={6}>
                             <FormGroup>
                                 <label>
@@ -45,11 +48,11 @@ const ContactForm = props => {
                                 </label>
                             </FormGroup>
                         </Col>
-                        <Col md={6}>
-                            <Button size="lg" css={saveBtn}>
-                                Send
-                            </Button>
-                        </Col>
+                    </Row>
+                    <Col md={6}>
+                        <Button size="lg" css={saveBtn}>
+                            Send
+                        </Button>
                     </Col>
                 </Form>
             </section>

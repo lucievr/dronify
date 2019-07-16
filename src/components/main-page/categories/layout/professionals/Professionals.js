@@ -36,7 +36,7 @@ const Professionals = props => {
                             props.gotopage(0) //Go to top, page 0
                         }}
                     >
-                        <Icon className="arrow" name="chevrons-up" />
+                        <Icon color="white" name="chevrons-up" />
                     </button>
                 </div>
             </div>
