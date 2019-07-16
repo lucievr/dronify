@@ -59,6 +59,18 @@ const GlobalStyles = css`
         letter-spacing: 1px;
     }
 
+    div.rccs {
+        width: 50%;
+    }
+
+    div.rccs__card--front {
+        margin: 3rem 0;
+    }
+
+    div.rccs__card--back {
+        margin: 3rem 0;
+    }
+
     footer {
         text-align: center;
         background-color: transparent;

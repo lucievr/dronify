@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { Button, Spinner } from "reactstrap"
+import { Spinner } from "reactstrap"
 import { Global } from "@emotion/core"
-import { Link } from "gatsby"
+import Navigation from '../../main-page/landing/navigation/Navigation'
 import GlobalStyles from "../../styles/GlobalStyles"
 import { navigate } from "gatsby"
 import { connect } from "react-redux"
@@ -9,9 +9,7 @@ import { removeAllItems } from "../../../actions"
 
 import {
     wrapper,
-    top,
     bottom,
-    top_button,
     bottom__heading,
     bottom__heading__title,
     bottom__heading__total,
@@ -28,19 +26,13 @@ const PaymentSuccess = ({ removeAllItems }) => {
         setTimeout(() => {
             removeAllItems()
             navigate('/')
-        }, 4000)
+        }, 5000)
     }, [])
 
     return (
         <section css={wrapper}>
             <Global styles={GlobalStyles} />
-            <div css={top}>
-                <Button color="secondary">
-                    <Link css={top_button} to="/">
-                        Home
-                    </Link>
-                </Button>
-            </div>
+            <Navigation />
             <div css={bottom}>
                 <div css={bottom__heading}>
                     <h3 css={bottom__heading__title}>My order</h3>

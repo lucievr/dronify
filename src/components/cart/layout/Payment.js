@@ -3,6 +3,7 @@ import { Col, Button, Form, FormGroup, Label, Input } from "reactstrap"
 import { Global } from "@emotion/core"
 import { Link } from "gatsby"
 import GlobalStyles from "../../styles/GlobalStyles"
+import Navigation from "../../main-page/landing/navigation/Navigation"
 import { navigate } from "gatsby"
 
 import Cards from "react-credit-cards"
@@ -11,10 +12,8 @@ import valid from "card-validator"
 
 import {
     wrapper,
-    top,
     bottom,
     payformWrapper,
-    top_button,
     bottom__heading,
     bottom__heading__title,
     bottom__heading__total,
@@ -133,13 +132,7 @@ class Payment extends React.Component {
         return (
             <section css={wrapper}>
                 <Global styles={GlobalStyles} />
-                <div css={top}>
-                    <Button color="secondary">
-                        <Link css={top_button} to="/">
-                            Home
-                        </Link>
-                    </Button>
-                </div>
+                <Navigation />
                 <div css={bottom}>
                     <div css={bottom__heading}>
                         <h3 css={bottom__heading__title}>My order</h3>
@@ -154,10 +147,8 @@ class Payment extends React.Component {
                             number={this.state.number}
                             expiry={this.state.expiry}
                             focused={this.state.focused}
-                            style={{ width: `50%` }}
                         />
                         <Form
-                            style={{ width: `50%` }}
                             onSubmit={this.handleSubmit}
                             action="/payment-success/"
                         >
@@ -247,10 +238,22 @@ class Payment extends React.Component {
                                 ) : null}
                             </FormGroup>
                             <Link to="/delivery/">
-                                <Button size="lg">Previous Step</Button>
+                                <Button
+                                    style={{
+                                        marginRight: `20rem`,
+                                        margin: `1rem`,
+                                    }}
+                                    size="lg"
+                                >
+                                    Previous Step
+                                </Button>
                             </Link>
 
-                            <Button size="lg" type="submit">
+                            <Button
+                                style={{ margin: `1rem` }}
+                                size="lg"
+                                type="submit"
+                            >
                                 Confirm payment
                             </Button>
                         </Form>

@@ -36,6 +36,8 @@ export const bottom = css`
 export const payformWrapper = css`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 
 export const bottom__heading = css`
