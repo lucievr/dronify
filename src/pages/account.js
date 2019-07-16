@@ -56,7 +56,7 @@ export default class Account extends React.Component {
             login()
             return <p>Redirecting to login...</p>
         }
-
+        console.log(isAuthenticated());
         return (
             <>
                 <AccountNavigation />

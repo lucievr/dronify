@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 // STYLES
 import { Global, css } from "@emotion/core"
 import GlobalStyles from "../components/styles/GlobalStyles"
+import { login, isAuthenticated, getProfile } from "../utils/auth"
 
 // GATSBY
 import SEO from "../components/gatsby-default-files/seo"
@@ -28,6 +29,8 @@ const IndexPage = () => {
     const gotopage = eventKey => {
         scrollRef.goToPage(eventKey)
     }
+
+    console.log(isAuthenticated());
 
     return (
         <>
