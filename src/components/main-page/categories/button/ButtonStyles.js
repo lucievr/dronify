@@ -38,15 +38,13 @@ export const backToTop = css`
     bottom: 0;
     right: 0;
     text-transform: uppercase;
-    padding: 1rem 3rem;
     margin: 2rem;
     font-size: 8px;
     letter-spacing: 0.2rem;
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 50%;
     transition: all 0.2s;
     background: transparent;
-    color: #fff;
     border: 2px solid #fff;
     box-shadow: 0 1rem 2rem rgba(#000, 0.1);
     cursor: pointer;
