@@ -33,7 +33,7 @@ const Consumers = props => {
                             props.gotopage(0) //Go to top, page 0
                         }}
                     >
-                        Click
+                        Back to top
                     </button>
                 </div>
             </div>
