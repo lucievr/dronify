@@ -11,12 +11,6 @@ const menuRequested = () => {
     }
 }
 
-const menuError = () => {
-    return {
-        type: 'MENU_ERROR'
-    }
-}
-
 const addedToCart = (id) => {
     return {
         type: 'ITEM_ADD_TO_CART',
@@ -26,13 +20,13 @@ const addedToCart = (id) => {
 
 const removeAllItems = () => {
     return {
-        type: 'ITEMS_REMOVE'
+        type: 'REMOVE_ITEM'
     }
 }
 
 const addQuantity = (id) => {
     return {
-        type: 'ITEM_ADD_QUANTITY',
+        type: 'ITEM_INCREASE_QUANTITY',
         payload: id
     }
 }
@@ -54,7 +48,6 @@ const deleteFromCart = (id) => {
 export {
     menuLoaded,
     menuRequested,
-    menuError,
     addedToCart,
     deleteFromCart,
     addQuantity,

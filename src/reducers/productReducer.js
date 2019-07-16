@@ -18,15 +18,10 @@ const productReducer = (state = initialState, action) => {
                 menu: state.menu
             }
 
-        case 'MENU_ERROR':
+        case 'REMOVE_ITEM':
             return {
                 ...state,
-                menu: []
-            }
-
-        case 'ITEMS_REMOVE':
-            return {
-                items: state.items
+                items: []
             }
 
         case 'ITEM_ADD_TO_CART':
@@ -40,7 +35,6 @@ const productReducer = (state = initialState, action) => {
 
                 newItems = state.items.slice()
                 newItems[itemIndex].quantity++
-                // newItems[itemIndex].price += newItems[itemIndex].price
 
             } else {
 
@@ -66,7 +60,7 @@ const productReducer = (state = initialState, action) => {
                 items: newItems
             }
 
-        case 'ITEM_ADD_QUANTITY':
+        case 'ITEM_INCREASE_QUANTITY':
 
             const idToIncrease = action.payload
 
