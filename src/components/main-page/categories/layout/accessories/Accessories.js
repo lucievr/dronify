@@ -8,7 +8,7 @@ import { Item, Content } from "./AccessoriesStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import { StaticQuery, graphql } from "gatsby"
 
-const Accessories = () => (
+const Accessories = props => (
     <StaticQuery
         query={graphql`
             query SiteTitleQuery {
@@ -31,6 +31,14 @@ const Accessories = () => (
                         </div>
                         <div css={Item}></div>
                     </div>
+                    <button
+                        onClick={() => {
+                            props.gotopage(0) //Go to top, page 0
+                        }}
+                    >
+                        Back to top
+                    </button>
+
                     <footer>
                         © {new Date().getFullYear()}{" "}
                         {data.site.siteMetadata.title}
