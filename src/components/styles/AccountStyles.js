@@ -16,7 +16,8 @@ const sectionWrapperCol = css`
     justify-content: center;
     align-items: center;
     margin-top: 200px;
-    min-height: 60vh;
+    min-height: 100vh;
+    height: auto;
     width: 100%;
 `
 

@@ -5,8 +5,13 @@ import { css } from "@emotion/core"
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 
 const GoogleMaps = css`
-    min-height: 70vh;
+    min-height: 60vh;
+    width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
 `
 
 const ContactForm = props => {
@@ -14,25 +19,27 @@ const ContactForm = props => {
         <>
             <section css={sectionWrapperCol}>
 
-                <div>
-                    <h4>Find us</h4>
-                    <p>Taborska 31</p>
-                    <p>Prague 4</p>
-                    <p>140 00</p>
-                </div>
                 
                 <div css={GoogleMaps}>
                     <Map
                         google={props.google}
                         zoom={13}
                         initialCenter={{ lat: 50.06224, lng: 14.437376 }}
+                        style={{width: `50%`, left: `40px`}}
                     >
                         <Marker position={{ lat: 50.06224, lng: 14.437376 }} />
                     </Map>
+                    <div style={{width: `50%`, margin: `30px`}}>
+                    <h2>Find us</h2>
+                    <h4>Dronify</h4>
+                    <p>Taborska 31</p>
+                    <p>Prague 4</p>
+                    <p>140 00</p>
                 </div>
-
+                </div>
+                <div style={{marginTop: `3rem`}}>
                 <Form name="contact" method="POST" data-netlify="true">
-
+                            <h2>Contact Us</h2>
                             <FormGroup>
                                 <Label for="name">Your Name: </Label>
                                     <Input type="text" name="name" />
@@ -52,6 +59,7 @@ const ContactForm = props => {
                             Send
                         </Button>
                 </Form>
+                </div>
             </section>
 
 
