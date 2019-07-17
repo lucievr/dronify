@@ -7,8 +7,10 @@ import Background from "./ProfessionalsStyles"
 import { Item, Content, Image } from "./ProfessionalsStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import Fade from "react-reveal/Fade"
+import { backToTop } from "../../button/ButtonStyles"
+import Icon from "../../../../styles/Icon"
 
-const Professionals = () => {
+const Professionals = props => {
     return (
         <div css={Background}>
             <div css={DarkOverlay}>
@@ -28,6 +30,14 @@ const Professionals = () => {
                             />
                         </Fade>
                     </div>
+                    <button
+                        css={backToTop}
+                        onClick={() => {
+                            props.gotopage(0) //Go to top, page 0
+                        }}
+                    >
+                        <Icon color="white" name="chevrons-up" />
+                    </button>
                 </div>
             </div>
         </div>

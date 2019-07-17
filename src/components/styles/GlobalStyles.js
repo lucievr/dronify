@@ -24,6 +24,10 @@ const GlobalStyles = css`
         background-color: rgb(128, 141, 153);
     }
 
+    .icon-style.arrow {
+        color: white;
+    }
+
     a {
         text-decoration: none !important;
         color: #000;
@@ -37,10 +41,34 @@ const GlobalStyles = css`
         margin: 10px;
     }
 
-    span.account-icon .icon-style{
+    span.account-icon svg.icon-style {
         width: 25px;
         height: 25px;
         margin: 10px 15px 18px 10px;
+    }
+
+    span.iconDiv svg.icon-style {
+        color: white;
+        width: 23px;
+        height: 23px;
+        margin: 0 10px 3px 10px;
+    }
+
+    span.iconName {
+        font-size: calc(8px + 0.4vw);
+        letter-spacing: 1px;
+    }
+
+    div.rccs {
+        width: 50%;
+    }
+
+    div.rccs__card--front {
+        margin: 3rem 0;
+    }
+
+    div.rccs__card--back {
+        margin: 3rem 0;
     }
 
     footer {
@@ -49,74 +77,72 @@ const GlobalStyles = css`
         margin-bottom: 1rem;
     }
 
-    svg {
-  width: 100px;
-  display: block;
-  margin: 40px auto 0;
-}
+    .loaded svg {
+        width: 100px;
+        display: block;
+        margin: 40px auto 0;
+    }
 
-.path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 0;
-  &.circle {
-    -webkit-animation: dash .9s ease-in-out;
-    animation: dash .9s ease-in-out;
-  }
-  &.line {
-    stroke-dashoffset: 1000;
-    -webkit-animation: dash .9s .35s ease-in-out forwards;
-    animation: dash .9s .35s ease-in-out forwards;
-  }
-  &.check {
-    stroke-dashoffset: -100;
-    -webkit-animation: dash-check .9s .35s ease-in-out forwards;
-    animation: dash-check .9s .35s ease-in-out forwards;
-  }
-}
+    .path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+        &.circle {
+            -webkit-animation: dash 0.9s ease-in-out;
+            animation: dash 0.9s ease-in-out;
+        }
+        &.line {
+            stroke-dashoffset: 1000;
+            -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+            animation: dash 0.9s 0.35s ease-in-out forwards;
+        }
+        &.check {
+            stroke-dashoffset: -100;
+            -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+            animation: dash-check 0.9s 0.35s ease-in-out forwards;
+        }
+    }
 
-p.svg {
-  text-align: center;
-  margin: 20px 0 60px;
-  font-size: 1.25em;
-}
+    p.svg {
+        text-align: center;
+        margin: 20px 0 60px;
+        font-size: 1.25em;
+    }
 
+    @-webkit-keyframes dash {
+        0% {
+            stroke-dashoffset: 1000;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
 
-@-webkit-keyframes dash {
-  0% {
-    stroke-dashoffset: 1000;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
+    @keyframes dash {
+        0% {
+            stroke-dashoffset: 1000;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
 
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 1000;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
+    @-webkit-keyframes dash-check {
+        0% {
+            stroke-dashoffset: -100;
+        }
+        100% {
+            stroke-dashoffset: 900;
+        }
+    }
 
-@-webkit-keyframes dash-check {
-  0% {
-    stroke-dashoffset: -100;
-  }
-  100% {
-    stroke-dashoffset: 900;
-  }
-}
-
-@keyframes dash-check {
-  0% {
-    stroke-dashoffset: -100;
-  }
-  100% {
-    stroke-dashoffset: 900;
-  }
-}
-
+    @keyframes dash-check {
+        0% {
+            stroke-dashoffset: -100;
+        }
+        100% {
+            stroke-dashoffset: 900;
+        }
+    }
 `
 
 const DarkOverlay = css`

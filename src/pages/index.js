@@ -1,8 +1,9 @@
 import React from "react"
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css"
 // STYLES
 import { Global, css } from "@emotion/core"
 import GlobalStyles from "../components/styles/GlobalStyles"
+import { isAuthenticated } from "../utils/auth"
 
 // GATSBY
 import SEO from "../components/gatsby-default-files/seo"
@@ -14,33 +15,42 @@ import Professionals from "../components/main-page/categories/layout/professiona
 import Enterprise from "../components/main-page/categories/layout/enterprise/Enterprise"
 import Accessories from "../components/main-page/categories/layout/accessories/Accessories"
 
+//React scroller and ScrollupButton
 import ReactPageScroller from "react-page-scroller"
+import ScrollUpButton from "react-scroll-up-button"
 
 const Category = css`
-  height: 100vh;
+    height: 100vh;
 `
 
 const IndexPage = () => {
-
-    const scrollRef = null
+    let scrollRef = null
 
     const gotopage = eventKey => {
-        scrollRef.gotopage(eventKey)
+        scrollRef.goToPage(eventKey)
     }
+
+    console.log(isAuthenticated());
 
     return (
         <>
             <Global styles={GlobalStyles} />
             <SEO title="home" />
-            <ReactPageScroller ref={scrollRef}>
+            <ReactPageScroller
+                ref={ref => {
+                    scrollRef = ref
+                }}
+            >
                 <Landing />
                 <Consumers gotopage={gotopage} css={Category} />
                 <Professionals gotopage={gotopage} css={Category} />
                 <Enterprise gotopage={gotopage} css={Category} />
                 <Accessories gotopage={gotopage} css={Category} />
             </ReactPageScroller>
-       </>
+            <ScrollUpButton />
+        </>
     )
 }
 
 export default IndexPage
+//working on scrollupButton

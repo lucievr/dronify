@@ -1,37 +1,74 @@
 import React from "react"
+import { saveBtn, sectionWrapperCol } from "../styles/AccountStyles"
+import { Button, Form, FormGroup, Label, Input } from "reactstrap"
+import { css } from "@emotion/core"
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 
-const ContactForm = () => {
+const GoogleMaps = css`
+    min-height: 60vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+`
+
+const ContactForm = props => {
     return (
-        <form name="contact" method="POST" data-netlify="true">
-            <p>
-                <label>
-                    Your Name: <input type="text" name="name" />
-                </label>
-            </p>
-            <p>
-                <label>
-                    Your Email: <input type="email" name="email" />
-                </label>
-            </p>
-            <p>
-                <label>
-                    Your Role:{" "}
-                    <select name="role[]" multiple>
-                        <option value="leader">Leader</option>
-                        <option value="follower">Follower</option>
-                    </select>
-                </label>
-            </p>
-            <p>
-                <label>
-                    Message: <textarea name="message"></textarea>
-                </label>
-            </p>
-            <p>
-                <button type="submit">Send</button>
-            </p>
-        </form>
+        <>
+            <section css={sectionWrapperCol}>
+
+                
+                <div css={GoogleMaps}>
+                    <Map
+                        google={props.google}
+                        zoom={13}
+                        initialCenter={{ lat: 50.06224, lng: 14.437376 }}
+                        style={{width: `50%`, left: `40px`}}
+                    >
+                        <Marker position={{ lat: 50.06224, lng: 14.437376 }} />
+                    </Map>
+                    <div style={{width: `50%`, margin: `30px`}}>
+                    <h2>Find us</h2>
+                    <h4>Dronify</h4>
+                    <p>Taborska 31</p>
+                    <p>Prague 4</p>
+                    <p>140 00</p>
+                </div>
+                </div>
+                <div style={{marginTop: `3rem`}}>
+                <Form name="contact" method="POST" data-netlify="true">
+                            <h2>Contact Us</h2>
+                            <FormGroup>
+                                <Label for="name">Your Name: </Label>
+                                    <Input type="text" name="name" />
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label for="email">Your Email: </Label>
+                                <Input type="email" name="email" />
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label for="message">Message: </Label>
+                                <Input type="textarea" name="message" id="message" />
+                            </FormGroup>
+
+                        <Button size="lg" css={saveBtn}>
+                            Send
+                        </Button>
+                </Form>
+                </div>
+            </section>
+
+
+        </>
     )
 }
 
-export default ContactForm
+/* export default ContactForm
+ */
+export default GoogleApiWrapper({
+    apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
+})(ContactForm)

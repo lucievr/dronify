@@ -3,7 +3,6 @@ import { css } from "@emotion/core"
 export const wrapper = css`
     display: flex;
     flex-direction: column;
-    background-color: #fff;
 `
 
 export const top = css`
@@ -26,7 +25,8 @@ export const top_button = css`
 export const bottom = css`
     display: flex;
     flex-direction: column;
-    margin: 2rem auto;
+    margin: 10rem auto;
+    background: white;
     width: 60%;
     -webkit-box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.75);
@@ -36,6 +36,8 @@ export const bottom = css`
 export const payformWrapper = css`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 
 export const bottom__heading = css`
@@ -92,10 +94,25 @@ export const qty = css`
 export const imageStyles = css`
     height: 50px;
     width: 50px;
+    margin: .5rem;
 `
 
 export const deleteItemButton = css`
     background: none;
     border: none;
     color: red;
+    margin-right: 1rem;
+`
+
+export const emptyCart = css`
+    padding: 1.5rem;
+`
+
+export const cartButtons = css`
+    display: flex;
+    justify-content: space-around;
+
+    button {
+        margin-bottom: 1rem;
+    }
 `

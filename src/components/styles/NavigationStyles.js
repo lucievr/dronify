@@ -11,7 +11,7 @@ export const NavBar = css`
 
     height: 7rem;
     width: 100%;
-    padding-top: 1rem;
+    padding-top: 0.9rem;
 `
 
 export const NavMenuTop = css`
@@ -32,6 +32,7 @@ export const LogoName = css`
     color: #fff;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif !important;
+    padding-top: 1.5rem;
 
     @media screen and (max-width: 420px) {
         display: none;
@@ -42,6 +43,7 @@ export const Icons = css`
     flex: 1 1 20%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 
     div:first-of-type {
         margin-right: 1rem;
@@ -52,7 +54,7 @@ export const NavList = css`
     display: flex;
     justify-content: space-between;
     margin: 0;
-
+    padding-top: 1.7rem;
     width: 70%;
 
     @media screen and (max-width: 1100px) {
@@ -68,6 +70,7 @@ export const IconItem = css`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     color: #fff;
     font-family: "Montserrat", sans-serif !important;
 `
@@ -82,7 +85,7 @@ export const NavLink = css`
     color: #fff;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 
     &:hover {
         text-decoration: none !important;

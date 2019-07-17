@@ -2,7 +2,7 @@ import React from "react"
 import { Router } from "@reach/router"
 import { Link } from "gatsby"
 import SEO from "../components/gatsby-default-files/seo"
-import AccountNavigation from "../components/account/AccountNavigation"
+import Navigation from "../components/main-page/landing/navigation/Navigation"
 import { Global } from "@emotion/core"
 import GlobalStyles from "../components/styles/GlobalStyles"
 import {
@@ -56,10 +56,10 @@ export default class Account extends React.Component {
             login()
             return <p>Redirecting to login...</p>
         }
-
+        console.log(isAuthenticated());
         return (
             <>
-                <AccountNavigation />
+                <Navigation />
                 <Global styles={GlobalStyles} />
                 <SEO title="User account" />
                 <section css={sectionWrapper}>

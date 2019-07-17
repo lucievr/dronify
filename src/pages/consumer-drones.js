@@ -98,6 +98,7 @@ const ConsumerDrones = props => {
                         ))
                     }
                 </div>
+
                 <footer>© {new Date().getFullYear()} dronify</footer>
             </div>
         </>

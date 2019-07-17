@@ -1,17 +1,16 @@
-import React from 'react'
-import { Button, Table } from 'reactstrap';
+import React from "react"
+import { Table, Button } from "reactstrap"
 import { Global } from "@emotion/core"
-import { Link } from 'gatsby'
-import { connect } from 'react-redux'
-import { deleteFromCart, addQuantity, reduceQuantity } from '../../../actions'
+import { Link } from "gatsby"
+import { connect } from "react-redux"
+import { deleteFromCart, addQuantity, reduceQuantity, removeAllItems } from "../../../actions"
+import Navigation from '../../main-page/landing/navigation/Navigation'
 
-import GlobalStyles from '../../styles/GlobalStyles'
+import GlobalStyles from "../../styles/GlobalStyles"
 
 import {
     wrapper,
-    top,
     bottom,
-    top_button,
     bottom__heading,
     bottom__heading__title,
     bottom__heading__total,
@@ -19,24 +18,38 @@ import {
     qty,
     buttons,
     imageStyles,
-    deleteItemButton
-} from './CartStyles'
+    deleteItemButton,
+    emptyCart,
+    cartButtons
+} from "./CartStyles"
 
-const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
+const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllItems }) => {
 
-    const total = items.reduce((acc, item) => (acc + item.price * item.quantity), 0)
+    const total = items.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+    )
 
-    const content = (total !== 0) ? <View /> : <tr><td>No items in the cart</td></tr>
+    const View =
+        total === 0 ? (
+            <span css={emptyCart}>
+                The cart is now empty. Select some products to buy before
+                checking out.
+            </span>
+        ) : (
+                <div css={cartButtons}>
+                    <Button color="secondary" size="lg" onClick={() => removeAllItems()}>Empty</Button>
+                    <Link to="/delivery/">
+                        <Button color="secondary" size="lg">Next Step</Button>
+                    </Link>
+                </div>
+            )
 
     return (
         <div>
-        <Global styles={GlobalStyles} />
+            <Global styles={GlobalStyles} />
             <div css={wrapper}>
-                <div css={top}>
-                    <Button color="secondary">
-                        <Link css={top_button} to='/'>Home</Link>
-                    </Button>
-                </div>
+                <Navigation />
                 <div css={bottom}>
                     <div css={bottom__heading}>
                         <h3 css={bottom__heading__title}>My order</h3>
@@ -49,69 +62,76 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity }) => {
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Name</th>
+                                <th>Item</th>
                                 <th>Quantity</th>
                                 <th>Unit Price</th>
                                 <th>Total Price</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {content}
+                            {
+                                items.map(item => {
+                                    const {
+                                        name,
+                                        price,
+                                        id,
+                                        quantity,
+                                        image,
+                                    } = item
+
+                                    return (
+                                        <tr key={id} css={item__box}>
+                                            <td>
+                                                <img
+                                                    css={imageStyles}
+                                                    src={image.src}
+                                                    alt="product"
+                                                />
+                                            </td>
+                                            <td>{name}</td>
+                                            <td>
+                                                <div css={buttons}>
+                                                    <button
+                                                        css={qty}
+                                                        onClick={() =>
+                                                            reduceQuantity(id)
+                                                        }
+                                                    >
+                                                        -
+                                                </button>
+                                                    {quantity}
+                                                    <button
+                                                        css={qty}
+                                                        onClick={() =>
+                                                            addQuantity(id)
+                                                        }
+                                                    >
+                                                        +
+                                                </button>
+                                                </div>
+                                            </td>
+                                            <td>{price}€</td>
+                                            <td>{quantity * price}€</td>
+                                            <td>
+                                                <button
+                                                    css={deleteItemButton}
+                                                    onClick={() =>
+                                                        deleteFromCart(id)
+                                                    }
+                                                >
+                                                    &times;
+                                            </button>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            }
                         </tbody>
                     </Table>
-                    <Link to="/payment/"><button>Next Step</button></Link>
+                    {View}
                 </div>
             </div>
         </div>
-    )
-}
-
-const View = ({ items }) => {
-
-    if (items === undefined) {
-        return null
-    }
-
-    return (
-
-        items.map((item) => {
-
-            const { name, price, id, quantity, image } = item
-
-            return (
-                <>
-                    <tr key={id} css={item__box}>
-                        <td><img css={imageStyles} src={image.src} alt='product' /></td>
-                        <td>{name}</td>
-                        <td>
-                            <div css={buttons}>
-                                <button
-                                    css={qty}
-                                    onClick={() => reduceQuantity(id)}>
-                                    -
-                                </button>
-                                {quantity}
-                                <button
-                                    css={qty}
-                                    onClick={() => addQuantity(id)}>
-                                    +
-                                </button>
-                            </div>
-                        </td>
-                        <td>{price}€</td>
-                        <td>{quantity * price}€</td>
-                        <td>
-                            <button
-                                css={deleteItemButton}
-                                onClick={() => deleteFromCart(id)}>
-                                &times;
-                            </button>
-                        </td>
-                    </tr>
-                </>
-            )
-        })
-
     )
 }
 
@@ -124,7 +144,11 @@ const mapStateToProps = ({ items }) => {
 const mapDispatchToState = {
     deleteFromCart,
     addQuantity,
-    reduceQuantity
+    reduceQuantity,
+    removeAllItems
 }
 
-export default connect(mapStateToProps, mapDispatchToState)(Cart)
+export default connect(
+    mapStateToProps,
+    mapDispatchToState
+)(Cart)
