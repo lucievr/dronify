@@ -22,8 +22,12 @@ import Slide from "react-reveal/Slide"
 const Carousel = makeCarousel(CarouselUI)
 
 const itemWrapper = css`
-    margin-top: 10rem auto 0;
-    
+    margin: 10rem auto 0;
+    padding: 2rem;
+    background: rgba(224, 226, 235, .5);
+    border-radius: 1rem;
+    width: 70%;
+
 `
 
 const ItemPage = ({ item, addedToCart }) => {
@@ -90,7 +94,7 @@ const ItemPage = ({ item, addedToCart }) => {
                     onClick={() => addedToCart(id)}
                     css={btnBuy}
                 >
-                    Add to cart
+                    Buy
                 </button>
             </div>
             <Carousel defaultWait={3000} css={carouselWrapper}>

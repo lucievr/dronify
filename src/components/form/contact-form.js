@@ -5,48 +5,47 @@ import { Container, Row, Col } from 'reactstrap';
 import { css } from "@emotion/core"
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import { navigate } from "gatsby"
-<<<<<<< HEAD
 import './contacts.scss'
 import HeadingStyles from '../main-page/categories/heading/HeadingStyles'
 
 const maps = css`
     min-height: 60vh;
-=======
-import drone from "../../images/icon.png"
-
-const GoogleMaps = css`
-    min-height: 40vh;
-    height: 55vh;
-    max-height: 80vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
->>>>>>> fc64956e6fb192ed1104093a2eec7b499ee8f07e
 `
 
-const heading = css`
-    margin-bottom: 2rem;
-    font-weight: 400;
-`
-const dronify = css`
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    font-family: "Montserrat", sans-serif !important;
-`
+// import drone from "../../images/icon.png"
 
-const address = css`
-    margin-bottom: 0.2rem;
-`
+// const GoogleMaps = css`
+//     min-height: 40vh;
+//     height: 55vh;
+//     max-height: 80vh;
+//     width: 100%;
+//     position: relative;
+//     display: flex;
+//     flex-direction: row-reverse;
+//     justify-content: space-between;
+//     align-items: center;
+// `
 
-const droneImg = css`
-    margin: 0.1rem auto;
-    height: 4rem;
-    width: 4rem;
-`
+// const heading = css`
+//     margin-bottom: 2rem;
+//     font-weight: 400;
+// `
+// const dronify = css`
+//     text-transform: uppercase;
+//     letter-spacing: 1px;
+//     font-weight: 400;
+//     font-family: "Montserrat", sans-serif !important;
+// `
+
+// const address = css`
+//     margin-bottom: 0.2rem;
+// `
+
+// const droneImg = css`
+//     margin: 0.1rem auto;
+//     height: 4rem;
+//     width: 4rem;
+// `
 
 const encode = data => {
     return Object.keys(data)
@@ -68,7 +67,6 @@ class ContactForm extends React.Component {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-<<<<<<< HEAD
             body: encode({ "form-name": "contact", ...this.state })
         })
             .then(() => navigate("/form-success/"))
@@ -77,21 +75,10 @@ class ContactForm extends React.Component {
 
         e.preventDefault();
     };
-=======
-            body: encode({ "form-name": "contact", ...this.state }),
-        })
-            .then(() => navigate("/form-success/"))
-            .catch(error => alert(error))
-            .finally(this.setState({ name: "", email: "", message: "" }))
-
-        e.preventDefault()
-    }
->>>>>>> fc64956e6fb192ed1104093a2eec7b499ee8f07e
 
     render() {
         return (
             <>
-<<<<<<< HEAD
                 <section className="section-contact" id="contact">
                     <h1 css={HeadingStyles}>Drop us a line:</h1>
                     <div className="contact">
@@ -152,7 +139,6 @@ export default GoogleApiWrapper({
 
 
 {/* <div style={{ marginTop: `3rem` }}>
-=======
                 <section css={sectionWrapperCol}>
                     <h2 css={heading}>Find us</h2>
                     <div css={GoogleMaps}>
@@ -176,7 +162,6 @@ export default GoogleApiWrapper({
                     </div>
                     <div style={{ marginTop: `3rem` }}>
                         <h2 css={heading}>Contact Us</h2>
->>>>>>> fc64956e6fb192ed1104093a2eec7b499ee8f07e
                         <Form
                             name="contact"
                             method="POST"
