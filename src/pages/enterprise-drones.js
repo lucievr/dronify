@@ -19,6 +19,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import useToggle from "react-use/lib/useToggle"
+import Icon from '../components/styles/Icon'
 
 const EnterpriseDrones = props => {
     useEffect(() => {
@@ -70,7 +71,6 @@ const EnterpriseDrones = props => {
                             <li css={card} key={node.id}>
                                 
                                 <div
-                                    id="myModal"
                                     className={
                                         show
                                             ? "modal display-block"
@@ -79,10 +79,10 @@ const EnterpriseDrones = props => {
                                 >
                                     <div className="modal-content">
                                         <span
-                                            className="close"
+                                            className="icon close"
                                             onClick={toggle}
                                         >
-                                            &times;
+                                            <Icon name="x-circle"/>
                                         </span>
                                         <h2>{node.name}</h2>
                                         <p>{node.description}</p>
@@ -123,7 +123,6 @@ const EnterpriseDrones = props => {
                                     </button>
 
                                     <button
-                                        id="myBtn"
                                         css={buttonStyle}
                                         onClick={toggle}
                                     >
