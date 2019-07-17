@@ -12,6 +12,8 @@ export const NavBar = css`
     height: 7rem;
     width: 100%;
     padding-top: 0.9rem;
+
+    /* background: #222; */
 `
 
 export const NavMenuTop = css`
@@ -54,7 +56,7 @@ export const NavList = css`
     display: flex;
     justify-content: space-between;
     margin: 0;
-    padding-top: 1.7rem;
+    padding-top: 1rem;
     width: 70%;
 
     @media screen and (max-width: 1100px) {

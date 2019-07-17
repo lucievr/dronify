@@ -1,18 +1,15 @@
 import React from "react"
-import { saveBtn, sectionWrapperCol } from "../styles/AccountStyles"
-import { Button, Form, FormGroup, Label, Input } from "reactstrap"
+import { Container, Row, Col } from 'reactstrap';
+// import { saveBtn, sectionWrapperCol } from "../styles/AccountStyles"
+// import { Button, Form, FormGroup, Label, Input } from "reactstrap"
 import { css } from "@emotion/core"
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import { navigate } from "gatsby"
+import './contacts.scss'
+import HeadingStyles from '../main-page/categories/heading/HeadingStyles'
 
-const GoogleMaps = css`
+const maps = css`
     min-height: 60vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
 `
 
 const encode = (data) => {
@@ -31,41 +28,80 @@ class ContactForm extends React.Component {
 
     handleSubmit = e => {
         fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", ...this.state })
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...this.state })
         })
-          .then(() => navigate("/form-success/"))
-          .catch(error => alert(error))
-          .finally(this.setState({ name: "", email: "", message: "" }));
-  
+            .then(() => navigate("/form-success/"))
+            .catch(error => alert(error))
+            .finally(this.setState({ name: "", email: "", message: "" }));
+
         e.preventDefault();
-      };
+    };
 
     render() {
         return (
             <>
-                <section css={sectionWrapperCol}>
-                    <div css={GoogleMaps}>
-                        <Map
-                            google={this.props.google}
-                            zoom={13}
-                            initialCenter={{ lat: 50.06224, lng: 14.437376 }}
-                            style={{ width: `50%`, left: `50px` }}
-                        >
-                            <Marker
-                                position={{ lat: 50.06224, lng: 14.437376 }}
-                            />
-                        </Map>
-                        <div style={{ width: `50%`, margin: `30px` }}>
-                            <h2>Find us</h2>
-                            <h4>Dronify</h4>
-                            <p>Taborska 31</p>
-                            <p>Prague 4</p>
-                            <p>140 00</p>
+                <section className="section-contact" id="contact">
+                    <h1 css={HeadingStyles}>Drop us a line:</h1>
+                    <div className="contact">
+                        <div className="contact__form">
+                            <form action="#" className="form">
+                                <div className="form__group">
+                                    <input type="text" className="form__input" placeholder="Name" id="name" required />
+                                    <label htmlFor="name" className="form__label">Name</label>
+                                </div>
+
+                                <div className="form__group">
+                                    <input type="email" className="form__input" placeholder="Email" id="email" required />
+                                    <label htmlFor="email" className="form__label">Email</label>
+                                </div>
+
+                                <div className="form__group">
+                                    <textarea name="message" className="form__message" placeholder="Message" id="message"
+                                        cols="30" rows="6" />
+                                </div>
+
+                                <div className="form__group">
+                                    <button className="form__button">Send</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div style={{ marginTop: `3rem` }}>
+                </section>
+                <Container style={{ padding: `2rem` }}>
+                    <Row>
+                        <Col>
+                            <Map
+                                google={this.props.google}
+                                zoom={13}
+                                initialCenter={{ lat: 50.06224, lng: 14.437376 }}
+                                css={maps}>
+                                <Marker position={{ lat: 50.06224, lng: 14.437376 }} />
+                            </Map>
+                        </Col>
+                        <Col>
+                            <h2>Find us</h2>
+                            <p>Taborska 31</p>
+                            <p>Prague 4, Nusle, 18000</p>
+                            <p>Prague, Czech Republic</p>
+                        </Col>
+                    </Row>
+                </Container>
+                {/* <div css={GoogleMaps}>
+                        
+                    </div> */}
+            </>
+        )
+    }
+}
+
+export default GoogleApiWrapper({
+    apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
+})(ContactForm)
+
+
+{/* <div style={{ marginTop: `3rem` }}>
                         <Form
                             name="contact"
                             method="POST"
@@ -129,13 +165,4 @@ class ContactForm extends React.Component {
                                 Send
                             </Button>
                         </Form>
-                    </div>
-                </section>
-            </>
-        )
-    }
-}
-
-export default GoogleApiWrapper({
-    apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
-})(ContactForm)
+                    </div> */}

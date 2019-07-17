@@ -22,6 +22,7 @@ const GlobalStyles = css`
         line-height: 1.5;
         word-wrap: break-word;
         background-color: rgb(128, 141, 153);
+        /* background-color: rgb(224, 226, 235); */
     }
 
     .icon-style.arrow {
