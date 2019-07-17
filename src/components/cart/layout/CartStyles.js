@@ -92,8 +92,9 @@ export const qty = css`
 `
 
 export const imageStyles = css`
-    height: 50px;
-    width: 50px;
+    height: 4rem;
+    width: 4rem;
+    object-fit: contain;
     margin: .5rem;
 `
 

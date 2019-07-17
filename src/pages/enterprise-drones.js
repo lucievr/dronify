@@ -195,8 +195,7 @@ const EnterpriseDrones = props => {
                                     <div>
                                         <Img
                                             fluid={
-                                                node.localImage1.childImageSharp
-                                                    .fluid
+                                                node.localImage1.childImageSharp.fluid
                                             }
                                             imgStyle={{
                                                 position: `absolute`,
@@ -216,8 +215,7 @@ const EnterpriseDrones = props => {
                                     <div>
                                         <Img
                                             fluid={
-                                                node.localImage2.childImageSharp
-                                                    .fluid
+                                                node.localImage2.childImageSharp.fluid
                                             }
                                             imgStyle={{
                                                 position: `absolute`,
@@ -237,8 +235,7 @@ const EnterpriseDrones = props => {
                                     <div>
                                         <Img
                                             fluid={
-                                                node.localImage3.childImageSharp
-                                                    .fluid
+                                                node.localImage3.childImageSharp.fluid
                                             }
                                             imgStyle={{
                                                 position: `absolute`,
@@ -258,8 +255,7 @@ const EnterpriseDrones = props => {
                                     <div>
                                         <Img
                                             fluid={
-                                                node.localImage4.childImageSharp
-                                                    .fluid
+                                                node.localImage4.childImageSharp.fluid
                                             }
                                             imgStyle={{
                                                 position: `absolute`,

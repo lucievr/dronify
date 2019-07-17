@@ -21,7 +21,8 @@ const GlobalStyles = css`
         font-size: calc(11px + 0.5vw);
         line-height: 1.5;
         word-wrap: break-word;
-        background-color: rgb(128, 141, 153);
+        background: rgb(120,132,143);
+        background: linear-gradient(45deg, rgba(120,132,143,1) 0%, rgba(144,157,170,1) 50%, rgba(120,132,143,1) 100%);
     }
 
     .icon-style.arrow {
