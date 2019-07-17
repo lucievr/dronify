@@ -18,51 +18,51 @@ const ContactForm = props => {
     return (
         <>
             <section css={sectionWrapperCol}>
-
-                
                 <div css={GoogleMaps}>
                     <Map
                         google={props.google}
                         zoom={13}
                         initialCenter={{ lat: 50.06224, lng: 14.437376 }}
-                        style={{width: `50%`, left: `40px`}}
+                        style={{ width: `50%`, left: `40px` }}
                     >
                         <Marker position={{ lat: 50.06224, lng: 14.437376 }} />
                     </Map>
-                    <div style={{width: `50%`, margin: `30px`}}>
-                    <h2>Find us</h2>
-                    <h4>Dronify</h4>
-                    <p>Taborska 31</p>
-                    <p>Prague 4</p>
-                    <p>140 00</p>
+                    <div style={{ width: `50%`, margin: `30px` }}>
+                        <h2>Find us</h2>
+                        <h4>Dronify</h4>
+                        <p>Taborska 31</p>
+                        <p>Prague 4</p>
+                        <p>140 00</p>
+                    </div>
                 </div>
-                </div>
-                <div style={{marginTop: `3rem`}}>
-                <Form name="contact" method="POST" data-netlify="true">
-                            <h2>Contact Us</h2>
-                            <FormGroup>
-                                <Label for="name">Your Name: </Label>
-                                    <Input type="text" name="name" />
-                            </FormGroup>
 
-                            <FormGroup>
-                                <Label for="email">Your Email: </Label>
-                                <Input type="email" name="email" />
-                            </FormGroup>
+                <Form
+                    style={{ width: `40%`, marginTop: `4rem` }}
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                >
+                    <h2>Contact Us</h2>
+                    <FormGroup>
+                        <Label for="name">Your Name: </Label>
+                        <Input type="text" name="name" />
+                    </FormGroup>
 
-                            <FormGroup>
-                                <Label for="message">Message: </Label>
-                                <Input type="textarea" name="message" id="message" />
-                            </FormGroup>
+                    <FormGroup>
+                        <Label for="email">Your Email: </Label>
+                        <Input type="email" name="email" />
+                    </FormGroup>
 
-                        <Button size="lg" css={saveBtn}>
-                            Send
-                        </Button>
+                    <FormGroup>
+                        <Label for="message">Message: </Label>
+                        <Input type="textarea" name="message" id="message" />
+                    </FormGroup>
+
+                    <Button size="lg" css={saveBtn}>
+                        Send
+                    </Button>
                 </Form>
-                </div>
             </section>
-
-
         </>
     )
 }
