@@ -18,6 +18,8 @@ import SEO from "../components/gatsby-default-files/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
+import useToggle from "react-use/lib/useToggle"
+import Icon from '../components/styles/Icon'
 
 const EnterpriseDrones = props => {
     useEffect(() => {
@@ -25,6 +27,8 @@ const EnterpriseDrones = props => {
     }, [])
 
     const { menuItems, addedToCart } = props
+
+    const [show, toggle] = useToggle(false)
 
     const data = useStaticQuery(graphql`
         query DbEntQuery {
@@ -36,6 +40,7 @@ const EnterpriseDrones = props => {
                         id
                         name
                         category
+                        description
                         price
                         imageURL1
                         localImage1 {
@@ -59,46 +64,74 @@ const EnterpriseDrones = props => {
             <div css={contentWrapper}>
                 <h1 css={categoryTitle}>Enterprise drones</h1>
                 <div css={cardsWrapper}>
-                    {
-                        menuItems.map(({ node }) => (
-                            <ul key={node.id} css={cardList}>
-                                <li css={card}>
-                                    <div css={imageWrapper}>
-                                        <Img
-                                            fluid={
-                                                node.localImage1.childImageSharp
-                                                    .fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                                maxHeight: `280px`,
-                                            }}
-                                        />
-                                    </div>
-                                    <div css={textWrapper}>
-                                        <h3 css={productTitle}>{node.name}</h3>
-                                        <p>
-                                            <strong>Category:</strong>{" "}
-                                            {node.category}
-                                        </p>
-                                        <p>
-                                            <strong>Price:</strong> € {node.price}
-                                        </p>
-                                        <button
-                                            onClick={() => addedToCart(node.id)}
-                                            css={buttonStyle}
+                    <ul css={cardList}>
+
+                        {menuItems.map(({ node }) => (
+                            
+                            <li css={card} key={node.id}>
+                                
+                                <div
+                                    className={
+                                        show
+                                            ? "modal display-block"
+                                            : "modal display-none"
+                                    }
+                                >
+                                    <div className="modal-content">
+                                        <span
+                                            className="icon close"
+                                            onClick={toggle}
                                         >
-                                            Show product
-                                        </button>
+                                            <Icon name="x-circle"/>
+                                        </span>
+                                        <h2>{node.name}</h2>
+                                        <p>{node.description}</p>
                                     </div>
-                                </li>
-                            </ul>
-                        ))
-                    }
+                                </div>
+
+                                <div css={imageWrapper}>
+                                    <Img
+                                        fluid={
+                                            node.localImage1.childImageSharp
+                                                .fluid
+                                        }
+                                        imgStyle={{
+                                            position: `absolute`,
+                                            objectFit: `contain`,
+                                        }}
+                                        style={{
+                                            position: `relative`,
+                                            maxHeight: `280px`,
+                                        }}
+                                    />
+                                </div>
+                                
+                                <div css={textWrapper}>
+                                    <h3 css={productTitle}>{node.name}</h3>
+                                    <p>
+                                        <strong>Category:</strong>{" "}
+                                        {node.category}
+                                    </p>
+                                    <p>
+                                        <strong>Price:</strong> € {node.price}
+                                    </p>
+                                    <button
+                                        onClick={() => addedToCart(node.id)}
+                                        css={buttonStyle}
+                                    >
+                                        Add to cart
+                                    </button>
+
+                                    <button
+                                        css={buttonStyle}
+                                        onClick={toggle}
+                                    >
+                                        Show product
+                                    </button>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 <footer>© {new Date().getFullYear()} dronify</footer>
             </div>
