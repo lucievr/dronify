@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
-import { Spinner } from "reactstrap"
 import { Global } from "@emotion/core"
-import Navigation from '../main-page/landing/navigation/Navigation'
+import Navigation from "../main-page/landing/navigation/Navigation"
 import GlobalStyles from "../styles/GlobalStyles"
 import { navigate } from "gatsby"
 import { connect } from "react-redux"
 import { removeAllItems } from "../../actions"
+import Spin from "react-reveal/Spin"
+import drone from "../../images/icon.png"
 
 import {
     wrapper,
@@ -16,17 +17,16 @@ import {
 } from "../cart/layout/CartStyles"
 
 const FormSuccess = ({ removeAllItems }) => {
-
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         setTimeout(() => {
             setLoading(false)
-        }, 2000)
+        }, 3000)
         setTimeout(() => {
             removeAllItems()
-            navigate('/')
-        }, 5000)
+            navigate("/")
+        }, 7000)
     }, [])
 
     return (
@@ -40,19 +40,19 @@ const FormSuccess = ({ removeAllItems }) => {
                         <span>CONTACT </span>
                     </span>
                 </div>
-                {loading ?
-                    (<div className="loading">
-                        <Spinner
-                            color="info"
-                            style={{
-                                width: "6rem",
-                                height: "6rem",
-                                margin: `5rem`,
-                            }}
-                        />
+                {loading ? (
+                    <div className="loading">
+                        <Spin>
+                            <img
+                                src={drone}
+                                alt="drone icon"
+                                className="droneIcon"
+                            />
+                        </Spin>
                         <h5>Your form is being processed...</h5>
-                    </div>) :
-                    (<div className="loaded">
+                    </div>
+                ) : (
+                    <div className="loaded">
                         <svg
                             version="1.1"
                             xmlns="http://www.w3.org/2000/svg"
@@ -79,23 +79,26 @@ const FormSuccess = ({ removeAllItems }) => {
                             />
                         </svg>
                         <h5 className="svg success">
-                            Oh Yeah! Your message has been sent.
-                    </h5>
-                    </div>)
-                }
+                            Great! Your message has been received.
+                        </h5>
+                    </div>
+                )}
             </div>
         </section>
     )
 }
 
 const mapDispatchToProps = {
-    removeAllItems
+    removeAllItems,
 }
 
 const mapStateToProps = ({ items }) => {
     return {
-        items
+        items,
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormSuccess)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(FormSuccess)

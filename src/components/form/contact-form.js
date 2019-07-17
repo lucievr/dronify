@@ -4,9 +4,12 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap"
 import { css } from "@emotion/core"
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import { navigate } from "gatsby"
+import drone from "../../images/icon.png"
 
 const GoogleMaps = css`
-    min-height: 60vh;
+    min-height: 40vh;
+    height: 55vh;
+    max-height: 80vh;
     width: 100%;
     position: relative;
     display: flex;
@@ -15,10 +18,33 @@ const GoogleMaps = css`
     align-items: center;
 `
 
-const encode = (data) => {
+const heading = css`
+    margin-bottom: 2rem;
+    font-weight: 400;
+`
+const dronify = css`
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif !important;
+`
+
+const address = css`
+    margin-bottom: 0.2rem;
+`
+
+const droneImg = css`
+    margin: 0.1rem auto;
+    height: 4rem;
+    width: 4rem;
+`
+
+const encode = data => {
     return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
+        .map(
+            key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&")
 }
 
 class ContactForm extends React.Component {
@@ -27,45 +53,47 @@ class ContactForm extends React.Component {
         this.state = { name: "", email: "", message: "" }
     }
 
-    handleChange = e => this.setState({ [e.target.name]: e.target.value });
+    handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
     handleSubmit = e => {
         fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", ...this.state })
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...this.state }),
         })
-          .then(() => navigate("/form-success/"))
-          .catch(error => alert(error))
-          .finally(this.setState({ name: "", email: "", message: "" }));
-  
-        e.preventDefault();
-      };
+            .then(() => navigate("/form-success/"))
+            .catch(error => alert(error))
+            .finally(this.setState({ name: "", email: "", message: "" }))
+
+        e.preventDefault()
+    }
 
     render() {
         return (
             <>
                 <section css={sectionWrapperCol}>
+                    <h2 css={heading}>Find us</h2>
                     <div css={GoogleMaps}>
                         <Map
                             google={this.props.google}
                             zoom={13}
                             initialCenter={{ lat: 50.06224, lng: 14.437376 }}
-                            style={{ width: `50%`, left: `50px` }}
+                            style={{ width: `50%`, left: `7rem` }}
                         >
                             <Marker
                                 position={{ lat: 50.06224, lng: 14.437376 }}
                             />
                         </Map>
-                        <div style={{ width: `50%`, margin: `30px` }}>
-                            <h2>Find us</h2>
-                            <h4>Dronify</h4>
-                            <p>Taborska 31</p>
-                            <p>Prague 4</p>
-                            <p>140 00</p>
+                        <div style={{ width: `55%`, margin: `0.5rem` }}>
+                            <img src={drone} alt="drone icon" css={droneImg} />
+                            <h4 css={dronify}>Dronify</h4>
+                            <p css={address}>Taborska 31</p>
+                            <p css={address}>Prague 4</p>
+                            <p css={address}>140 00</p>
                         </div>
                     </div>
                     <div style={{ marginTop: `3rem` }}>
+                        <h2 css={heading}>Contact Us</h2>
                         <Form
                             name="contact"
                             method="POST"
@@ -80,7 +108,7 @@ class ContactForm extends React.Component {
                                 value="contact"
                             />
                             <input name="bot-field" type="hidden" />
-                            <h2>Contact Us</h2>
+
                             <FormGroup>
                                 <Label for="name">Your Name: </Label>
                                 <Input
@@ -126,7 +154,7 @@ class ContactForm extends React.Component {
                             </FormGroup>
 
                             <Button size="lg" css={saveBtn} type="submit">
-                                Send
+                                Send message
                             </Button>
                         </Form>
                     </div>
