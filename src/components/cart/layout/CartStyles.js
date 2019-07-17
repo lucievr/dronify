@@ -5,32 +5,16 @@ export const wrapper = css`
     flex-direction: column;
 `
 
-export const top = css`
-    margin: 2rem auto;
-    padding: 2rem;
-    width: 80%;
-    height: 4rem;
-`
-
-export const top_button = css`
-    margin: 2rem;
-    color: #fff;
-
-    &:hover {
-        text-decoration: none;
-        color: #fff;
-    }
-`
-
 export const bottom = css`
     display: flex;
     flex-direction: column;
     margin: 10rem auto;
     background: white;
     width: 60%;
-    -webkit-box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.75);
+    min-height: 65vh;
+    -webkit-box-shadow: 0px 0px 23px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 23px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 23px 1px rgba(0, 0, 0, 0.75);
 `
 
 export const payformWrapper = css`
@@ -50,8 +34,7 @@ export const bottom__heading = css`
     text-transform: uppercase;
 `
 
-export const bottom__heading__title = css`
-`
+export const bottom__heading__title = css``
 
 export const bottom__heading__total = css`
     font-size: 1.2rem;
@@ -67,7 +50,7 @@ export const item__box = css`
     td {
         padding: 0;
         height: 5rem;
-        text-align: center; 
+        text-align: center;
         vertical-align: middle;
     }
 
@@ -87,14 +70,15 @@ export const buttons = css`
 export const qty = css`
     height: 2rem;
     width: 2rem;
-    margin: 0 .3rem;
+    margin: 0 0.3rem;
     border-radius: 50%;
 `
 
 export const imageStyles = css`
-    height: 50px;
-    width: 50px;
-    margin: .5rem;
+    height: 4rem;
+    width: 4rem;
+    object-fit: contain;
+    margin: 0.5rem;
 `
 
 export const deleteItemButton = css`
