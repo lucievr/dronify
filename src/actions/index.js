@@ -18,6 +18,13 @@ const addedToCart = (id) => {
     }
 }
 
+const showItem = (id) => {
+    return {
+        type: 'SHOW_ITEM',
+        payload: id
+    }
+}
+
 const removeAllItems = () => {
     return {
         type: 'REMOVE_ITEM'
@@ -52,5 +59,6 @@ export {
     deleteFromCart,
     addQuantity,
     reduceQuantity,
-    removeAllItems
+    removeAllItems,
+    showItem
 }

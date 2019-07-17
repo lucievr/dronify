@@ -12,6 +12,7 @@ const sectionWrapper = css`
 
 const sectionWrapperCol = css`
     display: flex;
+    font-family: "Montserrat", sans-serif !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;

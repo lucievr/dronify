@@ -21,8 +21,13 @@ const GlobalStyles = css`
         font-size: calc(11px + 0.5vw);
         line-height: 1.5;
         word-wrap: break-word;
-        background: rgb(120,132,143);
-        background: linear-gradient(45deg, rgba(120,132,143,1) 0%, rgba(144,157,170,1) 50%, rgba(120,132,143,1) 100%);
+        background: rgb(120, 132, 143);
+        background: linear-gradient(
+            45deg,
+            rgba(120, 132, 143, 1) 0%,
+            rgba(144, 157, 170, 1) 50%,
+            rgba(120, 132, 143, 1) 100%
+        );
     }
 
     .icon-style.arrow {
@@ -149,9 +154,10 @@ const GlobalStyles = css`
     }
 
     .loaded svg {
-        width: 100px;
+        width: 6rem;
+        height: 6rem;
         display: block;
-        margin: 40px auto 0;
+        margin: 5rem auto 3rem;
     }
 
     .path {
@@ -171,12 +177,6 @@ const GlobalStyles = css`
             -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
             animation: dash-check 0.9s 0.35s ease-in-out forwards;
         }
-    }
-
-    p.svg {
-        text-align: center;
-        margin: 20px 0 60px;
-        font-size: 1.25em;
     }
 
     @-webkit-keyframes dash {
@@ -213,6 +213,10 @@ const GlobalStyles = css`
         100% {
             stroke-dashoffset: 900;
         }
+    }
+
+    img.droneIcon {
+        margin: 5rem auto 2rem;
     }
 `
 

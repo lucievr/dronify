@@ -22,11 +22,11 @@ const PaymentSuccess = ({ removeAllItems }) => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false)
-        }, 2000)
+        }, 2500)
         setTimeout(() => {
             removeAllItems()
             navigate('/')
-        }, 5000)
+        }, 7000)
     }, [])
 
     return (
@@ -47,7 +47,7 @@ const PaymentSuccess = ({ removeAllItems }) => {
                             style={{
                                 width: "6rem",
                                 height: "6rem",
-                                margin: `5rem`,
+                                margin: `5rem auto 3rem`,
                             }}
                         />
                         <h5>Your payment is being processed...</h5>
@@ -78,9 +78,9 @@ const PaymentSuccess = ({ removeAllItems }) => {
                                 points="100.2,40.2 51.5,88.8 29.8,67.5 "
                             />
                         </svg>
-                        <p className="svg success">
-                            Oh Yeah! Your payment has been processed.
-                    </p>
+                        <h5 className="svg success">
+                            Nice! Your payment has been received.
+                        </h5>
                     </div>)
                 }
             </div>

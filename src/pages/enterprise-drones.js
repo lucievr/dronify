@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { addedToCart, menuLoaded } from "../actions"
+import { addedToCart, menuLoaded, showItem } from "../actions"
 import GlobalStyles from "../components/styles/GlobalStyles"
 import {
     contentWrapper,
@@ -13,29 +13,24 @@ import {
     productTitle,
     buttonStyle,
 } from "../components/styles/ProductOverviewStyles"
-import { carouselWrapper, specWrapper, descriptionStyle, specText, column, btnBuy} from '../components/styles/ProductDetailStyles'
+// import { carouselWrapper, specWrapper, descriptionStyle, specText, column, btnBuy } from '../components/styles/ProductDetailStyles'
 import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
-import useToggle from "react-use/lib/useToggle"
-import Icon from '../components/styles/Icon'
+import { Link } from 'gatsby'
+// import useToggle from "react-use/lib/useToggle"
 
-import makeCarousel from "react-reveal/makeCarousel"
-import Slide from "react-reveal/Slide"
-import CarouselUI from '../components/product-page/CarouselUI'
+// const Carousel = makeCarousel(CarouselUI)
 
-const Carousel = makeCarousel(CarouselUI)
-
-const EnterpriseDrones = props => {
+const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
     useEffect(() => {
-        props.menuLoaded(data.allMongodbDronifyDrones.edges)
+        menuLoaded(data.allMongodbDronifyDrones.edges)
     }, [])
 
-    const { menuItems, addedToCart } = props
+    // console.log(item)
 
-    const [show, toggle] = useToggle(false)
 
     const data = useStaticQuery(graphql`
         query DbEntQuery {
@@ -113,167 +108,18 @@ const EnterpriseDrones = props => {
                     <ul css={cardList}>
 
                         {menuItems.map(({ node }) => (
-                            
+
                             <li css={card} key={node.id}>
-                                
-                                <div
+
+                                {/* <div
                                     className={
                                         show
                                             ? "modal display-block"
                                             : "modal display-none"
                                     }
-                                >
-                                    <div className="modal-content">
-                                        <span
-                                            className="icon close"
-                                            onClick={toggle}
-                                        >
-                                            <Icon name="x-circle"/>
-                                        </span>
-                        
-                            <div css={textWrapper}>
-                                <h2 style={{ letterSpacing: `1px` }}>
-                                    {node.name}
-                                </h2>
-                                <h3>€ {node.price}</h3>
-                                <h5>
-                                    <strong>Category:</strong> {node.category}
-                                </h5>
-                                <hr />
-                                <h6 css={descriptionStyle}>{node.description}</h6>
-                                <div css={specWrapper}>
-                                    <section css={column}>
-                                        <p>
-                                            <Icon name={node.icon1} />{" "}
-                                            <span css={specText}>
-                                                {node.spec1}
-                                            </span>
-                                        </p>
-                                        <p>
-                                            <Icon name={node.icon2} />{" "}
-                                            <span css={specText}>
-                                                {node.spec2}
-                                            </span>
-                                        </p>
-                                        <p>
-                                            <Icon name={node.icon3} />{" "}
-                                            <span css={specText}>
-                                                {node.spec3}
-                                            </span>
-                                        </p>
-                                    </section>
-                                    <section css={column}>
-                                        <p>
-                                            <Icon name={node.icon4} />{" "}
-                                            <span css={specText}>
-                                                {node.spec4}
-                                            </span>
-                                        </p>
-                                        <p>
-                                            <Icon name={node.icon5} />{" "}
-                                            <span css={specText}>
-                                                {node.spec5}
-                                            </span>
-                                        </p>
-                                        <p>
-                                            <Icon name={node.icon6} />{" "}
-                                            <span css={specText}>
-                                                {node.spec6}
-                                            </span>
-                                        </p>
-                                    </section>
-                                </div>
-                                <button
-                                        onClick={() => addedToCart(node.id)}
-                                        css={btnBuy}
-                                    >
-                                        Add to cart
-                                    </button>
-                            </div>
-                            <Carousel defaultWait={3000} css={carouselWrapper}>
-                                <Slide right>
-                                    <div>
-                                        <Img
-                                            fluid={
-                                                node.localImage1.childImageSharp.fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                                top: `3rem`,
-                                                left: `10rem`,
-                                                maxHeight: `350px`,
-                                                maxWidth: `700px`
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                            }}
-                                        />
-                                    </div>
-                                </Slide>
-                                <Slide right>
-                                    <div>
-                                        <Img
-                                            fluid={
-                                                node.localImage2.childImageSharp.fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                                top: `3rem`,
-                                                left: `10rem`,
-                                                maxHeight: `350px`,
-                                                maxWidth: `700px`
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                            }}
-                                        />
-                                    </div>
-                                </Slide>
-                                <Slide right>
-                                    <div>
-                                        <Img
-                                            fluid={
-                                                node.localImage3.childImageSharp.fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                                top: `3rem`,
-                                                left: `10rem`,
-                                                maxHeight: `350px`,
-                                                maxWidth: `700px`
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                            }}
-                                        />
-                                    </div>
-                                </Slide>
-                                <Slide right>
-                                    <div>
-                                        <Img
-                                            fluid={
-                                                node.localImage4.childImageSharp.fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                                top: `3rem`,
-                                                left: `10rem`,
-                                                maxHeight: `350px`,
-                                                maxWidth: `700px`
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                            }}
-                                        />
-                                    </div>
-                                </Slide>
-                            </Carousel> 
-                            </div>
-                        </div>
+                                > 
+                                    
+                                </div>*/}
 
                                 <div css={imageWrapper}>
                                     <Img
@@ -291,7 +137,7 @@ const EnterpriseDrones = props => {
                                         }}
                                     />
                                 </div>
-                                
+
                                 <div css={textWrapper}>
                                     <h3 css={productTitle}>{node.name}</h3>
                                     <p>
@@ -308,12 +154,16 @@ const EnterpriseDrones = props => {
                                         Add to cart
                                     </button>
 
+                                    <Link to='/item'>
                                     <button
                                         css={buttonStyle}
-                                        onClick={toggle}
+                                        onClick={() => {
+                                            showItem(node.id)
+                                        }}
                                     >
                                         Show product
                                     </button>
+                                    </Link>
                                 </div>
                             </li>
                         ))}
@@ -328,12 +178,14 @@ const EnterpriseDrones = props => {
 const mapStateToProps = state => {
     return {
         menuItems: state.menu,
+        item: state.item
     }
 }
 
 const mapDispatchToProps = {
     addedToCart,
     menuLoaded,
+    showItem
 }
 
 export default connect(

@@ -5,17 +5,55 @@ import { Container, Row, Col } from 'reactstrap';
 import { css } from "@emotion/core"
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import { navigate } from "gatsby"
+<<<<<<< HEAD
 import './contacts.scss'
 import HeadingStyles from '../main-page/categories/heading/HeadingStyles'
 
 const maps = css`
     min-height: 60vh;
+=======
+import drone from "../../images/icon.png"
+
+const GoogleMaps = css`
+    min-height: 40vh;
+    height: 55vh;
+    max-height: 80vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+>>>>>>> fc64956e6fb192ed1104093a2eec7b499ee8f07e
 `
 
-const encode = (data) => {
+const heading = css`
+    margin-bottom: 2rem;
+    font-weight: 400;
+`
+const dronify = css`
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif !important;
+`
+
+const address = css`
+    margin-bottom: 0.2rem;
+`
+
+const droneImg = css`
+    margin: 0.1rem auto;
+    height: 4rem;
+    width: 4rem;
+`
+
+const encode = data => {
     return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
+        .map(
+            key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&")
 }
 
 class ContactForm extends React.Component {
@@ -24,12 +62,13 @@ class ContactForm extends React.Component {
         this.state = { name: "", email: "", message: "" }
     }
 
-    handleChange = e => this.setState({ [e.target.name]: e.target.value });
+    handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
     handleSubmit = e => {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
+<<<<<<< HEAD
             body: encode({ "form-name": "contact", ...this.state })
         })
             .then(() => navigate("/form-success/"))
@@ -38,10 +77,21 @@ class ContactForm extends React.Component {
 
         e.preventDefault();
     };
+=======
+            body: encode({ "form-name": "contact", ...this.state }),
+        })
+            .then(() => navigate("/form-success/"))
+            .catch(error => alert(error))
+            .finally(this.setState({ name: "", email: "", message: "" }))
+
+        e.preventDefault()
+    }
+>>>>>>> fc64956e6fb192ed1104093a2eec7b499ee8f07e
 
     render() {
         return (
             <>
+<<<<<<< HEAD
                 <section className="section-contact" id="contact">
                     <h1 css={HeadingStyles}>Drop us a line:</h1>
                     <div className="contact">
@@ -102,6 +152,31 @@ export default GoogleApiWrapper({
 
 
 {/* <div style={{ marginTop: `3rem` }}>
+=======
+                <section css={sectionWrapperCol}>
+                    <h2 css={heading}>Find us</h2>
+                    <div css={GoogleMaps}>
+                        <Map
+                            google={this.props.google}
+                            zoom={13}
+                            initialCenter={{ lat: 50.06224, lng: 14.437376 }}
+                            style={{ width: `50%`, left: `7rem` }}
+                        >
+                            <Marker
+                                position={{ lat: 50.06224, lng: 14.437376 }}
+                            />
+                        </Map>
+                        <div style={{ width: `55%`, margin: `0.5rem` }}>
+                            <img src={drone} alt="drone icon" css={droneImg} />
+                            <h4 css={dronify}>Dronify</h4>
+                            <p css={address}>Taborska 31</p>
+                            <p css={address}>Prague 4</p>
+                            <p css={address}>140 00</p>
+                        </div>
+                    </div>
+                    <div style={{ marginTop: `3rem` }}>
+                        <h2 css={heading}>Contact Us</h2>
+>>>>>>> fc64956e6fb192ed1104093a2eec7b499ee8f07e
                         <Form
                             name="contact"
                             method="POST"
@@ -116,7 +191,7 @@ export default GoogleApiWrapper({
                                 value="contact"
                             />
                             <input name="bot-field" type="hidden" />
-                            <h2>Contact Us</h2>
+
                             <FormGroup>
                                 <Label for="name">Your Name: </Label>
                                 <Input
@@ -162,7 +237,7 @@ export default GoogleApiWrapper({
                             </FormGroup>
 
                             <Button size="lg" css={saveBtn} type="submit">
-                                Send
+                                Send message
                             </Button>
                         </Form>
                     </div> */}
