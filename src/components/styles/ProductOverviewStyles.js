@@ -37,7 +37,6 @@ export const cardList = css`
 export const card = css`
   min-width: 450px;
   min-height: 500px;
-  ${'' /* background-color: rgb(255, 255, 255, 0.2); */}
   margin: 30px;
   color: grey;
   padding: 2rem;

@@ -21,8 +21,8 @@ const GlobalStyles = css`
         font-size: calc(11px + 0.5vw);
         line-height: 1.5;
         word-wrap: break-word;
-        background-color: rgb(128, 141, 153);
-        /* background-color: rgb(224, 226, 235); */
+        background: rgb(120,132,143);
+        background: linear-gradient(45deg, rgba(120,132,143,1) 0%, rgba(144,157,170,1) 50%, rgba(120,132,143,1) 100%);
     }
 
     .icon-style.arrow {
@@ -32,7 +32,7 @@ const GlobalStyles = css`
     .modal {
         position: fixed;
         z-index: 99;
-        padding-top: 100px;
+        padding-top: 2rem;
         left: 0;
         top: 0;
         width: 100%;
@@ -55,21 +55,28 @@ const GlobalStyles = css`
         padding: 20px;
         border: 1px solid #888;
         width: 80%;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
         animation-name: animatetop;
-        animation-duration: 0.5s
+        animation-duration: 0.5s;
     }
 
     @keyframes animatetop {
-        from {top: -300px; opacity: 0}
-        to {top: 0; opacity: 1}
+        from {
+            top: -300px;
+            opacity: 0;
+        }
+        to {
+            top: 0;
+            opacity: 1;
+        }
     }
 
-    span.icon.close {
-        color: #aaaaaa;
+    span.icon.close svg.icon-style {
+        color: #4d4d4d;
         float: right;
-        font-size: 28px;
-        font-weight: bold;
+        width: 4rem;
+        height: 4rem;
     }
 
     span.icon.close:hover,
@@ -96,6 +103,19 @@ const GlobalStyles = css`
         width: 25px;
         height: 25px;
         margin: 10px 15px 18px 10px;
+    }
+
+    span.carouselIcon svg.icon-style {
+        color: #666666;
+        width: 4rem;
+        height: 4rem;
+        stroke-width: 1;
+        margin: 10px 15px 18px 10px;
+        border-radius: 50%;
+    }
+
+    span.carouselIcon svg.icon-style:hover {
+        background-color: rgba(0, 0, 0, 0.06);
     }
 
     span.iconDiv svg.icon-style {
