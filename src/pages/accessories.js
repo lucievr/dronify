@@ -127,6 +127,7 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
                                             style={{
                                                 position: `relative`,
                                                 maxHeight: `280px`,
+                                                maxWidth: `428px`
                                             }}
                                         />
                                     </div>

@@ -32,6 +32,7 @@ export const cardList = css`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  width: 600px;
 `
 
 export const card = css`
@@ -56,6 +57,7 @@ export const imageWrapper = css`
   width: 100%;
   height: auto;
   margin-bottom: 50px;
+  width: 420px;
 `
 
 export const textWrapper = css`
