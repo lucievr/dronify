@@ -9,12 +9,12 @@
     justify-content: flex-end;
     background-image: linear-gradient(
             90deg,
-            rgba(rgb(224,226,235), 0) 1%,
-            rgba(rgb(224,226,235), 0.2) 20%,
-            rgba(rgb(224,226,235), 0.4) 40%,
-            rgba(rgb(224,226,235), 0.7) 50%,
-            rgba(rgb(224,226,235), 0.8) 55%,
-            rgba(rgb(224,226,235), 1) 100%,
+            rgba(rgb(0,31,63), 0) 1%,
+            rgba(rgb(0,31,63), 0.2) 20%,
+            rgba(rgb(0,31,63), 0.4) 40%,
+            rgba(rgb(0,31,63), 0.7) 50%,
+            rgba(rgb(0,31,63), 0.8) 55%,
+            rgba(rgb(0,31,63), 1) 100%,
             transparent 100%
         ),
         url(./contact.jpg);
@@ -63,7 +63,7 @@
         }
 
         &::-webkit-input-placeholder {
-            color: lightgrey;
+            color: rgba(0, 0, 0, .5);
         }
     }
 
