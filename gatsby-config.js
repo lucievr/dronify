@@ -78,7 +78,7 @@ module.exports = {
           'Link: </icons/icon-72x72.png>; rel=preload; as=image',
           'Link: </icons/icon-96x96.png>; rel=preload; as=image',
           'Link: </icons/icon-144x144.png>; rel=preload; as=image',
-          'Link: </src/images/poster.jpg>; rel=preload; as=image; crossorigin=anonymous',
+          // 'Link: </src/images/poster.jpg>; rel=preload; as=image; crossorigin=anonymous',
         ],
       },
     },
