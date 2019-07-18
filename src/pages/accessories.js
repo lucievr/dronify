@@ -19,6 +19,7 @@ import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 
 const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => {
     useEffect(() => {
@@ -96,7 +97,7 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
             <Global styles={GlobalStyles} />
             <SEO title="Accessories" />
             <div css={contentWrapper}>
-                <h1 css={categoryTitle}>Accessories</h1>
+                <CategoriesHeading label='Accessories' />
                 <div css={cardsWrapper}>
 
                     {
@@ -128,8 +129,8 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
                                             {node.category}
                                         </p>
                                         <p>
-                                            <strong>Price:</strong> €{" "}
-                                            {node.price}
+                                            <strong>Price:</strong>{" "}
+                                            {node.price}€
                                         </p>
                                         <button
                                             onClick={() => addedToCart(node.id)}

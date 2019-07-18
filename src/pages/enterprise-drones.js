@@ -13,16 +13,13 @@ import {
     productTitle,
     buttonStyle,
 } from "../components/styles/ProductOverviewStyles"
-// import { carouselWrapper, specWrapper, descriptionStyle, specText, column, btnBuy } from '../components/styles/ProductDetailStyles'
 import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import { Link } from 'gatsby'
-// import useToggle from "react-use/lib/useToggle"
-
-// const Carousel = makeCarousel(CarouselUI)
+import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 
 const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
     useEffect(() => {
@@ -100,7 +97,9 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
             <Global styles={GlobalStyles} />
             <SEO title="Enterprise drones" />
             <div css={contentWrapper}>
-                <h1 css={categoryTitle}>Enterprise drones</h1>
+                <CategoriesHeading
+                    label='Enterprise drones'
+                    descriptionText='Dronify has been assisting police, fire departments, search and rescue teams, inspection services, agriculture crop inspectors, and educational institutions to launch their own drone programs. From infrared camera drones finding missing persons to multispectral agriculture drones identifying crop stress, we know the efficient power of unmanned aerial systems (UAS). Dronify is the go-to commercial drone shop for organizations looking to harness the possibilities of infrared, zoom, or agriculture drones.' />
                 <div css={cardsWrapper}>
                     <ul css={cardList}>
 
@@ -131,8 +130,8 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                                         {node.category}
                                     </p>
                                     <p>
-                                        <strong>Price:</strong>
-                                         € {node.price}
+                                        <strong>Price:</strong>{" "}
+                                        {node.price}€
                                     </p>
                                     <button
                                         onClick={() => addedToCart(node.id)}
