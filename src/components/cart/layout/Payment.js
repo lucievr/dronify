@@ -241,28 +241,25 @@ class Payment extends React.Component {
                                     </span>
                                         ) : null}
                                 </FormGroup>
-                            </Form>
-                        </div>
-                        <div>
-                            <Link to="/delivery/">
-                                <Button
-                                    style={{
-                                        marginRight: `20rem`,
-                                        margin: `1rem`,
-                                    }}
-                                    size="lg"
-                                >
-                                    Previous Step
-                                </Button>
-                            </Link>
+                                <div style={{display: `flex`, justifyContent: `space-between`}}>
+                                    <Link to="/delivery/">
+                                        <Button
+                                            style={{padding: `.5rem 1rem`}}
+                                            size="lg"
+                                        >
+                                            Previous Step
+                                        </Button>
+                                    </Link>
 
-                            <Button
-                                style={{ margin: `1rem` }}
-                                size="lg"
-                                type="submit"
-                            >
-                                Confirm payment
-                            </Button>
+                                    <Button
+                                        style={{padding: `.5rem 1rem`}}
+                                        size="lg"
+                                        type="submit"
+                                    >
+                                        Confirm payment
+                                    </Button>
+                                </div>
+                            </Form>
                         </div>
                     </div>
                 </div>
