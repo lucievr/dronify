@@ -18,6 +18,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-mongodb`,
       options: {
