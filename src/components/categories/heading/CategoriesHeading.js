@@ -6,6 +6,8 @@ const heading = css`
     text-transform: uppercase;
     letter-spacing: .2rem;
     color: #fff;
+    font-size: calc(25px + 2vw);
+    margin: calc(22px + 3vw);
 `
 
 const description = css`
@@ -13,6 +15,8 @@ const description = css`
     padding: 2rem;
     color: #fff;
     font-size: 1rem;
+    line-height: 2;
+    margin: calc(20px + 2vw);
 `
 
 const CategoriesHeading = ({ label, descriptionText }) => {

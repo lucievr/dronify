@@ -44,7 +44,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-40%,-50%);
         list-style: none;
         text-align: center;
         width: 100%;
@@ -68,6 +68,11 @@
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
             background-size: 220%;
             transition: all .4s;
+            margin-left: -20rem;
+        }
+
+        @media (max-width: 600px) {
+            margin-left: -10rem !important;
         }
         
         &:hover,

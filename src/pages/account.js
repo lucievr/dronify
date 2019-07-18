@@ -16,8 +16,8 @@ import { login, isAuthenticated, getProfile } from "../utils/auth"
 import Home from "../components/account/HomeSection"
 import Settings from "../components/account/SettingsSection"
 import Orders from "../components/account/OrdersSection"
-
-// console.log(getProfile())
+import Button from "../components/main-page/navigation-button/Button";
+import Footer from "../components/footer/Footer";
 
 export default class Account extends React.Component {
     constructor(props) {
@@ -56,9 +56,9 @@ export default class Account extends React.Component {
             login()
             return <p>Redirecting to login...</p>
         }
-        console.log(isAuthenticated());
         return (
             <>
+                <Button />
                 <Navigation />
                 <Global styles={GlobalStyles} />
                 <SEO title="Account" />
@@ -94,7 +94,7 @@ export default class Account extends React.Component {
                         <Orders path="/account/orders" user={this.state.user} />
                     </Router>
                 </section>
-                <footer>© {new Date().getFullYear()} dronify</footer>
+                <Footer />
             </>
         )
     }

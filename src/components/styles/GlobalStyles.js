@@ -21,13 +21,18 @@ const GlobalStyles = css`
         font-size: calc(12px + 0.4vw);
         line-height: 1.5;
         word-wrap: break-word;
-        background: #001f3f;
+        /* background: #001f3f; */
         /* background: linear-gradient(
             45deg,
             rgba(120, 132, 143, 1) 0%,
             rgba(144, 157, 170, 1) 50%,
             rgba(120, 132, 143, 1) 100%
         ); */
+        background-repeat: no-repeat;
+        background: #0F2027;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     }
 
     .icon-style.arrow {
@@ -112,7 +117,7 @@ const GlobalStyles = css`
     }
 
     span.carouselIcon svg.icon-style {
-        color: #666666;
+        color: rgba(255,255,255,0.8);
         width: 4rem;
         height: 4rem;
         stroke-width: 1;
@@ -124,24 +129,32 @@ const GlobalStyles = css`
         background-color: rgba(0, 0, 0, 0.06);
     }
 
+    span.specIcon svg.icon-style {
+        color: #badb57;
+    }
+
     span.iconDiv svg.icon-style {
         color: white;
         width: 23px;
         height: 23px;
         margin: 0 10px 3px 10px;
     }
+    span.iconDiv.login svg.icon-style {
+        color: #badb57;
+    }
 
     span.iconName {
-        font-size: calc(8px + 0.4vw);
+        font-size: calc(12px + 0.2vw);
         letter-spacing: 1px;
     }
 
     div.rccs {
         width: 50%;
+        margin: 0;
     }
 
     div.rccs__card--front {
-        margin: 3rem 0;
+        /* margin: 3rem 0; */
     }
 
     div.rccs__card--back {

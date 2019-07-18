@@ -11,6 +11,7 @@ import {
     textWrapper,
     productTitle,
     buttonStyle,
+    buttonCartStyle,
 } from "../components/styles/ProductOverviewStyles"
 import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
@@ -19,6 +20,8 @@ import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import { Link } from 'gatsby'
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
+import Button from '../components/main-page/navigation-button/Button'
+import Footer from '../components/footer/Footer'
 
 const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
     useEffect(() => {
@@ -95,16 +98,17 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
             <Navigation />
             <Global styles={GlobalStyles} />
             <SEO title="Enterprise drones" />
+            <Button />
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Enterprise drones'
-                    descriptionText='Dronify has been assisting police, fire departments, search and rescue teams, inspection services, agriculture crop inspectors, and educational institutions to launch their own drone programs. From infrared camera drones finding missing persons to multispectral agriculture drones identifying crop stress, we know the efficient power of unmanned aerial systems (UAS). Dronify is the go-to commercial drone shop for organizations looking to harness the possibilities of infrared, zoom, or agriculture drones.' />
+                    descriptionText='Our enterprise drones have been assisting police, fire departments, search and rescue teams, inspection services, agriculture crop inspectors, and educational institutions to launch their own drone programs. From infrared camera drones finding missing persons to multispectral agriculture drones identifying crop stress, we know the efficient power of unmanned aerial systems (UAS). Dronify is the go-to commercial drone shop for organizations looking to harness the possibilities of infrared, zoom, or agriculture drones.' />
                 <div css={cardsWrapper}>
-                    <ul css={cardList}>
 
-                        {menuItems.map(({ node }) => (
+                    {menuItems.map(({ node }) => (
+                        <ul css={cardList} key={node.id}>
 
-                            <li css={card} key={node.id}>
+                            <li css={card}>
                                 <div css={imageWrapper}>
                                     <Img
                                         fluid={
@@ -117,7 +121,7 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                                         }}
                                         style={{
                                             position: `relative`,
-                                            maxHeight: `280px`,
+                                            maxHeight: `220px`,
                                         }}
                                     />
                                 </div>
@@ -125,36 +129,37 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                                 <div css={textWrapper}>
                                     <h3 css={productTitle}>{node.name}</h3>
                                     <p>
-                                        <strong>Category:</strong>{" "}
-                                        {node.category}
+                                        {node.description}
                                     </p>
                                     <p>
                                         <strong>Price:</strong>{" "}
                                         {node.price}€
                                     </p>
-                                    <button
-                                        onClick={() => addedToCart(node.id)}
-                                        css={buttonStyle}
-                                    >
-                                        Add to cart
-                                    </button>
-
-                                    <Link to='/item'>
+                                    <div>
                                         <button
-                                            css={buttonStyle}
-                                            onClick={() => {
-                                                showItem(node.id)
-                                            }}
+                                            onClick={() => addedToCart(node.id)}
+                                            css={buttonCartStyle}
                                         >
-                                            Show product
+                                            Add to cart
                                         </button>
-                                    </Link>
+
+                                        <Link to='/item'>
+                                            <button
+                                                css={buttonStyle}
+                                                onClick={() => {
+                                                    showItem(node.id)
+                                                }}
+                                            >
+                                                Show product
+                                            </button>
+                                        </Link>
+                                    </div>
                                 </div>
                             </li>
-                        ))}
-                    </ul>
+                        </ul>
+                    ))}
                 </div>
-                <footer>© {new Date().getFullYear()} dronify</footer>
+                <Footer />
             </div>
         </>
     )

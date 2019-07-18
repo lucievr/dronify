@@ -16,6 +16,7 @@ import {
     textWrapper,
     productTitle,
     buttonStyle,
+    buttonCartStyle,
 } from "../components/styles/ProductOverviewStyles"
 
 // COMPONENTS
@@ -25,6 +26,8 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
+import Button from '../components/main-page/navigation-button/Button'
+import Footer from "../components/footer/Footer";
 
 const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => {
     useEffect(() => {
@@ -101,10 +104,11 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
             <Navigation />
             <Global styles={GlobalStyles} />
             <SEO title="Accessories" />
+            <Button />
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Accessories'
-                    descriptionText='some description goes here'
+                    descriptionText="Sustainable XOXO hashtag meggings 90's, meh meditation mustache mlkshk DIY palo santo fanny pack. 8-bit irony retro 90's VHS copper mug freegan 3 wolf moon organic succulents meditation. Meh franzen snackwave, umami vaporware fanny pack photo booth. Messenger bag pinterest flexitarian, cornhole drinking vinegar cronut quinoa. 90's tattooed poutine fam, bicycle rights vaporware umami pickled cliche."
                 />
                 <div css={cardsWrapper}>
 
@@ -124,7 +128,7 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
                                             }}
                                             style={{
                                                 position: `relative`,
-                                                maxHeight: `280px`,
+                                                maxHeight: `220px`
                                             }}
                                         />
                                     </div>
@@ -133,28 +137,29 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
                                             {node.name}
                                         </h3>
                                         <p>
-                                            <strong>Category:</strong>{" "}
-                                            {node.category}
+                                            {node.description}
                                         </p>
                                         <p>
                                             <strong>Price:</strong>{" "}
                                             {node.price}€
                                         </p>
-                                        <button
-                                            onClick={() => addedToCart(node.id)}
-                                            css={buttonStyle}>
-                                            Add to cart
-                                            </button>
-                                        <Link to='/item'>
+                                        <div>
                                             <button
-                                                css={buttonStyle}
-                                                onClick={() => {
-                                                    showItem(node.id)
-                                                }}
-                                            >
-                                                Show product
+                                                onClick={() => addedToCart(node.id)}
+                                                css={buttonCartStyle}>
+                                                Add to cart
                                             </button>
-                                        </Link>
+                                            <Link to='/item'>
+                                                <button
+                                                    css={buttonStyle}
+                                                    onClick={() => {
+                                                        showItem(node.id)
+                                                    }}
+                                                >
+                                                    Show product
+                                                </button>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
@@ -162,7 +167,7 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
                     }
 
                 </div>
-                <footer>© {new Date().getFullYear()} dronify</footer>
+                <Footer/>
             </div>
         </>
     )

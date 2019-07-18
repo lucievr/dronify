@@ -23,21 +23,23 @@ export const landingContent = css`
 `
 
 export const heading = css`
-    font-size: 4rem;
+    font-size: calc(30px + 3vw);
     color: #fff;
     letter-spacing: 1px;
     font-weight: 300;
     font-family: "Montserrat", sans-serif !important;
-    margin-bottom: 10rem;
+    margin: calc(20px + 5vw);
+    margin-bottom: calc(100px + 3vh);
 `
 
 export const button = css`
-    color: #fff;
+    color: #badb57;
     font-family: "Montserrat", sans-serif !important;
-    border: 3px solid #fff;
+    border: 3px solid #badb57;
     padding: 1rem 3rem;
     border-radius: 5rem;
-    font-size: 1.2rem;
+    font-size: calc(13px + 0.6vw);
+    margin: calc(15px + 1vw);
     text-transform: uppercase;
     &:hover {
         text-decoration: none !important;

@@ -4,7 +4,6 @@ import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap"
 
 export default class UserSettings extends React.Component {
     render() {
-        console.log(this.props.user)
         return (
             <Form onSubmit={(event) => this.props.handleSubmit(event)}>
                 <Row form>

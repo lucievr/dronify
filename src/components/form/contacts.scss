@@ -1,6 +1,7 @@
 .section-contact {
-    padding: 5rem 8rem;
-    margin-top: 10rem;
+    padding: calc(15px + 7vw);
+    padding-top: calc(10px + 4vw);
+    margin-top: 7rem;
     background: inherit;
 }
 
@@ -25,7 +26,25 @@
 
     &__form {
         width: 50%;
-        padding: 2rem;  
+        padding: 2rem;
+        @media (max-width: 1000px) {
+            width: 60%;
+        }
+        @media (max-width: 850px) {
+            width: 70%;
+        }
+        @media (max-width: 650px) {
+            width: 80%;
+            padding: 1.5rem 1rem;
+        } 
+        @media (max-width: 500px) {
+            width: 90%;
+            padding: 1 rem 0.5rem;
+        }
+        @media (max-width: 400px) {
+            width: 100%;
+            padding: 1 rem 0.3rem;
+        }
     }
 }
 

@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import { Link } from "gatsby"
 
 // COMPONENTS
-import Button from "../../navigation-button/Button"
 import Icon from "../../../styles/Icon"
 import {
     NavBar,
@@ -28,7 +27,7 @@ const Navigation = ({ items }) => {
         <nav css={NavBar}>
             <div css={NavMenuTop}>
                 <div css={ButtonWrapper}>
-                    <Button />
+                    {/* <Button /> */}
                 </div>
                 <Link to="/">
                     <div css={LogoName}> Dronify </div>
@@ -37,38 +36,38 @@ const Navigation = ({ items }) => {
                     {!isAuthenticated() ? (
                         <Link to="/account">
                             <div css={IconItem}>
-                                <span className="iconDiv">
+                                <span className="iconDiv login">
                                     <Icon name="user-plus" />
                                 </span>
-                                <span className="iconName">Log In</span>
+                                <span className="iconName" style={{color: `#badb57`}}>Log In</span>
                             </div>
                         </Link>
                     ) : (
-                        <>
-                            <Link to="/account">
-                                <div css={IconItem}>
-                                    <span className="iconDiv">
-                                        <Icon name="user" />
-                                    </span>
-                                    <span className="iconName">Account</span>
-                                </div>
-                            </Link>
-                            <a
-                                href="#logout"
-                                onClick={e => {
-                                    logout()
-                                    e.preventDefault()
-                                }}
-                            >
-                                <div css={IconItem}>
-                                    <span className="iconDiv">
-                                        <Icon name="x-circle" />
-                                    </span>
-                                    <span className="iconName">Log Out</span>
-                                </div>
-                            </a>
-                        </>
-                    )}
+                            <>
+                                <Link to="/account">
+                                    <div css={IconItem}>
+                                        <span className="iconDiv">
+                                            <Icon name="user" />
+                                        </span>
+                                        <span className="iconName">Account</span>
+                                    </div>
+                                </Link>
+                                <a
+                                    href="#logout"
+                                    onClick={e => {
+                                        logout()
+                                        e.preventDefault()
+                                    }}
+                                >
+                                    <div css={IconItem}>
+                                        <span className="iconDiv">
+                                            <Icon name="x-circle" />
+                                        </span>
+                                        <span className="iconName">Log Out</span>
+                                    </div>
+                                </a>
+                            </>
+                        )}
 
                     <Link to="/cart">
                         <div css={IconItem}>

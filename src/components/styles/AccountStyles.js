@@ -59,6 +59,7 @@ const homeSection = css`
     min-height: 60vh;
     min-width: 50vw;
     margin: 10px 40px;
+    opacity: .7;
 `
 
 const welcomeMsg = css`

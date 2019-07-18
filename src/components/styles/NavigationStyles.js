@@ -34,7 +34,7 @@ export const LogoName = css`
     color: #fff;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif !important;
-    padding-top: 1.5rem;
+    padding-top: .5rem;
 
     @media screen and (max-width: 420px) {
         display: none;
@@ -58,6 +58,7 @@ export const NavList = css`
     margin: 0;
     padding-top: 1rem;
     width: 70%;
+    margin-left: -2rem;
 
     @media screen and (max-width: 1100px) {
         width: 90%;

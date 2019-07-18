@@ -3,7 +3,6 @@ import React from "react"
 // STYLES
 import { Global, css } from "@emotion/core"
 import GlobalStyles from "../components/styles/GlobalStyles"
-import { isAuthenticated } from "../utils/auth"
 
 // GATSBY
 import SEO from "../components/gatsby-default-files/seo"
@@ -14,6 +13,7 @@ import Consumers from "../components/main-page/categories/layout/consumers/Consu
 import Professionals from "../components/main-page/categories/layout/professionals/Professionals"
 import Enterprise from "../components/main-page/categories/layout/enterprise/Enterprise"
 import Accessories from "../components/main-page/categories/layout/accessories/Accessories"
+import Button from '../components/main-page/navigation-button/Button'
 
 //React scroller and ScrollupButton
 import ReactPageScroller from "react-page-scroller"
@@ -30,12 +30,11 @@ const IndexPage = () => {
         scrollRef.goToPage(eventKey)
     }
 
-    console.log(isAuthenticated());
-
     return (
         <>
             <Global styles={GlobalStyles} />
             <SEO title="home" />
+            <Button />
             <ReactPageScroller
                 ref={ref => {
                     scrollRef = ref

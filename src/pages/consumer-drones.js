@@ -12,6 +12,7 @@ import {
     textWrapper,
     productTitle,
     buttonStyle,
+    buttonCartStyle,
 } from "../components/styles/ProductOverviewStyles"
 import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
@@ -19,6 +20,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
+import Button from '../components/main-page/navigation-button/Button'
+import Footer from '../components/footer/Footer'
 
 const ConsumerDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
 
@@ -96,10 +99,11 @@ const ConsumerDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
             <Navigation />
             <Global styles={GlobalStyles} />
             <SEO title="Consumer drones" />
+            <Button />
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Consumer drones'
-                    descriptionText='some description goes here' />
+                    descriptionText="Lo-fi meh biodiesel, freegan banh mi jean shorts truffaut portland next level polaroid squid butcher etsy master cleanse. 3 wolf moon listicle keffiyeh, af typewriter quinoa shaman asymmetrical. VHS fanny pack +1, retro etsy truffaut blue bottle hella unicorn tote bag pitchfork slow-carb hell of jianbing. Live-edge messenger bag shoreditch ethical edison bulb ugh." />
                 <div css={cardsWrapper}>
                     {
                         menuItems.map(({ node }) => (
@@ -117,43 +121,43 @@ const ConsumerDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                                             }}
                                             style={{
                                                 position: `relative`,
-                                                maxHeight: `280px`,
+                                                maxHeight: `200px`,
                                             }}
                                         />
                                     </div>
                                     <div css={textWrapper}>
                                         <h3 css={productTitle}>{node.name}</h3>
                                         <p>
-                                            <strong>Category:</strong>{" "}
-                                            {node.category}
+                                            {node.description}
                                         </p>
                                         <p>
                                             <strong>Price:</strong>{" "} {node.price}€
                                         </p>
-                                        <button
-                                            onClick={() => addedToCart(node.id)}
-                                            css={buttonStyle}
-                                        >
-                                            Add to cart
-                                        </button>
-                                        <Link to='/item'>
+                                        <div>
                                             <button
-                                                css={buttonStyle}
-                                                onClick={() => {
-                                                    showItem(node.id)
-                                                }}
+                                                onClick={() => addedToCart(node.id)}
+                                                css={buttonCartStyle}
                                             >
-                                                Show product
+                                                Add to cart
                                             </button>
-                                        </Link>
+                                            <Link to='/item'>
+                                                <button
+                                                    css={buttonStyle}
+                                                    onClick={() => {
+                                                        showItem(node.id)
+                                                    }}
+                                                >
+                                                    Show product
+                                                </button>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
                         ))
                     }
                 </div>
-
-                <footer>© {new Date().getFullYear()} dronify</footer>
+                <Footer />
             </div>
         </>
     )

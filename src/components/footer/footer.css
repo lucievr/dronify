@@ -1,0 +1,38 @@
+.footer {
+    background-color: #0F2027;
+    grid-column: full-start / full-end;
+    padding: 5rem 5rem 2rem; 
+    margin: 0;
+    font-family: "Montserrat", sans-serif !important;
+}
+  
+.nav {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+    align-items: center; 
+}
+
+.nav__link:link, .nav__link:visited {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .2rem;
+    padding: 1.5rem;
+    display: block;
+    transition: all .2s; 
+}
+
+.nav__link:hover, .nav__link:active {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px); 
+}
+
+.copyright {
+    color: #fff;
+    margin-top: 2rem;
+    font-size: .9rem;
+}

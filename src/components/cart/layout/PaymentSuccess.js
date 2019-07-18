@@ -51,7 +51,7 @@ const PaymentSuccess = ({ removeAllItems }) => {
                                 paddingBottom: `2rem`
                             }}
                         />
-                        <h5>Your payment is being processed...</h5>
+                        <h5 style={{paddingBottom: `2rem`}}>Your payment is being processed...</h5>
                     </div>) :
                     (<div className="loaded">
                         <svg
@@ -79,7 +79,7 @@ const PaymentSuccess = ({ removeAllItems }) => {
                                 points="100.2,40.2 51.5,88.8 29.8,67.5 "
                             />
                         </svg>
-                        <h5 className="svg success">
+                        <h5 style={{paddingBottom: `2rem`}} className="svg success">
                             Nice! Your payment has been received.
                         </h5>
                     </div>)
