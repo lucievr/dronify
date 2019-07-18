@@ -25,7 +25,17 @@ const Consumers = props => {
                         </Fade>
                     </div>
                     <div css={Item}>
-                        <Heading name="Consumer drones" />
+                        <Heading name="Consumer" />
+                        <h5
+                            style={{
+                                color: `white`,
+                                fontWeight: `300`,
+                                letterSpacing: `1px`,
+                            }}
+                        >
+                            Capture your best moments with our consumer drones
+                            series
+                        </h5>
                         <Link to="/consumer-drones/">
                             <Button label="Explore" />
                         </Link>

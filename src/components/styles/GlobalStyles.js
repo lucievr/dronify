@@ -18,16 +18,16 @@ const GlobalStyles = css`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        font-size: calc(11px + 0.5vw);
+        font-size: calc(12px + 0.4vw);
         line-height: 1.5;
         word-wrap: break-word;
-        background: rgb(120, 132, 143);
-        background: linear-gradient(
+        background: #001f3f;
+        /* background: linear-gradient(
             45deg,
             rgba(120, 132, 143, 1) 0%,
             rgba(144, 157, 170, 1) 50%,
             rgba(120, 132, 143, 1) 100%
-        );
+        ); */
     }
 
     .icon-style.arrow {
@@ -108,6 +108,7 @@ const GlobalStyles = css`
         width: 25px;
         height: 25px;
         margin: 10px 15px 18px 10px;
+        color: #fff;
     }
 
     span.carouselIcon svg.icon-style {

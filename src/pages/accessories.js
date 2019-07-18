@@ -1,12 +1,14 @@
 import React, { useEffect } from "react"
+
+// REDUX
 import { connect } from "react-redux"
-import Navigation from "../components/main-page/landing/navigation/Navigation"
 import { addedToCart, menuLoaded, showItem } from "../actions"
-import { Link } from 'gatsby'
+
+// STYLES
+import { Global } from "@emotion/core"
 import GlobalStyles from "../components/styles/GlobalStyles"
 import {
     contentWrapper,
-    categoryTitle,
     cardsWrapper,
     cardList,
     card,
@@ -15,10 +17,13 @@ import {
     productTitle,
     buttonStyle,
 } from "../components/styles/ProductOverviewStyles"
-import { Global } from "@emotion/core"
+
+// COMPONENTS
 import SEO from "../components/gatsby-default-files/seo"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from 'gatsby'
 import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
+import Navigation from "../components/main-page/landing/navigation/Navigation"
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 
 const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => {
@@ -99,7 +104,8 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Accessories'
-                    descriptionText='some description goes here' />
+                    descriptionText='some description goes here'
+                />
                 <div css={cardsWrapper}>
 
                     {

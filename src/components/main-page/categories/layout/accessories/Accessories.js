@@ -27,6 +27,16 @@ const Accessories = props => (
                     <div css={Content}>
                         <div css={Item}>
                             <Heading name="Accessories" />
+                            <h5
+                                style={{
+                                    color: `white`,
+                                    fontWeight: `300`,
+                                    letterSpacing: `1px`,
+                                }}
+                            >
+                                The best drone accessories and tools to keep you
+                                flying safer, longer and smarter.
+                            </h5>
                             <Link to="/accessories/">
                                 <Button label="Explore" />
                             </Link>

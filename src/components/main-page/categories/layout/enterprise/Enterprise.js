@@ -25,7 +25,18 @@ const Enterprise = props => {
                         </Fade>
                     </div>
                     <div css={Item}>
-                        <Heading name="Enterprise drones" />
+                        <Heading name="Enterprise" />
+                        <h5
+                            style={{
+                                color: `white`,
+                                fontWeight: `300`,
+                                letterSpacing: `1px`,
+                                marginRight: `1rem`,
+                            }}
+                        >
+                            Collect and Leverage Data Across your Operations
+                            with our enterprise Drones
+                        </h5>
                         <Link to="/enterprise-drones/">
                             <Button label="Explore" />
                         </Link>

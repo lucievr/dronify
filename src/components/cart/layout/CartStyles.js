@@ -9,9 +9,9 @@ export const bottom = css`
     display: flex;
     flex-direction: column;
     margin: 10rem auto;
-    background: white;
-    width: 60%;
-    min-height: 65vh;
+    background: #f5f5f5;
+    font-family: "Montserrat", sans-serif !important;
+    width: 70%;
     -webkit-box-shadow: 0px 0px 23px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 23px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 23px 1px rgba(0, 0, 0, 0.75);
@@ -65,13 +65,14 @@ export const buttons = css`
     display: flex;
     align-items: center;
     color: #000;
+    padding-left: 2rem;
 `
 
 export const qty = css`
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin: 0 0.3rem;
-    border-radius: 50%;
+    border-radius: 50% !important;
 `
 
 export const imageStyles = css`
@@ -99,4 +100,8 @@ export const cartButtons = css`
     button {
         margin-bottom: 1rem;
     }
+`
+
+export const formGroup = css`
+    padding-top: 1rem;
 `
