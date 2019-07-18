@@ -29,9 +29,6 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
         menuLoaded(data.allMongodbDronifyDrones.edges)
     }, [])
 
-    // console.log(item)
-
-
     const data = useStaticQuery(graphql`
         query DbEntQuery {
             allMongodbDronifyDrones(
@@ -110,17 +107,6 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                         {menuItems.map(({ node }) => (
 
                             <li css={card} key={node.id}>
-
-                                {/* <div
-                                    className={
-                                        show
-                                            ? "modal display-block"
-                                            : "modal display-none"
-                                    }
-                                > 
-                                    
-                                </div>*/}
-
                                 <div css={imageWrapper}>
                                     <Img
                                         fluid={
@@ -145,7 +131,8 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                                         {node.category}
                                     </p>
                                     <p>
-                                        <strong>Price:</strong> € {node.price}
+                                        <strong>Price:</strong>
+                                         € {node.price}
                                     </p>
                                     <button
                                         onClick={() => addedToCart(node.id)}
@@ -155,14 +142,14 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                                     </button>
 
                                     <Link to='/item'>
-                                    <button
-                                        css={buttonStyle}
-                                        onClick={() => {
-                                            showItem(node.id)
-                                        }}
-                                    >
-                                        Show product
-                                    </button>
+                                        <button
+                                            css={buttonStyle}
+                                            onClick={() => {
+                                                showItem(node.id)
+                                            }}
+                                        >
+                                            Show product
+                                        </button>
                                     </Link>
                                 </div>
                             </li>

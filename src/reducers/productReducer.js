@@ -45,7 +45,7 @@ const productReducer = (state = initialState, action) => {
                 spec1: itemToShow.node.spec1,
                 spec2: itemToShow.node.spec2,
                 spec3: itemToShow.node.spec3,
-                spec4: itemToShow.node.spec5,
+                spec4: itemToShow.node.spec4,
                 spec5: itemToShow.node.spec5,
                 spec6: itemToShow.node.spec6,
                 localImage1: itemToShow.node.localImage1.childImageSharp.fluid,
