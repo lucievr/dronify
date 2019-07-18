@@ -5,7 +5,6 @@ import GlobalStyles from "../components/styles/GlobalStyles"
 import { Link } from 'gatsby'
 import {
     contentWrapper,
-    categoryTitle,
     cardsWrapper,
     cardList,
     card,
