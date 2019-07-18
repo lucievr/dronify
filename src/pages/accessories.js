@@ -16,6 +16,7 @@ import {
     textWrapper,
     productTitle,
     buttonStyle,
+    buttonCartStyle,
 } from "../components/styles/ProductOverviewStyles"
 
 // COMPONENTS
@@ -144,7 +145,7 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
                                         <div>
                                             <button
                                                 onClick={() => addedToCart(node.id)}
-                                                css={buttonStyle}>
+                                                css={buttonCartStyle}>
                                                 Add to cart
                                             </button>
                                             <Link to='/item'>

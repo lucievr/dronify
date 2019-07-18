@@ -25,7 +25,7 @@ const Carousel = makeCarousel(CarouselUI)
 const itemWrapper = css`
     margin: 10rem auto 0;
     padding: 2rem;
-    background: rgba(224, 226, 235, .5);
+    background: rgba(255, 255, 255, 0.22);
     border-radius: 1rem;
     width: 70%;
     font-family: "Montserrat", sans-serif !important;
@@ -43,10 +43,10 @@ const ItemPage = ({ item, addedToCart }) => {
             <Button />
             <Navigation />
             <div css={itemWrapper}>
-                <h2 style={{ letterSpacing: `.2rem`, color: `#fff`, marginBottom: `1.5rem` }}>
+                <h2 style={{ letterSpacing: `.25rem`, color: `#badb57`, marginBottom: `1.5rem` }}>
                     {name}
                 </h2>
-                <h3>€ {price}</h3>
+                <h4>€ {price}</h4>
                 <br/>
                 <h5>
                     <strong>Category:</strong> {category}
@@ -56,19 +56,19 @@ const ItemPage = ({ item, addedToCart }) => {
                 <div css={specWrapper}>
                     <section css={column}>
                         <p>
-                            <Icon name={icon1} />{" "}
+                            <span className="specIcon"><Icon name={icon1} /></span>
                             <span css={specText}>
                                 {spec1}
                             </span>
                         </p>
                         <p>
-                            <Icon name={icon2} />{" "}
+                            <span className="specIcon"><Icon name={icon2} /></span>
                             <span css={specText}>
                                 {spec2}
                             </span>
                         </p>
                         <p>
-                            <Icon name={icon3} />{" "}
+                            <span className="specIcon"><Icon name={icon3} /></span>
                             <span css={specText}>
                                 {spec3}
                             </span>
@@ -76,19 +76,19 @@ const ItemPage = ({ item, addedToCart }) => {
                     </section>
                     <section css={column}>
                         <p>
-                            <Icon name={icon4} />{" "}
+                        <span className="specIcon"><Icon name={icon4} /></span>
                             <span css={specText}>
                                 {spec4}
                             </span>
                         </p>
                         <p>
-                            <Icon name={icon5} />{" "}
+                            <span className="specIcon"><Icon name={icon5} /></span>
                             <span css={specText}>
                                 {spec5}
                             </span>
                         </p>
                         <p>
-                            <Icon name={icon6} />{" "}
+                            <span className="specIcon"><Icon name={icon6} /></span>
                             <span css={specText}>
                                 {spec6}
                             </span>

@@ -25,21 +25,26 @@ export const column = css`
 
 export const specText = css`
     margin: 0;
+    color: #fff;
+    font-weight: 500;
 `
 
 export const btnBuy = css`
-  color: #fff;
+  color: #badb57;
   font-family: "Montserrat", sans-serif !important;
-  background-color: transparent;
-  border: 2px solid #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid #badb57;
   padding: .7rem 2.5rem;
   margin: 1rem;
   border-radius: 5rem;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-transform: uppercase;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(186, 219, 87, 0.5);
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.9);
     cursor: pointer;
   }
 `

@@ -12,6 +12,7 @@ import {
     textWrapper,
     productTitle,
     buttonStyle,
+    buttonCartStyle,
 } from "../components/styles/ProductOverviewStyles"
 import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
@@ -136,7 +137,7 @@ const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) =>
                                         <div>
                                             <button
                                                 onClick={() => addedToCart(node.id)}
-                                                css={buttonStyle}
+                                                css={buttonCartStyle}
                                             >
                                                 Add to cart
                                             </button>

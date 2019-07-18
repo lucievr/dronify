@@ -116,7 +116,7 @@ const GlobalStyles = css`
     }
 
     span.carouselIcon svg.icon-style {
-        color: #666666;
+        color: rgba(255,255,255,0.8);
         width: 4rem;
         height: 4rem;
         stroke-width: 1;
@@ -128,11 +128,18 @@ const GlobalStyles = css`
         background-color: rgba(0, 0, 0, 0.06);
     }
 
+    span.specIcon svg.icon-style {
+        color: #badb57;
+    }
+
     span.iconDiv svg.icon-style {
         color: white;
         width: 23px;
         height: 23px;
         margin: 0 10px 3px 10px;
+    }
+    span.iconDiv.login svg.icon-style {
+        color: #badb57;
     }
 
     span.iconName {

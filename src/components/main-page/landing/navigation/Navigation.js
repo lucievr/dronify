@@ -36,10 +36,10 @@ const Navigation = ({ items }) => {
                     {!isAuthenticated() ? (
                         <Link to="/account">
                             <div css={IconItem}>
-                                <span className="iconDiv">
+                                <span className="iconDiv login">
                                     <Icon name="user-plus" />
                                 </span>
-                                <span className="iconName">Log In</span>
+                                <span className="iconName" style={{color: `#badb57`}}>Log In</span>
                             </div>
                         </Link>
                     ) : (

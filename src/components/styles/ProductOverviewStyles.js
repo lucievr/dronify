@@ -40,11 +40,12 @@ export const card = css`
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 
   height: 40rem;
   margin: 2rem;
   padding: 2rem;
-  background: rgba(224, 226, 235, .5);
+  background: rgba(255, 255, 255, 0.22);
   border-radius: 10px;
   transition: transform 0.7s;
 
@@ -56,7 +57,7 @@ export const card = css`
 export const imageWrapper = css`
   width: 100%;
   height: auto;
-  margin-bottom: 50px;
+  margin-bottom: calc(5px + 3vh);
 `
 
 export const textWrapper = css`
@@ -70,7 +71,7 @@ export const textWrapper = css`
   justify-content: space-between;
 `
 export const productTitle = css`
-  color: white;
+  color: #badb57;
   font-family: "Montserrat", sans-serif !important;
   font-weight: 500;
   letter-spacing: 1px;
@@ -82,6 +83,22 @@ export const buttonStyle = css`
   font-family: "Montserrat", sans-serif !important;
   background-color: transparent;
   border: 2px solid #fff;
+  padding: 1rem 1rem;
+  margin: 1rem;
+  border-radius: 5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+`
+
+export const buttonCartStyle = css`
+  color: #badb57;
+  font-family: "Montserrat", sans-serif !important;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid #badb57;
   padding: 1rem 1rem;
   margin: 1rem;
   border-radius: 5rem;
