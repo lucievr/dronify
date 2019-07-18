@@ -1,4 +1,5 @@
 import React from 'react'
+import SEO from "../components/gatsby-default-files/seo"
 
 // REDUX
 import { connect } from "react-redux"
@@ -37,6 +38,7 @@ const ItemPage = ({ item, addedToCart }) => {
     return (
         <>
             <Global styles={GlobalStyles} />
+            <SEO title={name} />
             <Navigation />
             <div css={itemWrapper}>
                 <h2 style={{ letterSpacing: `1px` }}>
