@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { addedToCart, menuLoaded } from "../actions"
+import { addedToCart, menuLoaded, showItem } from "../actions"
 import GlobalStyles from "../components/styles/GlobalStyles"
 import {
     contentWrapper,
@@ -18,13 +18,13 @@ import SEO from "../components/gatsby-default-files/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
+import { Link } from 'gatsby'
+import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 
-const EnterpriseDrones = props => {
+const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
     useEffect(() => {
-        props.menuLoaded(data.allMongodbDronifyDrones.edges)
+        menuLoaded(data.allMongodbDronifyDrones.edges)
     }, [])
-
-    const { menuItems, addedToCart } = props
 
     const data = useStaticQuery(graphql`
         query DbEntQuery {
@@ -36,9 +36,49 @@ const EnterpriseDrones = props => {
                         id
                         name
                         category
+                        description
                         price
+                        icon1
+                        icon2
+                        icon3
+                        icon4
+                        icon5
+                        icon6
+                        spec1
+                        spec2
+                        spec3
+                        spec4
+                        spec5
+                        spec6
                         imageURL1
+                        imageURL2
+                        imageURL3
+                        imageURL4
                         localImage1 {
+                            id
+                            childImageSharp {
+                                fluid(maxWidth: 700, fit: CONTAIN) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                        localImage2 {
+                            id
+                            childImageSharp {
+                                fluid(maxWidth: 700, fit: CONTAIN) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                        localImage3 {
+                            id
+                            childImageSharp {
+                                fluid(maxWidth: 700, fit: CONTAIN) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                        localImage4 {
                             id
                             childImageSharp {
                                 fluid(maxWidth: 700, fit: CONTAIN) {
@@ -57,48 +97,63 @@ const EnterpriseDrones = props => {
             <Global styles={GlobalStyles} />
             <SEO title="Enterprise drones" />
             <div css={contentWrapper}>
-                <h1 css={categoryTitle}>Enterprise drones</h1>
+                <CategoriesHeading
+                    label='Enterprise drones'
+                    descriptionText='Dronify has been assisting police, fire departments, search and rescue teams, inspection services, agriculture crop inspectors, and educational institutions to launch their own drone programs. From infrared camera drones finding missing persons to multispectral agriculture drones identifying crop stress, we know the efficient power of unmanned aerial systems (UAS). Dronify is the go-to commercial drone shop for organizations looking to harness the possibilities of infrared, zoom, or agriculture drones.' />
                 <div css={cardsWrapper}>
-                    {
-                        menuItems.map(({ node }) => (
-                            <ul key={node.id} css={cardList}>
-                                <li css={card}>
-                                    <div css={imageWrapper}>
-                                        <Img
-                                            fluid={
-                                                node.localImage1.childImageSharp
-                                                    .fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                                maxHeight: `280px`,
-                                            }}
-                                        />
-                                    </div>
-                                    <div css={textWrapper}>
-                                        <h3 css={productTitle}>{node.name}</h3>
-                                        <p>
-                                            <strong>Category:</strong>{" "}
-                                            {node.category}
-                                        </p>
-                                        <p>
-                                            <strong>Price:</strong> € {node.price}
-                                        </p>
+                    <ul css={cardList}>
+
+                        {menuItems.map(({ node }) => (
+
+                            <li css={card} key={node.id}>
+                                <div css={imageWrapper}>
+                                    <Img
+                                        fluid={
+                                            node.localImage1.childImageSharp
+                                                .fluid
+                                        }
+                                        imgStyle={{
+                                            position: `absolute`,
+                                            objectFit: `contain`,
+                                        }}
+                                        style={{
+                                            position: `relative`,
+                                            maxHeight: `280px`,
+                                        }}
+                                    />
+                                </div>
+
+                                <div css={textWrapper}>
+                                    <h3 css={productTitle}>{node.name}</h3>
+                                    <p>
+                                        <strong>Category:</strong>{" "}
+                                        {node.category}
+                                    </p>
+                                    <p>
+                                        <strong>Price:</strong>{" "}
+                                        {node.price}€
+                                    </p>
+                                    <button
+                                        onClick={() => addedToCart(node.id)}
+                                        css={buttonStyle}
+                                    >
+                                        Add to cart
+                                    </button>
+
+                                    <Link to='/item'>
                                         <button
-                                            onClick={() => addedToCart(node.id)}
                                             css={buttonStyle}
+                                            onClick={() => {
+                                                showItem(node.id)
+                                            }}
                                         >
                                             Show product
                                         </button>
-                                    </div>
-                                </li>
-                            </ul>
-                        ))
-                    }
+                                    </Link>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 <footer>© {new Date().getFullYear()} dronify</footer>
             </div>
@@ -109,12 +164,14 @@ const EnterpriseDrones = props => {
 const mapStateToProps = state => {
     return {
         menuItems: state.menu,
+        item: state.item
     }
 }
 
 const mapDispatchToProps = {
     addedToCart,
     menuLoaded,
+    showItem
 }
 
 export default connect(

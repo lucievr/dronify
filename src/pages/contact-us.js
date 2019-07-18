@@ -10,11 +10,11 @@ import ContactForm from "../components/form/contact-form"
 const ContactUs = () => {
     return (
         <>
-            <Navigation />
-            <Global styles={GlobalStyles} />
-            <ContactForm />
             <SEO title="Contact Us" />
-            <footer>© {new Date().getFullYear()} dronify</footer>
+            <Global styles={GlobalStyles} />
+            <Navigation />
+            <ContactForm />
+            {/* <footer>© {new Date().getFullYear()} dronify</footer> */}
         </>
     )
 }
