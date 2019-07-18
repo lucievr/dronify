@@ -14,6 +14,7 @@ import Consumers from "../components/main-page/categories/layout/consumers/Consu
 import Professionals from "../components/main-page/categories/layout/professionals/Professionals"
 import Enterprise from "../components/main-page/categories/layout/enterprise/Enterprise"
 import Accessories from "../components/main-page/categories/layout/accessories/Accessories"
+import Button from '../components/main-page/navigation-button/Button'
 
 //React scroller and ScrollupButton
 import ReactPageScroller from "react-page-scroller"
@@ -36,6 +37,7 @@ const IndexPage = () => {
         <>
             <Global styles={GlobalStyles} />
             <SEO title="home" />
+            <Button/>
             <ReactPageScroller
                 ref={ref => {
                     scrollRef = ref

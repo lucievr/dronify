@@ -28,7 +28,7 @@ const Navigation = ({ items }) => {
         <nav css={NavBar}>
             <div css={NavMenuTop}>
                 <div css={ButtonWrapper}>
-                    <Button />
+                    {/* <Button /> */}
                 </div>
                 <Link to="/">
                     <div css={LogoName}> Dronify </div>

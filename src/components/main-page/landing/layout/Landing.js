@@ -4,7 +4,6 @@ import { landing, darkOverlay, landingContent, heading, button} from '../../../s
 import Navigation from "../navigation/Navigation"
 import Video from "../video/Video"
 
-
 const LandingPage = () => {
     return (
         <div css={landing}>
