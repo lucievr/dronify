@@ -16,6 +16,7 @@ import { login, isAuthenticated, getProfile } from "../utils/auth"
 import Home from "../components/account/HomeSection"
 import Settings from "../components/account/SettingsSection"
 import Orders from "../components/account/OrdersSection"
+import Button from "../components/main-page/navigation-button/Button";
 
 // console.log(getProfile())
 
@@ -59,6 +60,7 @@ export default class Account extends React.Component {
         console.log(isAuthenticated());
         return (
             <>
+                <Button/>
                 <Navigation />
                 <Global styles={GlobalStyles} />
                 <SEO title="Account" />

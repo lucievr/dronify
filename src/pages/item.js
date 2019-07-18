@@ -15,6 +15,7 @@ import { carouselWrapper, specWrapper, descriptionStyle, specText, column, btnBu
 // COMPONENTS
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
+import Button from '../components/main-page/navigation-button/Button'
 
 // CAROUSEL
 import CarouselUI from '../components/product-page/CarouselUI'
@@ -40,6 +41,7 @@ const ItemPage = ({ item, addedToCart }) => {
         <>
             <Global styles={GlobalStyles} />
             <SEO title={name} />
+            <Button />
             <Navigation />
             <div css={itemWrapper}>
                 <h2 style={{ letterSpacing: `.2rem`, color: `#fff`, marginBottom: `1.5rem` }}>
