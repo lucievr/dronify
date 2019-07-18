@@ -61,7 +61,7 @@ export default class Account extends React.Component {
             <>
                 <Navigation />
                 <Global styles={GlobalStyles} />
-                <SEO title="User account" />
+                <SEO title="Account" />
                 <section css={sectionWrapper}>
                     <nav css={navStyle}>
                         <Link to="/account/" css={navLink}>

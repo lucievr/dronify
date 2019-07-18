@@ -1,6 +1,7 @@
 const initialState = {
     menu: [],
-    items: []
+    items: [],
+    item: null
 }
 
 const productReducer = (state = initialState, action) => {
@@ -22,6 +23,40 @@ const productReducer = (state = initialState, action) => {
             return {
                 ...state,
                 items: []
+            }
+
+        case 'SHOW_ITEM':
+
+            const idToShow = action.payload
+            const itemToShow = state.menu.find(item => item.node.id === idToShow)
+
+            const newItemToShow = {
+                id: itemToShow.node.id,
+                name: itemToShow.node.name,
+                description: itemToShow.node.description,
+                price: itemToShow.node.price,
+                category: itemToShow.node.category,
+                icon1: itemToShow.node.icon1,
+                icon2: itemToShow.node.icon2,
+                icon3: itemToShow.node.icon3,
+                icon4: itemToShow.node.icon4,
+                icon5: itemToShow.node.icon5,
+                icon6: itemToShow.node.icon6,
+                spec1: itemToShow.node.spec1,
+                spec2: itemToShow.node.spec2,
+                spec3: itemToShow.node.spec3,
+                spec4: itemToShow.node.spec4,
+                spec5: itemToShow.node.spec5,
+                spec6: itemToShow.node.spec6,
+                localImage1: itemToShow.node.localImage1.childImageSharp.fluid,
+                localImage2: itemToShow.node.localImage2.childImageSharp.fluid,
+                localImage3: itemToShow.node.localImage3.childImageSharp.fluid,
+                localImage4: itemToShow.node.localImage4.childImageSharp.fluid
+            }
+
+            return {
+                ...state,
+                item: newItemToShow
             }
 
         case 'ITEM_ADD_TO_CART':

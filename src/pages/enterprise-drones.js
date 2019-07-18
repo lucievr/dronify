@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { addedToCart, menuLoaded } from "../actions"
+import { addedToCart, menuLoaded, showItem } from "../actions"
 import GlobalStyles from "../components/styles/GlobalStyles"
 import {
     contentWrapper,
@@ -13,29 +13,18 @@ import {
     productTitle,
     buttonStyle,
 } from "../components/styles/ProductOverviewStyles"
-import { carouselWrapper, specWrapper, descriptionStyle, specText, column, btnBuy} from '../components/styles/ProductDetailStyles'
 import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
-import useToggle from "react-use/lib/useToggle"
-import Icon from '../components/styles/Icon'
+import { Link } from 'gatsby'
+import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 
-import makeCarousel from "react-reveal/makeCarousel"
-import Slide from "react-reveal/Slide"
-import CarouselUI from '../components/product-page/CarouselUI'
-
-const Carousel = makeCarousel(CarouselUI)
-
-const EnterpriseDrones = props => {
+const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
     useEffect(() => {
-        props.menuLoaded(data.allMongodbDronifyDrones.edges)
+        menuLoaded(data.allMongodbDronifyDrones.edges)
     }, [])
-
-    const { menuItems, addedToCart } = props
-
-    const [show, toggle] = useToggle(false)
 
     const data = useStaticQuery(graphql`
         query DbEntQuery {
@@ -108,173 +97,15 @@ const EnterpriseDrones = props => {
             <Global styles={GlobalStyles} />
             <SEO title="Enterprise drones" />
             <div css={contentWrapper}>
-                <h1 css={categoryTitle}>Enterprise drones</h1>
+                <CategoriesHeading
+                    label='Enterprise drones'
+                    descriptionText='Dronify has been assisting police, fire departments, search and rescue teams, inspection services, agriculture crop inspectors, and educational institutions to launch their own drone programs. From infrared camera drones finding missing persons to multispectral agriculture drones identifying crop stress, we know the efficient power of unmanned aerial systems (UAS). Dronify is the go-to commercial drone shop for organizations looking to harness the possibilities of infrared, zoom, or agriculture drones.' />
                 <div css={cardsWrapper}>
                     <ul css={cardList}>
 
                         {menuItems.map(({ node }) => (
-                            
-                            <li css={card} key={node.id}>
-                                
-                                <div
-                                    className={
-                                        show
-                                            ? "modal display-block"
-                                            : "modal display-none"
-                                    }
-                                >
-                                    <div className="modal-content">
-                                        <span
-                                            className="icon close"
-                                            onClick={toggle}
-                                        >
-                                            <Icon name="x-circle"/>
-                                        </span>
-                        
-                            <div css={textWrapper}>
-                                <h2 style={{ letterSpacing: `1px` }}>
-                                    {node.name}
-                                </h2>
-                                <h3>€ {node.price}</h3>
-                                <h5>
-                                    <strong>Category:</strong> {node.category}
-                                </h5>
-                                <hr />
-                                <h6 css={descriptionStyle}>{node.description}</h6>
-                                <div css={specWrapper}>
-                                    <section css={column}>
-                                        <p>
-                                            <Icon name={node.icon1} />{" "}
-                                            <span css={specText}>
-                                                {node.spec1}
-                                            </span>
-                                        </p>
-                                        <p>
-                                            <Icon name={node.icon2} />{" "}
-                                            <span css={specText}>
-                                                {node.spec2}
-                                            </span>
-                                        </p>
-                                        <p>
-                                            <Icon name={node.icon3} />{" "}
-                                            <span css={specText}>
-                                                {node.spec3}
-                                            </span>
-                                        </p>
-                                    </section>
-                                    <section css={column}>
-                                        <p>
-                                            <Icon name={node.icon4} />{" "}
-                                            <span css={specText}>
-                                                {node.spec4}
-                                            </span>
-                                        </p>
-                                        <p>
-                                            <Icon name={node.icon5} />{" "}
-                                            <span css={specText}>
-                                                {node.spec5}
-                                            </span>
-                                        </p>
-                                        <p>
-                                            <Icon name={node.icon6} />{" "}
-                                            <span css={specText}>
-                                                {node.spec6}
-                                            </span>
-                                        </p>
-                                    </section>
-                                </div>
-                                <button
-                                        onClick={() => addedToCart(node.id)}
-                                        css={btnBuy}
-                                    >
-                                        Add to cart
-                                    </button>
-                            </div>
-                            <Carousel defaultWait={3000} css={carouselWrapper}>
-                                <Slide right>
-                                    <div>
-                                        <Img
-                                            fluid={
-                                                node.localImage1.childImageSharp.fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                                top: `3rem`,
-                                                left: `10rem`,
-                                                maxHeight: `350px`,
-                                                maxWidth: `700px`
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                            }}
-                                        />
-                                    </div>
-                                </Slide>
-                                <Slide right>
-                                    <div>
-                                        <Img
-                                            fluid={
-                                                node.localImage2.childImageSharp.fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                                top: `3rem`,
-                                                left: `10rem`,
-                                                maxHeight: `350px`,
-                                                maxWidth: `700px`
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                            }}
-                                        />
-                                    </div>
-                                </Slide>
-                                <Slide right>
-                                    <div>
-                                        <Img
-                                            fluid={
-                                                node.localImage3.childImageSharp.fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                                top: `3rem`,
-                                                left: `10rem`,
-                                                maxHeight: `350px`,
-                                                maxWidth: `700px`
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                            }}
-                                        />
-                                    </div>
-                                </Slide>
-                                <Slide right>
-                                    <div>
-                                        <Img
-                                            fluid={
-                                                node.localImage4.childImageSharp.fluid
-                                            }
-                                            imgStyle={{
-                                                position: `absolute`,
-                                                objectFit: `contain`,
-                                                top: `3rem`,
-                                                left: `10rem`,
-                                                maxHeight: `350px`,
-                                                maxWidth: `700px`
-                                            }}
-                                            style={{
-                                                position: `relative`,
-                                            }}
-                                        />
-                                    </div>
-                                </Slide>
-                            </Carousel> 
-                            </div>
-                        </div>
 
+                            <li css={card} key={node.id}>
                                 <div css={imageWrapper}>
                                     <Img
                                         fluid={
@@ -291,7 +122,7 @@ const EnterpriseDrones = props => {
                                         }}
                                     />
                                 </div>
-                                
+
                                 <div css={textWrapper}>
                                     <h3 css={productTitle}>{node.name}</h3>
                                     <p>
@@ -299,7 +130,8 @@ const EnterpriseDrones = props => {
                                         {node.category}
                                     </p>
                                     <p>
-                                        <strong>Price:</strong> € {node.price}
+                                        <strong>Price:</strong>{" "}
+                                        {node.price}€
                                     </p>
                                     <button
                                         onClick={() => addedToCart(node.id)}
@@ -308,12 +140,16 @@ const EnterpriseDrones = props => {
                                         Add to cart
                                     </button>
 
-                                    <button
-                                        css={buttonStyle}
-                                        onClick={toggle}
-                                    >
-                                        Show product
-                                    </button>
+                                    <Link to='/item'>
+                                        <button
+                                            css={buttonStyle}
+                                            onClick={() => {
+                                                showItem(node.id)
+                                            }}
+                                        >
+                                            Show product
+                                        </button>
+                                    </Link>
                                 </div>
                             </li>
                         ))}
@@ -328,12 +164,14 @@ const EnterpriseDrones = props => {
 const mapStateToProps = state => {
     return {
         menuItems: state.menu,
+        item: state.item
     }
 }
 
 const mapDispatchToProps = {
     addedToCart,
     menuLoaded,
+    showItem
 }
 
 export default connect(

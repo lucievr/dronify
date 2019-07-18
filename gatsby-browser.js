@@ -3,7 +3,7 @@ import wrapWithProvider from "./wrap-with-provider"
 import React from "react"
 import { silentAuth } from "./src/utils/auth"
 
-require("typeface-montserrat")
+import "typeface-montserrat"
 
 export class SessionCheck extends React.Component {
   constructor(props) {

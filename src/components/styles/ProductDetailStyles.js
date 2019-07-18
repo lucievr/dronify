@@ -1,8 +1,8 @@
 import { css } from "@emotion/core"
 
 export const carouselWrapper = css`
-    width: 100%;
-    height: auto;
+    width: 70%;
+    margin: 0 auto;
 `
 
 export const descriptionStyle = css`
@@ -32,7 +32,7 @@ export const btnBuy = css`
   font-family: "Montserrat", sans-serif !important;
   background-color: transparent;
   border: 2px solid #4d4d4d;
-  padding: 1rem 1rem;
+  padding: .7rem 2.5rem;
   margin: 1rem;
   border-radius: 5rem;
   font-size: 1rem;

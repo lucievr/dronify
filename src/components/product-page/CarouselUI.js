@@ -5,10 +5,10 @@ import Icon from '../styles/Icon'
 
 
 const Container = styled.div`
-    border: 1px solid white;
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
 `
 const Children = styled.div`
     width: 95%;
