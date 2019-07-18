@@ -5,6 +5,7 @@ import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
 import ContactForm from "../components/form/contact-form"
 import Button from '../components/main-page/navigation-button/Button'
+import Footer from "../components/footer/Footer";
 
 const ContactUs = () => {
     return (
@@ -14,7 +15,7 @@ const ContactUs = () => {
             <Button />
             <Navigation />
             <ContactForm />
-            {/* <footer>© {new Date().getFullYear()} dronify</footer> */}
+            <Footer />
         </>
     )
 }

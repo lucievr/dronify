@@ -20,6 +20,7 @@ import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 import Button from '../components/main-page/navigation-button/Button'
+import Footer from '../components/footer/Footer'
 
 const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) => {
 
@@ -157,7 +158,7 @@ const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) =>
                         ))
                     }
                 </div>
-                <footer>© {new Date().getFullYear()} dronify</footer>
+                <Footer />
             </div>
         </>
     )

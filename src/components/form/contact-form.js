@@ -23,7 +23,7 @@ const findUs = css`
 `
 
 class ContactForm extends React.Component {
-    
+
     render() {
         return (
             <>
@@ -31,11 +31,11 @@ class ContactForm extends React.Component {
                     <CategoriesHeading label='Drop us a line:' />
                     <div className="contact">
                         <div className="contact__form">
-                        <Form />
+                            <Form />
                         </div>
                     </div>
                 </section>
-                <Container style={{ padding: `2rem` }}>
+                {/* <Container style={{ padding: `2rem` }}>
                     <Row>
                         <Col>
                             <div css={findUs}>
@@ -44,6 +44,8 @@ class ContactForm extends React.Component {
                                 <p>Prague 4, Nusle, 18000</p>
                                 <p>Prague, Czech Republic</p>
                             </div>
+                        </Col>
+                        <Col md='6'>
                             <Map
                                 google={this.props.google}
                                 zoom={13}
@@ -58,8 +60,9 @@ class ContactForm extends React.Component {
                                 />
                             </Map>
                         </Col>
+
                     </Row>
-                </Container>
+                </Container> */}
             </>
         )
     }

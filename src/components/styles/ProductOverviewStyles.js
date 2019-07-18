@@ -41,7 +41,7 @@ export const card = css`
   flex-direction: column;
   align-items: center;
 
-  height: 40rem;
+  height: 43rem;
   margin: 2rem;
   padding: 2rem;
   background: rgba(224, 226, 235, .5);

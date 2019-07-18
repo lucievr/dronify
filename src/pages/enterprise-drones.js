@@ -20,6 +20,7 @@ import Navigation from "../components/main-page/landing/navigation/Navigation"
 import { Link } from 'gatsby'
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 import Button from '../components/main-page/navigation-button/Button'
+import Footer from '../components/footer/Footer'
 
 const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
     useEffect(() => {
@@ -157,7 +158,7 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                         </ul>
                     ))}
                 </div>
-                <footer>© {new Date().getFullYear()} dronify</footer>
+                <Footer />
             </div>
         </>
     )
