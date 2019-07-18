@@ -7,17 +7,17 @@ import Icon from '../styles/Icon'
 const Container = styled.div`
     position: relative;
     overflow: hidden;
-    width: 70%;
+    /* width: 70%; */
     margin: 0 auto;
+    color: #000;
 `
 const Children = styled.div`
-    width: 95%;
+    height: 25rem;
     position: relative;
-    min-height: 70vh;
-    margin: 0 auto;
+    left: 0;
 `
 const Arrow = styled.div`
-    text-shadow: 1px 1px 1px #fff;
+    text-shadow: 1px 1px 1px #000;
     z-index: 100;
     line-height: 60vh;
     text-align: center;
@@ -37,9 +37,9 @@ const Arrow = styled.div`
               `}
 `
 const Dot = styled.span`
-    font-size: 2rem;
+    font-size: 1rem;
     cursor: pointer;
-    text-shadow: 1px 1px 1px #fff;
+    text-shadow: 1px 1px 1px #000;
     user-select: none;
 `
 const Dots = styled.span`

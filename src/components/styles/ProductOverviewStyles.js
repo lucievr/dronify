@@ -43,7 +43,7 @@ export const card = css`
   height: 40rem;
   margin: 2rem;
   padding: 2rem;
-  background: #5885AF;
+  background: rgba(224, 226, 235, .5);
   border-radius: 10px;
   transition: transform 0.7s;
 

@@ -28,6 +28,7 @@ const itemWrapper = css`
     background: rgba(224, 226, 235, .5);
     border-radius: 1rem;
     width: 70%;
+    font-family: "Montserrat", sans-serif !important;
 
 `
 
@@ -98,89 +99,90 @@ const ItemPage = ({ item, addedToCart }) => {
                 >
                     Buy
                 </button>
+
+                <Carousel defaultWait={3000} css={carouselWrapper}>
+                    <Slide right>
+                        <div>
+                            <Img
+                                fluid={
+                                    localImage1
+                                }
+                                imgStyle={{
+                                    position: `absolute`,
+                                    objectFit: `contain`,
+                                    top: `3rem`,
+                                    left: `7rem`,
+                                    maxHeight: `350px`,
+                                    maxWidth: `700px`
+                                }}
+                                style={{
+                                    position: `relative`,
+                                }}
+                            />
+                        </div>
+                    </Slide>
+                    <Slide right>
+                        <div>
+                            <Img
+                                fluid={
+                                    localImage2
+                                }
+                                imgStyle={{
+                                    position: `absolute`,
+                                    objectFit: `contain`,
+                                    top: `3rem`,
+                                    left: `7rem`,
+                                    maxHeight: `350px`,
+                                    maxWidth: `700px`
+                                }}
+                                style={{
+                                    position: `relative`,
+                                }}
+                            />
+                        </div>
+                    </Slide>
+                    <Slide right>
+                        <div>
+                            <Img
+                                fluid={
+                                    localImage3
+                                }
+                                imgStyle={{
+                                    position: `absolute`,
+                                    objectFit: `contain`,
+                                    top: `3rem`,
+                                    left: `7rem`,
+                                    maxHeight: `350px`,
+                                    maxWidth: `700px`
+                                }}
+                                style={{
+                                    position: `relative`,
+                                }}
+                            />
+                        </div>
+                    </Slide>
+                    <Slide right>
+                        <div>
+                            <Img
+                                fluid={
+                                    localImage4
+                                }
+                                imgStyle={{
+                                    position: `absolute`,
+                                    objectFit: `contain`,
+                                    top: `3rem`,
+                                    left: `7rem`,
+                                    maxHeight: `350px`,
+                                    maxWidth: `700px`
+                                }}
+                                style={{
+                                    position: `relative`,
+                                }}
+                            />
+                        </div>
+                    </Slide>
+                </Carousel>
             </div>
-            <Carousel defaultWait={3000} css={carouselWrapper}>
-                <Slide right>
-                    <div>
-                        <Img
-                            fluid={
-                                localImage1
-                            }
-                            imgStyle={{
-                                position: `absolute`,
-                                objectFit: `contain`,
-                                top: `3rem`,
-                                left: `10rem`,
-                                maxHeight: `350px`,
-                                maxWidth: `700px`
-                            }}
-                            style={{
-                                position: `relative`,
-                            }}
-                        />
-                    </div>
-                </Slide>
-                <Slide right>
-                    <div>
-                        <Img
-                            fluid={
-                                localImage2
-                            }
-                            imgStyle={{
-                                position: `absolute`,
-                                objectFit: `contain`,
-                                top: `3rem`,
-                                left: `10rem`,
-                                maxHeight: `350px`,
-                                maxWidth: `700px`
-                            }}
-                            style={{
-                                position: `relative`,
-                            }}
-                        />
-                    </div>
-                </Slide>
-                <Slide right>
-                    <div>
-                        <Img
-                            fluid={
-                                localImage3
-                            }
-                            imgStyle={{
-                                position: `absolute`,
-                                objectFit: `contain`,
-                                top: `3rem`,
-                                left: `10rem`,
-                                maxHeight: `350px`,
-                                maxWidth: `700px`
-                            }}
-                            style={{
-                                position: `relative`,
-                            }}
-                        />
-                    </div>
-                </Slide>
-                <Slide right>
-                    <div>
-                        <Img
-                            fluid={
-                                localImage4
-                            }
-                            imgStyle={{
-                                position: `absolute`,
-                                objectFit: `contain`,
-                                top: `3rem`,
-                                left: `10rem`,
-                                maxHeight: `350px`,
-                                maxWidth: `700px`
-                            }}
-                            style={{
-                                position: `relative`,
-                            }}
-                        />
-                    </div>
-                </Slide>
-            </Carousel>
         </>
     )
 }
