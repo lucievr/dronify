@@ -4,6 +4,7 @@ import React from "react"
 import { silentAuth } from "./src/utils/auth"
 
 import "typeface-montserrat"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 export class SessionCheck extends React.Component {
   constructor(props) {

@@ -3,7 +3,7 @@ module.exports = {
     title: `Dronify`,
     description: `Dronify - your exclusive seller of high-tech consumer, professional, and enterprise drones all around Europe.`,
     url: "https://dronify.netlify.com",
-    image: "/images/dronify-image.jpg",
+    image: "/src/images/poster.jpg",
     author: `@lucie_vrs`,
   },
   plugins: [
@@ -78,8 +78,7 @@ module.exports = {
           'Link: </icons/icon-72x72.png>; rel=preload; as=image',
           'Link: </icons/icon-96x96.png>; rel=preload; as=image',
           'Link: </icons/icon-144x144.png>; rel=preload; as=image',
-          'Link: </static/images/dronify-image.jpg>; rel=preload; as=image; crossorigin=anonymous',
-          'Link: </static/images/poster.jpg>; rel=preload; as=image; crossorigin=anonymous',
+          'Link: </src/images/poster.jpg>; rel=preload; as=image; crossorigin=anonymous',
         ],
       },
     },
