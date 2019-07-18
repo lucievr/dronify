@@ -3,7 +3,6 @@ import React from "react"
 // STYLES
 import { Global, css } from "@emotion/core"
 import GlobalStyles from "../components/styles/GlobalStyles"
-import { isAuthenticated } from "../utils/auth"
 
 // GATSBY
 import SEO from "../components/gatsby-default-files/seo"
@@ -30,8 +29,6 @@ const IndexPage = () => {
     const gotopage = eventKey => {
         scrollRef.goToPage(eventKey)
     }
-
-    console.log(isAuthenticated());
 
     return (
         <>

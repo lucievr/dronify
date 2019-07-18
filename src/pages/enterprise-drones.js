@@ -104,9 +104,9 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                 <div css={cardsWrapper}>
 
                     {menuItems.map(({ node }) => (
-                        <ul css={cardList}>
+                        <ul css={cardList} key={node.id}>
 
-                            <li css={card} key={node.id}>
+                            <li css={card}>
                                 <div css={imageWrapper}>
                                     <Img
                                         fluid={

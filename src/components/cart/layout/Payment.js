@@ -172,7 +172,6 @@ class Payment extends React.Component {
                                             maxLength="16"
                                             required
                                         />
-                                        {/* <div>E.g.: 49..., 51..., 36..., 37...</div> */}
                                     </Col>
                                     {this.state.focused === "number" &&
                                         !this.state.numIsValid ? (
@@ -213,13 +212,13 @@ class Payment extends React.Component {
                                             maxLength="7"
                                             required
                                         />
-                                    </Col>
                                     {this.state.focused === "expiry" &&
                                         !this.state.expiryIsValid ? (
                                             <span style={{ color: `red` }}>
                                                 Invalid expiry date
                                     </span>
                                         ) : null}
+                                    </Col>
                                     <Col md={6}>
                                         <Label for="cvc">CVC</Label>
                                         <Input
@@ -233,18 +232,18 @@ class Payment extends React.Component {
                                             maxLength="3"
                                             required
                                         />
-                                    </Col>
                                     {this.state.focused === "cvc" &&
                                         !this.state.cvcIsValid ? (
                                             <span style={{ color: `red` }}>
                                                 Invalid CVC
                                     </span>
                                         ) : null}
+                                    </Col>
                                 </FormGroup>
-                                <div style={{display: `flex`, justifyContent: `space-between`}}>
+                                <div style={{ display: `flex`, justifyContent: `space-around` }}>
                                     <Link to="/delivery/">
                                         <Button
-                                            style={{padding: `.5rem 1rem`}}
+                                            style={{ padding: `.5rem 1rem` }}
                                             size="lg"
                                         >
                                             Previous Step
@@ -252,7 +251,7 @@ class Payment extends React.Component {
                                     </Link>
 
                                     <Button
-                                        style={{padding: `.5rem 1rem`}}
+                                        style={{ padding: `.5rem .5rem` }}
                                         size="lg"
                                         type="submit"
                                     >

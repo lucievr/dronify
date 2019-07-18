@@ -29,7 +29,7 @@ export const bottom__heading = css`
     align-items: center;
     justify-content: space-between;
     color: #fff;
-    background: #232323;
+    background: #6b757d;
     padding: 2rem;
     text-transform: uppercase;
 `
@@ -106,16 +106,18 @@ export const formGroup = css`
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    flex: 1 1 60%;
 `
 
 export const cardStyles = css`
     padding: 2rem;
+    flex: 1 1 40%
 `
 
 export const formWrapper = css`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* flex-wrap: wrap; */
     width: 100%;
+    /* height: 30rem; */
 `

@@ -18,8 +18,6 @@ import Settings from "../components/account/SettingsSection"
 import Orders from "../components/account/OrdersSection"
 import Button from "../components/main-page/navigation-button/Button";
 
-// console.log(getProfile())
-
 export default class Account extends React.Component {
     constructor(props) {
         super(props)
@@ -57,7 +55,6 @@ export default class Account extends React.Component {
             login()
             return <p>Redirecting to login...</p>
         }
-        console.log(isAuthenticated());
         return (
             <>
                 <Button/>
