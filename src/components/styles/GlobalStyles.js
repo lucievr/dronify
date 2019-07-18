@@ -18,7 +18,7 @@ const GlobalStyles = css`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        font-size: calc(11px + 0.5vw);
+        font-size: calc(12px + 0.4vw);
         line-height: 1.5;
         word-wrap: break-word;
         background: #001f3f;

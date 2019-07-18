@@ -3,7 +3,7 @@ module.exports = {
     title: `Dronify`,
     description: `Dronify - your exclusive seller of high-tech consumer, professional, and enterprise drones all around Europe.`,
     url: "https://dronify.netlify.com",
-    image: "/images/dronify-image.jpg",
+    image: "/src/images/poster.jpg",
     author: `@lucie_vrs`,
   },
   plugins: [
@@ -18,7 +18,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-mongodb`,
       options: {
@@ -69,6 +68,18 @@ module.exports = {
         theme_color: `#3a4045`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        allPageHeaders: [
+          'Link: </icons/icon-48x48.png>; rel=preload; as=image',
+          'Link: </icons/icon-72x72.png>; rel=preload; as=image',
+          'Link: </icons/icon-96x96.png>; rel=preload; as=image',
+          'Link: </icons/icon-144x144.png>; rel=preload; as=image',
+          'Link: </src/images/poster.jpg>; rel=preload; as=image; crossorigin=anonymous',
+        ],
       },
     },
     `gatsby-plugin-sass`,
