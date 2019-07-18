@@ -19,6 +19,7 @@ import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import { Link } from 'gatsby'
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
+import Button from '../components/main-page/navigation-button/Button'
 
 const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
     useEffect(() => {
@@ -95,6 +96,7 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
             <Navigation />
             <Global styles={GlobalStyles} />
             <SEO title="Enterprise drones" />
+            <Button />
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Enterprise drones'

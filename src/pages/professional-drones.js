@@ -19,7 +19,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
-
+import Button from '../components/main-page/navigation-button/Button'
 
 const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) => {
 
@@ -97,6 +97,7 @@ const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) =>
             <Navigation />
             <Global styles={GlobalStyles} />
             <SEO title="Professional drones" />
+            <Button />
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Professional drones'
