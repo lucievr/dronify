@@ -19,6 +19,7 @@ import SEO from "../components/gatsby-default-files/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
+import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 
 const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) => {
 
@@ -97,7 +98,9 @@ const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) =>
             <Global styles={GlobalStyles} />
             <SEO title="Professional drones" />
             <div css={contentWrapper}>
-                <h1 css={categoryTitle}>Professional drones</h1>
+                <CategoriesHeading
+                    label='Professional drones'
+                    descriptionText='some description goes here' />
                 <div css={cardsWrapper}>
                     {
                         menuItems.map(({ node }) => (
@@ -126,7 +129,8 @@ const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) =>
                                             {node.category}
                                         </p>
                                         <p>
-                                            <strong>Price:</strong> € {node.price}
+                                            <strong>Price:</strong>{" "}
+                                            {node.price}€
                                         </p>
                                         <button
                                             onClick={() => addedToCart(node.id)}

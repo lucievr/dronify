@@ -1,7 +1,6 @@
 import React from "react"
 import { Container, Row, Col } from "reactstrap"
 // import { saveBtn, sectionWrapperCol } from "../styles/AccountStyles"
-// import { Button, Form, FormGroup, Label, Input } from "reactstrap"
 import { css } from "@emotion/core"
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import { navigate } from "gatsby"
@@ -11,41 +10,6 @@ import HeadingStyles from "../main-page/categories/heading/HeadingStyles"
 const maps = css`
     min-height: 60vh;
 `
-
-// import drone from "../../images/icon.png"
-
-// const GoogleMaps = css`
-//     min-height: 40vh;
-//     height: 55vh;
-//     max-height: 80vh;
-//     width: 100%;
-//     position: relative;
-//     display: flex;
-//     flex-direction: row-reverse;
-//     justify-content: space-between;
-//     align-items: center;
-// `
-
-// const heading = css`
-//     margin-bottom: 2rem;
-//     font-weight: 400;
-// `
-// const dronify = css`
-//     text-transform: uppercase;
-//     letter-spacing: 1px;
-//     font-weight: 400;
-//     font-family: "Montserrat", sans-serif !important;
-// `
-
-// const address = css`
-//     margin-bottom: 0.2rem;
-// `
-
-// const droneImg = css`
-//     margin: 0.1rem auto;
-//     height: 4rem;
-//     width: 4rem;
-// `
 
 const encode = data => {
     return Object.keys(data)
@@ -67,7 +31,11 @@ class ContactForm extends React.Component {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
+<<<<<<< HEAD
             body: encode({ "form-name": "contact", ...this.state }),
+=======
+            body: encode({ "form-name": "contact-form", ...this.state }),
+>>>>>>> d039bbd712362ba436cce14f54c1f21df19e8e90
         })
             .then(() => navigate("/form-success/"))
             .catch(error => alert(error))
@@ -83,13 +51,36 @@ class ContactForm extends React.Component {
                     <h1 css={HeadingStyles}>Drop us a line:</h1>
                     <div className="contact">
                         <div className="contact__form">
-                            <form action="#" className="form">
+                            <form
+                                className="form"
+                                name="contact-form"
+                                method="POST"
+                                data-netlify="true"
+                                netlify-honeypot="bot-field"
+                                onSubmit={this.handleSubmit}
+                                action="/form-success/"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="form-name"
+                                    value="contact-form"
+                                />
+                                <input name="bot-field" type="hidden" />
                                 <div className="form__group">
                                     <input
                                         type="text"
                                         className="form__input"
                                         placeholder="Name"
                                         id="name"
+<<<<<<< HEAD
+=======
+                                        name="name"
+                                        value={this.state.name}
+                                        onChange={this.handleChange}
+                                        pattern="^([A-Za-z ]){5,}$"
+                                        title="Minimum 5 letters"
+                                        maxLength="40"
+>>>>>>> d039bbd712362ba436cce14f54c1f21df19e8e90
                                         required
                                     />
                                     <label
@@ -106,6 +97,15 @@ class ContactForm extends React.Component {
                                         className="form__input"
                                         placeholder="Email"
                                         id="email"
+<<<<<<< HEAD
+=======
+                                        name="email"
+                                        value={this.state.email}
+                                        onChange={this.handleChange}
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        title="Enter a valid email address"
+                                        maxLength="50"
+>>>>>>> d039bbd712362ba436cce14f54c1f21df19e8e90
                                         required
                                     />
                                     <label
@@ -120,15 +120,34 @@ class ContactForm extends React.Component {
                                     <textarea
                                         name="message"
                                         className="form__message"
+<<<<<<< HEAD
                                         placeholder="Message"
                                         id="message"
                                         cols="30"
                                         rows="6"
+=======
+                                        placeholder="Your message"
+                                        id="message"
+                                        cols="30"
+                                        rows="6"
+                                        value={this.state.message}
+                                        onChange={this.handleChange}
+                                        title="Your message is too short"
+                                        minLength="10"
+                                        required
+>>>>>>> d039bbd712362ba436cce14f54c1f21df19e8e90
                                     />
                                 </div>
 
                                 <div className="form__group">
+<<<<<<< HEAD
                                     <button className="form__button">
+=======
+                                    <button
+                                        className="form__button"
+                                        type="submit"
+                                    >
+>>>>>>> d039bbd712362ba436cce14f54c1f21df19e8e90
                                         Send
                                     </button>
                                 </div>
@@ -161,9 +180,6 @@ class ContactForm extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-                {/* <div css={GoogleMaps}>
-                        
-                    </div> */}
             </>
         )
     }
@@ -172,6 +188,7 @@ class ContactForm extends React.Component {
 export default GoogleApiWrapper({
     apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
 })(ContactForm)
+<<<<<<< HEAD
 
 {
     /* <div style={{ marginTop: `3rem` }}>
@@ -263,3 +280,5 @@ export default GoogleApiWrapper({
                         </Form>
                     </div> */
 }
+=======
+>>>>>>> d039bbd712362ba436cce14f54c1f21df19e8e90

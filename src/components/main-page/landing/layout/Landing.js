@@ -13,7 +13,7 @@ const LandingPage = () => {
                 <Video />
                 <div css={landingContent}>
                     <h1 css={heading}>Explore the future</h1>
-                    <Link to='/consumer-drones' css={button} rel="preload">
+                    <Link to='/consumer-drones' css={button}>
                         Fly with us
                     </Link>
                 </div>
