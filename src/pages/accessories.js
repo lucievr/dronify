@@ -106,7 +106,7 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Accessories'
-                    descriptionText='some description goes here'
+                    descriptionText="Sustainable XOXO hashtag meggings 90's, meh meditation mustache mlkshk DIY palo santo fanny pack. 8-bit irony retro 90's VHS copper mug freegan 3 wolf moon organic succulents meditation. Meh franzen snackwave, umami vaporware fanny pack photo booth. Messenger bag pinterest flexitarian, cornhole drinking vinegar cronut quinoa. 90's tattooed poutine fam, bicycle rights vaporware umami pickled cliche."
                 />
                 <div css={cardsWrapper}>
 

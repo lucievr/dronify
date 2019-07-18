@@ -101,7 +101,7 @@ const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) =>
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Professional drones'
-                    descriptionText='some description goes here' />
+                    descriptionText="Single-origin coffee yuccie hell of taxidermy tumeric iceland. Green juice pop-up ramps woke letterpress synth franzen, subway tile scenester literally. Sartorial vexillologist cliche, hammock green juice salvia whatever waistcoat. Bespoke raclette pop-up fanny pack 3 wolf moon lyft. Trust fund taiyaki shaman wayfarers. Bitters craft beer franzen, coloring book VHS ugh affogato forage." />
                 <div css={cardsWrapper}>
                     {
                         menuItems.map(({ node }) => (

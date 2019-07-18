@@ -101,7 +101,7 @@ const ConsumerDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Consumer drones'
-                    descriptionText='some description goes here' />
+                    descriptionText="Lo-fi meh biodiesel, freegan banh mi jean shorts truffaut portland next level polaroid squid butcher etsy master cleanse. 3 wolf moon listicle keffiyeh, af typewriter quinoa shaman asymmetrical. VHS fanny pack +1, retro etsy truffaut blue bottle hella unicorn tote bag pitchfork slow-carb hell of jianbing. Live-edge messenger bag shoreditch ethical edison bulb ugh." />
                 <div css={cardsWrapper}>
                     {
                         menuItems.map(({ node }) => (

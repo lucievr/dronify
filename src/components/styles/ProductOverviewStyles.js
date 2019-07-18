@@ -32,7 +32,6 @@ export const cardList = css`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 600px;
 `
 
 export const card = css`
