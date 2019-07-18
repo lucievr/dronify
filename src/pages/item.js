@@ -9,7 +9,6 @@ import { addedToCart } from "../actions"
 import { Global, css } from "@emotion/core"
 import Icon from '../components/styles/Icon'
 import GlobalStyles from "../components/styles/GlobalStyles"
-// import { textWrapper } from "../components/styles/ProductOverviewStyles"
 import { carouselWrapper, specWrapper, descriptionStyle, specText, column, btnBuy } from '../components/styles/ProductDetailStyles'
 
 // COMPONENTS
@@ -30,7 +29,7 @@ const itemWrapper = css`
     border-radius: 1rem;
     width: 70%;
     font-family: "Montserrat", sans-serif !important;
-
+    color: #fff;
 `
 
 const ItemPage = ({ item, addedToCart }) => {
@@ -48,6 +47,7 @@ const ItemPage = ({ item, addedToCart }) => {
                     {name}
                 </h2>
                 <h3>€ {price}</h3>
+                <br/>
                 <h5>
                     <strong>Category:</strong> {category}
                 </h5>
