@@ -12,6 +12,7 @@ const description = css`
     font-family: "Montserrat", sans-serif !important;
     padding: 2rem;
     color: #fff;
+    font-size: 1rem;
 `
 
 const CategoriesHeading = ({ label, descriptionText }) => {

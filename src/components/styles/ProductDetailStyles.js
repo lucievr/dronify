@@ -28,10 +28,10 @@ export const specText = css`
 `
 
 export const btnBuy = css`
-  color: #4d4d4d;
+  color: #fff;
   font-family: "Montserrat", sans-serif !important;
   background-color: transparent;
-  border: 2px solid #4d4d4d;
+  border: 2px solid #fff;
   padding: .7rem 2.5rem;
   margin: 1rem;
   border-radius: 5rem;

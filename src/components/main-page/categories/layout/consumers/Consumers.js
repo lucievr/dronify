@@ -25,7 +25,7 @@ const Consumers = props => {
                         </Fade>
                     </div>
                     <div css={Item}>
-                        <Heading name="Consumer drones" />
+                        <Heading name="Consumer" />
                         <h5
                             style={{
                                 color: `white`,

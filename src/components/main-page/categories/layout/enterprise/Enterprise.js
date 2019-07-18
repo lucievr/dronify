@@ -25,7 +25,7 @@ const Enterprise = props => {
                         </Fade>
                     </div>
                     <div css={Item}>
-                        <Heading name="Enterprise drones" />
+                        <Heading name="Enterprise" />
                         <h5
                             style={{
                                 color: `white`,

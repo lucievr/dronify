@@ -1,7 +1,7 @@
 import { css } from "@emotion/core"
 
 const HeadingStyles = css`
-    font-size: 2.4rem;
+    font-size: 3.5rem;
     font-family: "Montserrat", sans-serif;
     color: #fff;
     letter-spacing: .1rem;

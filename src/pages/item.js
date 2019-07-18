@@ -42,7 +42,7 @@ const ItemPage = ({ item, addedToCart }) => {
             <SEO title={name} />
             <Navigation />
             <div css={itemWrapper}>
-                <h2 style={{ letterSpacing: `1px` }}>
+                <h2 style={{ letterSpacing: `.2rem`, color: `#fff`, marginBottom: `1.5rem` }}>
                     {name}
                 </h2>
                 <h3>€ {price}</h3>
