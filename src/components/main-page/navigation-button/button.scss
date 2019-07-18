@@ -70,6 +70,10 @@
             transition: all .4s;
             margin-left: -20rem;
         }
+
+        @media (max-width: 600px) {
+            margin-left: -10rem !important;
+        }
         
         &:hover,
         &:active {
