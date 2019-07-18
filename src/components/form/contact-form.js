@@ -1,12 +1,12 @@
 import React from "react"
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from "reactstrap"
 // import { saveBtn, sectionWrapperCol } from "../styles/AccountStyles"
 // import { Button, Form, FormGroup, Label, Input } from "reactstrap"
 import { css } from "@emotion/core"
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import { navigate } from "gatsby"
-import './contacts.scss'
-import HeadingStyles from '../main-page/categories/heading/HeadingStyles'
+import "./contacts.scss"
+import HeadingStyles from "../main-page/categories/heading/HeadingStyles"
 
 const maps = css`
     min-height: 60vh;
@@ -67,14 +67,14 @@ class ContactForm extends React.Component {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", ...this.state })
+            body: encode({ "form-name": "contact", ...this.state }),
         })
             .then(() => navigate("/form-success/"))
             .catch(error => alert(error))
-            .finally(this.setState({ name: "", email: "", message: "" }));
+            .finally(this.setState({ name: "", email: "", message: "" }))
 
-        e.preventDefault();
-    };
+        e.preventDefault()
+    }
 
     render() {
         return (
@@ -85,22 +85,52 @@ class ContactForm extends React.Component {
                         <div className="contact__form">
                             <form action="#" className="form">
                                 <div className="form__group">
-                                    <input type="text" className="form__input" placeholder="Name" id="name" required />
-                                    <label htmlFor="name" className="form__label">Name</label>
+                                    <input
+                                        type="text"
+                                        className="form__input"
+                                        placeholder="Name"
+                                        id="name"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="name"
+                                        className="form__label"
+                                    >
+                                        Name
+                                    </label>
                                 </div>
 
                                 <div className="form__group">
-                                    <input type="email" className="form__input" placeholder="Email" id="email" required />
-                                    <label htmlFor="email" className="form__label">Email</label>
+                                    <input
+                                        type="email"
+                                        className="form__input"
+                                        placeholder="Email"
+                                        id="email"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="email"
+                                        className="form__label"
+                                    >
+                                        Email
+                                    </label>
                                 </div>
 
                                 <div className="form__group">
-                                    <textarea name="message" className="form__message" placeholder="Message" id="message"
-                                        cols="30" rows="6" />
+                                    <textarea
+                                        name="message"
+                                        className="form__message"
+                                        placeholder="Message"
+                                        id="message"
+                                        cols="30"
+                                        rows="6"
+                                    />
                                 </div>
 
                                 <div className="form__group">
-                                    <button className="form__button">Send</button>
+                                    <button className="form__button">
+                                        Send
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -112,9 +142,15 @@ class ContactForm extends React.Component {
                             <Map
                                 google={this.props.google}
                                 zoom={13}
-                                initialCenter={{ lat: 50.06224, lng: 14.437376 }}
-                                css={maps}>
-                                <Marker position={{ lat: 50.06224, lng: 14.437376 }} />
+                                initialCenter={{
+                                    lat: 50.06224,
+                                    lng: 14.437376,
+                                }}
+                                css={maps}
+                            >
+                                <Marker
+                                    position={{ lat: 50.06224, lng: 14.437376 }}
+                                />
                             </Map>
                         </Col>
                         <Col>
@@ -137,8 +173,8 @@ export default GoogleApiWrapper({
     apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
 })(ContactForm)
 
-
-{/* <div style={{ marginTop: `3rem` }}>
+{
+    /* <div style={{ marginTop: `3rem` }}>
                 <section css={sectionWrapperCol}>
                     <h2 css={heading}>Find us</h2>
                     <div css={GoogleMaps}>
@@ -225,4 +261,5 @@ export default GoogleApiWrapper({
                                 Send message
                             </Button>
                         </Form>
-                    </div> */}
+                    </div> */
+}
