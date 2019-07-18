@@ -42,7 +42,7 @@ export const card = css`
   align-items: center;
   overflow: hidden;
 
-  height: 40rem;
+  height: 43rem;
   margin: 2rem;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.22);

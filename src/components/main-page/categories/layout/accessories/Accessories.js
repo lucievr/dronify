@@ -51,11 +51,6 @@ const Accessories = props => (
                             <Icon color="white" name="chevrons-up" />
                         </button>
                     </div>
-
-                    <footer>
-                        © {new Date().getFullYear()}{" "}
-                        {data.site.siteMetadata.title}
-                    </footer>
                 </div>
             </div>
         )}

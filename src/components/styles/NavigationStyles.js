@@ -58,6 +58,7 @@ export const NavList = css`
     margin: 0;
     padding-top: 1rem;
     width: 70%;
+    margin-left: -2rem;
 
     @media screen and (max-width: 1100px) {
         width: 90%;

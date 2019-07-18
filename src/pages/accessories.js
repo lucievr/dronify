@@ -27,6 +27,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 import Button from '../components/main-page/navigation-button/Button'
+import Footer from "../components/footer/Footer";
 
 const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => {
     useEffect(() => {
@@ -166,7 +167,7 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
                     }
 
                 </div>
-                <footer>© {new Date().getFullYear()} dronify</footer>
+                <Footer/>
             </div>
         </>
     )

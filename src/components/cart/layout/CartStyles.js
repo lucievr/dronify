@@ -3,6 +3,7 @@ import { css } from "@emotion/core"
 export const wrapper = css`
     display: flex;
     flex-direction: column;
+    height: 100vh;
 `
 
 export const bottom = css`
