@@ -32,9 +32,9 @@ export const heading = css`
 `
 
 export const button = css`
-    color: #fff;
+    color: #badb57;
     font-family: "Montserrat", sans-serif !important;
-    border: 3px solid #fff;
+    border: 3px solid #badb57;
     padding: 1rem 3rem;
     border-radius: 5rem;
     font-size: 1.2rem;
