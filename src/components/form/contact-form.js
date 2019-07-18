@@ -1,7 +1,7 @@
 import React from "react"
-import { Container, Row, Col } from "reactstrap"
+// import { Container, Row, Col } from "reactstrap"
 import { css } from "@emotion/core"
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
+// import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import "./contacts.scss"
 import Form from './Form'
 
@@ -76,6 +76,8 @@ class ContactForm extends React.Component {
     }
 }
 
-export default GoogleApiWrapper({
-    apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
-})(ContactForm)
+// export default GoogleApiWrapper({
+//     apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
+// })(ContactForm)
+
+export default ContactForm
