@@ -102,7 +102,7 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
             <div css={contentWrapper}>
                 <CategoriesHeading
                     label='Enterprise drones'
-                    descriptionText='Dronify has been assisting police, fire departments, search and rescue teams, inspection services, agriculture crop inspectors, and educational institutions to launch their own drone programs. From infrared camera drones finding missing persons to multispectral agriculture drones identifying crop stress, we know the efficient power of unmanned aerial systems (UAS). Dronify is the go-to commercial drone shop for organizations looking to harness the possibilities of infrared, zoom, or agriculture drones.' />
+                    descriptionText='Our enterprise drones have been assisting police, fire departments, search and rescue teams, inspection services, agriculture crop inspectors, and educational institutions to launch their own drone programs. From infrared camera drones finding missing persons to multispectral agriculture drones identifying crop stress, we know the efficient power of unmanned aerial systems (UAS). Dronify is the go-to commercial drone shop for organizations looking to harness the possibilities of infrared, zoom, or agriculture drones.' />
                 <div css={cardsWrapper}>
 
                     {menuItems.map(({ node }) => (

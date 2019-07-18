@@ -3,7 +3,6 @@ import { Container, Row, Col } from "reactstrap"
 import { css } from "@emotion/core"
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import "./contacts.scss"
-import CategoriesHeading from '../categories/heading/CategoriesHeading'
 import Form from './Form'
 
 const maps = css`
@@ -22,13 +21,22 @@ const findUs = css`
     }
 `
 
+const heading = css`
+    font-family: "Montserrat", sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: #fff;
+    font-size: calc(25px + 2vw);
+    margin: calc(20px + 3vw);
+`
+
 class ContactForm extends React.Component {
 
     render() {
         return (
             <>
                 <section className="section-contact" id="contact">
-                    <CategoriesHeading label='Drop us a line:' />
+                    <h1 css={heading}>Drop us a line:</h1>
                     <div className="contact">
                         <div className="contact__form">
                             <Form />
