@@ -98,7 +98,9 @@ const ConsumerDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
             <Global styles={GlobalStyles} />
             <SEO title="Consumer drones" />
             <div css={contentWrapper}>
-                <CategoriesHeading label='Consumer drones' />
+                <CategoriesHeading
+                    label='Consumer drones'
+                    descriptionText='some description goes here' />
                 <div css={cardsWrapper}>
                     {
                         menuItems.map(({ node }) => (

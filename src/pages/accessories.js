@@ -97,7 +97,9 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
             <Global styles={GlobalStyles} />
             <SEO title="Accessories" />
             <div css={contentWrapper}>
-                <CategoriesHeading label='Accessories' />
+                <CategoriesHeading
+                    label='Accessories'
+                    descriptionText='some description goes here' />
                 <div css={cardsWrapper}>
 
                     {
