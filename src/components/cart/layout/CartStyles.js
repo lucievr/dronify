@@ -19,9 +19,9 @@ export const bottom = css`
 
 export const payformWrapper = css`
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 `
 
 export const bottom__heading = css`
@@ -103,5 +103,19 @@ export const cartButtons = css`
 `
 
 export const formGroup = css`
-    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+`
+
+export const cardStyles = css`
+    padding: 2rem;
+`
+
+export const formWrapper = css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    width: 100%;
 `

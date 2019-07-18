@@ -17,7 +17,9 @@ import {
     bottom__heading,
     bottom__heading__title,
     bottom__heading__total,
-    formGroup
+    formGroup,
+    cardStyles,
+    formWrapper
 } from "./CartStyles"
 
 class Payment extends React.Component {
@@ -142,103 +144,106 @@ class Payment extends React.Component {
                         </span>
                     </div>
                     <div css={payformWrapper}>
-                        <Cards
-                            cvc={this.state.cvc}
-                            name={this.state.name}
-                            number={this.state.number}
-                            expiry={this.state.expiry}
-                            focused={this.state.focused}
-                        />
-                        <Form
-                            css={formGroup}
-                            onSubmit={this.handleSubmit}
-                            action="/payment-success/"
-                        >
-                            <FormGroup row>
-                                <Col md={6}>
-                                    <Label for="number">Card Number</Label>
-                                    <Input
-                                        type="tel"
-                                        name="number"
-                                        id="number"
-                                        placeholder="1234 1234 1234 1234"
-                                        value={this.state.number}
-                                        onChange={this.handleNumChange}
-                                        onFocus={this.handleOnFocus("number")}
-                                        maxLength="16"
-                                        required
-                                    />
-                                    {/* <div>E.g.: 49..., 51..., 36..., 37...</div> */}
-                                </Col>
-                                {this.state.focused === "number" &&
-                                !this.state.numIsValid ? (
-                                    <span style={{ color: `red` }}>
-                                        Card number is invalid
+                        <div css={formWrapper}>
+                            <Cards
+                                css={cardStyles}
+                                cvc={this.state.cvc}
+                                name={this.state.name}
+                                number={this.state.number}
+                                expiry={this.state.expiry}
+                                focused={this.state.focused}
+                            />
+                            <Form
+                                css={formGroup}
+                                onSubmit={this.handleSubmit}
+                                action="/payment-success/"
+                            >
+                                <FormGroup row>
+                                    <Col md={12}>
+                                        <Label for="number">Card Number</Label>
+                                        <Input
+                                            type="tel"
+                                            name="number"
+                                            id="number"
+                                            placeholder="1234 1234 1234 1234"
+                                            value={this.state.number}
+                                            onChange={this.handleNumChange}
+                                            onFocus={this.handleOnFocus("number")}
+                                            maxLength="16"
+                                            required
+                                        />
+                                        {/* <div>E.g.: 49..., 51..., 36..., 37...</div> */}
+                                    </Col>
+                                    {this.state.focused === "number" &&
+                                        !this.state.numIsValid ? (
+                                            <span style={{ color: `red` }}>
+                                                Card number is invalid
                                     </span>
-                                ) : null}
-                            </FormGroup>
-                            <FormGroup row>
-                                <Col md={6}>
-                                    <Label for="name">Name on Card</Label>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        placeholder="Jane Doe"
-                                        value={this.state.name}
-                                        onChange={this.handleNameChange}
-                                        onFocus={this.handleOnFocus("name")}
-                                        pattern="^([A-Za-z ]){5,}$"
-                                        title="Minimum 5 letters"
-                                        maxLength="40"
-                                        required
-                                    />
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Col md={6}>
-                                    <Label for="expiry">Date of Expiry</Label>
-                                    <Input
-                                        type="tel"
-                                        name="expiry"
-                                        id="expiry"
-                                        placeholder="12/20"
-                                        value={this.state.expiry}
-                                        onChange={this.handleExpiryChange}
-                                        onFocus={this.handleOnFocus("expiry")}
-                                        maxLength="7"
-                                        required
-                                    />
-                                </Col>
-                                {this.state.focused === "expiry" &&
-                                !this.state.expiryIsValid ? (
-                                    <span style={{ color: `red` }}>
-                                        Invalid expiry date
+                                        ) : null}
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md={12}>
+                                        <Label for="name">Name on Card</Label>
+                                        <Input
+                                            type="text"
+                                            name="name"
+                                            id="name"
+                                            placeholder="Jane Doe"
+                                            value={this.state.name}
+                                            onChange={this.handleNameChange}
+                                            onFocus={this.handleOnFocus("name")}
+                                            pattern="^([A-Za-z ]){5,}$"
+                                            title="Minimum 5 letters"
+                                            maxLength="40"
+                                            required
+                                        />
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Col md={6}>
+                                        <Label for="expiry">Date of Expiry</Label>
+                                        <Input
+                                            type="tel"
+                                            name="expiry"
+                                            id="expiry"
+                                            placeholder="12/20"
+                                            value={this.state.expiry}
+                                            onChange={this.handleExpiryChange}
+                                            onFocus={this.handleOnFocus("expiry")}
+                                            maxLength="7"
+                                            required
+                                        />
+                                    </Col>
+                                    {this.state.focused === "expiry" &&
+                                        !this.state.expiryIsValid ? (
+                                            <span style={{ color: `red` }}>
+                                                Invalid expiry date
                                     </span>
-                                ) : null}
-                            </FormGroup>
-                            <FormGroup row>
-                                <Col md={6}>
-                                    <Label for="cvc">CVC</Label>
-                                    <Input
-                                        type="tel"
-                                        name="cvc"
-                                        id="cvc"
-                                        placeholder="123"
-                                        value={this.state.cvc}
-                                        onChange={this.handleCvcChange}
-                                        onFocus={this.handleOnFocus("cvc")}
-                                        maxLength="3"
-                                        required
-                                    />
-                                </Col>
-                                {this.state.focused === "cvc" &&
-                                !this.state.cvcIsValid ? (
-                                    <span style={{ color: `red` }}>
-                                        Invalid CVC
+                                        ) : null}
+                                    <Col md={6}>
+                                        <Label for="cvc">CVC</Label>
+                                        <Input
+                                            type="tel"
+                                            name="cvc"
+                                            id="cvc"
+                                            placeholder="123"
+                                            value={this.state.cvc}
+                                            onChange={this.handleCvcChange}
+                                            onFocus={this.handleOnFocus("cvc")}
+                                            maxLength="3"
+                                            required
+                                        />
+                                    </Col>
+                                    {this.state.focused === "cvc" &&
+                                        !this.state.cvcIsValid ? (
+                                            <span style={{ color: `red` }}>
+                                                Invalid CVC
                                     </span>
-                                ) : null}
-                            </FormGroup>
+                                        ) : null}
+                                </FormGroup>
+                            </Form>
+                        </div>
+                        <div>
                             <Link to="/delivery/">
                                 <Button
                                     style={{
@@ -258,7 +263,7 @@ class Payment extends React.Component {
                             >
                                 Confirm payment
                             </Button>
-                        </Form>
+                        </div>
                     </div>
                 </div>
             </section>

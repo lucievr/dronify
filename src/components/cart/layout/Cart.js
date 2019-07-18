@@ -58,7 +58,7 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllIte
                             <span>{total}€</span>
                         </div>
                     </div>
-                    <Table hover>
+                    <Table style={{borderBottomStyle: `hidden`}} hover>
                         <thead>
                             <tr>
                                 <th></th>

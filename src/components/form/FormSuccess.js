@@ -49,7 +49,7 @@ const FormSuccess = ({ removeAllItems }) => {
                                 className="droneIcon"
                             />
                         </Spin>
-                        <h5>Your form is being processed...</h5>
+                        <h5 style={{paddingBottom: `2rem`}}>Your form is being processed...</h5>
                     </div>
                 ) : (
                     <div className="loaded">
@@ -78,7 +78,7 @@ const FormSuccess = ({ removeAllItems }) => {
                                 points="100.2,40.2 51.5,88.8 29.8,67.5 "
                             />
                         </svg>
-                        <h5 className="svg success">
+                        <h5 style={{paddingBottom: `2rem`}} className="svg success">
                             Great! Your message has been received.
                         </h5>
                     </div>

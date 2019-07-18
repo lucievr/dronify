@@ -138,10 +138,11 @@ const GlobalStyles = css`
 
     div.rccs {
         width: 50%;
+        margin: 0;
     }
 
     div.rccs__card--front {
-        margin: 3rem 0;
+        /* margin: 3rem 0; */
     }
 
     div.rccs__card--back {
