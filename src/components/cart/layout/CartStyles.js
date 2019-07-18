@@ -71,7 +71,6 @@ export const buttons = css`
 export const qty = css`
     height: 1.5rem;
     width: 1.5rem;
-    /* padding: .2rem; */
     margin: 0 0.3rem;
     border-radius: 50% !important;
 `

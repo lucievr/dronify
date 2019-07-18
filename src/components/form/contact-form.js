@@ -8,6 +8,18 @@ import CategoriesHeading from '../categories/heading/CategoriesHeading'
 
 const maps = css`
     min-height: 60vh;
+    margin-bottom: 5rem;
+`
+
+const findUs = css`
+    color: #fff;
+    padding-bottom: 3rem;
+
+    h2 {
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        padding-bottom: 2rem;
+    }
 `
 
 const encode = data => {
@@ -136,6 +148,12 @@ class ContactForm extends React.Component {
                 <Container style={{ padding: `2rem` }}>
                     <Row>
                         <Col>
+                            <div css={findUs}>
+                                <h2>Find us</h2>
+                                <p>Taborska 31</p>
+                                <p>Prague 4, Nusle, 18000</p>
+                                <p>Prague, Czech Republic</p>
+                            </div>
                             <Map
                                 google={this.props.google}
                                 zoom={13}
@@ -150,12 +168,12 @@ class ContactForm extends React.Component {
                                 />
                             </Map>
                         </Col>
-                        <Col>
+                        {/* <Col>
                             <h2>Find us</h2>
                             <p>Taborska 31</p>
                             <p>Prague 4, Nusle, 18000</p>
                             <p>Prague, Czech Republic</p>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Container>
             </>
