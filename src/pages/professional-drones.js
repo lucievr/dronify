@@ -5,7 +5,6 @@ import GlobalStyles from "../components/styles/GlobalStyles"
 import { Link } from 'gatsby'
 import {
     contentWrapper,
-    categoryTitle,
     cardsWrapper,
     cardList,
     card,
@@ -20,6 +19,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
+
 
 const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) => {
 
@@ -104,6 +104,7 @@ const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) =>
                 <div css={cardsWrapper}>
                     {
                         menuItems.map(({ node }) => (
+
                             <ul key={node.id} css={cardList}>
                                 <li css={card}>
                                     <div css={imageWrapper}>

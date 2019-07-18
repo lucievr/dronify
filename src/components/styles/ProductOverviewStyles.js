@@ -35,15 +35,23 @@ export const cardList = css`
 `
 
 export const card = css`
-  min-width: 450px;
-  min-height: 500px;
-  margin: 30px;
-  color: grey;
-  padding: 2rem;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+
+  /* min-width: 450px;
+  min-height: 500px; */
+  margin: 2rem;
+  /* color: grey; */
+  padding: 2rem;
+  background: #5885AF;
+  border-radius: 10px;
+  transition: transform 0.7s;
+
+  &:hover {
+        transform: translateY(-1.5rem) scale(1.05);
+    }
 `
 
 export const imageWrapper = css`
