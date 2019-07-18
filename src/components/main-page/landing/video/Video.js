@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import LandingVideo from "./video.mp4"
-import Poster from "../../../../images/poster.jpg"
+import Poster from "../../../../../public/static/images/poster.jpg"
 
 // VIDEO STYLES
 

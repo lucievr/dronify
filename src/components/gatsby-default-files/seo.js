@@ -1,16 +1,14 @@
 /**
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+ **/
 
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, image, url }) {
+function SEO({ description, lang, meta, title, image, url, link }) {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -93,6 +91,43 @@ function SEO({ description, lang, meta, title, image, url }) {
                     content: image,
                 },
             ].concat(meta)}
+            link={[
+                {
+                    rel: `preload`,
+                    as: `image`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/consumer-drones%2Fconsumer-bg.jpg?alt=media&token=cfc4edd7-df2c-4904-ba22-23a0fe7c3723`,
+                },
+                {
+                    rel: `preload`,
+                    as: `image`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fprofessional-bg.jpg?alt=media&token=6eb4503c-ccb8-4f7e-9562-10bd22eae7a8`,
+                },
+                {
+                    rel: `preload`,
+                    as: `image`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/enterprise-bg-flip.jpg?alt=media&token=8d6d2ed3-88bd-4569-a219-6bc2dd240216`,
+                },
+                {
+                    rel: `preload`,
+                    as: `image`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/drone-3453361_1280uflip.jpg?alt=media&token=c412ca6a-ed03-41fb-baf0-78383f0f0e83`,
+                },
+                {
+                    rel: `preload`,
+                    as: `image`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/consumer-drones%2Fphantom-3-se.png?alt=media&token=07f00be4-b994-4e35-91f6-90335b2b74b6`,
+                },
+                {
+                    rel: `preload`,
+                    as: `image`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fzenmuse-x7.png?alt=media&token=f40badd9-5aa6-4b05-812d-bda0e8186933`,
+                },
+                {
+                    rel: `preload`,
+                    as: `image`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/enterprise-drones%2Fmatrice-200v2-ii.png?alt=media&token=c8176e7c-4869-4f0f-abce-48e6fd4d8cf3`,
+                },
+            ].concat(link)}
         />
     )
 }
@@ -100,6 +135,7 @@ function SEO({ description, lang, meta, title, image, url }) {
 SEO.defaultProps = {
     lang: `en`,
     meta: [],
+    link: [],
     description: ``,
     image: null,
     title: null,
@@ -110,6 +146,7 @@ SEO.propTypes = {
     description: PropTypes.string,
     lang: PropTypes.string,
     meta: PropTypes.arrayOf(PropTypes.object),
+    link: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string.isRequired,
     image: PropTypes.string,
     url: PropTypes.string,

@@ -18,7 +18,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-mongodb`,
       options: {
@@ -69,6 +68,19 @@ module.exports = {
         theme_color: `#3a4045`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        allPageHeaders: [
+          'Link: </icons/icon-48x48.png>; rel=preload; as=image',
+          'Link: </icons/icon-72x72.png>; rel=preload; as=image',
+          'Link: </icons/icon-96x96.png>; rel=preload; as=image',
+          'Link: </icons/icon-144x144.png>; rel=preload; as=image',
+          'Link: </static/images/dronify-image.jpg>; rel=preload; as=image; crossorigin=anonymous',
+          'Link: </static/images/poster.jpg>; rel=preload; as=image; crossorigin=anonymous',
+        ],
       },
     },
     `gatsby-plugin-sass`,
