@@ -6,6 +6,8 @@ import { navigate } from "gatsby"
 import "./contacts.scss"
 import CategoriesHeading from '../categories/heading/CategoriesHeading'
 
+import '../../images/contact.jpg'
+
 const maps = css`
     min-height: 60vh;
     margin-bottom: 5rem;

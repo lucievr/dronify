@@ -4,7 +4,6 @@ import { addedToCart, menuLoaded, showItem } from "../actions"
 import GlobalStyles from "../components/styles/GlobalStyles"
 import {
     contentWrapper,
-    categoryTitle,
     cardsWrapper,
     cardList,
     card,
