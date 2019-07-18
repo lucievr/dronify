@@ -17,6 +17,16 @@ const Professionals = props => {
                 <div css={Content}>
                     <div css={Item}>
                         <Heading name="Professional drones" />
+                        <h5
+                            style={{
+                                color: `white`,
+                                fontWeight: `300`,
+                                letterSpacing: `1px`,
+                            }}
+                        >
+                            Take your aerial imaging and film making to the next
+                            level
+                        </h5>
                         <Link to="/professional-drones/">
                             <Button label="Explore" />
                         </Link>
