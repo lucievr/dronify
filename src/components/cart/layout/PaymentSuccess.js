@@ -48,6 +48,7 @@ const PaymentSuccess = ({ removeAllItems }) => {
                                 width: "6rem",
                                 height: "6rem",
                                 margin: `5rem auto 3rem`,
+                                paddingBottom: `2rem`
                             }}
                         />
                         <h5>Your payment is being processed...</h5>

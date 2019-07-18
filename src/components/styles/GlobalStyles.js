@@ -107,7 +107,7 @@ const GlobalStyles = css`
     span.account-icon svg.icon-style {
         width: 25px;
         height: 25px;
-        margin: 10px 15px 18px 10px;\
+        margin: 10px 15px 18px 10px;
         color: #fff;
     }
 

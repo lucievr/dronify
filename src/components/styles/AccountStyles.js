@@ -81,7 +81,7 @@ const settingsSection = css`
 
 const profileTitle = css`
     font-family: "Montserrat", sans-serif !important;
-    color: #000;
+    color: #fff;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     font-size: 1rem;
