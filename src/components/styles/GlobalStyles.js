@@ -144,7 +144,7 @@ const GlobalStyles = css`
     }
 
     span.iconName {
-        font-size: calc(8px + 0.4vw);
+        font-size: calc(12px + 0.2vw);
         letter-spacing: 1px;
     }
 

@@ -4,7 +4,7 @@ import Button from "../../button/Button"
 import Heading from "../../heading/Heading"
 
 import Background from "./ConsumersStyles"
-import { Item, Content, Image } from "./ConsumersStyles"
+import { Item, Content, Image, subHeadingRight } from "./ConsumersStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import Fade from "react-reveal/Fade"
 import { backToTop } from "../../button/ButtonStyles"
@@ -26,13 +26,7 @@ const Consumers = props => {
                     </div>
                     <div css={Item}>
                         <Heading name="Consumer" />
-                        <h5
-                            style={{
-                                color: `white`,
-                                fontWeight: `300`,
-                                letterSpacing: `1px`,
-                            }}
-                        >
+                        <h5 css={subHeadingRight}>
                             Capture your best moments with our consumer drones
                             series
                         </h5>

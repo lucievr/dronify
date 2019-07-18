@@ -4,7 +4,7 @@ import Button from "../../button/Button"
 import Heading from "../../heading/Heading"
 
 import Background from "./EnterpriseStyles"
-import { Item, Content, Image } from "./EnterpriseStyles"
+import { Item, Content, Image, subHeadingRight } from "./EnterpriseStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import Fade from "react-reveal/Fade"
 import { backToTop } from "../../button/ButtonStyles"
@@ -26,16 +26,9 @@ const Enterprise = props => {
                     </div>
                     <div css={Item}>
                         <Heading name="Enterprise" />
-                        <h5
-                            style={{
-                                color: `white`,
-                                fontWeight: `300`,
-                                letterSpacing: `1px`,
-                                marginRight: `1rem`,
-                            }}
-                        >
-                            Collect and Leverage Data Across your Operations
-                            with our enterprise Drones
+                        <h5 css={subHeadingRight}>
+                            Collect and leverage data across your operations
+                            with our enterprise drones
                         </h5>
                         <Link to="/enterprise-drones/">
                             <Button label="Explore" />

@@ -10,8 +10,8 @@ const buttonStyles = css`
     border-radius: 10px;
     transition: all 0.2s;
     background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
+    color: #badb57;
+    border: 2px solid #badb57;
     box-shadow: 0 1rem 2rem rgba(#000, 0.1);
     cursor: pointer;
 

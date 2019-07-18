@@ -4,7 +4,7 @@ import Button from "../../button/Button"
 import Heading from "../../heading/Heading"
 
 import Background from "./AccessoriesStyles"
-import { Item, Content } from "./AccessoriesStyles"
+import { Item, Content, subHeadingLeft } from "./AccessoriesStyles"
 import { DarkOverlay } from "../../../../styles/GlobalStyles"
 import { StaticQuery, graphql } from "gatsby"
 import { backToTop } from "../../button/ButtonStyles"
@@ -27,15 +27,9 @@ const Accessories = props => (
                     <div css={Content}>
                         <div css={Item}>
                             <Heading name="Accessories" />
-                            <h5
-                                style={{
-                                    color: `white`,
-                                    fontWeight: `300`,
-                                    letterSpacing: `1px`,
-                                }}
-                            >
+                            <h5 css={subHeadingLeft}>
                                 The best drone accessories and tools to keep you
-                                flying safer, longer and smarter.
+                                flying safer, longer and smarter
                             </h5>
                             <Link to="/accessories/">
                                 <Button label="Explore" />
