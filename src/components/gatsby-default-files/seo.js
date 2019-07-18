@@ -10,23 +10,27 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, image, url }) {
     const { site } = useStaticQuery(
         graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
+            query {
+                site {
+                    siteMetadata {
+                        title
+                        description
+                        image
+                        author
+                        url
+                    }
+                }
+            }
+        `
     )
 
-    const metaDescription = description || site.siteMetadata.description
-
+    description = description || site.siteMetadata.description
+    title = title || site.siteMetadata.title
+    image = `${url}${image || site.siteMetadata.image}`
+    url = `${url}${url || "/"}`
 
     return (
         <Helmet
@@ -38,7 +42,11 @@ function SEO({ description, lang, meta, title }) {
             meta={[
                 {
                     name: `description`,
-                    content: metaDescription,
+                    content: description,
+                },
+                {
+                    name: `image`,
+                    content: image,
                 },
                 {
                     name: `google-site-verification`,
@@ -49,8 +57,16 @@ function SEO({ description, lang, meta, title }) {
                     content: title,
                 },
                 {
+                    property: `og:url`,
+                    content: url,
+                },
+                {
                     property: `og:description`,
-                    content: metaDescription,
+                    content: description,
+                },
+                {
+                    property: `og:image`,
+                    content: image,
                 },
                 {
                     property: `og:type`,
@@ -70,7 +86,11 @@ function SEO({ description, lang, meta, title }) {
                 },
                 {
                     name: `twitter:description`,
-                    content: metaDescription,
+                    content: description,
+                },
+                {
+                    name: `twitter:image`,
+                    content: image,
                 },
             ].concat(meta)}
         />
@@ -81,6 +101,9 @@ SEO.defaultProps = {
     lang: `en`,
     meta: [],
     description: ``,
+    image: null,
+    title: null,
+    url: null,
 }
 
 SEO.propTypes = {
@@ -88,6 +111,8 @@ SEO.propTypes = {
     lang: PropTypes.string,
     meta: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    url: PropTypes.string,
 }
 
 export default SEO
