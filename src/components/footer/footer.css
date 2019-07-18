@@ -15,7 +15,7 @@
 }
 
 .nav__link:link, .nav__link:visited {
-    font-size: 1.4rem;
+    font-size: 1rem;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
@@ -34,4 +34,5 @@
 .copyright {
     color: #fff;
     margin-top: 2rem;
+    font-size: .9rem;
 }
