@@ -5,8 +5,6 @@ import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
 import ContactForm from "../components/form/contact-form"
 
-// import { connect } from 'react-redux'
-
 const ContactUs = () => {
     return (
         <>
@@ -19,5 +17,4 @@ const ContactUs = () => {
     )
 }
 
-// export default connect()(ContactUs)
 export default ContactUs

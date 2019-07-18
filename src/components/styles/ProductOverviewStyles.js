@@ -40,10 +40,8 @@ export const card = css`
   flex-direction: column;
   align-items: center;
 
-  /* min-width: 450px;
-  min-height: 500px; */
+  height: 40rem;
   margin: 2rem;
-  /* color: grey; */
   padding: 2rem;
   background: #5885AF;
   border-radius: 10px;
