@@ -31,7 +31,7 @@ const navStyle = css`
 const navLink = css`
     text-decoration: none !important;
     font-family: "Montserrat", sans-serif !important;
-    color: #000;
+    color: #fff;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     font-size: 0.8rem;
@@ -40,7 +40,8 @@ const navLink = css`
 
     &:hover {
         text-decoration: none !important;
-        color: #fff !important;
+        font-weight: 700;
+        color: #fff;
         cursor: pointer;
     }
 
