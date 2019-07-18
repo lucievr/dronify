@@ -34,7 +34,7 @@ const IndexPage = () => {
         <>
             <Global styles={GlobalStyles} />
             <SEO title="home" />
-            <Button/>
+            <Button />
             <ReactPageScroller
                 ref={ref => {
                     scrollRef = ref
