@@ -126,8 +126,7 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
                                             }}
                                             style={{
                                                 position: `relative`,
-                                                maxHeight: `280px`,
-                                                maxWidth: `428px`
+                                                maxHeight: `220px`
                                             }}
                                         />
                                     </div>
@@ -136,28 +135,29 @@ const AccessoriesDrones = ({ menuLoaded, menuItems, addedToCart, showItem }) => 
                                             {node.name}
                                         </h3>
                                         <p>
-                                            <strong>Category:</strong>{" "}
-                                            {node.category}
+                                            {node.description}
                                         </p>
                                         <p>
                                             <strong>Price:</strong>{" "}
                                             {node.price}€
                                         </p>
-                                        <button
-                                            onClick={() => addedToCart(node.id)}
-                                            css={buttonStyle}>
-                                            Add to cart
-                                            </button>
-                                        <Link to='/item'>
+                                        <div>
                                             <button
-                                                css={buttonStyle}
-                                                onClick={() => {
-                                                    showItem(node.id)
-                                                }}
-                                            >
-                                                Show product
+                                                onClick={() => addedToCart(node.id)}
+                                                css={buttonStyle}>
+                                                Add to cart
                                             </button>
-                                        </Link>
+                                            <Link to='/item'>
+                                                <button
+                                                    css={buttonStyle}
+                                                    onClick={() => {
+                                                        showItem(node.id)
+                                                    }}
+                                                >
+                                                    Show product
+                                                </button>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </li>
                             </ul>

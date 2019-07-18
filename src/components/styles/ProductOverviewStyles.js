@@ -32,6 +32,7 @@ export const cardList = css`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  width: 37rem;
 `
 
 export const card = css`
@@ -56,21 +57,24 @@ export const imageWrapper = css`
   width: 100%;
   height: auto;
   margin-bottom: 50px;
-  width: 420px;
 `
 
 export const textWrapper = css`
   font-family: "Montserrat", sans-serif !important;
   padding: 0 20px;
   text-align: center;
-  color: black;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 export const productTitle = css`
   color: white;
   font-family: "Montserrat", sans-serif !important;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 1px;
-  margin: 20px;
+  padding: 1rem;
 `
 
 export const buttonStyle = css`
