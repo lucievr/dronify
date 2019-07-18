@@ -17,6 +17,7 @@ import {
     bottom__heading,
     bottom__heading__title,
     bottom__heading__total,
+    formGroup
 } from "./CartStyles"
 
 class Payment extends React.Component {
@@ -149,6 +150,7 @@ class Payment extends React.Component {
                             focused={this.state.focused}
                         />
                         <Form
+                            css={formGroup}
                             onSubmit={this.handleSubmit}
                             action="/payment-success/"
                         >

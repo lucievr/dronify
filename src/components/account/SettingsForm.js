@@ -10,7 +10,7 @@ export default class UserSettings extends React.Component {
                 <Row form>
                     <Col md={6}>
                         <FormGroup>
-                            <Label for="name">Full Name</Label>
+                            <Label style={{color: `#fff`}} for="name">Full Name</Label>
                             <Input
                                 type="text"
                                 name="name"
@@ -22,7 +22,7 @@ export default class UserSettings extends React.Component {
                     </Col>
                     <Col md={6}>
                         <FormGroup>
-                            <Label for="email">Email</Label>
+                            <Label style={{color: `#fff`}} for="email">Email</Label>
                             <Input
                                 type="email"
                                 name="email"
@@ -35,7 +35,7 @@ export default class UserSettings extends React.Component {
                 </Row>
 
                 <FormGroup>
-                    <Label for="address">Address</Label>
+                    <Label style={{color: `#fff`}} for="address">Address</Label>
                     <Input
                         type="text"
                         name="address"
@@ -45,7 +45,7 @@ export default class UserSettings extends React.Component {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="exampleAddress2">
+                    <Label style={{color: `#fff`}} for="exampleAddress2">
                         Address Description (optional)
                     </Label>
                     <Input
@@ -60,7 +60,7 @@ export default class UserSettings extends React.Component {
                 <Row form>
                     <Col md={6}>
                         <FormGroup>
-                            <Label for="exampleCity">City</Label>
+                            <Label style={{color: `#fff`}} for="exampleCity">City</Label>
                             <Input
                                 type="text"
                                 name="city"
@@ -72,7 +72,7 @@ export default class UserSettings extends React.Component {
                     </Col>
                     <Col md={4}>
                         <FormGroup>
-                            <Label for="country">Country</Label>
+                            <Label style={{color: `#fff`}} for="country">Country</Label>
                             <Input
                                 type="text"
                                 name="country"
@@ -84,7 +84,7 @@ export default class UserSettings extends React.Component {
                     </Col>
                     <Col md={2}>
                         <FormGroup>
-                            <Label for="postcode">Post Code</Label>
+                            <Label style={{color: `#fff`}} for="postcode">Post Code</Label>
                             <Input
                                 type="text"
                                 name="postcode"
@@ -97,7 +97,7 @@ export default class UserSettings extends React.Component {
                 </Row>
                 <FormGroup check>
                     <Input type="checkbox" name="check" id="exampleCheck" />
-                    <Label for="exampleCheck" check>
+                    <Label style={{color: `#fff`}} for="exampleCheck" check>
                         The above details are correct
                     </Label>
                 </FormGroup>
