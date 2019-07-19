@@ -35,7 +35,7 @@ class Form extends React.Component {
                 className="form"
                 name="contact-form"
                 method="POST"
-                data-netlify="true"
+                netlify="true"
                 netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
                 action="/form-success/"
