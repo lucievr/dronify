@@ -6,8 +6,11 @@ import "./contacts.scss"
 import Form from './Form'
 
 const maps = css`
-    min-height: 60vh;
-    margin-bottom: 5rem;
+    min-height: 30vh;
+    margin-bottom: calc(15px + 0.5vh);
+    bottom: calc(15px + 0.1vh);
+    right: calc(5px + 0.1vw);
+    left: calc(5px + 0.1vw);
 `
 
 const heading2 = css`
