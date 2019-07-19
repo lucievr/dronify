@@ -128,27 +128,27 @@ function SEO({ description, lang, meta, title, image, url, link }) {
                     href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/enterprise-drones%2Fmatrice-200v2-ii.png?alt=media&token=c8176e7c-4869-4f0f-abce-48e6fd4d8cf3`,
                 },
                 {
-                    rel: `preload`,
+                    rel: `prefetch`,
                     as: `image`,
                     href: `https://dronify.netlify.com/icons/icon-48x48.png`,
                 },
                 {
-                    rel: `preload`,
+                    rel: `prefetch`,
                     as: `image`,
                     href: `https://dronify.netlify.com/icons/icon-72x72.png`,
                 },
                 {
-                    rel: `preload`,
+                    rel: `prefetch`,
                     as: `image`,
                     href: `https://dronify.netlify.com/icons/icon-96x96.png`,
                 },
                 {
-                    rel: `preload`,
+                    rel: `prefetch`,
                     as: `image`,
                     href: `https://dronify.netlify.com/icons/icon-144x144.png`,
                 },
                 {
-                    rel: `prefetch`,
+                    rel: `preload`,
                     as: `image`,
                     href: `https://dronify.netlify.com/icons/icon-48x48.png?v=29402ea375cb0cfc45c42a82b61cb130`,
                     
@@ -166,7 +166,7 @@ function SEO({ description, lang, meta, title, image, url, link }) {
                     
                 },
                 {
-                    rel: `preload`,
+                    rel: `prefetch`,
                     as: `image`,
                     href: `https://dronify.netlify.com/icons/icon-144x144.png?v=29402ea375cb0cfc45c42a82b61cb130`,
                     
