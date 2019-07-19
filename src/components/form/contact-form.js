@@ -79,6 +79,10 @@ class ContactForm extends React.Component {
                                     <li>E-mail: hello@dronify.com</li>
                                     {/* <li>Prague, Czech Republic</li> */}
                                 </ul>
+                                <ul>
+                                    <li>Office Hours:</li>
+                                    <li>Monday to Friday, 9:00 to 18:00 (Prague time GMT+2)</li>
+                                </ul>
                             </div>
                         </Col>
                         <Col md='6'>
