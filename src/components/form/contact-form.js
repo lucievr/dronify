@@ -1,25 +1,44 @@
 import React from "react"
-// import { Container, Row, Col } from "reactstrap"
+import { Container, Row, Col } from "reactstrap"
 import { css } from "@emotion/core"
-// import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import "./contacts.scss"
 import Form from './Form'
 
-// const maps = css`
-//     min-height: 60vh;
-//     margin-bottom: 5rem;
-// `
+const maps = css`
+    min-height: 60vh;
+    margin-bottom: 5rem;
+`
 
-// const findUs = css`
-//     color: #fff;
-//     padding-bottom: 3rem;
+const heading2 = css`
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    font-family: "Montserrat", sans-serif !important;
+    color: #fff;
+`
 
-//     h2 {
-//         text-transform: uppercase;
-//         letter-spacing: .2rem;
-//         padding-bottom: 2rem;
-//     }
-// `
+const findUs = css`
+    color: #fff;
+    padding-bottom: 3rem;
+    height: 30rem;
+
+    ul {
+        text-align: left;
+        list-style: none;
+        margin-bottom: 2rem;
+
+        li {
+            margin-bottom: 1rem;
+
+            &:first-of-type {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+    }
+`
 
 const heading = css`
     font-family: "Montserrat", sans-serif !important;
@@ -43,14 +62,23 @@ class ContactForm extends React.Component {
                         </div>
                     </div>
                 </section>
-                {/* <Container style={{ padding: `2rem` }}>
+                <Container style={{ padding: `2rem` }}>
+                    <h2 css={heading2}>Find us</h2>
                     <Row>
                         <Col>
                             <div css={findUs}>
-                                <h2>Find us</h2>
-                                <p>Taborska 31</p>
-                                <p>Prague 4, Nusle, 18000</p>
-                                <p>Prague, Czech Republic</p>
+                                <ul>
+                                    <li>Address:</li>
+                                    <li>Taborska 31</li>
+                                    <li>Prague 4, Nusle, 18000</li>
+                                    <li>Prague, Czech Republic</li>
+                                </ul>
+                                <ul>
+                                    <li>Contacts:</li>
+                                    <li>Phone: +420 700500700</li>
+                                    <li>E-mail: hello@dronify.com</li>
+                                    {/* <li>Prague, Czech Republic</li> */}
+                                </ul>
                             </div>
                         </Col>
                         <Col md='6'>
@@ -70,14 +98,14 @@ class ContactForm extends React.Component {
                         </Col>
 
                     </Row>
-                </Container> */}
+                </Container>
             </>
         )
     }
 }
 
-// export default GoogleApiWrapper({
-//     apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
-// })(ContactForm)
+export default GoogleApiWrapper({
+    apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
+})(ContactForm)
 
-export default ContactForm
+// export default ContactForm
