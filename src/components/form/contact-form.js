@@ -5,21 +5,21 @@ import { css } from "@emotion/core"
 import "./contacts.scss"
 import Form from './Form'
 
-const maps = css`
-    min-height: 60vh;
-    margin-bottom: 5rem;
-`
+// const maps = css`
+//     min-height: 60vh;
+//     margin-bottom: 5rem;
+// `
 
-const findUs = css`
-    color: #fff;
-    padding-bottom: 3rem;
+// const findUs = css`
+//     color: #fff;
+//     padding-bottom: 3rem;
 
-    h2 {
-        text-transform: uppercase;
-        letter-spacing: .2rem;
-        padding-bottom: 2rem;
-    }
-`
+//     h2 {
+//         text-transform: uppercase;
+//         letter-spacing: .2rem;
+//         padding-bottom: 2rem;
+//     }
+// `
 
 const heading = css`
     font-family: "Montserrat", sans-serif !important;
