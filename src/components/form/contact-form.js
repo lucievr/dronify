@@ -102,7 +102,10 @@ class ContactForm extends React.Component {
                                 />
                             </Map>
                         </Col>
+                    </Row>
 
+                    <Row>
+                        <p style={{margin: `0 auto`}}><span style={{fontWeight: `bold`}}>Disclaimer: </span> This is not a real e-commerce site, it is for showcase purposes only.</p>
                     </Row>
                 </Container>
             </>
