@@ -80,7 +80,6 @@ class ContactForm extends React.Component {
                                     <li>Contacts:</li>
                                     <li>Phone: +420 700500700</li>
                                     <li>E-mail: hello@dronify.com</li>
-                                    {/* <li>Prague, Czech Republic</li> */}
                                 </ul>
                                 <ul>
                                     <li>Office Hours:</li>
@@ -114,5 +113,3 @@ class ContactForm extends React.Component {
 export default GoogleApiWrapper({
     apiKey: "AIzaSyCHMqCbsIxKOrTKvtYvvsfAEXnz2trsiAI",
 })(ContactForm)
-
-// export default ContactForm
