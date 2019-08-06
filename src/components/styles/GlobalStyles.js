@@ -36,6 +36,36 @@ const GlobalStyles = css`
         margin-left: auto;
     }
 
+    div.modali-overlay {
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    div.modali-content div.modali-footer {
+        justify-content: center;
+    }
+
+    button.modali-button {
+        margin: 1rem;
+    }
+
+    button.modali-button.modali-button-cancel {
+        background: rgba(186, 219, 87, 0.9);
+        border: 2px solid rgba(0,0,0,0.2);
+        text-transform: uppercase;
+    }
+    button.modali-button.modali-button-cancel:hover {
+        background: rgba(186, 219, 87, 0.7);
+    }
+
+    button.modali-button.modali-button-destructive {
+        background: rgb(255, 22, 84);
+        border: 2px solid rgba(0,0,0,0.2);
+        text-transform: uppercase;
+    }
+
+    button.modali-button.modali-button-destructive:hover {
+        background: rgba(255, 22, 84, 0.8);
+    }
 
     span.icon.close svg.icon-style {
         color: #4d4d4d;

@@ -15,18 +15,36 @@ import {
 } from "../components/styles/ProductOverviewStyles"
 import { Global } from "@emotion/core"
 import SEO from "../components/gatsby-default-files/seo"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link, navigate } from "gatsby"
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
-import { Link } from 'gatsby'
 import CategoriesHeading from "../components/categories/heading/CategoriesHeading"
 import Button from '../components/main-page/navigation-button/Button'
 import Footer from '../components/footer/Footer'
+import Modali, { useModali } from 'modali'
 
 const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
     useEffect(() => {
         menuLoaded(data.allMongodbDronifyDrones.edges)
     }, [])
+
+    const [completeModal, toggleCompleteModal] = useModali({
+        animated: true,
+        title: 'Added!',
+        message: 'Your item has been added to the cart.',
+        buttons: [
+          <Modali.Button
+            label="Continue Shopping"
+            isStyleCancel
+            onClick={() => toggleCompleteModal()}
+          />,
+          <Modali.Button
+            label="View Cart"
+            isStyleDestructive
+            onClick={() => navigate('/cart')}
+          />,
+        ],
+    })
 
     const data = useStaticQuery(graphql`
         query DbEntQuery {
@@ -137,12 +155,17 @@ const EnterpriseDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
                                     </p>
                                     <div>
                                         <button
-                                            onClick={() => addedToCart(node.id)}
+                                            onClick={() => {
+                                                    addedToCart(node.id)
+                                                    toggleCompleteModal()
+                                                    }}
                                             css={buttonCartStyle}
                                         >
                                             Add to cart
                                         </button>
-
+                                        <Modali.Modal 
+                                                {...completeModal}>
+                                        </Modali.Modal>
                                         <Link to='/item'>
                                             <button
                                                 css={buttonStyle}
