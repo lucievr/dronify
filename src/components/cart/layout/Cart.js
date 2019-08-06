@@ -12,6 +12,7 @@ import {
     wrapper,
     bottom,
     bottom__heading,
+    bottom__heading__wrapper,
     bottom__heading__title,
     bottom__heading__total,
     item__box,
@@ -52,10 +53,12 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllIte
                 <Navigation />
                 <div css={bottom}>
                     <div css={bottom__heading}>
-                        <h3 css={bottom__heading__title}>My order</h3>
-                        <div css={bottom__heading__total}>
-                            <span>Total: </span>
-                            <span>{total}€</span>
+                        <div>x</div>
+                        <div css={bottom__heading__wrapper}><h3 css={bottom__heading__title}>My order</h3>
+                            <div css={bottom__heading__total}>
+                                <span>Total: </span>
+                                <span>{total}€</span>
+                            </div>
                         </div>
                     </div>
                     <Table style={{ borderBottomStyle: `hidden` }} hover>

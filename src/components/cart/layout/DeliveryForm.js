@@ -11,6 +11,7 @@ import {
     wrapper,
     bottom,
     bottom__heading,
+    bottom__heading__wrapper,
     bottom__heading__title,
     bottom__heading__total,
 } from "./CartStyles"
@@ -62,11 +63,15 @@ class DeliveryForm extends React.Component {
                 <Global styles={GlobalStyles} />
                 <Navigation />
                 <div css={bottom}>
+
                     <div css={bottom__heading}>
-                        <h3 css={bottom__heading__title}>My order</h3>
-                        <span css={bottom__heading__total}>
-                            <span>DELIVERY </span>
-                        </span>
+                        <div>x</div>
+                        <div css={bottom__heading__wrapper}>
+                            <h3 css={bottom__heading__title}>My order</h3>
+                            <div css={bottom__heading__total}>
+                                <span>DELIVERY </span>
+                            </div>
+                        </div>
                     </div>
 
                     <Form onSubmit={this.handleSubmit} style={{ padding: `1rem` }}>
