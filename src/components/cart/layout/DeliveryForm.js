@@ -6,6 +6,7 @@ import GlobalStyles from "../../styles/GlobalStyles"
 import { login, isAuthenticated } from "../../../utils/auth"
 import { navigate } from "gatsby"
 import Navigation from '../../main-page/landing/navigation/Navigation'
+import Icon from '../../styles/Icon'
 
 import {
     wrapper,
@@ -19,7 +20,7 @@ import {
 class DeliveryForm extends React.Component {
     constructor(props) {
         super(props)
-        // let user = getProfile()
+
         this.state = {
             user: {
                 email: "",
@@ -46,7 +47,7 @@ class DeliveryForm extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         try {
-            navigate("/payment/")
+            navigate("/payment")
             this.setState({})
         } catch (error) {
             alert(error)
@@ -65,7 +66,7 @@ class DeliveryForm extends React.Component {
                 <div css={bottom}>
 
                     <div css={bottom__heading}>
-                        <div>x</div>
+                    <div className="icon--exit"><Link to="/consumer-drones"><Icon name="x" /></Link></div>
                         <div css={bottom__heading__wrapper}>
                             <h3 css={bottom__heading__title}>My order</h3>
                             <div css={bottom__heading__total}>

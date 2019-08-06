@@ -42,7 +42,10 @@ const ConsumerDrones = ({ menuItems, menuLoaded, addedToCart, showItem }) => {
           <Modali.Button
             label="View Cart"
             isStyleDestructive
-            onClick={() => navigate('/cart')}
+            onClick={() => {
+                toggleCompleteModal()
+                navigate('/cart')
+            }}
           />,
         ],
     })

@@ -94,6 +94,11 @@ const GlobalStyles = css`
         margin: 10px;
     }
 
+    div.icon--exit svg.icon-style {
+        color: #fff;
+        margin-right: 0;
+    }
+
     span.account-icon svg.icon-style {
         width: 25px;
         height: 25px;

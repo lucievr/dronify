@@ -5,8 +5,8 @@ import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { deleteFromCart, addQuantity, reduceQuantity, removeAllItems } from "../../../actions"
 import Navigation from '../../main-page/landing/navigation/Navigation'
-
 import GlobalStyles from "../../styles/GlobalStyles"
+import Icon from '../../styles/Icon'
 
 import {
     wrapper,
@@ -40,7 +40,7 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllIte
         ) : (
                 <div css={cartButtons}>
                     <Button color="secondary" size="lg" onClick={() => removeAllItems()}>Empty</Button>
-                    <Link to="/delivery/">
+                    <Link to="/delivery">
                         <Button color="secondary" size="lg">Next Step</Button>
                     </Link>
                 </div>
@@ -53,7 +53,7 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllIte
                 <Navigation />
                 <div css={bottom}>
                     <div css={bottom__heading}>
-                        <div>x</div>
+                    <div className="icon--exit"><Link to="/consumer-drones"><Icon name="x" /></Link></div>
                         <div css={bottom__heading__wrapper}><h3 css={bottom__heading__title}>My order</h3>
                             <div css={bottom__heading__total}>
                                 <span>Total: </span>

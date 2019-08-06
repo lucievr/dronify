@@ -42,7 +42,10 @@ const ProfessionalDrones = ({ menuLoaded, showItem, menuItems, addedToCart }) =>
           <Modali.Button
             label="View Cart"
             isStyleDestructive
-            onClick={() => navigate('/cart')}
+            onClick={() => {
+                toggleCompleteModal()
+                navigate('/cart')
+            }}
           />,
         ],
     })
