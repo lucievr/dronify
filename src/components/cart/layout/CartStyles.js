@@ -27,19 +27,30 @@ export const payformWrapper = css`
 
 export const bottom__heading = css`
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
     color: #fff;
     background: #6b757d;
-    padding: 2rem;
+    padding: 0.5rem 2rem 2rem 2rem;
     text-transform: uppercase;
 `
 
-export const bottom__heading__title = css``
+export const bottom__heading__wrapper = css`
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+`
+
+export const bottom__heading__title = css`
+    margin-bottom: 0;
+`
 
 export const bottom__heading__total = css`
     font-size: 1.2rem;
-
+    margin-left: auto;
     span:nth-of-type(2) {
         font-weight: bold;
     }
@@ -120,5 +131,4 @@ export const formWrapper = css`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* height: 30rem; */
 `

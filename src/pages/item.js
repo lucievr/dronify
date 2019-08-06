@@ -1,5 +1,6 @@
 import React from 'react'
 import SEO from "../components/gatsby-default-files/seo"
+import { navigate } from "gatsby"
 
 // REDUX
 import { connect } from "react-redux"
@@ -15,6 +16,7 @@ import { carouselWrapper, specWrapper, descriptionStyle, specText, column, btnBu
 import Img from "gatsby-image"
 import Navigation from "../components/main-page/landing/navigation/Navigation"
 import Button from '../components/main-page/navigation-button/Button'
+import Modali, { useModali } from 'modali'
 
 // CAROUSEL
 import CarouselUI from '../components/product-page/CarouselUI'
@@ -35,6 +37,27 @@ const itemWrapper = css`
 const ItemPage = ({ item, addedToCart }) => {
 
     const { id, name, description, price, category, icon1, icon2, icon3, icon4, icon5, icon6, spec1, spec2, spec3, spec4, spec5, spec6, localImage1, localImage2, localImage3, localImage4 } = item
+
+    const [completeModal, toggleCompleteModal] = useModali({
+        animated: true,
+        title: 'Added!',
+        message: 'Your item has been added to the cart.',
+        buttons: [
+          <Modali.Button
+            label="Continue Shopping"
+            isStyleCancel
+            onClick={() => toggleCompleteModal()}
+          />,
+          <Modali.Button
+            label="View Cart"
+            isStyleDestructive
+            onClick={() => {
+                toggleCompleteModal()
+                navigate('/cart')
+            }}
+          />,
+        ],
+    })
 
     return (
         <>
@@ -96,12 +119,17 @@ const ItemPage = ({ item, addedToCart }) => {
                     </section>
                 </div>
                 <button
-                    onClick={() => addedToCart(id)}
+                    onClick={() => {
+                        addedToCart(id)
+                        toggleCompleteModal()
+                    }}
                     css={btnBuy}
                 >
                     Buy
                 </button>
-
+                <Modali.Modal 
+                    {...completeModal}>
+                </Modali.Modal>
                 <Carousel defaultWait={3000} css={carouselWrapper}>
                     <Slide right>
                         <div>

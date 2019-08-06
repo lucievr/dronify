@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import GlobalStyles from "../../styles/GlobalStyles"
 import Navigation from "../../main-page/landing/navigation/Navigation"
 import { navigate } from "gatsby"
-
+import Icon from '../../styles/Icon'
 import Cards from "react-credit-cards"
 import "react-credit-cards/lib/styles-compiled.css"
 import valid from "card-validator"
@@ -15,6 +15,7 @@ import {
     bottom,
     payformWrapper,
     bottom__heading,
+    bottom__heading__wrapper,
     bottom__heading__title,
     bottom__heading__total,
     formGroup,
@@ -137,12 +138,17 @@ class Payment extends React.Component {
                 <Global styles={GlobalStyles} />
                 <Navigation />
                 <div css={bottom}>
+
                     <div css={bottom__heading}>
-                        <h3 css={bottom__heading__title}>My order</h3>
-                        <span css={bottom__heading__total}>
-                            <span>PAYMENT </span>
-                        </span>
+                    <div className="icon--exit"><Link to="/consumer-drones"><Icon name="x" /></Link></div>
+                        <div css={bottom__heading__wrapper}>
+                            <h3 css={bottom__heading__title}>My order</h3>
+                            <div css={bottom__heading__total}>
+                                <span>PAYMENT </span>
+                            </div>
+                        </div>
                     </div>
+
                     <div css={payformWrapper}>
                         <div css={formWrapper}>
                             <Cards

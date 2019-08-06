@@ -21,13 +21,6 @@ const GlobalStyles = css`
         font-size: calc(12px + 0.4vw);
         line-height: 1.5;
         word-wrap: break-word;
-        /* background: #001f3f; */
-        /* background: linear-gradient(
-            45deg,
-            rgba(120, 132, 143, 1) 0%,
-            rgba(144, 157, 170, 1) 50%,
-            rgba(120, 132, 143, 1) 100%
-        ); */
         background-repeat: no-repeat;
         background: #0F2027;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
@@ -39,47 +32,39 @@ const GlobalStyles = css`
         color: white;
     }
 
-    .modal {
-        position: fixed;
-        z-index: 99;
-        padding-top: 2rem;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.3);
+    div.modali-content div.modali-header div.modali-title {
+        margin-left: auto;
     }
 
-    .modal.display-none {
-        display: none; /* Hidden by default */
+    div.modali-overlay {
+        background-color: rgba(0,0,0,0.5);
     }
 
-    .modal.display-block {
-        display: block;
+    div.modali-content div.modali-footer {
+        justify-content: center;
     }
 
-    .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        animation-name: animatetop;
-        animation-duration: 0.5s;
+    button.modali-button {
+        margin: 1rem;
     }
 
-    @keyframes animatetop {
-        from {
-            top: -300px;
-            opacity: 0;
-        }
-        to {
-            top: 0;
-            opacity: 1;
-        }
+    button.modali-button.modali-button-cancel {
+        background: rgba(186, 219, 87, 0.9);
+        border: 2px solid rgba(0,0,0,0.2);
+        text-transform: uppercase;
+    }
+    button.modali-button.modali-button-cancel:hover {
+        background: rgba(186, 219, 87, 0.7);
+    }
+
+    button.modali-button.modali-button-destructive {
+        background: rgb(255, 22, 84);
+        border: 2px solid rgba(0,0,0,0.2);
+        text-transform: uppercase;
+    }
+
+    button.modali-button.modali-button-destructive:hover {
+        background: rgba(255, 22, 84, 0.8);
     }
 
     span.icon.close svg.icon-style {
@@ -107,6 +92,11 @@ const GlobalStyles = css`
 
     .icon-style {
         margin: 10px;
+    }
+
+    div.icon--exit svg.icon-style {
+        color: #fff;
+        margin-right: 0;
     }
 
     span.account-icon svg.icon-style {

@@ -5,13 +5,14 @@ import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { deleteFromCart, addQuantity, reduceQuantity, removeAllItems } from "../../../actions"
 import Navigation from '../../main-page/landing/navigation/Navigation'
-
 import GlobalStyles from "../../styles/GlobalStyles"
+import Icon from '../../styles/Icon'
 
 import {
     wrapper,
     bottom,
     bottom__heading,
+    bottom__heading__wrapper,
     bottom__heading__title,
     bottom__heading__total,
     item__box,
@@ -39,7 +40,7 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllIte
         ) : (
                 <div css={cartButtons}>
                     <Button color="secondary" size="lg" onClick={() => removeAllItems()}>Empty</Button>
-                    <Link to="/delivery/">
+                    <Link to="/delivery">
                         <Button color="secondary" size="lg">Next Step</Button>
                     </Link>
                 </div>
@@ -52,10 +53,12 @@ const Cart = ({ items, deleteFromCart, addQuantity, reduceQuantity, removeAllIte
                 <Navigation />
                 <div css={bottom}>
                     <div css={bottom__heading}>
-                        <h3 css={bottom__heading__title}>My order</h3>
-                        <div css={bottom__heading__total}>
-                            <span>Total: </span>
-                            <span>{total}€</span>
+                    <div className="icon--exit"><Link to="/consumer-drones"><Icon name="x" /></Link></div>
+                        <div css={bottom__heading__wrapper}><h3 css={bottom__heading__title}>My order</h3>
+                            <div css={bottom__heading__total}>
+                                <span>Total: </span>
+                                <span>{total}€</span>
+                            </div>
                         </div>
                     </div>
                     <Table style={{ borderBottomStyle: `hidden` }} hover>
