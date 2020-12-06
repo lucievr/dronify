@@ -1,7 +1,7 @@
 import { css } from "@emotion/core"
 
 const Background = css`
-    background: url("https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fprofessional-bg.jpg?alt=media&token=6eb4503c-ccb8-4f7e-9562-10bd22eae7a8");
+    background: url("https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/professional-bg.jpg?alt=media&token=6ccaa3b7-ef91-4ec4-a768-10fa810e50d9");
     background-size: cover;
     height: 100%;
 `

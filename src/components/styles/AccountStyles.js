@@ -54,7 +54,7 @@ const navLink = css`
     }
 `
 const homeSection = css`
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/consumer-drones%2Fphantom-3-se-ii.jpg?alt=media&token=9d80bf06-1938-4813-9314-d0c7362e72da");
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/phantom-3-se-ii.jpg?alt=media&token=dee7cb3d-b2f9-4be9-810c-00874a193507");
     background-size: cover;
     min-height: 60vh;
     min-width: 50vw;

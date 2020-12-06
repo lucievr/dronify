@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
     menu: [],
     items: [],
     item: null

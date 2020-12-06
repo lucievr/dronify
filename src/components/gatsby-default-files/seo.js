@@ -95,37 +95,37 @@ function SEO({ description, lang, meta, title, image, url, link }) {
                 {
                     rel: `preload`,
                     as: `image`,
-                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/consumer-drones%2Fconsumer-bg.jpg?alt=media&token=cfc4edd7-df2c-4904-ba22-23a0fe7c3723`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/consumer-bg.jpg?alt=media&token=864ae70e-f0fe-436f-a3a5-0b7ba5171e45`,
                 },
                 {
                     rel: `prefetch`,
                     as: `image`,
-                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fprofessional-bg.jpg?alt=media&token=6eb4503c-ccb8-4f7e-9562-10bd22eae7a8`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/professional-bg.jpg?alt=media&token=6ccaa3b7-ef91-4ec4-a768-10fa810e50d9`,
                 },
                 {
                     rel: `prefetch`,
                     as: `image`,
-                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/enterprise-bg-flip.jpg?alt=media&token=8d6d2ed3-88bd-4569-a219-6bc2dd240216`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/enterprise-bg-flip.jpg?alt=media&token=8e62633d-dda8-48d8-bb08-f70f55ff7ecd`,
                 },
                 {
                     rel: `prefetch`,
                     as: `image`,
-                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/drone-3453361_1280uflip.jpg?alt=media&token=c412ca6a-ed03-41fb-baf0-78383f0f0e83`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/drone-3453361_1280uflip.jpg?alt=media&token=e222db86-88e0-4603-8b25-3ce616d5c321`,
                 },
                 {
                     rel: `preload`,
                     as: `image`,
-                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/consumer-drones%2Fphantom-3-se.png?alt=media&token=07f00be4-b994-4e35-91f6-90335b2b74b6`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/consumer%2Fphantom-3%2Fphantom-3-se_1.png?alt=media&token=f0712e2a-2fa7-4ede-a214-f858c4bf581d`,
                 },
                 {
                     rel: `prefetch`,
                     as: `image`,
-                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fzenmuse-x7.png?alt=media&token=f40badd9-5aa6-4b05-812d-bda0e8186933`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/professional%2Fzenmuse-x7%2Fzenmuse-x7_3.png?alt=media&token=4a14687b-1796-440b-8ca9-932d31990e35`,
                 },
                 {
                     rel: `prefetch`,
                     as: `image`,
-                    href: `https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/enterprise-drones%2Fmatrice-200v2-ii.png?alt=media&token=c8176e7c-4869-4f0f-abce-48e6fd4d8cf3`,
+                    href: `https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/enterprise%2Fmatrice-200%2Fmatrice-200v2_2.png?alt=media&token=763c34dc-60f5-44b5-a7fb-bb19ea57e391`,
                 },
                 {
                     rel: `prefetch`,

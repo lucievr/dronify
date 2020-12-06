@@ -30,7 +30,7 @@ const Professionals = props => {
                             <img
                                 css={Image}
                                 alt="drone"
-                                src="https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/professional-drones%2Fzenmuse-x7.png?alt=media&token=f40badd9-5aa6-4b05-812d-bda0e8186933"
+                                src="https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/professional%2Fzenmuse-x7%2Fzenmuse-x7_3.png?alt=media&token=4a14687b-1796-440b-8ca9-932d31990e35"
                             />
                         </Fade>
                     </div>

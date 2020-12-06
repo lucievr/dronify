@@ -20,7 +20,7 @@ const Enterprise = props => {
                             <img
                                 css={Image}
                                 alt="drone"
-                                src="https://firebasestorage.googleapis.com/v0/b/shoolix.appspot.com/o/enterprise-drones%2Fmatrice-200v2-ii.png?alt=media&token=c8176e7c-4869-4f0f-abce-48e6fd4d8cf3"
+                                src="https://firebasestorage.googleapis.com/v0/b/dronify-245011.appspot.com/o/enterprise%2Fmatrice-200%2Fmatrice-200v2_2.png?alt=media&token=763c34dc-60f5-44b5-a7fb-bb19ea57e391"
                             />
                         </Fade>
                     </div>
