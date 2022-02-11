@@ -30,7 +30,7 @@
     "google-maps-react": "^2.0.2",
     "jss-plugin-vendor-prefixer": "^10.0.0-alpha.7",
     "modali": "^1.2.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-credit-cards": "^0.7.0",
