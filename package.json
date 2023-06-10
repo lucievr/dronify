@@ -13,7 +13,7 @@
     "card-validator": "^6.2.0",
     "css-vendor": "^2.0.4",
     "feather-icons": "^4.22.1",
-    "gatsby": "^2.28.0",
+    "gatsby": "^4.25.7",
     "gatsby-cli": "^2.15.0",
     "gatsby-image": "^2.1.2",
     "gatsby-plugin-emotion": "^4.0.7",
